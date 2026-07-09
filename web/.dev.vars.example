@@ -1,5 +1,0 @@
-# ローカルで `npm run dev` する時だけ使う秘密情報のサンプル
-# コピーして .dev.vars という名前で保存してください（Gitには絶対コミットしない）
-GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxx
-GOOGLE_CLIENT_SECRET=xxxxxxxxxxxxxxxxxxxx
-JWT_SECRET=何でもいいのでランダムな長い文字列
