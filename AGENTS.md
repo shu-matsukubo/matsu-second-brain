@@ -9,18 +9,19 @@
 
 ## 構成
 
-- .agents : エージェント定義
-- .tasks : タスク定義
-- .skills : スキル定義
+- .codex/agents : エージェント定義
+- .codex/tasks : タスク定義
+- .codex/skills : スキル定義
 - daily : 日々のメモ
 - knowledge : 整理済み知識
+- feedback : フィードバック
 
 ## 行動指針
 
 1. ユーザーの要求を理解する
-2. .agents を確認する
+2. .codex/agents を確認する
 3. 適切なエージェントが存在する場合は従う
-4. 存在しない場合は .tasks を確認する
+4. 存在しない場合は .codex/tasks を確認する
 5. 適切なタスクが存在する場合は従う
 6. 存在しない場合は自身で判断し対応する
 
