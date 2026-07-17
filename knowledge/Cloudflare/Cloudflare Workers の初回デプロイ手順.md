@@ -1,13 +1,16 @@
 ---
 title: Cloudflare Workers の初回デプロイ手順
+category: Cloudflare
 tags:
   - Cloudflare
   - Workers
   - Wrangler
-updated: 2026-07-17
+updated: 2026-07-18
 ---
 
 # Cloudflare Workers の初回デプロイ手順
+
+初回デプロイでは、依存関係の準備、Cloudflare への認証、本番用シークレットの登録、デプロイの順に進める。環境を分ける場合は、シークレットの登録先とデプロイ先に同じ `--env` を指定する。
 
 ## 前提
 
@@ -33,17 +36,13 @@ CI/CD では対話ログインではなく、必要な権限に絞った `CLOUDF
 
 ## 本番用シークレットの登録
 
-アプリが必要とする値を Worker のシークレットとして登録する。
+アプリが必要とする機密値を、コードが参照するバインディング名で Worker のシークレットとして登録する。
 
 ```shell
-npx wrangler secret put MY_EMAIL
-npx wrangler secret put GOOGLE_CLIENT_ID
-npx wrangler secret put GOOGLE_CLIENT_SECRET
-npx wrangler secret put GITHUB_TOKEN
-npx wrangler secret put JWT_SECRET
+npx wrangler secret put <BINDING_NAME>
 ```
 
-`GOOGLE_CLIENT_ID` は Google OAuth のクライアントIDであり、公開鍵ではない。機密性が特に高いのはクライアントシークレット、APIトークン、JWT署名用シークレットである。これらの値はソースコードや通常の `vars` に書かない。
+対象には OAuth のクライアントシークレット、API トークン、JWT 署名用シークレットなどがある。OAuth のクライアント ID は公開鍵ではなく、機密性はクライアントシークレットより低いが、設定を一元管理するためシークレットとして扱う構成も選べる。機密値はソースコードや通常の `vars` に書かない。
 
 環境を分けている場合は、対象を明示する。
 
@@ -79,6 +78,11 @@ npx wrangler deploy --env production
 - シークレットは環境間で継承されないため、環境ごとに登録する。
 - `package.json` のデプロイスクリプトが何を実行するか確認してから `npm run deploy` を使う。
 - シークレット名はコードが参照するバインディング名と一致させる。
+
+## 関連ナレッジ
+
+- [[Cloudflare Workers 無料枠の概要]]: デプロイ前に無料枠の制約を確認する。
+- [[Hono で Google ログインを実装する]]: Google OAuth を使う Hono アプリのシークレット名と登録例を確認する。
 
 ## 公式ドキュメント
 
