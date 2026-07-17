@@ -1,5 +1,6 @@
 ---
 title: API Gateway の REST API と HTTP API における JWT 認証
+category: AWS
 tags:
   - AWS
   - API Gateway
