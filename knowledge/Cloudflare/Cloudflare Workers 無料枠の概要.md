@@ -1,5 +1,6 @@
 ---
 title: Cloudflare Workers 無料枠の概要
+category: Cloudflare
 tags:
   - Cloudflare
   - Workers
