@@ -1,5 +1,6 @@
 ---
 title: Hono で Google ログインを実装する
+category: アプリ開発
 tags:
   - アプリ開発
   - Hono
@@ -60,6 +61,15 @@ export default app
 ```
 
 Cloudflare Workers では、ミドルウェアが既定名の `GOOGLE_ID` と `GOOGLE_SECRET` を環境バインディングから取得できる。別の実行環境では、公式 README の例のように `client_id` と `client_secret` を設定する。
+
+Cloudflare Workers に登録するシークレット名も、このバインディング名に一致させる。
+
+```shell
+npx wrangler secret put GOOGLE_ID
+npx wrangler secret put GOOGLE_SECRET
+```
+
+`GOOGLE_CLIENT_ID` や `GOOGLE_CLIENT_SECRET` など別名で登録しても、この省略形の設定からは自動で参照されない。別名を使う場合は `googleAuth` の `client_id` と `client_secret` に明示的に渡す。
 
 ## アプリ側で追加する処理
 
