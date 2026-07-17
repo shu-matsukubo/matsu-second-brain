@@ -1,5 +1,6 @@
 ---
 title: GitHub から Codex cloud にタスクを委譲する
+category: Codex
 tags:
   - Codex
   - GitHub
