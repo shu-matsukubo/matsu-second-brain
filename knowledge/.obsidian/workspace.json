@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cloudflare Workers の初回デプロイ手順.md",
+                "file": "API Gateway の REST API と HTTP API における JWT 認証.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Cloudflare Workers の初回デプロイ手順"
+              "title": "API Gateway の REST API と HTTP API における JWT 認証"
             }
           }
         ]
@@ -199,9 +199,13 @@
       "bases:新規ベースを作成": false
     }
   },
-  "active": "023eebe670ac834d",
+  "active": "10e611c1edde9b4f",
   "lastOpenFiles": [
+    "Codex/GitHub から Codex cloud にタスクを委譲する.md",
+    "Codex",
     "Cloudflare Workers 無料枠の概要.md",
+    "API Gateway の REST API と HTTP API における JWT 認証.md",
+    "Cloudflare Workers の初回デプロイ手順.md",
     "ようこそ.md"
   ]
 }
