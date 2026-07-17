@@ -1,5 +1,6 @@
 ---
 title: アプリの通知先に Discord と LINE を使う際の選び方
+category: アプリ開発
 tags:
   - アプリ開発
   - 通知
