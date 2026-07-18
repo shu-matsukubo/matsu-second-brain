@@ -52,6 +52,27 @@ npx wrangler secret put JWT_SECRET --env production
 
 ローカル開発用の値は `.dev.vars` または `.env` のどちらか一方に保存し、`.gitignore` でコミット対象外にする。
 
+### 必須シークレット名を設定へ宣言する
+
+Wrangler の設定にアプリが必要とするシークレット名を宣言しておくと、登録漏れをデプロイ前に検出できる。値そのものではなく、バインディング名だけをバージョン管理する。
+
+```jsonc
+{
+  "secrets": {
+    "required": ["GOOGLE_ID", "GOOGLE_SECRET", "JWT_SECRET"]
+  }
+}
+```
+
+`wrangler.toml` を使う場合は次のように書く。
+
+```toml
+[secrets]
+required = ["GOOGLE_ID", "GOOGLE_SECRET", "JWT_SECRET"]
+```
+
+`secrets.required` が定義されていると、`wrangler deploy` と `wrangler versions upload` は対象 Worker に必須シークレットがそろっていない場合に失敗する。ローカル開発でも、一覧にないキーは `.dev.vars` や `.env` から読み込まれず、不足しているキーには警告が出る。環境ごとに必要な名前が異なる場合は、それぞれの環境設定に宣言する。
+
 ## デプロイ
 
 標準の Wrangler コマンドは次のとおり。
@@ -76,6 +97,7 @@ npx wrangler deploy --env production
 
 - `wrangler secret put` は新しい Worker バージョンを作成し、その変更を直ちにデプロイする。
 - シークレットは環境間で継承されないため、環境ごとに登録する。
+- `secrets.required` を設定し、登録漏れをデプロイ時に検出する。
 - `package.json` のデプロイスクリプトが何を実行するか確認してから `npm run deploy` を使う。
 - シークレット名はコードが参照するバインディング名と一致させる。
 
