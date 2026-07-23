@@ -6,7 +6,7 @@ tags:
   - Workers
   - Wrangler
   - シークレット
-updated: 2026-07-18
+updated: 2026-07-23
 ---
 
 # Cloudflare Workers でシークレットを管理する
@@ -66,6 +66,8 @@ required = ["GOOGLE_ID", "GOOGLE_SECRET", "JWT_SECRET"]
 ## 関連ナレッジ
 
 - [[Cloudflare Workers の初回デプロイ手順]]: シークレット登録を含む初回デプロイの流れを確認する。
+- [[Hono で Google ログインを実装する]]: Google OAuth で必要なバインディング名と Workers への登録例を確認する。
+- [[OAuth ログイン後のアプリセッションを設計する]]: OAuth のクライアントシークレットと、ログイン後のセッション情報の役割を区別する。
 
 ## 公式ドキュメント
 
