@@ -1,0 +1,4 @@
+interface:
+  display_name: "第二の脳を整理"
+  short_description: "未処理メモのナレッジ化と既存ナレッジの小さなメンテナンス"
+  default_prompt: "Use $curate-second-brain to organize one item in this second-brain workspace."
