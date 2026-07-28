@@ -6,7 +6,7 @@ tags:
   - Dockerfile
   - Docker Compose
   - 開発環境
-updated: 2026-07-19
+updated: 2026-07-28
 ---
 
 # Dockerfile と Compose で開発環境を共有する
@@ -34,6 +34,8 @@ Compose ファイルは、アプリケーションを構成するサービスと
 - CPU アーキテクチャなど、ホスト側の前提を明示する
 - データベースなどの永続データを初期化する手順を用意する
 - 外部サービスへの依存と必要な接続条件を明示する
+
+Windows コンテナを共有する場合は、Dockerfile や Compose ファイルに加えて、ホストOS、Docker Desktop のコンテナモード、Windows のバージョン互換性も揃える必要がある。具体的な前提は [[Windows コンテナの実行条件]] を参照する。
 
 ## 公式情報
 
