@@ -4,7 +4,7 @@ category: Git
 tags:
   - Git
   - バージョン管理
-updated: 2026-07-18
+updated: 2026-08-09
 ---
 
 # Git の作業領域とリモートの全体像
@@ -94,7 +94,9 @@ git branch -vv
 - `git status` は作業ツリーとインデックスの状態を要約する。
 - `git diff` は主に作業ツリーとインデックスの差分を表示する。
 - `git diff --staged` はインデックスと `HEAD` の差分、つまり次のコミット候補を表示する。
+- `git log --oneline --graph --all` は、全ブランチのコミット履歴を短い形式のグラフで表示する。
 - `git remote -v` は remote 名と接続先 URL を表示する。
+- `git branch -vv` は、ローカルブランチと upstream の対応、先行・遅延の状態を表示する。
 
 ## 関連ナレッジ
 
