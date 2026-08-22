@@ -1,0 +1,4 @@
+interface:
+  display_name: "Knowledge Viewerを同期"
+  short_description: "knowledgeの変更時だけ既存Viewerを更新・公開する"
+  default_prompt: "Use $sync-knowledge-viewer to update the Knowledge Viewer only when committed knowledge has changed."
