@@ -1,6 +1,7 @@
 ---
 title: Git の commit・merge・rebase の使い分け
-category: Git
+type: fact
+topic: Git
 tags:
   - Git
   - バージョン管理
@@ -55,8 +56,8 @@ rebase は履歴を直線的にできる一方、コミット ID を書き換え
 
 ## 関連ナレッジ
 
-- [Git でコミットに含める差分を選ぶ](<../01-facts/Git/Git でコミットに含める差分を選ぶ.md>): ファイル単位・hunk 単位で変更をステージし、commit の対象を確認する。
-- [Git の作業領域とリモートの全体像](<../01-facts/Git/Git の作業領域とリモートの全体像.md>): commit が参照するインデックスや、push・fetch の更新方向を確認する。
+- [Git でコミットに含める差分を選ぶ](<Git でコミットに含める差分を選ぶ.md>): ファイル単位・hunk 単位で変更をステージし、commit の対象を確認する。
+- [Git の作業領域とリモートの全体像](<Git の作業領域とリモートの全体像.md>): commit が参照するインデックスや、push・fetch の更新方向を確認する。
 
 ## 公式情報
 

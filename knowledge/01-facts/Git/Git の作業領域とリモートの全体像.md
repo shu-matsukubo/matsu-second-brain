@@ -101,7 +101,7 @@ git branch -vv
 
 ## 関連ナレッジ
 
-- [Git の commit・merge・rebase の使い分け](<../../Git/Git の commit・merge・rebase の使い分け.md>): コミットの作成とブランチ履歴の統合・再構成を比較する。
+- [Git の commit・merge・rebase の使い分け](<Git の commit・merge・rebase の使い分け.md>): コミットの作成とブランチ履歴の統合・再構成を比較する。
 - [Git でコミットに含める差分を選ぶ](<Git でコミットに含める差分を選ぶ.md>): ファイル単位・hunk 単位でステージし、コミット候補を確認する。
 
 ## 公式情報
