@@ -1,6 +1,7 @@
 ---
 title: API Gateway HTTP API で JWT オーソライザーを設定する
-category: AWS
+type: fact
+topic: AWS
 tags:
   - AWS
   - API Gateway
@@ -73,7 +74,7 @@ API Gateway は検証済みのクレームを統合先へ渡す。Lambda プロ�
 
 ## 関連ナレッジ
 
-- [API Gateway の REST API と HTTP API における JWT 認証](<../01-facts/AWS/API Gateway の REST API と HTTP API における JWT 認証.md>): JWT の要件から REST API と HTTP API のどちらを選ぶか判断する。
+- [API Gateway の REST API と HTTP API における JWT 認証](<API Gateway の REST API と HTTP API における JWT 認証.md>): JWT の要件から REST API と HTTP API のどちらを選ぶか判断する。
 
 ## 公式情報
 

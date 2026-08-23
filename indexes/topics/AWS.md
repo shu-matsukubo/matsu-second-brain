@@ -2,7 +2,7 @@
 
 ## Facts
 
-- [API Gateway HTTP API で JWT オーソライザーを設定する](<../../knowledge/AWS/API Gateway HTTP API で JWT オーソライザーを設定する.md>)
+- [API Gateway HTTP API で JWT オーソライザーを設定する](<../../knowledge/01-facts/AWS/API Gateway HTTP API で JWT オーソライザーを設定する.md>) — CloudFormation設定・検証項目・運用上の制約
 - [API Gateway の REST API と HTTP API における JWT 認証](<../../knowledge/01-facts/AWS/API Gateway の REST API と HTTP API における JWT 認証.md>) — JWT認証要件に応じたAPI種別と認可方式の比較
 
 ## Principles
