@@ -1,6 +1,7 @@
 ---
 title: Cloudflare Workers 無料枠の概要
-category: Cloudflare
+type: fact
+topic: Cloudflare
 tags:
   - Cloudflare
   - Workers
@@ -36,7 +37,7 @@ Cloudflare Workers は、インフラを管理せずにコードを実行でき�
 
 ## 関連ナレッジ
 
-- [Cloudflare Workers の初回デプロイ手順](<../01-facts/Cloudflare/Cloudflare Workers の初回デプロイ手順.md>): 無料枠で試す際のセットアップ、シークレット登録、デプロイ手順を確認する。
+- [Cloudflare Workers の初回デプロイ手順](<Cloudflare Workers の初回デプロイ手順.md>): 無料枠で試す際のセットアップ、シークレット登録、デプロイ手順を確認する。
 
 ## 公式情報
 

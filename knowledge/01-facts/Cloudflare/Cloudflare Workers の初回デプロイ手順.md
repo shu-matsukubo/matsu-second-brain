@@ -66,7 +66,7 @@ npx wrangler deploy --env production
 
 ## 関連ナレッジ
 
-- [Cloudflare Workers 無料枠の概要](<../../Cloudflare/Cloudflare Workers 無料枠の概要.md>): デプロイ前に無料枠の制約を確認する。
+- [Cloudflare Workers 無料枠の概要](<Cloudflare Workers 無料枠の概要.md>): デプロイ前に無料枠の制約を確認する。
 - [Cloudflare Workers でシークレットを管理する](<Cloudflare Workers でシークレットを管理する.md>): 本番・ローカル・環境別のシークレット管理を確認する。
 - [Hono で Google ログインを実装する](<../../アプリ開発/Hono で Google ログインを実装する.md>): Google OAuth を使う Hono アプリのシークレット名と登録例を確認する。
 
