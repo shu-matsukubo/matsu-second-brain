@@ -1,6 +1,7 @@
 ---
 title: Quickfixは一連の移動操作で覚える
-category: Neovim
+type: principle
+topic: Neovim
 tags:
   - Neovim
   - Quickfix
@@ -32,4 +33,4 @@ xc  Quickfix を閉じる
 
 ## 関連ナレッジ
 
-- [キーマップを機能カテゴリ別のプレフィックスで整理する](<../02-principles/Neovim/キーマップを機能カテゴリ別のプレフィックスで整理する.md>): Quickfix の一連の操作を共通プレフィックスへまとめるときの設計指針。
+- [キーマップを機能カテゴリ別のプレフィックスで整理する](<キーマップを機能カテゴリ別のプレフィックスで整理する.md>): Quickfix の一連の操作を共通プレフィックスへまとめるときの設計指針。
