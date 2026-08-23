@@ -1,11 +1,12 @@
 ---
 title: LINE Messaging API の送信方式を選ぶ
-category: アプリ開発
+type: fact
+topic: アプリ開発
 tags:
   - アプリ開発
   - 通知
   - LINE
-updated: 2026-07-18
+updated: 2026-08-24
 ---
 
 # LINE Messaging API の送信方式を選ぶ
@@ -32,7 +33,7 @@ push を使う場合は、アプリの利用者と LINE のユーザー ID を�
 
 ## 関連ナレッジ
 
-- [[アプリの通知先に Discord と LINE を使う際の選び方]]: LINE を通知先として採用するか判断する。
+- [アプリの通知先に Discord と LINE を使う際の選び方](<../../アプリ開発/アプリの通知先に Discord と LINE を使う際の選び方.md>): LINE を通知先として採用するか判断する。
 
 ## 公式情報
 
