@@ -5,7 +5,7 @@
 
 # 前提
 
-このワークスペースは Obsidian を前提として構成されている。
+このワークスペースでは、Markdownファイルで第2の脳を管理する。
 ユーザーの認知負荷を抑えるため、安全な既定処理で小さく作業し、レビューしやすい状態を保つ。
 
 ## 構成
@@ -15,6 +15,7 @@
 - knowledge : 整理済み知識
 - reports : レビュー結果
 - feedback : フィードバック
+- knowledge-viewer : knowledgeを閲覧するWeb Viewer
 
 ## 既定の処理
 
@@ -41,9 +42,3 @@ knowledge は小さな単位で管理する。
 
 処理中に得られた事実や気付きを残す価値がある場合は、`feedback/ai-feedback.md` の当日の日付見出しへ箇条書きで追記する。
 推測や未検証の改善案だけを記録しない。
-
-## 補足
-
-Obsidian操作や記法については下記を参考にする。
-https://obsidian.md/help/obsidian-flavored-markdown
-https://obsidian.md/help/cli
