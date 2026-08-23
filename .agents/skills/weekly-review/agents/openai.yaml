@@ -1,4 +1,4 @@
 interface:
   display_name: "週次レビュー"
-  short_description: "第二の脳全体を評価し、事実に基づく週次レポートを作成する"
+  short_description: "現行設計との差とsignalsの傾向を観測し週次報告"
   default_prompt: "Use $weekly-review to evaluate this second-brain workspace and write the weekly report."
