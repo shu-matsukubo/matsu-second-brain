@@ -36,7 +36,7 @@ Compose ファイルは、アプリケーションを構成するサービスと
 - データベースなどの永続データを初期化する手順を用意する
 - 外部サービスへの依存と必要な接続条件を明示する
 
-Windows コンテナを共有する場合は、Dockerfile や Compose ファイルに加えて、ホストOS、Docker Desktop のコンテナモード、Windows のバージョン互換性も揃える必要がある。具体的な前提は [Windows コンテナの実行条件](<../../Docker/Windows コンテナの実行条件.md>) を参照する。
+Windows コンテナを共有する場合は、Dockerfile や Compose ファイルに加えて、ホストOS、Docker Desktop のコンテナモード、Windows のバージョン互換性も揃える必要がある。具体的な前提は [Windows コンテナの実行条件](<Windows コンテナの実行条件.md>) を参照する。
 
 ## 公式情報
 

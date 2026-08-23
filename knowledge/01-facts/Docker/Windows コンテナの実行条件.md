@@ -1,6 +1,7 @@
 ---
 title: Windows コンテナの実行条件
-category: Docker
+type: fact
+topic: Docker
 tags:
   - Docker
   - Windows
@@ -29,9 +30,9 @@ Windows コンテナはデスクトップ GUI をサポートしない。これ�
 
 GUI がインストール時だけ必要なアプリケーションは、サイレントインストールへ変更できればコンテナ化できる場合がある。実行時にデスクトップ操作が必要なら、コンテナではなく仮想マシンなどを検討する。
 
-コンテナがホストのカーネルを利用する基本的な仕組みは、[Docker コンテナの基本](<../01-facts/Docker/Docker コンテナの基本.md>)を参照する。
+コンテナがホストのカーネルを利用する基本的な仕組みは、[Docker コンテナの基本](<Docker コンテナの基本.md>)を参照する。
 
-Windows コンテナの構築手順と起動条件をチームで共有する方法は、[Dockerfile と Compose で開発環境を共有する](<../01-facts/Docker/Dockerfile と Compose で開発環境を共有する.md>)を参照する。
+Windows コンテナの構築手順と起動条件をチームで共有する方法は、[Dockerfile と Compose で開発環境を共有する](<Dockerfile と Compose で開発環境を共有する.md>)を参照する。
 
 ## 公式情報
 
