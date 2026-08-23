@@ -1,6 +1,7 @@
 ---
 title: Cloudflare Workers の初回デプロイ手順
-category: Cloudflare
+type: fact
+topic: Cloudflare
 tags:
   - Cloudflare
   - Workers
@@ -10,7 +11,7 @@ updated: 2026-08-24
 
 # Cloudflare Workers の初回デプロイ手順
 
-初回デプロイでは、依存関係の準備、Cloudflare への認証、本番用シークレットの登録、デプロイの順に進める。シークレットの登録方法や必須項目の検証は [Cloudflare Workers でシークレットを管理する](<../01-facts/Cloudflare/Cloudflare Workers でシークレットを管理する.md>) を参照する。
+初回デプロイでは、依存関係の準備、Cloudflare への認証、本番用シークレットの登録、デプロイの順に進める。シークレットの登録方法や必須項目の検証は [Cloudflare Workers でシークレットを管理する](<Cloudflare Workers でシークレットを管理する.md>) を参照する。
 
 ## 前提
 
@@ -36,7 +37,7 @@ CI/CD では対話ログインではなく、必要な権限に絞った `CLOUDF
 
 ## 本番用シークレットの登録
 
-デプロイ前に、アプリが必要とする機密値を Worker のシークレットとして登録する。コードが参照するバインディング名、対象環境、必須シークレットの宣言をそろえる必要がある。具体的なコマンドと設定は [Cloudflare Workers でシークレットを管理する](<../01-facts/Cloudflare/Cloudflare Workers でシークレットを管理する.md>) を参照する。
+デプロイ前に、アプリが必要とする機密値を Worker のシークレットとして登録する。コードが参照するバインディング名、対象環境、必須シークレットの宣言をそろえる必要がある。具体的なコマンドと設定は [Cloudflare Workers でシークレットを管理する](<Cloudflare Workers でシークレットを管理する.md>) を参照する。
 
 ## デプロイ
 
@@ -65,9 +66,9 @@ npx wrangler deploy --env production
 
 ## 関連ナレッジ
 
-- [[Cloudflare Workers 無料枠の概要]]: デプロイ前に無料枠の制約を確認する。
-- [Cloudflare Workers でシークレットを管理する](<../01-facts/Cloudflare/Cloudflare Workers でシークレットを管理する.md>): 本番・ローカル・環境別のシークレット管理を確認する。
-- [[Hono で Google ログインを実装する]]: Google OAuth を使う Hono アプリのシークレット名と登録例を確認する。
+- [Cloudflare Workers 無料枠の概要](<../../Cloudflare/Cloudflare Workers 無料枠の概要.md>): デプロイ前に無料枠の制約を確認する。
+- [Cloudflare Workers でシークレットを管理する](<Cloudflare Workers でシークレットを管理する.md>): 本番・ローカル・環境別のシークレット管理を確認する。
+- [Hono で Google ログインを実装する](<../../アプリ開発/Hono で Google ログインを実装する.md>): Google OAuth を使う Hono アプリのシークレット名と登録例を確認する。
 
 ## 公式ドキュメント
 

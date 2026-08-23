@@ -81,7 +81,7 @@ Googleログインだけを素早く追加する用途には `@hono/oauth-provid
 
 - [OAuth ログイン後のアプリセッションを設計する](<../02-principles/アプリ開発/OAuth ログイン後のアプリセッションを設計する.md>): Google ユーザーとアプリ内ユーザーの対応付け、セッション、ログアウトを設計する。
 - [Cloudflare Workers でシークレットを管理する](<../01-facts/Cloudflare/Cloudflare Workers でシークレットを管理する.md>): Google のクライアントシークレットを環境別に安全に管理する。
-- [[Cloudflare Workers の初回デプロイ手順]]: Workers へアプリを初回デプロイする手順を確認する。
+- [Cloudflare Workers の初回デプロイ手順](<../01-facts/Cloudflare/Cloudflare Workers の初回デプロイ手順.md>): Workers へアプリを初回デプロイする手順を確認する。
 
 ## 公式情報
 

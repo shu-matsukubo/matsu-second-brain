@@ -5,7 +5,7 @@ tags:
   - Cloudflare
   - Workers
   - サーバーレス
-updated: 2026-07-18
+updated: 2026-08-24
 ---
 
 # Cloudflare Workers 無料枠の概要
@@ -36,7 +36,7 @@ Cloudflare Workers は、インフラを管理せずにコードを実行でき�
 
 ## 関連ナレッジ
 
-- [[Cloudflare Workers の初回デプロイ手順]]: 無料枠で試す際のセットアップ、シークレット登録、デプロイ手順を確認する。
+- [Cloudflare Workers の初回デプロイ手順](<../01-facts/Cloudflare/Cloudflare Workers の初回デプロイ手順.md>): 無料枠で試す際のセットアップ、シークレット登録、デプロイ手順を確認する。
 
 ## 公式情報
 
