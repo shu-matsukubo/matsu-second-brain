@@ -1,11 +1,12 @@
 ---
 title: Codex cloud の実行環境を設定する
-category: Codex
+type: fact
+topic: Codex
 tags:
   - Codex
   - クラウド実行
   - 開発環境
-updated: 2026-07-18
+updated: 2026-08-24
 ---
 
 # Codex cloud の実行環境を設定する
@@ -44,9 +45,8 @@ Codex はコンテナ状態をキャッシュし、再開時には任意のメ�
 
 ## 関連ナレッジ
 
-- [[GitHub から Codex cloud にタスクを委譲する]]: 準備した環境を使い、GitHub の pull request からレビューや修正を依頼する。
+- [GitHub から Codex cloud にタスクを委譲する](<../../Codex/GitHub から Codex cloud にタスクを委譲する.md>): 準備した環境を使い、GitHub の pull request からレビューや修正を依頼する。
 
 ## 公式情報
 
 - [Cloud environments](https://developers.openai.com/codex/cloud/environments/)
-
