@@ -1,12 +1,13 @@
 ---
 name: curate-second-brain
-description: 第二の脳を小さく整理する。dailyをfacts・principles・ideas・signalsへ整理する依頼、週次候補の反映、既存knowledge・Index・signalsのメンテナンスに使用する。指定がなければ未処理dailyを最優先し、なければ現在の設計との差を1件整える。
+description: 第二の脳を小さく整理する。dailyをfacts・principles・ideas・signalsへ整理する依頼、週次候補の反映、既存knowledge・Index・signalsのメンテナンスに使用する。指定がなければ未処理daily、最新の週次候補、現在の設計との差の順に1件を扱う。
 ---
 
 # 第二の脳を整理する
 
 ## 原則
 
+- `AGENTS.md` を第二の脳全体の現在の基準とする。
 - 1回の実行では、主対象を1つに限定する。
 - 変更を小さく保ち、レビューしやすい状態を維持する。
 - ユーザーが処理方法を指定した場合は、その指定を優先する。
@@ -16,13 +17,12 @@ description: 第二の脳を小さく整理する。dailyをfacts・principles�
 
 ## referenceの選び方
 
-処理方法はこの `SKILL.md` から直接、次のreferenceを選ぶ。Skill固有referenceから共有referenceを順番に辿ることを通常経路にしない。
+処理方法はこの `SKILL.md` から直接、必要なreferenceだけを選ぶ。referenceから別のreferenceを順番に辿ることを通常経路にしない。
 
 - dailyを整理するときは、[daily整理](references/ingest-daily.md)を読む。
 - 週次候補または既存データを整えるときは、[メンテナンス](references/maintain-knowledge.md)を読む。
-- knowledgeの分類、配置、メタデータを判断または変更するときだけ、共有する[情報モデル](../../references/information-model.md)を読む。
-- Indexまたはknowledge間リンクを評価・変更するときだけ、共有する[Indexとリンク](../../references/indexes-and-links.md)を読む。
-- signalの保存、評価、昇格、整理を行うときだけ、共有する[signals](../../references/signals.md)を読む。
+- knowledgeの作成、移動、改名、分類変更に伴ってIndexまたはリンクを変えるときだけ、[Indexとリンクの更新](references/update-indexes-and-links.md)を読む。
+- dailyからsignalを保存するとき、または週次の昇格候補を反映するときだけ、[signalsの記録と反映](references/manage-signals.md)を読む。
 
 ## 処理を選択する
 
