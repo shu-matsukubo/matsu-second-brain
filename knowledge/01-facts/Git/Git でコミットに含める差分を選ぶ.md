@@ -1,11 +1,12 @@
 ---
 title: Git でコミットに含める差分を選ぶ
-category: Git
+type: fact
+topic: Git
 tags:
   - Git
   - バージョン管理
   - コミット
-updated: 2026-07-18
+updated: 2026-08-24
 ---
 
 # Git でコミットに含める差分を選ぶ
@@ -54,8 +55,8 @@ git diff --staged
 
 ## 関連ナレッジ
 
-- [[Git の作業領域とリモートの全体像]]: 作業ツリー、インデックス、コミットの関係を確認する。
-- [[Git の commit・merge・rebase の使い分け]]: commit と履歴統合・再構成の役割を比較する。
+- [Git の作業領域とリモートの全体像](<../../Git/Git の作業領域とリモートの全体像.md>): 作業ツリー、インデックス、コミットの関係を確認する。
+- [Git の commit・merge・rebase の使い分け](<../../Git/Git の commit・merge・rebase の使い分け.md>): commit と履歴統合・再構成の役割を比較する。
 
 ## 公式情報
 
