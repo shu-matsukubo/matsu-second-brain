@@ -40,5 +40,5 @@ updated: 2026-08-24
 ## 関連
 
 - [OpenID Connectのユーザー識別にはissとsubを使う](<../../01-facts/アプリ開発/OpenID Connectのユーザー識別にはissとsubを使う.md>)
-- [Hono で Google ログインを実装する](<../../アプリ開発/Hono で Google ログインを実装する.md>)
+- [Hono で Google ログインを実装する](<../../01-facts/アプリ開発/Hono で Google ログインを実装する.md>)
 - [Cloudflare Workers でシークレットを管理する](<../../01-facts/Cloudflare/Cloudflare Workers でシークレットを管理する.md>)

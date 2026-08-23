@@ -1,6 +1,7 @@
 ---
 title: Hono で Google ログインを実装する
-category: アプリ開発
+type: fact
+topic: アプリ開発
 tags:
   - アプリ開発
   - Hono
@@ -13,7 +14,7 @@ updated: 2026-08-24
 
 Hono ではサードパーティーミドルウェア `@hono/oauth-providers` を使うと、Google OAuth 2.0 の認可エンドポイントへのリダイレクト、認可コードとトークンの交換、基本プロフィールの取得を簡潔に実装できる。
 
-ただし、ミドルウェアが担当するのは Google との OAuth フローである。取得した Google ユーザーとアプリ内ユーザーの対応付け、ログインセッションの作成、ログアウト、アクセス制御はアプリ側で実装する。詳細は [OAuth ログイン後のアプリセッションを設計する](<../02-principles/アプリ開発/OAuth ログイン後のアプリセッションを設計する.md>) に分離する。
+ただし、ミドルウェアが担当するのは Google との OAuth フローである。取得した Google ユーザーとアプリ内ユーザーの対応付け、ログインセッションの作成、ログアウト、アクセス制御はアプリ側で実装する。詳細は [OAuth ログイン後のアプリセッションを設計する](<../../02-principles/アプリ開発/OAuth ログイン後のアプリセッションを設計する.md>) に分離する。
 
 ## 準備
 
@@ -79,9 +80,9 @@ Googleログインだけを素早く追加する用途には `@hono/oauth-provid
 
 ## 関連ナレッジ
 
-- [OAuth ログイン後のアプリセッションを設計する](<../02-principles/アプリ開発/OAuth ログイン後のアプリセッションを設計する.md>): Google ユーザーとアプリ内ユーザーの対応付け、セッション、ログアウトを設計する。
-- [Cloudflare Workers でシークレットを管理する](<../01-facts/Cloudflare/Cloudflare Workers でシークレットを管理する.md>): Google のクライアントシークレットを環境別に安全に管理する。
-- [Cloudflare Workers の初回デプロイ手順](<../01-facts/Cloudflare/Cloudflare Workers の初回デプロイ手順.md>): Workers へアプリを初回デプロイする手順を確認する。
+- [OAuth ログイン後のアプリセッションを設計する](<../../02-principles/アプリ開発/OAuth ログイン後のアプリセッションを設計する.md>): Google ユーザーとアプリ内ユーザーの対応付け、セッション、ログアウトを設計する。
+- [Cloudflare Workers でシークレットを管理する](<../Cloudflare/Cloudflare Workers でシークレットを管理する.md>): Google のクライアントシークレットを環境別に安全に管理する。
+- [Cloudflare Workers の初回デプロイ手順](<../Cloudflare/Cloudflare Workers の初回デプロイ手順.md>): Workers へアプリを初回デプロイする手順を確認する。
 
 ## 公式情報
 
