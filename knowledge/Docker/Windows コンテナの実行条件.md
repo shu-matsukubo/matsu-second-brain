@@ -31,7 +31,7 @@ GUI がインストール時だけ必要なアプリケーションは、サイ�
 
 コンテナがホストのカーネルを利用する基本的な仕組みは、[Docker コンテナの基本](<../01-facts/Docker/Docker コンテナの基本.md>)を参照する。
 
-Windows コンテナの構築手順と起動条件をチームで共有する方法は、[Dockerfile と Compose で開発環境を共有する](<Dockerfile と Compose で開発環境を共有する.md>)を参照する。
+Windows コンテナの構築手順と起動条件をチームで共有する方法は、[Dockerfile と Compose で開発環境を共有する](<../01-facts/Docker/Dockerfile と Compose で開発環境を共有する.md>)を参照する。
 
 ## 公式情報
 

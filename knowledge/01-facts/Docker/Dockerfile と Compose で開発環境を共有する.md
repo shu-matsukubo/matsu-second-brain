@@ -1,6 +1,7 @@
 ---
 title: Dockerfile と Compose で開発環境を共有する
-category: Docker
+type: fact
+topic: Docker
 tags:
   - Docker
   - Dockerfile
@@ -17,7 +18,7 @@ Dockerfile と Compose ファイルをリポジトリで共有すると、開発
 
 Dockerfile は、ベースイメージ、パッケージの導入、ファイルの配置、既定の起動コマンドなど、1つのコンテナイメージを構築する手順を記述する。
 
-Dockerfile 自体は完成したイメージではない。Dockerfile とビルド対象のファイルからイメージを構築し、そのイメージをもとにコンテナを起動する。イメージとコンテナの関係は [Docker コンテナの基本](<../01-facts/Docker/Docker コンテナの基本.md>) を参照する。
+Dockerfile 自体は完成したイメージではない。Dockerfile とビルド対象のファイルからイメージを構築し、そのイメージをもとにコンテナを起動する。イメージとコンテナの関係は [Docker コンテナの基本](<Docker コンテナの基本.md>) を参照する。
 
 ## Compose の役割
 
@@ -35,7 +36,7 @@ Compose ファイルは、アプリケーションを構成するサービスと
 - データベースなどの永続データを初期化する手順を用意する
 - 外部サービスへの依存と必要な接続条件を明示する
 
-Windows コンテナを共有する場合は、Dockerfile や Compose ファイルに加えて、ホストOS、Docker Desktop のコンテナモード、Windows のバージョン互換性も揃える必要がある。具体的な前提は [Windows コンテナの実行条件](<Windows コンテナの実行条件.md>) を参照する。
+Windows コンテナを共有する場合は、Dockerfile や Compose ファイルに加えて、ホストOS、Docker Desktop のコンテナモード、Windows のバージョン互換性も揃える必要がある。具体的な前提は [Windows コンテナの実行条件](<../../Docker/Windows コンテナの実行条件.md>) を参照する。
 
 ## 公式情報
 
