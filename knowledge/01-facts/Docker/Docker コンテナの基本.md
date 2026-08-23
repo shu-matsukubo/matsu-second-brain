@@ -1,11 +1,12 @@
 ---
 title: Docker コンテナの基本
-category: Docker
+type: fact
+topic: Docker
 tags:
   - Docker
   - コンテナ
   - 開発環境
-updated: 2026-07-18
+updated: 2026-08-24
 ---
 
 # Docker コンテナの基本
@@ -26,9 +27,9 @@ Docker は、アプリケーションとその実行に必要なファイルを�
 
 ただし、Docker を使えば無条件に完全に同一の動作が保証されるわけではない。CPU アーキテクチャ、永続データ、環境変数、外部サービス、Docker の実行基盤など、イメージの外にある条件も動作に影響する。
 
-開発チームでイメージの構築手順と複数サービスの起動設定を共有する方法は、[[Dockerfile と Compose で開発環境を共有する]]を参照する。
+開発チームでイメージの構築手順と複数サービスの起動設定を共有する方法は、[Dockerfile と Compose で開発環境を共有する](<../../Docker/Dockerfile と Compose で開発環境を共有する.md>)を参照する。
 
-Linux コンテナと Windows コンテナでは必要な実行基盤が異なる。Windows コンテナをローカルで扱う際の条件は、[[Windows コンテナの実行条件]]を参照する。
+Linux コンテナと Windows コンテナでは必要な実行基盤が異なる。Windows コンテナをローカルで扱う際の条件は、[Windows コンテナの実行条件](<../../Docker/Windows コンテナの実行条件.md>)を参照する。
 
 ## コンテナと仮想マシンの違い
 
