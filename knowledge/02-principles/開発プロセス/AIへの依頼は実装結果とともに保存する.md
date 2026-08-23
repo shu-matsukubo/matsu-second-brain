@@ -1,8 +1,8 @@
 ---
 title: AIへの依頼は実装結果とともに保存する
-category: 開発プロセス
+type: principle
+topic: 開発プロセス
 tags:
-  - 開発プロセス
   - AIタスク
   - ナレッジ管理
 updated: 2026-08-24
@@ -22,5 +22,5 @@ AIに作業を依頼するときは、実装結果だけでなく、依頼した
 
 ## 関連
 
-- [GitHub から Codex cloud にタスクを委譲する](<../Codex/GitHub から Codex cloud にタスクを委譲する.md>)
-- [AIに設計を依頼するときは現在の構成を共有する](<../02-principles/開発プロセス/AIに設計を依頼するときは現在の構成を共有する.md>)
+- [GitHub から Codex cloud にタスクを委譲する](<../../Codex/GitHub から Codex cloud にタスクを委譲する.md>)
+- [AIに設計を依頼するときは現在の構成を共有する](AIに設計を依頼するときは現在の構成を共有する.md)
