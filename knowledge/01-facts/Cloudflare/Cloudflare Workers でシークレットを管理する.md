@@ -69,7 +69,7 @@ required = ["GOOGLE_ID", "GOOGLE_SECRET", "JWT_SECRET"]
 - [Cloudflare Workers の初回デプロイ手順](<Cloudflare Workers の初回デプロイ手順.md>): シークレット登録を含む初回デプロイの流れを確認する。
 - [Hono で Google ログインを実装する](<../アプリ開発/Hono で Google ログインを実装する.md>): Google OAuth で必要なバインディング名と Workers への登録例を確認する。
 - [OAuth ログイン後のアプリセッションを設計する](<../../02-principles/アプリ開発/OAuth ログイン後のアプリセッションを設計する.md>): OAuth のクライアントシークレットと、ログイン後のセッション情報の役割を区別する。
-- [アプリの通知先に Discord と LINE を使う際の選び方](<../../アプリ開発/アプリの通知先に Discord と LINE を使う際の選び方.md>): 通知用の Webhook URL やアクセストークンをシークレットとして扱う。
+- [アプリの通知先に Discord と LINE を使う際の選び方](<../../02-principles/アプリ開発/アプリの通知先に Discord と LINE を使う際の選び方.md>): 通知用の Webhook URL やアクセストークンをシークレットとして扱う。
 
 ## 公式ドキュメント
 

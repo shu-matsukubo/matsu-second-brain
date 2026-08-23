@@ -1,6 +1,7 @@
 ---
 title: アプリの通知先に Discord と LINE を使う際の選び方
-category: アプリ開発
+type: principle
+topic: アプリ開発
 tags:
   - アプリ開発
   - 通知
@@ -41,8 +42,8 @@ LINE Messaging API の利用には、LINE公式アカウントと Messaging API 
 
 ## 関連ナレッジ
 
-- [LINE Messaging API の送信方式を選ぶ](<../01-facts/アプリ開発/LINE Messaging API の送信方式を選ぶ.md>): LINE を採用した後に、宛先と用途に合う API を選ぶ。
-- [Cloudflare Workers でシークレットを管理する](<../01-facts/Cloudflare/Cloudflare Workers でシークレットを管理する.md>): Workers から通知する場合に、Webhook URL やアクセストークンを安全に管理する。
+- [LINE Messaging API の送信方式を選ぶ](<../../01-facts/アプリ開発/LINE Messaging API の送信方式を選ぶ.md>): LINE を採用した後に、宛先と用途に合う API を選ぶ。
+- [Cloudflare Workers でシークレットを管理する](<../../01-facts/Cloudflare/Cloudflare Workers でシークレットを管理する.md>): Workers から通知する場合に、Webhook URL やアクセストークンを安全に管理する。
 
 ## 公式情報
 
