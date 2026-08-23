@@ -1,12 +1,13 @@
 ---
 title: API Gateway の REST API と HTTP API における JWT 認証
-category: AWS
+type: fact
+topic: AWS
 tags:
   - AWS
   - API Gateway
   - JWT
   - 認証認可
-updated: 2026-07-18
+updated: 2026-08-24
 ---
 
 # API Gateway の REST API と HTTP API における JWT 認証
@@ -38,7 +39,7 @@ Lambda オーソライザーは REST API と HTTP API の両方で利用でき�
 
 ## 関連ナレッジ
 
-- [[API Gateway HTTP API で JWT オーソライザーを設定する]]: HTTP API を選んだ後の最小構成と検証項目を確認する。
+- [API Gateway HTTP API で JWT オーソライザーを設定する](<../../AWS/API Gateway HTTP API で JWT オーソライザーを設定する.md>): HTTP API を選んだ後の最小構成と検証項目を確認する。
 
 ## 公式情報
 
