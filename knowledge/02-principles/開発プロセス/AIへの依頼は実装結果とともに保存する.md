@@ -22,5 +22,5 @@ AIに作業を依頼するときは、実装結果だけでなく、依頼した
 
 ## 関連
 
-- [GitHub から Codex cloud にタスクを委譲する](<../../Codex/GitHub から Codex cloud にタスクを委譲する.md>)
+- [GitHub から Codex cloud にタスクを委譲する](<../../01-facts/Codex/GitHub から Codex cloud にタスクを委譲する.md>)
 - [AIに設計を依頼するときは現在の構成を共有する](AIに設計を依頼するときは現在の構成を共有する.md)

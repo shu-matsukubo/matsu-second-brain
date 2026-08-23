@@ -45,7 +45,7 @@ Codex はコンテナ状態をキャッシュし、再開時には任意のメ�
 
 ## 関連ナレッジ
 
-- [GitHub から Codex cloud にタスクを委譲する](<../../Codex/GitHub から Codex cloud にタスクを委譲する.md>): 準備した環境を使い、GitHub の pull request からレビューや修正を依頼する。
+- [GitHub から Codex cloud にタスクを委譲する](<GitHub から Codex cloud にタスクを委譲する.md>): 準備した環境を使い、GitHub の pull request からレビューや修正を依頼する。
 
 ## 公式情報
 
