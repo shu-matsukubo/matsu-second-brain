@@ -14,13 +14,21 @@ description: 第二の脳を小さく整理する。dailyをfacts・principles�
 - 推測でナレッジを作成または更新しない。
 - 主対象の完了に必要な関連fact、リンク、Index、dailyのstatus、signalsの変更は同じ作業に含めてよい。
 
-knowledge、Index、signalsを扱う前に、共有する現在の設計である[情報モデル](../../references/information-model.md)、[Indexとリンク](../../references/indexes-and-links.md)、[signals](../../references/signals.md)のうち対象に関係するものを読む。
+## referenceの選び方
+
+処理方法はこの `SKILL.md` から直接、次のreferenceを選ぶ。Skill固有referenceから共有referenceを順番に辿ることを通常経路にしない。
+
+- dailyを整理するときは、[daily整理](references/ingest-daily.md)を読む。
+- 週次候補または既存データを整えるときは、[メンテナンス](references/maintain-knowledge.md)を読む。
+- knowledgeの分類、配置、メタデータを判断または変更するときだけ、共有する[情報モデル](../../references/information-model.md)を読む。
+- Indexまたはknowledge間リンクを評価・変更するときだけ、共有する[Indexとリンク](../../references/indexes-and-links.md)を読む。
+- signalの保存、評価、昇格、整理を行うときだけ、共有する[signals](../../references/signals.md)を読む。
 
 ## 処理を選択する
 
 1. dailyの処理を明示された場合は、daily整理を選択する。
 2. メンテナンスを明示された場合は、メンテナンスを選択する。
-3. 処理方法が指定されていない場合は、[未処理メモの判定](references/find-unprocessed-daily.md)に従って `status: new` のメモを探す。
+3. 処理方法が指定されていない場合は、`daily` 内から `status: new` のメモを探す。複数ある場合はfrontmatterの作成日時、取得できなければパス上の日付が古いものを1件選ぶ。statusが欠けている、または解釈できないファイルを推測で未処理または処理済みにしない。
 4. 未処理dailyが見つかった場合は、最も古い1件のdaily整理を選択する。
 5. 未処理dailyがない場合だけ、最新の週次レポートにある未解消の改善候補または昇格候補を確認する。
 6. 有益な週次候補があれば1件をメンテナンスし、なければ現在の設計との差を1件メンテナンスする。
@@ -28,11 +36,11 @@ knowledge、Index、signalsを扱う前に、共有する現在の設計であ�
 
 ## dailyを整理する
 
-[daily整理](references/ingest-daily.md)を読み、入力全体をknowledge、signals、保存不要な一時情報へ安全に振り分ける。未検証の事実主張をfactへ入れない。
+referenceの選び方に従ってdaily整理を読み、入力全体をknowledge、signals、保存不要な一時情報へ安全に振り分ける。未検証の事実主張をfactへ入れない。
 
 ## メンテナンスする
 
-[メンテナンス](references/maintain-knowledge.md)を読み、最新の週次候補または現在の設計との差から主対象を1件選ぶ。週次レポートの観測を鵜呑みにせず、現在も未解消か確認してから変更する。
+referenceの選び方に従ってメンテナンスを読み、最新の週次候補または現在の設計との差から主対象を1件選ぶ。週次レポートの観測を鵜呑みにせず、現在も未解消か確認してから変更する。
 
 ## 終了する
 

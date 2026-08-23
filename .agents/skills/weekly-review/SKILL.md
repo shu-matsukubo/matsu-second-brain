@@ -13,14 +13,24 @@ description: 第二の脳全体を現在の情報設計で評価し、週次レ�
 - 改善を強制せず、事実と観測を分けて記載する。
 - 過去の形式を固定基準にせず、現在の `AGENTS.md` と共有referencesを評価基準にする。
 
+## referenceの選び方
+
+`AGENTS.md` で全体の現在の思想と既定を確認した後、この `SKILL.md` から必要なreferenceを直接読む。日次整理やメンテナンスの操作手順は読まない。
+
+- 全体の調査観点は、[評価観点](references/inspect-knowledge-base.md)を読む。
+- knowledgeの分類・配置・メタデータを評価する段階で、共有する[情報モデル](../../references/information-model.md)を読む。
+- Index・リンクを評価する段階で、共有する[Indexとリンク](../../references/indexes-and-links.md)を読む。
+- signalsと反復パターンを評価する段階で、共有する[signals](../../references/signals.md)を読む。
+- レポートを書き始める段階で、[週次レポート形式](references/write-weekly-report.md)を読む。
+
 ## 手順
 
-1. `AGENTS.md` と、共有する[情報モデル](../../references/information-model.md)、[Indexとリンク](../../references/indexes-and-links.md)、[signals](../../references/signals.md)を読み、現在の基準を確認する。
-2. [評価観点](references/inspect-knowledge-base.md)に従い、knowledge、分類、topic、Index、links、signals、dailyの処理状況を確認する。
+1. `AGENTS.md` を読み、現在の全体基準を確認する。
+2. referenceの選び方に従い、評価観点と、各評価対象に必要な共有仕様をその対象を調べる段階で読む。knowledge、分類、topic、Index、links、signals、dailyの処理状況を確認する。
 3. 既存データと現在の基準との差を、通常の日次メンテナンスで扱える具体的な改善候補として整理する。
 4. signalsの反復パターンを評価し、根拠が十分な場合だけ昇格候補を整理する。週次レビュー自身は昇格を実行しない。
 5. 前回レポートとGit履歴を必要な範囲で確認し、根拠のある活動状況と未解消候補を区別する。
-6. [週次レポート形式](references/write-weekly-report.md)に従ってレポートを作成または更新する。
+6. レポートを書き始める段階で週次レポート形式を読み、レポートを作成または更新する。
 7. レポート以外のファイルが変更されていないことを確認する。
 8. この処理で変更したレポートだけをコミットし、既存の無関係な変更を含めない。
 9. 保存先、主な観測、日次メンテナンスへ渡した候補を簡潔に報告する。

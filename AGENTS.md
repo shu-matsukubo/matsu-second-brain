@@ -11,7 +11,7 @@
 ## 構成
 
 - `.agents/skills`: このワークスペースで使用するSkills
-- `.agents/references`: 日次整理と週次レビューが共有する現在の情報設計
+- `.agents/references`: 複数Skillが必要な場合だけ読む、現在の情報設計の詳細仕様
 - `daily`: 入力された日々のメモ
 - `signals`: 単体ではknowledgeにするほど強くないが、反復すると意味を持つ観測
 - `knowledge`: 整理済み知識
@@ -21,6 +21,15 @@
 - `knowledge-viewer`: knowledgeを閲覧するWeb Viewer
 
 `signals` と `indexes` は、保存する実データが初めて必要になった時点で作成する。空の構造を保つためだけのファイルは作らない。
+
+## 指示の責務
+
+- `AGENTS.md` は、第二の脳全体の現在の思想、情報の責務、既定の処理を定める共通入口とする。
+- `.agents/references` は、分類・メタデータ、Index・リンク、signalsのように複数Skillが共有する詳細仕様を置く。すべてを毎回読む前提にはせず、対象の判断または変更に必要な仕様だけを読む。
+- 各 `SKILL.md` は、そのSkillが担当する処理と、必要なreferenceの選び方を定める。
+- Skill配下の `references` は、そのSkillだけが使う具体的な処理方法を置く。
+
+全体の思想や共通の既定を変える場合は、まず `AGENTS.md` を更新する。共有する詳細仕様や処理方法に影響する場合だけ、対応するreferenceも同時に更新する。同じルールの全文を複数箇所へコピーしない。
 
 ## 現在の情報設計
 
