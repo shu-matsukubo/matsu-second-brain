@@ -21,7 +21,7 @@ OpenID Connectの `sub`（Subject Identifier）は、issuer内で利用者ごと
 
 ## 関連
 
-- [OAuth ログイン後のアプリセッションを設計する](<../../02-principles/アプリ開発/OAuth ログイン後のアプリセッションを設計する.md>)
+- [OAuth ログイン後のアプリセッションを設計する](<OAuth ログイン後のアプリセッションを設計する.md>)
 
 ## 根拠
 
