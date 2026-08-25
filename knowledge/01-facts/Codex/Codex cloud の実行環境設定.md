@@ -1,15 +1,15 @@
 ---
-title: Codex cloud の実行環境を設定する
+title: Codex cloud の実行環境設定
 type: fact
 topic: Codex
 tags:
   - Codex
   - クラウド実行
   - 開発環境
-updated: 2026-08-24
+updated: 2026-08-25
 ---
 
-# Codex cloud の実行環境を設定する
+# Codex cloud の実行環境設定
 
 Codex cloud の実行環境では、リポジトリの依存関係、開発ツール、環境変数、シークレット、セットアップスクリプトを設定する。リポジトリをチェックアウトした後に、ビルドやテストを再現できる状態を目指す。
 
@@ -49,4 +49,4 @@ Codex はコンテナ状態をキャッシュし、再開時には任意のメ�
 
 ## 公式情報
 
-- [Cloud environments](https://developers.openai.com/codex/cloud/environments/)
+- [Cloud environments](https://learn.chatgpt.com/docs/environments/cloud-environment)（2026-08-25確認）
