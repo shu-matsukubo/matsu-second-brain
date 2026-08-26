@@ -1,5 +1,5 @@
 ---
-title: API Gateway HTTP API で JWT オーソライザーを設定する
+title: API Gateway HTTP API の JWT オーソライザー設定
 type: fact
 topic: AWS
 tags:
@@ -7,10 +7,10 @@ tags:
   - API Gateway
   - JWT
   - 認証認可
-updated: 2026-08-24
+updated: 2026-08-26
 ---
 
-# API Gateway HTTP API で JWT オーソライザーを設定する
+# API Gateway HTTP API の JWT オーソライザー設定
 
 API Gateway の HTTP API では、OIDC または OAuth 2.0 プロバイダーが発行する JWT を組み込みの JWT オーソライザーで検証できる。issuer と audience をオーソライザーへ設定し、保護対象のルートから参照する。
 
@@ -78,6 +78,6 @@ API Gateway は検証済みのクレームを統合先へ渡す。Lambda プロ�
 
 ## 公式情報
 
-- [HTTP API の JWT オーソライザー](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-jwt-authorizer.html)
-- [AWS::ApiGatewayV2::Authorizer](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-apigatewayv2-authorizer.html)
-- [AWS::ApiGatewayV2::Route](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-apigatewayv2-route.html)
+- [HTTP API の JWT オーソライザー](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-jwt-authorizer.html)（2026-08-26確認）
+- [AWS::ApiGatewayV2::Authorizer](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-apigatewayv2-authorizer.html)（2026-08-26確認）
+- [AWS::ApiGatewayV2::Route](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-apigatewayv2-route.html)（2026-08-26確認）
