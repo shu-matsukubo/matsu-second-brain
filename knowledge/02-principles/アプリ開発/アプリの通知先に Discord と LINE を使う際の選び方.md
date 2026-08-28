@@ -43,7 +43,7 @@ LINE Messaging API の利用には、LINE公式アカウントと Messaging API 
 ## 関連ナレッジ
 
 - [LINE Messaging API の送信方式を選ぶ](<../../01-facts/アプリ開発/LINE Messaging API の送信方式を選ぶ.md>): LINE を採用した後に、宛先と用途に合う API を選ぶ。
-- [Cloudflare Workers でシークレットを管理する](<../../01-facts/Cloudflare/Cloudflare Workers でシークレットを管理する.md>): Workers から通知する場合に、Webhook URL やアクセストークンを安全に管理する。
+- [Cloudflare Workers のシークレット管理](<../../01-facts/Cloudflare/Cloudflare Workers のシークレット管理.md>): Workers から通知する場合に、Webhook URL やアクセストークンを安全に管理する。
 
 ## 公式情報
 

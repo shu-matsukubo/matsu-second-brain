@@ -1,5 +1,5 @@
 ---
-title: Cloudflare Workers でシークレットを管理する
+title: Cloudflare Workers のシークレット管理
 type: fact
 topic: Cloudflare
 tags:
@@ -7,10 +7,10 @@ tags:
   - Workers
   - Wrangler
   - シークレット
-updated: 2026-08-24
+updated: 2026-08-28
 ---
 
-# Cloudflare Workers でシークレットを管理する
+# Cloudflare Workers のシークレット管理
 
 Cloudflare Workers の機密値は、ソースコードや通常の `vars` へ書かず、Worker のシークレットとして管理する。登録時は、コードが参照するバインディング名と対象環境を一致させる。
 
@@ -73,5 +73,5 @@ required = ["GOOGLE_ID", "GOOGLE_SECRET", "JWT_SECRET"]
 
 ## 公式ドキュメント
 
-- [Secrets](https://developers.cloudflare.com/workers/configuration/secrets/)
-- [Wrangler の環境](https://developers.cloudflare.com/workers/wrangler/environments/)
+- [Secrets](https://developers.cloudflare.com/workers/configuration/secrets/)（2026-08-28確認）
+- [Wrangler の環境](https://developers.cloudflare.com/workers/wrangler/environments/)（2026-08-28確認）

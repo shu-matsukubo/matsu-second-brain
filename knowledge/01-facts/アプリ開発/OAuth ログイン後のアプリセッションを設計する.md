@@ -47,4 +47,4 @@ OWASPは、セッションIDに少なくとも64ビットのエントロピー�
 
 - [OpenID Connectのユーザー識別にはissとsubを使う](<OpenID Connectのユーザー識別にはissとsubを使う.md>)
 - [Hono で Google ログインを実装する](<Hono で Google ログインを実装する.md>)
-- [Cloudflare Workers でシークレットを管理する](<../Cloudflare/Cloudflare Workers でシークレットを管理する.md>)
+- [Cloudflare Workers のシークレット管理](<../Cloudflare/Cloudflare Workers のシークレット管理.md>)
