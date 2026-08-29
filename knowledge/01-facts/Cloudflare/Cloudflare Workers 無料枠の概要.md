@@ -6,7 +6,7 @@ tags:
   - Cloudflare
   - Workers
   - サーバーレス
-updated: 2026-08-24
+updated: 2026-08-29
 ---
 
 # Cloudflare Workers 無料枠の概要
@@ -15,7 +15,7 @@ Cloudflare Workers は、インフラを管理せずにコードを実行でき�
 
 ## 主な無料枠
 
-2026年7月時点の主な上限は次のとおり。
+2026年8月29日確認時点の主な上限は次のとおり。
 
 - Worker を呼び出すリクエスト: 1アカウントあたり1日100,000件
 - CPU時間: 1リクエストあたり10ミリ秒
@@ -39,8 +39,8 @@ Cloudflare Workers は、インフラを管理せずにコードを実行でき�
 
 - [Cloudflare Workers の初回デプロイ手順](<Cloudflare Workers の初回デプロイ手順.md>): 無料枠で試す際のセットアップ、シークレット登録、デプロイ手順を確認する。
 
-## 公式情報
+## 公式・一次情報
 
-- [Workers Pricing](https://developers.cloudflare.com/workers/platform/pricing/)
-- [Workers Limits](https://developers.cloudflare.com/workers/platform/limits/)
-- [Cloudflare Workers](https://www.cloudflare.com/products/workers/)
+- [Workers Pricing](https://developers.cloudflare.com/workers/platform/pricing/)（2026-08-29確認）
+- [Workers Limits](https://developers.cloudflare.com/workers/platform/limits/)（2026-08-29確認）
+- [Cloudflare Workers](https://www.cloudflare.com/products/workers/)（2026-08-29確認）
