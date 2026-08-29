@@ -1,4 +1,4 @@
 interface:
   display_name: "第二の脳を整理"
-  short_description: "daily・signals・knowledgeを現在の設計へ小さく整理"
-  default_prompt: "Use $curate-second-brain to organize one daily item or one current-design improvement."
+  short_description: "stateを確認しdaily・knowledgeを1件ずつ整理"
+  default_prompt: "Use $curate-second-brain to reconcile one daily item or one current-design improvement, and record idle state only after convergence."

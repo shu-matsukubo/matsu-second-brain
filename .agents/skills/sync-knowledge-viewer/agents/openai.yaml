@@ -1,4 +1,4 @@
 interface:
   display_name: "Knowledge Viewerを同期"
-  short_description: "knowledgeの変更時だけ既存Viewerを更新・公開する"
-  default_prompt: "Use $sync-knowledge-viewer to update the Knowledge Viewer only when committed knowledge has changed."
+  short_description: "stateとtree SHAを確認し既存Viewerだけを同期"
+  default_prompt: "Use $sync-knowledge-viewer to update the existing Knowledge Viewer only when committed knowledge or indexes are not yet synchronized."
