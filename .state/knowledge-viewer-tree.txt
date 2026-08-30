@@ -1,3 +1,3 @@
-status=active
-knowledge=594a66357d8b6ce778a94cfe464256fbe6cac5af
-indexes=1eb77a29b08edcd2492c9fb75d92f4c257109fc6
+status=idle
+knowledge=bb0158653476e0324450cd8c5b25fc4be41ea1b6
+indexes=cbd9aa44466f5897562f110a22e8d65a91d435f5
