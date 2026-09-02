@@ -1,6 +1,6 @@
 ---
 name: sync-knowledge-viewer
-description: 第二の脳のknowledge・indexesとChatGPT Site「第二の脳 — Knowledge Viewer」を同期する。毎日の定期起動または同期依頼でstateを確認し、コミット済み入力が変わった場合だけ既存Viewerを更新する。Siteの新規作成や一般的なデザイン・機能変更だけの依頼には使用しない。
+description: 第二の脳のknowledge・indexesとChatGPT Site「第二の脳 — Knowledge Viewer」を同期する。定期起動または同期依頼でstateを確認し、コミット済み入力が変わった場合だけ既存Viewerを更新する。Siteの新規作成や一般的なデザイン・機能変更だけの依頼には使用しない。
 ---
 
 # Knowledge Viewerを同期する
