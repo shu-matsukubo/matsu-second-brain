@@ -8,3 +8,5 @@
 ## Principles
 
 ## Ideas
+
+- [S3とCloudFrontで非公開コンテンツを配信する案](<../../knowledge/03-ideas/AWS/S3とCloudFrontで非公開コンテンツを配信する案.md>) — S3を直接公開しない配信構成の検討候補
