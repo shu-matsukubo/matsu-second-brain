@@ -8,4 +8,6 @@
 
 ## Principles
 
+- [Git worktreeは独立案の比較に使う](<../../knowledge/02-principles/Git/Git worktreeは独立案の比較に使う.md>) — 案の隔離が必要なときにworktreeを使う
+
 ## Ideas
