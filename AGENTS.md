@@ -19,7 +19,7 @@
 - `indexes`: knowledgeをテーマから辿るための閲覧入口
 - `reports`: レビュー結果
 - `feedback`: 処理中に確認できた、今後の改善に使うフィードバック
-- `knowledge-viewer`: knowledgeを閲覧するWeb Viewer
+- `app/viewer`: knowledgeを閲覧するWeb Viewer
 
 `signals` と `indexes` は、保存する実データが初めて必要になった時点で作成する。空の構造を保つためだけのファイルは作らない。
 
@@ -94,7 +94,7 @@ knowledge本文とメタデータを情報の正とし、indexesはテーマか�
 
 ## 定期reconcilerとstate
 
-ナレッジ整理、日次レビュー、Knowledge Viewer同期はすべて毎日起動できるreconcilerとして扱う。日次起動は毎日変更することを意味せず、現在の入力へ収束済みなら何も変更せず終了する。
+ナレッジ整理と日次レビューは毎日起動できるreconcilerとして扱う。日次起動は毎日変更することを意味せず、現在の入力へ収束済みなら何も変更せず終了する。
 
 各reconcilerの永続状態は、次の独立したファイルで保持する。
 
@@ -102,9 +102,8 @@ knowledge本文とメタデータを情報の正とし、indexesはテーマか�
 | --- | --- | --- |
 | ナレッジ整理 | `.state/curate-second-brain.txt` | `daily`、`knowledge`、`reports/daily` のGit tree SHA |
 | 日次レビュー | `.state/daily-review.txt` | `knowledge`、`indexes` のGit tree SHA |
-| Knowledge Viewer同期 | `.state/knowledge-viewer-tree.txt` | 正常公開した `knowledge`、`indexes` のGit tree SHA |
 
-状態は `status=idle` と監視値の `key=<SHA>` を1行ずつ記録する簡潔な形式にする。まだ収束していない初期状態は `status=active` だけでよい。Viewer同期のactive stateには、最後に正常公開したSHAを再実行の比較情報として残してよい。`reports/daily` がまだ存在しない場合は、tree SHAの代わりに `daily_reports=missing` を使う。
+状態は `status=idle` と監視値の `key=<SHA>` を1行ずつ記録する簡潔な形式にする。まだ収束していない初期状態は `status=active` だけでよい。`reports/daily` がまだ存在しない場合は、tree SHAの代わりに `daily_reports=missing` を使う。
 
 stateの判定と更新には次を適用する。
 
@@ -120,11 +119,10 @@ stateの判定と更新には次を適用する。
 1. ユーザーの明示的な要求を最優先する。
 2. 第二の脳やナレッジの整理を包括的に依頼された場合は、`$curate-second-brain` を使用する。
 3. 日次レビューを依頼された場合は、`$daily-review` を使用する。
-4. Knowledge Viewerの同期・更新を依頼された場合は、`$sync-knowledge-viewer` を使用する。
-5. 日次整理は未処理dailyを最優先し、1件を処理して終了する。
-6. 未処理dailyがない場合だけ、最新の日次レポートにある未解消の改善候補または昇格候補を1件処理する。
-7. レポートにも有益な候補がない場合だけ、knowledge、indexes、signalsを現在の設計と比較し、改善を1件行う。
-8. 対象がない場合や有益な変更が見つからない場合は、無理に変更しない。
+4. 日次整理は未処理dailyを最優先し、1件を処理して終了する。
+5. 未処理dailyがない場合だけ、最新の日次レポートにある未解消の改善候補または昇格候補を1件処理する。
+6. レポートにも有益な候補がない場合だけ、knowledge、indexes、signalsを現在の設計と比較し、改善を1件行う。
+7. 対象がない場合や有益な変更が見つからない場合は、無理に変更しない。
 
 日次レビューは現在の `AGENTS.md` を基準に全体を観測し、既存データとの差を通常の改善候補として報告する。日次レビュー自身はknowledge、indexes、signals、dailyを変更しない。日次整理が候補を1件ずつ安全に直すことで、設計ルールが変わった後も通常運用の中で全体を現在の正しい状態へ近づける。
 
@@ -137,7 +135,7 @@ stateの判定と更新には次を適用する。
 ## MarkdownとViewer
 
 リンクと本文は標準的なMarkdownで記述し、特定のノートアプリ固有のCLI、記法、運用を前提にしない。
-Knowledge Viewer本体、Site、公開状態は、明示的に依頼された同期またはViewer作業でだけ変更する。
+Knowledge Viewerは `app/viewer/` のVoidアプリでknowledgeとindexesを閲覧する。Viewerアプリやその公開設定は、明示的に依頼されたViewer作業でだけ変更する。
 
 ## フィードバック
 

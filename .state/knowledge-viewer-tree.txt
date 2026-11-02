@@ -1,3 +1,0 @@
-status=idle
-knowledge=a429e4db1b3da09fd339a89d1aa7383de27e263e
-indexes=aabff317bb9ada8f3ea03c3fd47603a3de00e1c4
