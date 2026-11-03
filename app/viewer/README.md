@@ -57,21 +57,36 @@ Viewer用JSONは本文を含まない派生データです。生成は `node app
 
 ブランチ保護でRequired status checkを指定する場合は、固定名の **Viewer CI** を選択します。検証設定だけを追加しており、デプロイ処理はありません。
 
-## 将来のCloudflare公開準備
+## Cloudflareへのデプロイ
 
-Cloudflare Workerはまだ作成していません。初回公開時はCloudflare Deploy Skillと[Voidのデプロイ手順](https://void.cloud/reference/cli/deploy)を使い、Cloudflareアカウントでログインしたうえで、まず次を実行します。
+Cloudflare Deploy Skillと[Voidのデプロイ手順](https://void.cloud/reference/cli/deploy)を使います。`app/viewer/` で実行してください。Worker名は `second-brain-viewer` です。`void.config.ts` はworkers.devでの公開を有効にし、プレビューURLを無効にしています。カスタムドメインのルートは設定していません。
+
+公開URLは [Knowledge Viewer](https://second-brain-viewer.matsu-app.workers.dev/) です。GitHubモードで `main` のknowledgeとindexesを表示します。
+
+デプロイ前にWranglerの認証状態を確認します。Voidの認証は別に管理されるため、Voidで未ログインの場合はブラウザーでログインしてください。
+
+```sh
+npx wrangler whoami
+npx void cloudflare login
+```
+
+GitHubモードでは、次の2つのWorker Secretを使います。登録済みのシークレットは再登録不要です。トークンの値は入力プロンプトから登録し、ファイルやコマンド引数に書かないでください。
+
+```sh
+npx wrangler secret put MATSU_SECOND_BRAIN_READ_TOKEN --name second-brain-viewer
+npx wrangler secret put VIEWER_DATA_SOURCE --name second-brain-viewer
+```
+
+2つ目のプロンプトには `github` を入力します。`VIEWER_DATA_SOURCE` とトークンはどちらも `src/env.ts` に定義したサーバー値で、公開変数やクライアントビルド値にはしません。環境変数の役割は[Voidの環境変数仕様](https://void.cloud/reference/api/env)を参照してください。
 
 ```sh
 npx void deploy --platform cloudflare
 ```
 
-Void設定のWorker名は `second-brain-viewer` です。初回デプロイ後、GitHubモードへ切り替える前に、VoidのSecret管理でFine-grained tokenをサーバーSecretとして登録し、その後データソースを切り替えます。
+シークレット登録で作成された仮Workerへの初回デプロイで `/__void/ready` の確認に失敗し、公開URLが無効な場合は、Cloudflare管理画面の対象Workerの **Settings > Domains & Routes** でworkers.devを有効にして再実行します。
 
-```sh
-npx void secret put MATSU_SECOND_BRAIN_READ_TOKEN
-npx void secret put VIEWER_DATA_SOURCE=github
-```
+Voidが生成する `void.lock.json` は、デプロイ先アカウントと解決済み設定を保持します。別の端末でも同じ設定を使えるようGit管理します。`.cloudflare/`、`.wrangler/`、`.void-wrangler.jsonc` は生成物のためGit管理しません。
 
-最初のコマンドは値を表示しない入力プロンプトを使います。`VIEWER_DATA_SOURCE` とトークンはどちらも `src/env.ts` に定義したサーバー値です。CloudflareのWorker Secretとして登録し、公開変数やクライアントビルド値にはしません。[VoidのSecret管理](https://void.cloud/reference/cli/secrets)では、`void secret put` は `void.config.ts` で指定したWorkerを対象にします。初回デプロイでWorkerを作成してから登録してください。環境変数の役割は[Voidの環境変数仕様](https://void.cloud/reference/api/env)を参照してください。
+WindowsでCloudflare APIへの接続が証明書エラーになる場合は、PowerShellで `$env:NODE_USE_SYSTEM_CA = '1'` を設定し、信頼済みのシステム証明書を利用します。
 
-必要なときだけ、Cloudflare Deploy Skillに沿ってWorkerを初期作成し、Secret登録、GitHub取得の確認、公開結果の確認を順に行います。このリポジトリのCIから自動公開はしません。
+デプロイ後は公開URLと `/api/library` を確認し、モックではなくGitHubのデータを取得できることを確認します。このリポジトリのCIから自動公開はしません。
