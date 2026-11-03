@@ -10,6 +10,8 @@
     "check": "biome check .",
     "fix": "biome check --write .",
     "typecheck": "void env types && tsc --noEmit",
+    "index:generate": "node scripts/generate-index.ts",
+    "index:check": "node scripts/generate-index.ts --check",
     "test": "vitest run --config vitest.config.ts",
     "build": "vite build"
   },

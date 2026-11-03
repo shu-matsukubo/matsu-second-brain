@@ -1,6 +1,7 @@
 import {
   Alert,
   Box,
+  Button,
   Chip,
   CircularProgress,
   Divider,
@@ -20,7 +21,7 @@ import type { ReactNode } from 'react';
 import { isValidElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import type { DocumentKind, KnowledgeDocument, LibraryPage } from '../shared/library';
+import type { Article, DocumentKind, DocumentMetadata, Library } from '../shared/library';
 
 const kindNames: Record<DocumentKind, string> = {
   index: 'Index',
@@ -30,12 +31,10 @@ const kindNames: Record<DocumentKind, string> = {
 };
 const kinds: Array<DocumentKind | ''> = ['', 'index', 'fact', 'principle', 'idea'];
 
-class SnapshotChangedError extends Error {}
-
 export function resolveInternalTarget(
   currentPath: string,
   href: string,
-  documents: KnowledgeDocument[],
+  documents: DocumentMetadata[],
 ): string | null {
   if (!href || href.startsWith('//') || href.startsWith('\\\\')) return null;
   const hashOnly = href.startsWith('#');
@@ -113,50 +112,36 @@ function textContent(node: ReactNode): string {
 
 export function Viewer() {
   const readerRef = useRef<HTMLElement>(null);
-  const [documents, setDocuments] = useState<KnowledgeDocument[]>([]);
+  const [documents, setDocuments] = useState<DocumentMetadata[]>([]);
+  const [snapshot, setSnapshot] = useState('');
+  const articleCache = useRef(new Map<string, Promise<Article>>());
+  const [article, setArticle] = useState<Article | null>(null);
+  const [articleError, setArticleError] = useState<{ path: string; stale: boolean } | null>(null);
+  const [articleAttempt, setArticleAttempt] = useState(0);
   const [selectedPath, setSelectedPath] = useState<string | null>(null);
   const [selectedAnchor, setSelectedAnchor] = useState<string | null>(null);
   const [query, setQuery] = useState('');
   const [topic, setTopic] = useState('');
   const [kind, setKind] = useState<DocumentKind | ''>('');
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading');
+  const selected = documents.find((doc) => doc.path === selectedPath) ?? null;
+  const articleReady = article?.path === selected?.path && article?.snapshot === snapshot;
 
   useEffect(() => {
     let cancelled = false;
     async function load() {
       try {
-        let restartCount = 0;
-        while (true) {
-          let offset = 0;
-          let snapshot: string | undefined;
-          const all: KnowledgeDocument[] = [];
-          try {
-            do {
-              const url = new URL('/api/library', window.location.origin);
-              url.searchParams.set('offset', String(offset));
-              if (snapshot) url.searchParams.set('snapshot', snapshot);
-              const response = await fetch(url, { cache: 'no-store' });
-              if (response.status === 409) throw new SnapshotChangedError();
-              if (!response.ok) throw new Error('library_unavailable');
-              const page = (await response.json()) as LibraryPage;
-              if (!snapshot) snapshot = page.snapshot;
-              if (page.snapshot !== snapshot || !Array.isArray(page.documents))
-                throw new Error('invalid_library');
-              all.push(...page.documents);
-              offset = page.nextOffset ?? -1;
-            } while (offset >= 0);
-            if (cancelled) return;
-            setDocuments(all);
-            setStatus('ready');
-            return;
-          } catch (error) {
-            if (error instanceof SnapshotChangedError && restartCount === 0) {
-              restartCount += 1;
-              continue;
-            }
-            throw error;
-          }
-        }
+        const response = await fetch(new URL('/api/library', window.location.origin), {
+          cache: 'no-store',
+        });
+        if (!response.ok) throw new Error('library_unavailable');
+        const library = (await response.json()) as Library;
+        if (!Array.isArray(library.documents) || !/^[a-f0-9]{40}$/.test(library.snapshot))
+          throw new Error('invalid_library');
+        if (cancelled) return;
+        setDocuments(library.documents);
+        setSnapshot(library.snapshot);
+        setStatus('ready');
       } catch {
         if (!cancelled) setStatus('error');
       }
@@ -166,6 +151,54 @@ export function Viewer() {
       cancelled = true;
     };
   }, []);
+
+  const articlePath = selected?.path;
+  // biome-ignore lint/correctness/useExhaustiveDependencies: articleAttempt explicitly retries a failed request.
+  useEffect(() => {
+    if (!articlePath || !snapshot) return;
+    let cancelled = false;
+    setArticleError(null);
+    const key = `${snapshot}:${articlePath}`;
+    let pending = articleCache.current.get(key);
+    if (!pending) {
+      const url = new URL('/api/article', window.location.origin);
+      url.searchParams.set('path', articlePath);
+      url.searchParams.set('snapshot', snapshot);
+      pending = fetch(url, { cache: 'no-store' })
+        .then(async (response) => {
+          if (response.status === 409) throw new Error('snapshot_changed');
+          if (!response.ok) throw new Error('article_unavailable');
+          const result = (await response.json()) as Article;
+          if (
+            result.path !== articlePath ||
+            result.snapshot !== snapshot ||
+            typeof result.body !== 'string'
+          )
+            throw new Error('invalid_article');
+          return result;
+        })
+        .catch((error: unknown) => {
+          articleCache.current.delete(key);
+          throw error;
+        });
+      articleCache.current.set(key, pending);
+    }
+    void pending.then(
+      (result) => {
+        if (!cancelled) setArticle(result);
+      },
+      (error: unknown) => {
+        if (!cancelled)
+          setArticleError({
+            path: articlePath,
+            stale: error instanceof Error && error.message === 'snapshot_changed',
+          });
+      },
+    );
+    return () => {
+      cancelled = true;
+    };
+  }, [articlePath, snapshot, articleAttempt]);
 
   useEffect(() => {
     const sync = () => {
@@ -179,7 +212,7 @@ export function Viewer() {
   }, []);
 
   useEffect(() => {
-    if (status !== 'ready') return;
+    if (status !== 'ready' || !articleReady) return;
     if (selectedAnchor && selectedPath) {
       const target = document.getElementById(selectedAnchor);
       if (target) {
@@ -188,7 +221,7 @@ export function Viewer() {
       }
     }
     if (readerRef.current) readerRef.current.scrollTop = 0;
-  }, [selectedAnchor, selectedPath, status]);
+  }, [selectedAnchor, selectedPath, status, articleReady]);
 
   const topics = useMemo(
     () =>
@@ -202,19 +235,16 @@ export function Viewer() {
     return documents.filter((doc) => {
       if (kind && doc.kind !== kind) return false;
       if (topic && doc.topic !== topic) return false;
-      const haystack = `${doc.title}\n${doc.tags.join(' ')}\n${doc.body}`.toLocaleLowerCase();
+      const haystack = `${doc.title}\n${doc.tags.join(' ')}`.toLocaleLowerCase();
       return terms.every((term) => haystack.includes(term));
     });
   }, [documents, kind, query, topic]);
-  const selected =
-    documents.find((doc) => doc.path === selectedPath) ??
-    documents.find((doc) => doc.path === 'indexes/index.md') ??
-    null;
-  const articleBody = selected
-    ? selected.body.replace(/^#\s+([^\n]+)(?:\r?\n)+/, (heading, title: string) =>
-        title.trim() === selected.title ? '' : heading,
-      )
-    : '';
+  const articleBody =
+    selected && articleReady && article
+      ? article.body.replace(/^#\s+([^\n]+)(?:\r?\n)+/, (heading, title: string) =>
+          title.trim() === selected.title ? '' : heading,
+        )
+      : '';
 
   const navigate = useCallback((path: string, anchor?: string) => {
     const base = encodeURIComponent(path);
@@ -235,7 +265,7 @@ export function Viewer() {
             size="small"
             fullWidth
             slotProps={{ htmlInput: { 'aria-label': '検索' } }}
-            placeholder="検索"
+            placeholder="タイトル・タグを検索"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
           />
@@ -340,114 +370,138 @@ export function Viewer() {
                 </div>
               )}
             </header>
-            <div className="markdown">
-              <ReactMarkdown
-                remarkPlugins={[remarkGfm]}
-                skipHtml
-                components={{
-                  a: ({ href = '', children, node: _node, ...props }) => {
-                    const internal = resolveInternalTarget(selected.path, href, documents);
-                    if (internal) {
-                      const fragment = href.includes('#')
-                        ? href.slice(href.indexOf('#') + 1).split(/[?&]/, 1)[0]
-                        : '';
-                      let anchor = '';
-                      try {
-                        anchor = decodeURIComponent(fragment);
-                      } catch {
-                        /* Invalid fragments are ignored. */
+            {articleError?.path === selected.path ? (
+              <Alert severity="error">
+                {articleError.stale
+                  ? '記事が更新されました。ページを再読み込みしてください。'
+                  : '記事の読み込みに失敗しました。'}
+                {!articleError.stale && (
+                  <Button onClick={() => setArticleAttempt((value) => value + 1)}>再試行</Button>
+                )}
+              </Alert>
+            ) : !articleReady ? (
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                <CircularProgress size={18} aria-label="記事を読み込み中" />
+                <Typography>記事を読み込み中…</Typography>
+              </Box>
+            ) : (
+              <div className="markdown">
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  skipHtml
+                  components={{
+                    a: ({ href = '', children, node: _node, ...props }) => {
+                      const internal = resolveInternalTarget(selected.path, href, documents);
+                      if (internal) {
+                        const fragment = href.includes('#')
+                          ? href.slice(href.indexOf('#') + 1).split(/[?&]/, 1)[0]
+                          : '';
+                        let anchor = '';
+                        try {
+                          anchor = decodeURIComponent(fragment);
+                        } catch {
+                          /* Invalid fragments are ignored. */
+                        }
+                        return (
+                          <a
+                            href={`${documentHash(internal)}${anchor ? `?anchor=${encodeURIComponent(anchor)}` : ''}`}
+                            onClick={(event) => {
+                              event.preventDefault();
+                              navigate(internal, anchor || undefined);
+                            }}
+                            {...props}
+                          >
+                            {children}
+                          </a>
+                        );
                       }
-                      return (
-                        <a
-                          href={`${documentHash(internal)}${anchor ? `?anchor=${encodeURIComponent(anchor)}` : ''}`}
-                          onClick={(event) => {
-                            event.preventDefault();
-                            navigate(internal, anchor || undefined);
-                          }}
-                          {...props}
-                        >
+                      const external = safeExternalHref(href);
+                      return external ? (
+                        <a href={external} target="_blank" rel="noopener noreferrer" {...props}>
                           {children}
                         </a>
+                      ) : (
+                        <span>{children}</span>
                       );
-                    }
-                    const external = safeExternalHref(href);
-                    return external ? (
-                      <a href={external} target="_blank" rel="noopener noreferrer" {...props}>
+                    },
+                    h1: ({ children, node: _node, ...props }) => (
+                      <Typography
+                        component="h1"
+                        variant="h1"
+                        id={headingSlug(textContent(children))}
+                        {...props}
+                      >
                         {children}
-                      </a>
-                    ) : (
-                      <span>{children}</span>
-                    );
-                  },
-                  h1: ({ children, node: _node, ...props }) => (
-                    <Typography
-                      component="h1"
-                      variant="h1"
-                      id={headingSlug(textContent(children))}
-                      {...props}
-                    >
-                      {children}
-                    </Typography>
-                  ),
-                  h2: ({ children, node: _node, ...props }) => (
-                    <Typography
-                      component="h2"
-                      variant="h2"
-                      id={headingSlug(textContent(children))}
-                      {...props}
-                    >
-                      {children}
-                    </Typography>
-                  ),
-                  h3: ({ children, node: _node, ...props }) => (
-                    <Typography
-                      component="h3"
-                      variant="h3"
-                      id={headingSlug(textContent(children))}
-                      {...props}
-                    >
-                      {children}
-                    </Typography>
-                  ),
-                  h4: ({ children, node: _node, ...props }) => (
-                    <Typography
-                      component="h4"
-                      variant="h4"
-                      id={headingSlug(textContent(children))}
-                      {...props}
-                    >
-                      {children}
-                    </Typography>
-                  ),
-                  h5: ({ children, node: _node, ...props }) => (
-                    <Typography
-                      component="h5"
-                      variant="h5"
-                      id={headingSlug(textContent(children))}
-                      {...props}
-                    >
-                      {children}
-                    </Typography>
-                  ),
-                  h6: ({ children, node: _node, ...props }) => (
-                    <Typography
-                      component="h6"
-                      variant="h6"
-                      id={headingSlug(textContent(children))}
-                      {...props}
-                    >
-                      {children}
-                    </Typography>
-                  ),
-                  img: ({ alt }) => <span className="image-alt">{alt ?? ''}</span>,
-                }}
-              >
-                {articleBody}
-              </ReactMarkdown>
-            </div>
+                      </Typography>
+                    ),
+                    h2: ({ children, node: _node, ...props }) => (
+                      <Typography
+                        component="h2"
+                        variant="h2"
+                        id={headingSlug(textContent(children))}
+                        {...props}
+                      >
+                        {children}
+                      </Typography>
+                    ),
+                    h3: ({ children, node: _node, ...props }) => (
+                      <Typography
+                        component="h3"
+                        variant="h3"
+                        id={headingSlug(textContent(children))}
+                        {...props}
+                      >
+                        {children}
+                      </Typography>
+                    ),
+                    h4: ({ children, node: _node, ...props }) => (
+                      <Typography
+                        component="h4"
+                        variant="h4"
+                        id={headingSlug(textContent(children))}
+                        {...props}
+                      >
+                        {children}
+                      </Typography>
+                    ),
+                    h5: ({ children, node: _node, ...props }) => (
+                      <Typography
+                        component="h5"
+                        variant="h5"
+                        id={headingSlug(textContent(children))}
+                        {...props}
+                      >
+                        {children}
+                      </Typography>
+                    ),
+                    h6: ({ children, node: _node, ...props }) => (
+                      <Typography
+                        component="h6"
+                        variant="h6"
+                        id={headingSlug(textContent(children))}
+                        {...props}
+                      >
+                        {children}
+                      </Typography>
+                    ),
+                    img: ({ alt }) => <span className="image-alt">{alt ?? ''}</span>,
+                  }}
+                >
+                  {articleBody}
+                </ReactMarkdown>
+              </div>
+            )}
           </article>
         ) : (
-          <p className="reader-state">ドキュメントがありません。</p>
+          <p className="reader-state">
+            {status === 'loading'
+              ? '一覧を読み込み中…'
+              : selectedPath
+                ? 'ドキュメントが見つかりません。'
+                : documents.length
+                  ? '一覧から記事を選択してください。'
+                  : 'ドキュメントがありません。'}
+          </p>
         )}
       </Box>
     </Box>

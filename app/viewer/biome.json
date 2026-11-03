@@ -2,7 +2,7 @@
   "$schema": "https://biomejs.dev/schemas/2.6.4/schema.json",
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**", "!node_modules", "!.void", "!.cloudflare", "!dist"]
+    "includes": ["**", "!node_modules", "!.void", "!.cloudflare", "!dist", "!library-index.json"]
   },
   "formatter": { "enabled": true, "indentStyle": "space", "indentWidth": 2, "lineWidth": 100 },
   "linter": { "enabled": true, "rules": { "preset": "recommended" } },
