@@ -15,67 +15,94 @@ body {
   min-height: 480px;
   display: grid;
   grid-template-columns: minmax(250px, 310px) minmax(0, 1fr);
-  background: #f3f6f8;
+  background: #edf4fb;
+}
+.viewer-shell.sidebar-collapsed {
+  grid-template-columns: minmax(0, 1fr);
 }
 .sidebar.MuiPaper-root {
   display: flex;
   flex-direction: column;
   min-height: 0;
-  border-right: 1px solid #dbe2e6;
-  background: #fbfcfc;
+  border-right: 1px solid #d8e4f1;
+  background: #fafdff;
 }
 .controls {
-  padding: 18px 16px 14px;
+  padding: 16px;
 }
 .brand.MuiButton-root {
-  color: #1c3f3b;
+  color: #244f78;
   justify-content: flex-start;
-  gap: 9px;
+  gap: 8px;
   font-size: 1.1rem;
   font-weight: 800;
-  padding: 5px 4px 9px;
+  padding: 4px;
 }
 .brand-mark {
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  color: #fff;
-  background: #507a70;
+  display: none;
 }
 .brand-row {
   display: flex;
   align-items: center;
 }
-.reader .mobile-menu-trigger {
-  display: none;
+.app-header {
+  height: 64px;
+  display: grid;
+  grid-template-columns: 48px 1fr 48px;
+  align-items: center;
+  padding: 0 16px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #edf4fbee;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #d8e4f1;
+}
+.menu-trigger.MuiIconButton-root {
+  color: #356b9a;
+  justify-self: start;
+}
+.header-title.MuiButton-root {
+  grid-column: 2;
+  justify-self: center;
+  color: #244f78;
+  font-size: 1rem;
+  font-weight: 700;
+  gap: 8px;
+}
+.header-title img {
+  width: 24px;
+  height: 24px;
 }
 .topic-list {
   display: flex;
   flex-direction: column;
   gap: 4px;
   overflow: auto;
-  padding: 14px 12px;
+  padding: 16px 12px;
 }
 .nav-heading {
-  padding: 0 10px 5px;
-  color: #73817e;
+  padding: 0 8px 8px;
+  color: #647b92;
   font-weight: 700;
 }
 .topic-button.MuiButton-root {
   justify-content: flex-start;
-  color: #374743;
+  color: #1e334a;
   text-align: left;
 }
 .topic-button.MuiButton-contained {
-  color: white;
-  background: #507a70;
+  color: #244f78;
+  background: #dceafb;
+}
+.topic-button.MuiButton-contained:hover {
+  background: #d2e4f8;
 }
 .reader {
   min-width: 0;
   overflow: auto;
   overscroll-behavior: contain;
+  scroll-padding-top: 72px;
 }
 .center-state {
   min-height: 100%;
@@ -83,7 +110,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 16px;
   padding: 24px;
   text-align: center;
 }
@@ -91,22 +118,22 @@ body {
 .topic-page {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 38px clamp(18px, 5vw, 64px) 72px;
+  padding: 32px 24px 64px;
 }
 .home-page > h1,
 .topic-page > h1 {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
 }
 .recent-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
-  gap: 14px;
-  margin-top: 28px;
+  gap: 16px;
+  margin-top: 24px;
 }
 .recent-card.MuiPaper-root {
-  border-color: #d9e2df;
+  border-color: #d8e4f1;
   border-radius: 12px;
-  background: #fff;
+  background: #fafdff;
 }
 .recent-link.MuiButton-root {
   display: flex;
@@ -114,30 +141,30 @@ body {
   min-height: 140px;
   align-items: flex-start;
   flex-direction: column;
-  gap: 10px;
-  padding: 18px;
+  gap: 8px;
+  padding: 16px;
   text-align: left;
 }
 .recent-link .MuiTypography-h6 {
-  color: #273c38;
+  color: #1e334a;
   font-weight: 700;
   overflow-wrap: anywhere;
 }
 .recent-link .MuiTypography-caption {
   margin-top: auto;
-  color: #73817e;
+  color: #647b92;
 }
 .topic-section {
-  margin-top: 28px;
+  margin-top: 24px;
 }
 .topic-section h2 {
   padding-bottom: 8px;
-  border-bottom: 1px solid #dae3e0;
+  border-bottom: 1px solid #d8e4f1;
 }
 .article {
   max-width: 900px;
   margin: 0 auto;
-  padding: 38px clamp(20px, 5vw, 70px) 80px;
+  padding: 32px 24px 64px;
 }
 .article-header {
   display: flex;
@@ -145,21 +172,21 @@ body {
   flex-direction: column;
   gap: 8px;
   padding-bottom: 24px;
-  border-bottom: 1px solid #dbe2e6;
+  border-bottom: 1px solid #d8e4f1;
 }
 .article-header h1 {
-  margin: 2px 0 7px;
+  margin: 0 0 8px;
   overflow-wrap: anywhere;
 }
 .topic-crumb.MuiButton-root {
   margin-left: -8px;
-  color: #507a70;
+  color: #356b9a;
   font-weight: 700;
 }
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
+  gap: 8px;
 }
 .article-loading {
   display: flex;
@@ -167,11 +194,11 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 12px;
-  padding: 28px;
+  gap: 16px;
+  padding: 24px;
 }
 .markdown {
-  padding-top: 14px;
+  padding-top: 16px;
   font-size: 1rem;
   line-height: 1.85;
   overflow-wrap: anywhere;
@@ -182,30 +209,41 @@ body {
 .markdown h4,
 .markdown h5,
 .markdown h6 {
-  margin-top: 1.8em;
+  margin: 24px 0 8px;
+}
+.markdown p {
+  margin: 8px 0;
+}
+.markdown ul,
+.markdown ol {
+  margin: 8px 0;
+  padding-left: 24px;
+}
+.markdown li {
+  margin: 4px 0;
 }
 .markdown a {
-  color: #245f73;
+  color: #356b9a;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
 .markdown a:hover {
-  color: #123f50;
+  color: #244f78;
 }
 .markdown pre {
   overflow: auto;
   padding: 16px;
   border-radius: 8px;
-  background: #e9efed;
+  background: #edf4fb;
 }
 .markdown code {
   font-family: ui-monospace, SFMono-Regular, monospace;
 }
 .markdown blockquote {
-  margin: 1em 0;
-  padding: 0.1em 1em;
-  border-left: 3px solid #a7c1b9;
-  color: #526964;
+  margin: 16px 0;
+  padding: 4px 16px;
+  border-left: 3px solid #557a9e;
+  color: #1e334a;
 }
 .markdown table {
   display: block;
@@ -216,10 +254,10 @@ body {
 .markdown th,
 .markdown td {
   border: 1px solid #cbd8e5;
-  padding: 6px 10px;
+  padding: 8px;
 }
 .image-alt {
-  color: #667c91;
+  color: #647b92;
 }
 .drawer-content {
   width: min(85vw, 330px);
@@ -228,6 +266,9 @@ body {
 .drawer-content .sidebar {
   height: 100%;
   border-right: 0;
+}
+.viewer-shell.sidebar-collapsed > .sidebar {
+  display: none;
 }
 @media (max-width: 700px) {
   .viewer-shell {
@@ -238,30 +279,20 @@ body {
   .viewer-shell > .sidebar {
     display: none;
   }
-  .reader .mobile-menu-trigger.MuiIconButton-root {
-    display: inline-flex;
-    position: fixed;
-    z-index: 2;
-    top: 8px;
-    left: 8px;
-    color: #1c3f3b;
-    background: #fff;
-    box-shadow: 0 1px 5px #0002;
-  }
   .controls {
-    padding: 12px;
+    padding: 16px;
   }
   .topic-list {
-    padding: 10px;
+    padding: 8px;
   }
   .mobile-drawer .MuiDrawer-paper {
     overflow: hidden;
   }
   .home-page,
   .topic-page {
-    padding: 54px 16px 48px;
+    padding: 24px 16px 48px;
   }
   .article {
-    padding: 54px 18px 56px;
+    padding: 24px 16px 56px;
   }
 }

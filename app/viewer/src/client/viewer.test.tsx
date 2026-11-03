@@ -196,4 +196,27 @@ describe('Viewer', () => {
     fireEvent.click(screen.getByRole('button', { name: 'メニューを開く' }));
     expect(await screen.findByRole('navigation', { name: 'トピック' })).toBeTruthy();
   });
+
+  it('shows the desktop menu action and expanded state', async () => {
+    const mediaQuery = {
+      matches: false,
+      media: '(max-width: 700px)',
+      onchange: null,
+      addListener: vi.fn(),
+      removeListener: vi.fn(),
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+      dispatchEvent: vi.fn(),
+    } satisfies MediaQueryList;
+    vi.stubGlobal(
+      'matchMedia',
+      vi.fn(() => mediaQuery),
+    );
+    render(<Viewer />);
+    const closeMenu = await screen.findByRole('button', { name: 'メニューを閉じる' });
+    expect(closeMenu.getAttribute('aria-expanded')).toBe('true');
+    fireEvent.click(closeMenu);
+    const openMenu = screen.getByRole('button', { name: 'メニューを開く' });
+    expect(openMenu.getAttribute('aria-expanded')).toBe('false');
+  });
 });

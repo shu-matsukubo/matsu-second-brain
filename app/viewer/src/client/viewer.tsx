@@ -18,6 +18,7 @@ import {
   Stack,
   TextField,
   Typography,
+  useMediaQuery,
 } from '@mui/material';
 import type { ReactNode } from 'react';
 import { isValidElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
@@ -119,7 +120,6 @@ function textContent(node: ReactNode): string {
   if (isValidElement<{ children?: ReactNode }>(node)) return textContent(node.props.children);
   return '';
 }
-
 export function Viewer() {
   const readerRef = useRef<HTMLElement>(null);
   const articleCache = useRef(new Map<string, Promise<Article>>());
@@ -136,6 +136,8 @@ export function Viewer() {
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading');
   const [refresh, setRefresh] = useState(0);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const isMobile = useMediaQuery('(max-width: 700px)', { defaultMatches: true });
   const selected =
     route.view === 'knowledge' ? (documents.find((doc) => doc.id === route.id) ?? null) : null;
   const articleReady = article?.path === selected?.path && article?.snapshot === snapshot;
@@ -232,6 +234,9 @@ export function Viewer() {
     return () => window.removeEventListener('hashchange', sync);
   }, []);
   useEffect(() => {
+    if (!isMobile) setDrawerOpen(false);
+  }, [isMobile]);
+  useEffect(() => {
     if (status !== 'ready' || !articleReady) return;
     if (route.view === 'knowledge' && route.anchor) {
       document.getElementById(route.anchor)?.scrollIntoView?.({ block: 'start' });
@@ -299,7 +304,7 @@ export function Viewer() {
 
   const sidebar = (
     <Paper component="aside" square elevation={0} className="sidebar" aria-label="ナビゲーション">
-      <Stack className="controls" spacing={1.25}>
+      <Stack className="controls" spacing={1}>
         <Box className="brand-row">
           <Button
             className="brand"
@@ -347,6 +352,7 @@ export function Viewer() {
             key={topic.key}
             className="topic-button"
             variant={route.view === 'topic' && route.topic === topic.key ? 'contained' : 'text'}
+            aria-current={route.view === 'topic' && route.topic === topic.key ? 'page' : undefined}
             onClick={() => navigate({ view: 'topic', topic: topic.key })}
           >
             {topic.label}
@@ -360,21 +366,37 @@ export function Viewer() {
       </Box>
     </Paper>
   );
-
   return (
-    <Box className="viewer-shell">
+    <Box className={`viewer-shell${sidebarOpen ? '' : ' sidebar-collapsed'}`}>
       {sidebar}
       <Drawer className="mobile-drawer" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
         <Box className="drawer-content">{sidebar}</Box>
       </Drawer>
       <Box component="main" ref={readerRef} className="reader" aria-live="polite">
-        <IconButton
-          className="mobile-menu-trigger"
-          aria-label="メニューを開く"
-          onClick={() => setDrawerOpen(true)}
-        >
-          ☰
-        </IconButton>
+        <header className="app-header">
+          <IconButton
+            className="menu-trigger"
+            aria-label={!isMobile && sidebarOpen ? 'メニューを閉じる' : 'メニューを開く'}
+            aria-expanded={isMobile ? drawerOpen : sidebarOpen}
+            onClick={() => {
+              if (isMobile) setDrawerOpen(true);
+              else setSidebarOpen((open) => !open);
+            }}
+          >
+            <span aria-hidden="true">☰</span>
+          </IconButton>
+          <Button
+            className="header-title"
+            onClick={() => {
+              if (readerRef.current) readerRef.current.scrollTop = 0;
+              window.scrollTo({ top: 0 });
+            }}
+            aria-label="第2の脳（ページの先頭へ戻る）"
+          >
+            <img src="/brain.svg" alt="" />
+            第2の脳
+          </Button>
+        </header>
         {status === 'loading' && (
           <Box className="center-state">
             <CircularProgress />
