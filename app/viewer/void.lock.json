@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "source": {
+    "name": "second-brain-viewer",
+    "workers_dev": true,
+    "preview_urls": false,
+    "routes": []
+  },
+  "resolved": {
+    "name": "second-brain-viewer",
+    "account_id": "f1f15b2209b9dbe4bd85ad5524d6eba4",
+    "workers_dev": true,
+    "preview_urls": false,
+    "routes": []
+  },
+  "text": "{\n  \"name\": \"second-brain-viewer\",\n  \"account_id\": \"f1f15b2209b9dbe4bd85ad5524d6eba4\",\n  \"workers_dev\": true,\n  \"preview_urls\": false,\n  \"routes\": []\n}\n"
+}
