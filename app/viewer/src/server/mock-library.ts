@@ -1,4 +1,4 @@
-import type { KnowledgeDocument } from '../shared/library';
+import type { Article, KnowledgeDocument, Library } from '../shared/library';
 
 export const mockDocuments: KnowledgeDocument[] = [
   {
@@ -63,15 +63,18 @@ export const mockDocuments: KnowledgeDocument[] = [
   },
 ];
 
-export function getMockPage(
-  offset: number,
-  snapshot = '0'.repeat(40),
-): { snapshot: string; documents: KnowledgeDocument[]; nextOffset: number | null; total: number } {
-  const documents = mockDocuments.slice(offset, offset + 20);
+const snapshot = '0'.repeat(40);
+
+export function getMockLibrary(): Library {
   return {
     snapshot,
-    documents,
-    nextOffset: offset + 20 < mockDocuments.length ? offset + 20 : null,
-    total: mockDocuments.length,
+    documents: mockDocuments.map(({ body: _body, ...metadata }) => metadata),
   };
+}
+
+export function getMockArticle(path: string, requestedSnapshot: string): Article {
+  if (requestedSnapshot !== snapshot) throw new Error('snapshot_changed');
+  const document = mockDocuments.find((doc) => doc.path === path);
+  if (!document) throw new Error('document_not_found');
+  return { path, snapshot, body: document.body };
 }

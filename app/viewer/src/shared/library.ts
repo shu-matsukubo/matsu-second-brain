@@ -1,20 +1,28 @@
 export type DocumentKind = 'index' | 'fact' | 'principle' | 'idea';
 
-export interface KnowledgeDocument {
+export interface DocumentMetadata {
   path: string;
   kind: DocumentKind;
   title: string;
   topic: string;
   tags: string[];
   updated?: string;
+}
+
+export interface KnowledgeDocument extends DocumentMetadata {
   body: string;
 }
 
-export interface LibraryPage {
-  snapshot: string;
-  documents: KnowledgeDocument[];
-  nextOffset: number | null;
-  total: number;
+export interface ViewerIndex {
+  documents: DocumentMetadata[];
 }
 
-export const PAGE_SIZE = 20;
+export interface Library extends ViewerIndex {
+  snapshot: string;
+}
+
+export interface Article {
+  path: string;
+  snapshot: string;
+  body: string;
+}

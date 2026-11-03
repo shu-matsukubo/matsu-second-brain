@@ -15,5 +15,12 @@
     "strict": true,
     "types": ["vite/client", "vitest/globals", "void/env"]
   },
-  "include": ["src", ".void/env.d.ts", "vite.config.ts", "vitest.config.ts", "void.config.ts"]
+  "include": [
+    "src",
+    "scripts",
+    ".void/env.d.ts",
+    "vite.config.ts",
+    "vitest.config.ts",
+    "void.config.ts"
+  ]
 }

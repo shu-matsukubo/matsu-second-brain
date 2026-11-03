@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   changes:
-    name: Detect app changes
+    name: Detect viewer input changes
     runs-on: ubuntu-latest
     outputs:
       app_changed: ${{ steps.diff.outputs.app_changed }}
@@ -24,14 +24,14 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Detect changes under app/
+      - name: Detect viewer and Markdown input changes
         id: diff
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         shell: bash
         run: |
-          if git diff --quiet --no-renames "${BASE_SHA}...${HEAD_SHA}" -- app/; then
+          if git diff --quiet --no-renames "${BASE_SHA}...${HEAD_SHA}" -- app/ knowledge/ indexes/ .github/workflows/viewer-ci.yml; then
             echo "app_changed=false" >> "${GITHUB_OUTPUT}"
           else
             diff_status=$?
@@ -69,6 +69,9 @@ jobs:
 
       - name: Check formatting and lint
         run: npm run check
+
+      - name: Check generated viewer index
+        run: npm run index:check
 
       - name: Check TypeScript types
         run: npm run typecheck
