@@ -1,0 +1,137 @@
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+.viewer-shell {
+  height: 100dvh;
+  min-height: 420px;
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+  background: #edf4fb;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border-right: 1px solid #d8e4f1;
+}
+.controls {
+  padding: 18px;
+}
+.document-list {
+  overflow: auto;
+  padding: 8px;
+  overscroll-behavior: contain;
+}
+.document-list .MuiListItemButton-root {
+  width: 100%;
+  text-align: left;
+}
+.reader {
+  min-width: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.article {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px clamp(20px, 5vw, 72px) 80px;
+}
+.article-header {
+  padding-bottom: 25px;
+  border-bottom: 1px solid #d8e4f1;
+}
+.article-header h1 {
+  margin: 9px 0 12px;
+  overflow-wrap: anywhere;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.markdown {
+  font-size: 1rem;
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  margin-top: 1.8em;
+}
+.markdown a {
+  color: #245f9b;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.markdown a:hover {
+  color: #123f70;
+}
+.markdown pre {
+  overflow: auto;
+  padding: 16px;
+  border-radius: 8px;
+  background: #e5edf6;
+}
+.markdown code {
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+.markdown blockquote {
+  margin: 1em 0;
+  padding: 0.1em 1em;
+  border-left: 3px solid #adc5df;
+  color: #526981;
+}
+.markdown table {
+  display: block;
+  max-width: 100%;
+  overflow: auto;
+  border-collapse: collapse;
+}
+.markdown th,
+.markdown td {
+  border: 1px solid #cbd8e5;
+  padding: 6px 10px;
+}
+.markdown img {
+  max-width: 100%;
+}
+.image-alt {
+  color: #667c91;
+}
+.reader-state {
+  margin: 40px;
+}
+@media (max-width: 700px) {
+  .viewer-shell {
+    height: auto;
+    min-height: 100dvh;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(260px, 42dvh) minmax(55dvh, 1fr);
+  }
+  .sidebar {
+    border-right: 0;
+    border-bottom: 1px solid #d8e4f1;
+  }
+  .controls {
+    padding: 12px;
+  }
+  .document-list {
+    padding: 4px 8px;
+  }
+  .article {
+    padding: 24px 18px 56px;
+  }
+}

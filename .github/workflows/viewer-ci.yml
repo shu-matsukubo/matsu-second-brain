@@ -1,0 +1,112 @@
+name: Knowledge Viewer
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: viewer-ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  changes:
+    name: Detect app changes
+    runs-on: ubuntu-latest
+    outputs:
+      app_changed: ${{ steps.diff.outputs.app_changed }}
+    steps:
+      - name: Check out full history
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Detect changes under app/
+        id: diff
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        shell: bash
+        run: |
+          if git diff --quiet --no-renames "${BASE_SHA}...${HEAD_SHA}" -- app/; then
+            echo "app_changed=false" >> "${GITHUB_OUTPUT}"
+          else
+            diff_status=$?
+            if [[ "${diff_status}" -eq 1 ]]; then
+              echo "app_changed=true" >> "${GITHUB_OUTPUT}"
+            else
+              echo "git diff failed with exit code ${diff_status}." >&2
+              exit "${diff_status}"
+            fi
+          fi
+
+  validate:
+    name: Validate viewer
+    needs: changes
+    if: needs.changes.outputs.app_changed == 'true'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app/viewer
+    env:
+      VIEWER_DATA_SOURCE: mock
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 26.13.0
+          cache: npm
+          cache-dependency-path: app/viewer/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check formatting and lint
+        run: npm run check
+
+      - name: Check TypeScript types
+        run: npm run typecheck
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+  viewer-ci:
+    name: Viewer CI
+    if: always()
+    needs:
+      - changes
+      - validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report aggregate result
+        env:
+          CHANGES_RESULT: ${{ needs.changes.result }}
+          APP_CHANGED: ${{ needs.changes.outputs.app_changed }}
+          VALIDATE_RESULT: ${{ needs.validate.result }}
+        shell: bash
+        run: |
+          if [[ "${CHANGES_RESULT}" != "success" ]]; then
+            echo "Change detection did not succeed (${CHANGES_RESULT})."
+            exit 1
+          fi
+
+          if [[ "${APP_CHANGED}" == "true" ]]; then
+            if [[ "${VALIDATE_RESULT}" != "success" ]]; then
+              echo "Viewer validation did not succeed (${VALIDATE_RESULT})."
+              exit 1
+            fi
+          elif [[ "${VALIDATE_RESULT}" != "skipped" ]]; then
+            echo "Unexpected validation result without app changes (${VALIDATE_RESULT})."
+            exit 1
+          fi
+
+          echo "Viewer CI passed."
