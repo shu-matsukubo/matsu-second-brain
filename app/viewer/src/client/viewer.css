@@ -1,7 +1,4 @@
 :root {
-  font-family: Inter, "Noto Sans JP", system-ui, sans-serif;
-  color: #1e334a;
-  background: #edf4fb;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
@@ -24,66 +21,19 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 0;
-  background: #f7faff;
   border-right: 1px solid #d8e4f1;
 }
 .controls {
-  display: grid;
-  gap: 10px;
   padding: 18px;
-  border-bottom: 1px solid #d8e4f1;
-}
-.controls input,
-.controls select {
-  width: 100%;
-  min-height: 42px;
-  border: 1px solid #c8d7e7;
-  border-radius: 8px;
-  background: #fff;
-  color: #20364d;
-  padding: 9px 11px;
-  font: inherit;
-}
-.controls input:focus,
-.controls select:focus {
-  outline: 3px solid #b8d7f8;
-  outline-offset: 1px;
 }
 .document-list {
   overflow: auto;
   padding: 8px;
   overscroll-behavior: contain;
 }
-.document-row {
-  display: grid;
+.document-list .MuiListItemButton-root {
   width: 100%;
-  gap: 4px;
   text-align: left;
-  padding: 11px 12px;
-  border: 0;
-  border-radius: 8px;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-  font: inherit;
-}
-.document-row:hover {
-  background: #eaf2fb;
-}
-.document-row.selected {
-  background: #dceafb;
-}
-.row-title {
-  font-weight: 600;
-  overflow-wrap: anywhere;
-}
-.row-meta {
-  font-size: 0.78rem;
-  color: #647b92;
-}
-.state {
-  padding: 12px;
-  color: #647b92;
 }
 .reader {
   min-width: 0;
@@ -99,15 +49,7 @@ body {
   padding-bottom: 25px;
   border-bottom: 1px solid #d8e4f1;
 }
-.kind-label {
-  color: #557a9e;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-}
-.article h1 {
-  font-size: clamp(1.65rem, 3vw, 2.35rem);
-  line-height: 1.35;
+.article-header h1 {
   margin: 9px 0 12px;
   overflow-wrap: anywhere;
 }
@@ -116,22 +58,17 @@ body {
   flex-wrap: wrap;
   gap: 7px;
 }
-.tags span {
-  border-radius: 999px;
-  background: #e3eef9;
-  color: #47637f;
-  padding: 4px 10px;
-  font-size: 0.78rem;
-}
 .markdown {
   font-size: 1rem;
   line-height: 1.85;
   overflow-wrap: anywhere;
 }
+.markdown h1,
 .markdown h2,
 .markdown h3,
-.markdown h4 {
-  line-height: 1.45;
+.markdown h4,
+.markdown h5,
+.markdown h6 {
   margin-top: 1.8em;
 }
 .markdown a {
@@ -175,8 +112,7 @@ body {
   color: #667c91;
 }
 .reader-state {
-  padding: 40px;
-  color: #647b92;
+  margin: 40px;
 }
 @media (max-width: 700px) {
   .viewer-shell {
@@ -190,17 +126,10 @@ body {
     border-bottom: 1px solid #d8e4f1;
   }
   .controls {
-    grid-template-columns: 1fr 1fr;
     padding: 12px;
-  }
-  .controls input {
-    grid-column: 1 / -1;
   }
   .document-list {
     padding: 4px 8px;
-  }
-  .document-row {
-    padding: 8px 10px;
   }
   .article {
     padding: 24px 18px 56px;

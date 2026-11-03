@@ -1,6 +1,6 @@
 # Knowledge Viewer
 
-Void 1.5.0、Vite 8、React、TypeScriptで作った、`knowledge/` と `indexes/` の閲覧アプリです。
+Void 1.5.0、Vite 8、React、TypeScript、Material UIで作った、`knowledge/` と `indexes/` の閲覧アプリです。MUIテーマで画面全体の色・文字・操作部品を揃えています。
 
 ## ローカルで起動する
 
