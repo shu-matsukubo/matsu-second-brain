@@ -43,9 +43,9 @@ cp env.mock.example .env
 
 ローカルでGitHubデータを確認する場合は、任意で `.env` に `VIEWER_DATA_SOURCE=github` と `MATSU_SECOND_BRAIN_READ_TOKEN` を設定できます。値は `src/env.ts` で定義し、トークンはクライアントへ渡しません。`.env` はGit管理対象外なので、設定した実トークンやそれを含む `.env` をコミットしないでください。CIはモックで動作し、本番トークンは不要です。`env.mock.example` にはモック設定だけを置いています。
 
-GitHubモードは `shu-matsukubo/matsu-second-brain` の `main` からデータを読みます。初期表示では `/api/library` から `app/viewer/library-index.json` のメタデータだけを取得し、タイトル・タグ検索とトピック・分類フィルタをブラウザー上で行います。本文検索は行いません。記事選択時だけ `/api/article?path=...&snapshot=...` で本文を取得し、ブラウザーではコミットとパス単位で取得済み・通信中の本文をキャッシュします。サーバーには60秒のメモリキャッシュと最大4件の同時取得制限があり、本文は一覧と同じコミットの許可対象Markdown（通常ファイル）だけを返します。閲覧中にmainが更新された場合は再読み込みを案内します。
+GitHubモードは `shu-matsukubo/matsu-second-brain` の `main` からデータを読みます。初期表示では `/api/library` から `indexes/library.json` のメタデータだけを取得し、タイトル・タグ検索と分類条件をブラウザー上で組み合わせます。topic一覧は検索・分類の両方に一致するKnowledgeから作ります。ホームには最近更新された10件、topic画面には分類別のKnowledge一覧を表示します。topic本文は取得しません。knowledge選択時だけ `/api/article?path=...&snapshot=...` で本文を取得し、ブラウザーではsnapshotとpath単位で取得済み・通信中の本文をキャッシュします。更新確認ボタンで新しいsnapshotを読むと、旧snapshotの本文キャッシュを破棄します。サーバーには60秒のメモリキャッシュと最大4件の同時取得制限があり、本文は一覧と同じコミットの許可対象knowledge Markdown（通常ファイル）だけを返します。内部リンクはtopic/knowledgeのURLへ移動し、戻る・進むと直接URLにも対応します。
 
-Viewer用JSONは本文を含まない派生データです。生成は `node app/viewer/scripts/generate-index.ts`、非破壊検証は末尾に `--check` を付けて、任意の作業ディレクトリから実行できます。Frontmatterのタイトル・トピック・文字列タグ・更新日を使用し、分類は配置パスから取得します。タイトル未指定時はH1、次にファイル名へフォールバックします。パス順に安定して出力し、不正なFrontmatterでは失敗します。ナレッジ整理SkillがMarkdown変更後・コミット前に再生成し、日次レビューSkillは `--check` の不整合を改善候補として報告します。
+`indexes/library.json` とtopic MarkdownはKnowledge Markdownから生成する派生データです。正本の `id`, `title`, `type`, `topic`, `topic_label`, `tags`, `updated` を検証し、ID/path/topic/classification/linkの不整合やsymlinkを拒否します。JSONには本文を含めません。生成はリポジトリルートで `npm run index:generate`、非破壊検証は `npm run index:check` です。生成は内容が変わったファイルだけを置換し、古い生成topic pageを除去します。
 
 このViewerは認証を設けず、読み込んだknowledgeとindexesをページ利用者に表示します。GitHubモードへ切り替えると、対象内容は公開情報として閲覧可能になります。公開を前提に扱える内容だけを置いてください。
 
@@ -53,7 +53,7 @@ Viewer用JSONは本文を含まない派生データです。生成は `node app
 
 ## Pull request CI
 
-`main` 宛てのPull requestでは `Knowledge Viewer` ワークフローが毎回起動します。`app/`、`knowledge/`、`indexes/` またはワークフロー自身に差分がある場合はNode.js 26.13.0、モックデータ、本番Secretなしで `npm ci`、`npm run check`、`npm run index:check`、`npm run typecheck`、`npm test`、`npm run build` を実行します。対象の差分がない場合はアプリ検証を省略し、集約ジョブが成功を報告します。変更検出または必要な検証が失敗・キャンセルされた場合、集約ジョブも成功扱いにしません。
+`main` 宛てのPull requestでは `Knowledge Viewer` ワークフローが毎回起動します。`app/`、`knowledge/`、`knowledge-policy/`、`indexes/`、`scripts/`、`.agents/skills/`、package設定またはworkflowに差分がある場合、Node.js 26.13.0でルートのworkflow testとViewerのlint、index check、型検査、テスト、buildを実行します。本番Secretは不要です。対象差分がない場合は検証を省略し、集約ジョブが成功を報告します。変更検出または必要な検証が失敗・キャンセルされた場合、集約ジョブも成功扱いにしません。
 
 ブランチ保護でRequired status checkを指定する場合は、固定名の **Viewer CI** を選択します。検証設定だけを追加しており、デプロイ処理はありません。
 

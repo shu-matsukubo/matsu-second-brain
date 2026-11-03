@@ -12,7 +12,7 @@ vi.mock('void/env', () => ({ env: environment }));
 vi.mock('./library', () => ({ getLibrary, getArticle, SHA_PATTERN: /^[a-f0-9]{40}$/ }));
 
 const snapshot = 'a'.repeat(40);
-const path = 'knowledge/01-facts/開発/test.md';
+const path = 'knowledge/facts/app-development/test.md';
 async function request(handler: unknown, query: Record<string, string | undefined> = {}) {
   return (handler as (context: unknown) => Promise<Response>)({
     req: { query: () => query },

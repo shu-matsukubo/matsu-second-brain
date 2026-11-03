@@ -1,13 +1,11 @@
 # Knowledge Index
 
-## Topics
-
-- [AWS](topics/AWS.md)
-- [Cloudflare](topics/Cloudflare.md)
-- [Codex](topics/Codex.md)
-- [Docker](topics/Docker.md)
-- [Git](topics/Git.md)
-- [Neovim](topics/Neovim.md)
-- [アプリ開発](<topics/アプリ開発.md>)
-- [開発ツール](<topics/開発ツール.md>)
-- [開発プロセス](<topics/開発プロセス.md>)
+- [アプリ開発](topics/app-development.md) (app-development)
+- [AWS](topics/aws.md) (aws)
+- [Cloudflare](topics/cloudflare.md) (cloudflare)
+- [Codex](topics/codex.md) (codex)
+- [開発プロセス](topics/development-process.md) (development-process)
+- [開発ツール](topics/development-tools.md) (development-tools)
+- [Docker](topics/docker.md) (docker)
+- [Git](topics/git.md) (git)
+- [Neovim](topics/neovim.md) (neovim)

@@ -1,0 +1,927 @@
+{
+  "version": 1,
+  "source_commit": "efa3a14783cf9349c8e22141b40f93428ae9ded4",
+  "legacy_library_index_sha256": "1ccd326048b4cbbfd2abf93b241bec076ee4dc38d70b2cc92b5ce19e12242aef",
+  "knowledge": [
+    {
+      "old_path": "knowledge/01-facts/AWS/API Gateway HTTP API の JWT オーソライザー設定.md",
+      "new_path": "knowledge/facts/aws/k-80d43c7d7d3971e7.md",
+      "id": "k-80d43c7d7d3971e7",
+      "source_sha256": "f1dddf1412d783da8bfd58f5534493bc7c96be98dc9288ed92d43c9f17699717",
+      "old_body_sha256": "ec07ea42b382ec5ee086bc744e0b7bbd0a9fbe8f52783de319c91d20d5fec79e",
+      "migrated_body_sha256": "42383ab4f3273b1677c07dcd6df2a10b60e4c7dbe09b5bcc4c9f6d374fe33f77"
+    },
+    {
+      "old_path": "knowledge/01-facts/AWS/API Gateway の REST API と HTTP API における JWT 認証.md",
+      "new_path": "knowledge/facts/aws/k-8d3f67394f671d3c.md",
+      "id": "k-8d3f67394f671d3c",
+      "source_sha256": "d88ad9ec74a8a28317f921b4cdeb166987ae2fc02dd710e0886db8de8d65de91",
+      "old_body_sha256": "fc80e305a586f59f52470870b8ad8eb04794dd88a01b644712322705196249ec",
+      "migrated_body_sha256": "d049b019f1137bbd40a2e8299fbd1dc191576210b77ee439a599c2fd73fc684e"
+    },
+    {
+      "old_path": "knowledge/01-facts/Cloudflare/Cloudflare Workers のシークレット管理.md",
+      "new_path": "knowledge/facts/cloudflare/k-f7e33e41fd6f8b95.md",
+      "id": "k-f7e33e41fd6f8b95",
+      "source_sha256": "2c70b0663b49ea0880913082fe4b4a3396600817cea6634d7f8fcb53e952079f",
+      "old_body_sha256": "146295741892f68badfb52bdb26a09a2fae36249d4be4aa5ade829ac555a9e22",
+      "migrated_body_sha256": "f7bcc2584a27a79aea061da3e3d22efcafb9e22c0202ce1e1e68142c1dabd655"
+    },
+    {
+      "old_path": "knowledge/01-facts/Cloudflare/Cloudflare Workers の初回デプロイ手順.md",
+      "new_path": "knowledge/facts/cloudflare/k-97d6709958a83deb.md",
+      "id": "k-97d6709958a83deb",
+      "source_sha256": "54ab13d511311883edf0941480faa1564b7a94cba58ef3232a8970deb3ea127c",
+      "old_body_sha256": "ff90daa385adeaf6a81bfcc0e6572c23570b91f48a2fa32718439bdcc97adc39",
+      "migrated_body_sha256": "161101cf23a01888ef055e739f1e8f9018f3ce1039d1d17e997398b5a78ac61b"
+    },
+    {
+      "old_path": "knowledge/01-facts/Cloudflare/Cloudflare Workers 無料枠の概要.md",
+      "new_path": "knowledge/facts/cloudflare/k-aa6d85a855837646.md",
+      "id": "k-aa6d85a855837646",
+      "source_sha256": "363847565535c21d7e6001c6148a69609d89a2bf931975ef812ca01e853d30f5",
+      "old_body_sha256": "c4554a83a59e3e7a58d332015793afdfbb8d1c0af89ace77b63db70e401631a6",
+      "migrated_body_sha256": "c8b22f9979fa8dc99a176bbb75a428b0eee895b511f06e01e4963a584b32b857"
+    },
+    {
+      "old_path": "knowledge/01-facts/Codex/ChatGPT Sitesの公開共有と利用条件.md",
+      "new_path": "knowledge/facts/codex/k-33a5d4987fc0872f.md",
+      "id": "k-33a5d4987fc0872f",
+      "source_sha256": "a0eee86ce5bcbd51b3fcd2191272d37458faac942d20faa9001fac5c9078dd9e",
+      "old_body_sha256": "8bfba09985ae4bf548a54aa2d030c0d88d649b8cae844d92634c6076dea8d577",
+      "migrated_body_sha256": "8bfba09985ae4bf548a54aa2d030c0d88d649b8cae844d92634c6076dea8d577"
+    },
+    {
+      "old_path": "knowledge/01-facts/Codex/Codex cloud の実行環境設定.md",
+      "new_path": "knowledge/facts/codex/k-9295e908c1b088c6.md",
+      "id": "k-9295e908c1b088c6",
+      "source_sha256": "0c5d8e6e2401f8fb016afb5f0a4c98cda6da2c953efaf4f185c1c38d2f71cc44",
+      "old_body_sha256": "ddbd1f76df01f98b1f730e5c5072d9762c30bc5e8752a048cbbad89783162785",
+      "migrated_body_sha256": "821178bc244c0282d344c99b4789c5bc7296f71984f36e2634ac7307115473f9"
+    },
+    {
+      "old_path": "knowledge/01-facts/Codex/GitHub から Codex cloud にタスクを委譲する.md",
+      "new_path": "knowledge/facts/codex/k-15f9bd7c222b1115.md",
+      "id": "k-15f9bd7c222b1115",
+      "source_sha256": "13376d938e92bc3f1daea8b5d7de2a9dc89b3d52f876d505e612b72b82be233d",
+      "old_body_sha256": "2bcc923c364e1d8f86d408a0c83c253c69396d876e0f0970303cc30e0cda6982",
+      "migrated_body_sha256": "c78172c79c71ab4275aacfabf40e2569dc6704a70ca289511339e0fbfb1f0e59"
+    },
+    {
+      "old_path": "knowledge/01-facts/Docker/Docker コンテナの基本.md",
+      "new_path": "knowledge/facts/docker/k-72df4a0acb401aee.md",
+      "id": "k-72df4a0acb401aee",
+      "source_sha256": "4f6a5b87abf3ae83893884434b89b3ec8fa2b5d794f12225fd401a0a88f1b85d",
+      "old_body_sha256": "19759040f6fa37903d9c93a4646d3252ac0544bc7fc984b4ad7f49d32b58d322",
+      "migrated_body_sha256": "cccdc57f7881b050d2c9bc9c253430a2ebe2cdaefe5d36a53f3d37f56c664b22"
+    },
+    {
+      "old_path": "knowledge/01-facts/Docker/Dockerfile と Compose で開発環境を共有する.md",
+      "new_path": "knowledge/facts/docker/k-db6a704b4c1b4cca.md",
+      "id": "k-db6a704b4c1b4cca",
+      "source_sha256": "25be31c82a11472b5f3606e52479124e7cbdc5d132020bc537ca03625a687156",
+      "old_body_sha256": "260afc617742638a256a312175fd134f781441efca72d58b6f213b4c43f7b0af",
+      "migrated_body_sha256": "2f54870984859ec047b78a75f2db5cde216a00052d5a7925ec0eb809efbbb50a"
+    },
+    {
+      "old_path": "knowledge/01-facts/Docker/Windows コンテナの実行条件.md",
+      "new_path": "knowledge/facts/docker/k-5c212626fd61d868.md",
+      "id": "k-5c212626fd61d868",
+      "source_sha256": "2c082a5ff89696a0f1e88481e273535f91011475113196490f574e136162225f",
+      "old_body_sha256": "eaf8a8120987874299081b18950fb5117568f2fdd2d44cfd7e268c172bb9c83d",
+      "migrated_body_sha256": "2ee89f0305d1da9dbbee0539a9d79fd0f675ce3aeb0b0833d353eb5834746e67"
+    },
+    {
+      "old_path": "knowledge/01-facts/Git/Git でコミットに含める差分を選ぶ.md",
+      "new_path": "knowledge/facts/git/k-ef264754e56ae439.md",
+      "id": "k-ef264754e56ae439",
+      "source_sha256": "c67a0a6ce90055fb744df0bf01758fb4222832bc7e70b1aa64809cde9bbff6bd",
+      "old_body_sha256": "59481b4db4b6980361c42badd592684f871b47c4adab631975ab899078140353",
+      "migrated_body_sha256": "231dd13b34976e90f9e3b076fe771e2f050963f930d090ee72934bf63539094d"
+    },
+    {
+      "old_path": "knowledge/01-facts/Git/Git の commit・merge・rebase の使い分け.md",
+      "new_path": "knowledge/facts/git/k-5baba0e54a9f1187.md",
+      "id": "k-5baba0e54a9f1187",
+      "source_sha256": "3004dbb4f517c08ffac3c9b935c978adcf99075c702a4937c8a82704c7c70ca2",
+      "old_body_sha256": "62ff9d870c5e36d4e5aec54557657f63badeb91fbc0515022a0de741bc9c6d80",
+      "migrated_body_sha256": "51438b5a924842e62ff647d5e9ee21835917887c69f72b74d549f1060071b8c7"
+    },
+    {
+      "old_path": "knowledge/01-facts/Git/Git の作業領域とリモートの全体像.md",
+      "new_path": "knowledge/facts/git/k-0ad4026c9667ce8a.md",
+      "id": "k-0ad4026c9667ce8a",
+      "source_sha256": "7758cf5a76faf3b69f285e220e95a512ddb506f75982ddc1a409c55003bfa4b4",
+      "old_body_sha256": "6cfc77e99aef438ad5d5df989c70847a824445ccc20e81a35657237e04aa4306",
+      "migrated_body_sha256": "2d74f6266957ec444a77b5b2eb9a559b2543601c46586044dfeb01ef3df63bfa"
+    },
+    {
+      "old_path": "knowledge/01-facts/アプリ開発/Hono で Google ログインを実装する.md",
+      "new_path": "knowledge/facts/app-development/k-09eeb3ef9aafd09d.md",
+      "id": "k-09eeb3ef9aafd09d",
+      "source_sha256": "630481ba956b1e03e933466b2acbda0ee0856e7dc296eb96326eb5f0aaf8cb90",
+      "old_body_sha256": "499b673a5320dcff86dcdaf73ca7d7098a262b359ebb5cb0d13f51d6b0563cab",
+      "migrated_body_sha256": "be3308c94cc1911a335bf4b2a714b6847d55e3a515095e56885dc08c8891b1e9"
+    },
+    {
+      "old_path": "knowledge/01-facts/アプリ開発/LINE Messaging API の送信方式を選ぶ.md",
+      "new_path": "knowledge/facts/app-development/k-a399c0657f69c609.md",
+      "id": "k-a399c0657f69c609",
+      "source_sha256": "da90480f6bacdbd64099665dcfa404dd9433aa117c8ff949fb532096363f1659",
+      "old_body_sha256": "ddd2a6ebb62bfde0cfa4f7dafe881c57d255b685a2341db3dd1f21416b85bf92",
+      "migrated_body_sha256": "15652cb1fd85afeb79d1e9e64945d2305b569dfb82fde3c6a2ef99dd2828e3f0"
+    },
+    {
+      "old_path": "knowledge/01-facts/アプリ開発/OAuth ログイン後のアプリセッションを設計する.md",
+      "new_path": "knowledge/facts/app-development/k-63ec6b4ce9ba5b6b.md",
+      "id": "k-63ec6b4ce9ba5b6b",
+      "source_sha256": "cbfe379b176b0cd1b1f84e16e42d4082ff8dcbafa5a23de446cb42cc5cbdd3f0",
+      "old_body_sha256": "2c4c3730605bd5390aaf8d3840b23fe0152903ef7fce1d1f3b106016e42d184a",
+      "migrated_body_sha256": "d48b6352176c83b6f5c5385f46cb0529b9ce6d5d386e83f39c3297dfe29c239b"
+    },
+    {
+      "old_path": "knowledge/01-facts/アプリ開発/OpenID Connectのユーザー識別にはissとsubを使う.md",
+      "new_path": "knowledge/facts/app-development/k-db267f70c5bcb7b4.md",
+      "id": "k-db267f70c5bcb7b4",
+      "source_sha256": "51c39de2cba4e1e553c2d2c02db7800ea6f266c4f3fa0a816fa99eab205d1439",
+      "old_body_sha256": "58d69e137e7f7a587716cd565293fdebec62816e1b7b9334716a02d5a10d3582",
+      "migrated_body_sha256": "46853cc27eb8e822cdd21e2c53352d4e9625567f8f8c2c272ca013acc49a7777"
+    },
+    {
+      "old_path": "knowledge/02-principles/Git/Git worktreeは独立案の比較に使う.md",
+      "new_path": "knowledge/principles/git/k-20bf6db73d8aa7b6.md",
+      "id": "k-20bf6db73d8aa7b6",
+      "source_sha256": "96428b7eb06a0af5af44bddd9a1585c99991d64e9df7e82ed73bc596526278fe",
+      "old_body_sha256": "6a1123728a2bc2aa318deb084a2a928e2f380c75369234cd0b46ff55599c411a",
+      "migrated_body_sha256": "266a716a0d0f271b938e8e5f1092c2ed179e11af23a537493ada575b4da88e9e"
+    },
+    {
+      "old_path": "knowledge/02-principles/Neovim/Quickfixは一連の移動操作で覚える.md",
+      "new_path": "knowledge/principles/neovim/k-521ed05503772955.md",
+      "id": "k-521ed05503772955",
+      "source_sha256": "0838d504b36c356a57f86adef2324736872e91c9cec0654962b29919f3519e5f",
+      "old_body_sha256": "5aaf623f26772e30edf07e88ecaeb5b70027274eb3f41342c38f3cabe789047a",
+      "migrated_body_sha256": "79c132fc4e7e4bf0dd58657bc1e8ecb5f1aa236a83452d806df300d9783a9417"
+    },
+    {
+      "old_path": "knowledge/02-principles/Neovim/キーマップを機能カテゴリ別のプレフィックスで整理する.md",
+      "new_path": "knowledge/principles/neovim/k-d6c113cecb02d6e2.md",
+      "id": "k-d6c113cecb02d6e2",
+      "source_sha256": "7d7183c4263e6ceedb3b4a3704168920b4f448bb002d3ef5fac6b48429b684f1",
+      "old_body_sha256": "826a305176ffdb162c0d9aaeb05d9309871a452f55471545667b38dea9ff9a47",
+      "migrated_body_sha256": "234fb028615fbe827ff4d16e6d5b2d983258786b629bdf2f59ce9279989c0ea7"
+    },
+    {
+      "old_path": "knowledge/02-principles/アプリ開発/アプリの通知先に Discord と LINE を使う際の選び方.md",
+      "new_path": "knowledge/principles/app-development/k-483e48a6197921ea.md",
+      "id": "k-483e48a6197921ea",
+      "source_sha256": "3fd2d8462e63fd7b7e494df515d90208b0f22b4a7d1a4e95a069153ac58ee7ba",
+      "old_body_sha256": "d20b35af3c3b059f7a7c8ced856f0839493769537ada853b2d1196409c6c69d5",
+      "migrated_body_sha256": "8731b5d27c23735e4d429c5ffdbb3964d5da0624db96c8fe3d982df0a0dff0b7"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発ツール/grepツールは検索性能と運用性で選ぶ.md",
+      "new_path": "knowledge/principles/development-tools/k-a3cbbc2c7f124a3d.md",
+      "id": "k-a3cbbc2c7f124a3d",
+      "source_sha256": "d46b6653a22d578ca725483ae6482850110a8e29a96f5279437a7d7bc6c252bd",
+      "old_body_sha256": "597a920dd5a1c4b02737cc4b006e1ca4ba3db829e027c13a0b723b830e1d0f63",
+      "migrated_body_sha256": "3cd04704ec12d2e6b59e63e12b82b292ba52e08ba806a3883729561ae64a0b9a"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/Agentは必要最小限にし専門性は知識で拡張する.md",
+      "new_path": "knowledge/principles/development-process/k-3953b9c0e4266be4.md",
+      "id": "k-3953b9c0e4266be4",
+      "source_sha256": "1bf4de1d71d527fc494f4d91a878bc9dcaf6acc14360f440d641661b5fee12f1",
+      "old_body_sha256": "ee3d7cb9d03bf6fabd9017c2f1d94a80f6875eb20a607cff78dffe398fae8b5e",
+      "migrated_body_sha256": "8780c102fc169a7b1d94ecbf8fc28db86702eb6ef30a493194d50b10edeff6df"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/AI Workflowは探索量と完了時間で評価する.md",
+      "new_path": "knowledge/principles/development-process/k-cb4b907775bc93a7.md",
+      "id": "k-cb4b907775bc93a7",
+      "source_sha256": "95288cdc48394fae926bdc3a978d83bd3e7663da46fad163eeff6501e0449f0f",
+      "old_body_sha256": "f23f613415a78ea6b0d504b92d52fc27dee4224f040a06db602847e27028ed32",
+      "migrated_body_sha256": "f60a4b495e8fa5487d728d1e3ee8c3c742f6f006522ee051014bdfa5eb182078"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/AIエージェントには覚えておく仕事を任せる.md",
+      "new_path": "knowledge/principles/development-process/k-f51a362201719cec.md",
+      "id": "k-f51a362201719cec",
+      "source_sha256": "79d95f37775f7ff127b000e1ff6f299b49ec869eefb29e729de5ee9537fb9b34",
+      "old_body_sha256": "721d8e61f573f0c27a52b469740b6b4ba13fa3f1bda592af66acfc0d8bd6e873",
+      "migrated_body_sha256": "3ea4b79ad9af7af842a04c00ee1918496269c46e4578fb6a88b078c01bcf7f82"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/AIセキュリティは入力経路と実行権限をセットで考える.md",
+      "new_path": "knowledge/principles/development-process/k-c2677cc313efd69a.md",
+      "id": "k-c2677cc313efd69a",
+      "source_sha256": "96f5b117141f1e8448be38406ae3fd4115a1e10fa0ce1ee6c10fb3179cf77b87",
+      "old_body_sha256": "351ae487ec5b50f4f5f13fa31b5eac1378876fd8ca414fd6c14fb080badcf55f",
+      "migrated_body_sha256": "33913df52fb6ed42df16c471013818e5a6e01952ca536a438b0922da856cd529"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/AIチャットは永続状態の更新境界で切り替える.md",
+      "new_path": "knowledge/principles/development-process/k-ed9431132a1300be.md",
+      "id": "k-ed9431132a1300be",
+      "source_sha256": "1e9837d859f91b4419237a63db39215eb26f0e2e98041e0e723f8697c2f339b1",
+      "old_body_sha256": "33a5417367e925e1aed4403a20af70b0ad77a47e41e488c53347d40305ab0a59",
+      "migrated_body_sha256": "e6cc4ae2ebe35076d581ec8594f24573147c49110c6ae5163f14320ae1fb4005"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/AIツールは認知コストの削減で投資判断する.md",
+      "new_path": "knowledge/principles/development-process/k-53b874d26fbc1ddd.md",
+      "id": "k-53b874d26fbc1ddd",
+      "source_sha256": "d21a940acbdf89160bb828bcdc75985be25419ded2d8345e5a8d487f2f0e93a5",
+      "old_body_sha256": "f9ff5455d12dd617505cf5b5a5a47a111d8c70269eb4ca01fd9dfbc2b7e9e96a",
+      "migrated_body_sha256": "ae76c3f110de5ee0a77df1f36c76d8bf32a8a032faff401d528a6a2f815dc1a6"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/AIに設計を依頼するときは現在の構成を共有する.md",
+      "new_path": "knowledge/principles/development-process/k-b6bac51054c079bf.md",
+      "id": "k-b6bac51054c079bf",
+      "source_sha256": "7245e5ebe31c07bfda7a026743fdeb460a757794f242f06cb8cec8cf4249c47e",
+      "old_body_sha256": "75d84dee245dd2711e4b87581fb7b1832626cc4b22461bbfa101d810ed6289f6",
+      "migrated_body_sha256": "636f03b6c9196ecd14862cd73369c57d708dfedd530ee2062267038624f6f346"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/AIの実行場所は責務から決める.md",
+      "new_path": "knowledge/principles/development-process/k-cff4d20a9bc43e30.md",
+      "id": "k-cff4d20a9bc43e30",
+      "source_sha256": "26497f094efe2e1754e373b4150526654427f3ff57646dd20218ed9516f66375",
+      "old_body_sha256": "3eaf514553b1b536cad20e985ca6b7e408c4dfd5c8f46373387a510b02df8b64",
+      "migrated_body_sha256": "3a989b94cc3d00d349e2881ff0cae6fedb6cc352c5fc60def7fb611f432e86cc"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/AIの操作制約はPolicyで結果を制限する.md",
+      "new_path": "knowledge/principles/development-process/k-c7312886320ad33f.md",
+      "id": "k-c7312886320ad33f",
+      "source_sha256": "b0790d34b326ca950b9a06d1fffce403c63794ce674cb64e92898b77a9876c3e",
+      "old_body_sha256": "ab3dc5fb231ba19b164394d29048908ce8736409d92ffd3836ce852cbd096a72",
+      "migrated_body_sha256": "3ebfdb942703d2a556269c9498b0a246d83d6cb995da896b4d3f18e458b60237"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/AIフローでは能力・制御・判断知識を分離する.md",
+      "new_path": "knowledge/principles/development-process/k-1c336721577e40fb.md",
+      "id": "k-1c336721577e40fb",
+      "source_sha256": "84c788ef54f89f961810dd09cc1e63fed52af486813cab8da6ad78295b4f1723",
+      "old_body_sha256": "42313108ebce0c79edbcaf0fc155994adb3ef5c09f64b0ad259f75fc5285bee2",
+      "migrated_body_sha256": "c88c337a52c6a0ec1d621d7b1072ce100339021e697a050762bee06fbe557b08"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/AIへの依頼は実装結果とともに保存する.md",
+      "new_path": "knowledge/principles/development-process/k-d00d5434cb5bb73e.md",
+      "id": "k-d00d5434cb5bb73e",
+      "source_sha256": "6799fcad08139ae5b95e8d533acce04a9cd32eb03fd0a5fb478f39a9632c6095",
+      "old_body_sha256": "ac2eacc56fbc58339b8535c360c81ff1b3df5bc58557c71b9381e671203b8b83",
+      "migrated_body_sha256": "1f929d075eaed1ae41ea54415b1ed476fb95747abb7416937ccdf3d8fe7819cb"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/Issueは現在の実装に照合してから設計する.md",
+      "new_path": "knowledge/principles/development-process/k-a9b0faffeeed8800.md",
+      "id": "k-a9b0faffeeed8800",
+      "source_sha256": "8dfdf7182deb448e37f89ac7e881868bdd84c9b3c36a91f89468e24fb1de5cdf",
+      "old_body_sha256": "970a53bacd0d63995f985613d529f8a4d300b3e3dc13427f336c8a650bd7d605",
+      "migrated_body_sha256": "bb51d1181d803517345f800bf377991fcbb92e00186198a99fc75f2869caca97"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/Review単位とIntegration単位を分ける.md",
+      "new_path": "knowledge/principles/development-process/k-3e976cb288ac805d.md",
+      "id": "k-3e976cb288ac805d",
+      "source_sha256": "97d159f1847c5d121d14df800b83abc47dabad341ee1fde1862fdef502829429",
+      "old_body_sha256": "8a107082a9201ab2e7f7227a4b6a6b32d0deeaf3ecaa2bb94b8f52cf5df0d5af",
+      "migrated_body_sha256": "463a7bacce00699383e6b5bba42910720ee3a07f57bae68642ef95c2541e3c5c"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/エージェントのモデルは責務に応じて選ぶ.md",
+      "new_path": "knowledge/principles/development-process/k-f1b6da308d1daaf7.md",
+      "id": "k-f1b6da308d1daaf7",
+      "source_sha256": "37e843afd21384c9f9bf0adcbf8235c90ebee64cb7e7bd64a5b2e935b63deb1e",
+      "old_body_sha256": "13a6bb9a7f29b0a88592daf6acae2acbab3d646b4471d527b89f14d509192151",
+      "migrated_body_sha256": "d9e3e3eaeb2f799902ffd3fe68a3eb63c0503257491a5571c8a2b41775831f92"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/ツールは継続的な価値で採用を判断する.md",
+      "new_path": "knowledge/principles/development-process/k-1c9d5e44b0d5304d.md",
+      "id": "k-1c9d5e44b0d5304d",
+      "source_sha256": "9c5e098d6b7a559c7c9a23258ec3505d2c5658483ac3d3043bb83043bdfd7928",
+      "old_body_sha256": "3d7697886ea09625ebb85f3d93b8cff58f6d4e09bdc33c2dd4eead9a62c0baba",
+      "migrated_body_sha256": "722a9e54041f03d878e0464586d69200307d7e343ab3ea575ea1cda20694781b"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/パフォーマンス改善は発生頻度と影響度で優先順位を決める.md",
+      "new_path": "knowledge/principles/development-process/k-e4905c42b314c4c4.md",
+      "id": "k-e4905c42b314c4c4",
+      "source_sha256": "15934df96a1b386ad5f9905cb56ff994c0239fc7ec468dc5e057272de6dad06c",
+      "old_body_sha256": "4f7edafd4c7b582a32d6b45cacb8c32f66021ab5d127966a170058a849e3f528",
+      "migrated_body_sha256": "5202d0fecad90965e3ee35355b3c1af5121c549e4247ad25354b986b0edf81b2"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/マルチエージェントの並列度はタスク構造で決める.md",
+      "new_path": "knowledge/principles/development-process/k-cace147d56d039c9.md",
+      "id": "k-cace147d56d039c9",
+      "source_sha256": "14ba5c9f43c37b56d1ba7dcff6f0da7b9a63933ab531b7b3b6a8b65db8de6d01",
+      "old_body_sha256": "48ac6fbd3239924346e077880300ca9c40d9518a41777999731fe4acc9605c8b",
+      "migrated_body_sha256": "c84566803df40bccf804b99229c3081aa5c63fe7e80ba3bbe3ab15b732e22339"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/上位Agentへの相談は必要時の共通能力にする.md",
+      "new_path": "knowledge/principles/development-process/k-284229ca7cd4221b.md",
+      "id": "k-284229ca7cd4221b",
+      "source_sha256": "f3118f243c694b9a25914a7322ea95010514f4a62cddb3a5350f74796375c112",
+      "old_body_sha256": "be293135395face182c2203292651635223f6613a75202b0a40e6ffe414cc066",
+      "migrated_body_sha256": "d4e3c208bee701193e42c8d3d0f64d998198f6c84c2dc1d11e8c413ea77c9776"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/不採用アーキテクチャは前提が変わったら再評価する.md",
+      "new_path": "knowledge/principles/development-process/k-faeac1f2745de751.md",
+      "id": "k-faeac1f2745de751",
+      "source_sha256": "3c1217c9674db78372899a7361a6643a73d3b3cf8acabca282d840ce778a8947",
+      "old_body_sha256": "5973c5935436a13ab2114959a4959e6c4c7d7c375fb44aefdfbd75eb162f999a",
+      "migrated_body_sha256": "7294cdf5dcb50ec522f7225d8bd7481069f1416f95bd8f188ef679570b9272b0"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/仕様を詰める対話と実装エージェントは分ける.md",
+      "new_path": "knowledge/principles/development-process/k-12ebb55403b0808f.md",
+      "id": "k-12ebb55403b0808f",
+      "source_sha256": "a973b78c67a14eebd653708a053aa2f1b7a5a14a54461448edefef855806b5df",
+      "old_body_sha256": "9f486f67ff9d1454e5694ec79d026879c452c25c5303afe6a50d9e6c8dbffedc",
+      "migrated_body_sha256": "7838451dbe4cce4377e5b748ecdf63cd55d54569bd97f9791c7ffddee6bf89a1"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/品質ゲートは追加価値で増やす.md",
+      "new_path": "knowledge/principles/development-process/k-18cd4b4f19159d05.md",
+      "id": "k-18cd4b4f19159d05",
+      "source_sha256": "3422153b880b31b9a4b3b89ef26b07d60b57a98ddb2356559ec56bdb4b33e1e6",
+      "old_body_sha256": "fd1d2e0fa8ea3ad770ac2629778fb7b8f0075d91dba900671072542cc266b9a5",
+      "migrated_body_sha256": "44dea0edd39b13c92fada9a05924cb397861ad202c911df679c0ee1fbc2de927"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/品質保証レベルは入口で選ぶ.md",
+      "new_path": "knowledge/principles/development-process/k-1fd2110eaa47e4f6.md",
+      "id": "k-1fd2110eaa47e4f6",
+      "source_sha256": "71040ce0293eb9f33a68fad7784c79ce369c077d9cdf57f62f2a89eb86337139",
+      "old_body_sha256": "497eb3d7f267ae9d0ee8671ed2524e8b91fdb3b3578f908b62a08f9035c8fcd2",
+      "migrated_body_sha256": "73af96425186d44916614fff6f4d9b89b33c63a4ed61ddaec1c65d0a9101ab81"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/外部依存のリスクはUpstream Issueも確認する.md",
+      "new_path": "knowledge/principles/development-process/k-7c01507f86f46660.md",
+      "id": "k-7c01507f86f46660",
+      "source_sha256": "16b525e998cf212fbdbad8e99d2a3f3d4c6a003f483652f3ee59adb8e5cf2b20",
+      "old_body_sha256": "419b8c4f641d4a85115d68dbf657d1b0c24ea315adc43579a7fb9933ad292cb9",
+      "migrated_body_sha256": "419b8c4f641d4a85115d68dbf657d1b0c24ea315adc43579a7fb9933ad292cb9"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/安全策は脅威モデルから選ぶ.md",
+      "new_path": "knowledge/principles/development-process/k-0c0c7182767c137a.md",
+      "id": "k-0c0c7182767c137a",
+      "source_sha256": "f872d7cc08e5ba36a453cd5dc1fc3d4c8d82922dd8ac24f7fbe017cfaf24e634",
+      "old_body_sha256": "8789412708e036ce490cb964ab9fa7399c5bfdd65a0dbad929409f78d8d02e1f",
+      "migrated_body_sha256": "8e02f2c4fd63c7ff44f3f80670990c00fc024b9dfc8fd8f7529820d0d24193ea"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/定期処理は停止時間を抑える頻度で実行する.md",
+      "new_path": "knowledge/principles/development-process/k-55e0d5d013745fda.md",
+      "id": "k-55e0d5d013745fda",
+      "source_sha256": "ff59b5710c1fb564209b45c204d2b1d12b3d3ca0dcca4e51154ae4edca4874cb",
+      "old_body_sha256": "db045a208061030c2434a18c54c53a9dbcdbdd2c426c2e431bbbffb957442af6",
+      "migrated_body_sha256": "dc5d058f46026a592547455427e9feb22fe3d10b7f2a3874a2b46aa9936c3f07"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/局所品質が十分なら検証対象を上位へ移す.md",
+      "new_path": "knowledge/principles/development-process/k-7edd2b79c450ab07.md",
+      "id": "k-7edd2b79c450ab07",
+      "source_sha256": "e481bf5a1a6183cdddbd943d1a5b70aef380fd80fb6171b8c49026581d919c28",
+      "old_body_sha256": "40ee26f2ef72debf1df565280fe4fe4aff45108df1a93c631cb2d931f9a12b3e",
+      "migrated_body_sha256": "0984398d6c473f1f7d36bec10142ce3fd82d316ff6cd5c131e74abfdc1e7b03b"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/承認ゲートは責任境界として設計する.md",
+      "new_path": "knowledge/principles/development-process/k-bd28870e8387958e.md",
+      "id": "k-bd28870e8387958e",
+      "source_sha256": "396583aaa0e6e73fd2edf0edb29e131a4bb7d7db5295d378c75c9dc058b247cf",
+      "old_body_sha256": "bbd59a5db0c6dccc59fbe2988faabbebfb010a788063cc796241a9d7ded2e899",
+      "migrated_body_sha256": "f2b4e162b75ca7dd337a510967365f0a0efe6ba2788cce1f5e3199e1599639bf"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/抽象化は複数の具体例から行う.md",
+      "new_path": "knowledge/principles/development-process/k-c8c18cc4a6746b87.md",
+      "id": "k-c8c18cc4a6746b87",
+      "source_sha256": "88d847fc60675752c9083c75918be79b3ecd5d62b25ac36388bb6e37206a3f03",
+      "old_body_sha256": "f7a790b61cfd152e6bda88f61220dae821055a1646418d79257d8085a6e99f95",
+      "migrated_body_sha256": "f7a790b61cfd152e6bda88f61220dae821055a1646418d79257d8085a6e99f95"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/改善バックログは現在状態から再評価する.md",
+      "new_path": "knowledge/principles/development-process/k-5c5789a9053c209a.md",
+      "id": "k-5c5789a9053c209a",
+      "source_sha256": "44dacbe4ad2fb40b1abd910121f1873e5d5159c8c59fcdf9e66334f06005ea63",
+      "old_body_sha256": "1ff71f6ca0ebe78ace5d1108676aadf1b0626cd42bffd7b427cd51194e50b1f0",
+      "migrated_body_sha256": "d1169c2cc46f7ebd7c243c6309105803bc4083fcefad774ef44083f0025f6088"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/暫定対応は恒久対応までの総コストで判断する.md",
+      "new_path": "knowledge/principles/development-process/k-3f83490d1cf6bf02.md",
+      "id": "k-3f83490d1cf6bf02",
+      "source_sha256": "b12aa42822d94cc0172a4db682a17b0ca9987376fba27535abe7adbd37e0b07c",
+      "old_body_sha256": "8b00b6818f3e56d0ad37f36eb5c8e9ba520f8c7cf9b91c1f1db53e6090bb2c49",
+      "migrated_body_sha256": "cc2283dfb725de9b90f8bd0c05480be608341d41e2a43801ddf31d6c98e7a532"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/標準規格は相互運用性の最低境界として使う.md",
+      "new_path": "knowledge/principles/development-process/k-37ea96230a1cf568.md",
+      "id": "k-37ea96230a1cf568",
+      "source_sha256": "09a62286267aa42b769c79ed1dce4563a362c651fca1273f53f5354f05e0b41f",
+      "old_body_sha256": "81202fe4202a61c80665819c9f06938dc74bdb0a1e2284707077b53f257002ea",
+      "migrated_body_sha256": "81202fe4202a61c80665819c9f06938dc74bdb0a1e2284707077b53f257002ea"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/汎用Workflowは解決する問題を一般化する.md",
+      "new_path": "knowledge/principles/development-process/k-8f683f6261a605b6.md",
+      "id": "k-8f683f6261a605b6",
+      "source_sha256": "b48dcb6c445bfeefe80e394a1f79e1562056b9b056e3b7911832f4fe99e83108",
+      "old_body_sha256": "bf9ec84aa8ef38254a680a8091423543b77b7233cbe5ac4ece13bc5fd72b20ac",
+      "migrated_body_sha256": "bf9ec84aa8ef38254a680a8091423543b77b7233cbe5ac4ece13bc5fd72b20ac"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/状態管理方式は現在の不変条件で選ぶ.md",
+      "new_path": "knowledge/principles/development-process/k-dd48dc1f30a5dbac.md",
+      "id": "k-dd48dc1f30a5dbac",
+      "source_sha256": "037ceb2270eecf23ad6915e2116421b5dce445dfcd821822dfee05748eb26fbc",
+      "old_body_sha256": "56bbe855460f98dee65a0d801a0b0da76d2f2ed5f402f30fa68e3a2c40aa3e0a",
+      "migrated_body_sha256": "520576db6e750417c3dd2b0f364385dbdc5d2411165f4763b65b9bf7a92ab559"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/自己レビューと独立レビューで異なる失敗を検出する.md",
+      "new_path": "knowledge/principles/development-process/k-12584bf597c40b01.md",
+      "id": "k-12584bf597c40b01",
+      "source_sha256": "c8a84c15b6faaeb2d618cf4d00abb675412b844c7b7a782413587fd35c12e4f1",
+      "old_body_sha256": "ada9f297504e8084ae8987243d2084930098b15d7c0be363a6cace789a7570db",
+      "migrated_body_sha256": "ada9f297504e8084ae8987243d2084930098b15d7c0be363a6cace789a7570db"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/複雑な計算の不具合は計算経路から調べる.md",
+      "new_path": "knowledge/principles/development-process/k-95ab8cac0e648a55.md",
+      "id": "k-95ab8cac0e648a55",
+      "source_sha256": "f4bee57f0877ac493c950666bef834dad6ca91fda32476177bb62f61f1d80a58",
+      "old_body_sha256": "56ef40a19342f40a249bb961c8f9645647b1398b9e3c6d155db52e5bb6d300a8",
+      "migrated_body_sha256": "56ef40a19342f40a249bb961c8f9645647b1398b9e3c6d155db52e5bb6d300a8"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/観測と改善を分離する.md",
+      "new_path": "knowledge/principles/development-process/k-082f394197334891.md",
+      "id": "k-082f394197334891",
+      "source_sha256": "c588c8e32d7629c0447da2c931bcb246dd449762aa3e33336c534b0e851e76a2",
+      "old_body_sha256": "e084cd68d4bff17a0a52c9c47de6b8c40c9add6006c7d9e3d85b1abb1d680818",
+      "migrated_body_sha256": "be89aab71bb6a76f7c6e5e0ce49a29d53b8ddc679a102be9c92bba10dc6224f7"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/設計では技術以外の制約条件も明示する.md",
+      "new_path": "knowledge/principles/development-process/k-18612ffa4bd0558c.md",
+      "id": "k-18612ffa4bd0558c",
+      "source_sha256": "247c228fa6ccfaff58d7e3c65f5bcf0776d1a17539a96fe9f2c758fdcf774736",
+      "old_body_sha256": "a6f7169f82c05a307bea3032b1b9df3e2fa8905dd64c69163de40a7e0ad038fb",
+      "migrated_body_sha256": "02a7045bb5f10ac8e70cc4ec25e49274918343b0d00f62c14c13ff22d44bd425"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/設計原則は将来の変更で検証可能にする.md",
+      "new_path": "knowledge/principles/development-process/k-d24184b6e646329f.md",
+      "id": "k-d24184b6e646329f",
+      "source_sha256": "e56cd588c743d47026106f03d5c31f132c0379322e323b5b0bd89f845177e52f",
+      "old_body_sha256": "69861c338f3caa1f094f246b76590899af92c8a2b2ba89215054021a08011259",
+      "migrated_body_sha256": "039940e60fd1a53034969f6d76db73ee84e08e0559cdc12c985248bf2b40928c"
+    },
+    {
+      "old_path": "knowledge/02-principles/開発プロセス/長寿命なCoreを短寿命なClientへ依存させない.md",
+      "new_path": "knowledge/principles/development-process/k-3ddb79c59977a9f0.md",
+      "id": "k-3ddb79c59977a9f0",
+      "source_sha256": "971e6273e955bb40f200e4204aa93662ebe001453bbc4bc6af810ed831b97907",
+      "old_body_sha256": "c9a41d5c66adb8c6ff0960c158fba1b69223866099861f1b2f05f2ac2e9eb826",
+      "migrated_body_sha256": "a8b22c4f8e3b4c575d3f86c1a42bfe0c3f613f41f004b5b2201b8fd56964dcdf"
+    },
+    {
+      "old_path": "knowledge/03-ideas/AWS/S3とCloudFrontで非公開コンテンツを配信する案.md",
+      "new_path": "knowledge/ideas/aws/k-6cfc44888ba6b730.md",
+      "id": "k-6cfc44888ba6b730",
+      "source_sha256": "77df2ab564b458e148c0d3925830e5cb50985add299c457c6dd293596528c547",
+      "old_body_sha256": "fd24bf429b43cd142454f845e2a9f42738c146a43ae31f5984d279ce1fedd28d",
+      "migrated_body_sha256": "fd24bf429b43cd142454f845e2a9f42738c146a43ae31f5984d279ce1fedd28d"
+    },
+    {
+      "old_path": "knowledge/03-ideas/Codex/ChatGPT Sitesをチーム向け小アプリに使う案.md",
+      "new_path": "knowledge/ideas/codex/k-f3633df9248e801a.md",
+      "id": "k-f3633df9248e801a",
+      "source_sha256": "d45b167a50076a54ca86abd771d5c6669c2239a2f147b88d5e1c8d7bbdee700d",
+      "old_body_sha256": "bac5e232ae7b0140ac75adc7174d32d80fe2266233ee64bdb684a9dc8c7cbeed",
+      "migrated_body_sha256": "483ac3b960fe340351a12fcfa538e2ccd62fadb057ea87bba74c9de4ca69bce1"
+    },
+    {
+      "old_path": "knowledge/03-ideas/Codex/Codex Schedulerで作業を継続する案.md",
+      "new_path": "knowledge/ideas/codex/k-b60be5784b16a225.md",
+      "id": "k-b60be5784b16a225",
+      "source_sha256": "bbc18b864e54cf444653f0fb8d9ec39e0d1b87e71f8141780e45dd7161a1daa1",
+      "old_body_sha256": "fe1fd0c789313cca8bbe2a41adf3ba708959b65dfd96fa3713a91d207c0928d0",
+      "migrated_body_sha256": "7d4161b081485e1ea13d4f5e156d46167edab80e87285251dd27ecc8d1749b42"
+    },
+    {
+      "old_path": "knowledge/03-ideas/アプリ開発/AWS LambdaでHonoを使う案.md",
+      "new_path": "knowledge/ideas/app-development/k-3a1a3f3653452faf.md",
+      "id": "k-3a1a3f3653452faf",
+      "source_sha256": "604c871b0d291060d5ebda203cb5374662eb4e6af30e02c272152562db38d9c4",
+      "old_body_sha256": "b188170ffe09000a51150d2b32b36ed823241fd7686243d20409e0899cfaef00",
+      "migrated_body_sha256": "b188170ffe09000a51150d2b32b36ed823241fd7686243d20409e0899cfaef00"
+    },
+    {
+      "old_path": "knowledge/03-ideas/開発プロセス/AI処理はキャッシュ効率を運用データで検証する.md",
+      "new_path": "knowledge/ideas/development-process/k-d8c1f72c69667e83.md",
+      "id": "k-d8c1f72c69667e83",
+      "source_sha256": "ddd9a11b688bc9864a33e759d351a96c027194dae2637b7ad47be42c441f9b05",
+      "old_body_sha256": "7b33ecee7d2a5e308c85f50e304fd64cea4bc969b8a5265536d53bf9a4ceea85",
+      "migrated_body_sha256": "26058274d6c5d8a9af3fb2652475309507b13e9ed4d0ce60557122dad4aad728"
+    }
+  ],
+  "archives": [
+    {
+      "old_path": ".state/curate-second-brain.txt",
+      "archive_path": "report/archive/legacy-state/curate-second-brain.txt",
+      "sha256": "fe251417b6ba8592aec30900704a993ded7f35df62d965e076c02982dbf4d9a3"
+    },
+    {
+      "old_path": ".state/daily-review.txt",
+      "archive_path": "report/archive/legacy-state/daily-review.txt",
+      "sha256": "fe251417b6ba8592aec30900704a993ded7f35df62d965e076c02982dbf4d9a3"
+    },
+    {
+      "old_path": "feedback/ai-feedback.md",
+      "archive_path": "report/archive/feedback/ai-feedback.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "old_path": "reports/daily/2026/08-30.md",
+      "archive_path": "report/archive/reports/daily/2026/08-30.md",
+      "sha256": "daf109c4c094c40046217c3836619993b55478de3811776d879177b17c7ce52c"
+    },
+    {
+      "old_path": "reports/daily/2026/08-31.md",
+      "archive_path": "report/archive/reports/daily/2026/08-31.md",
+      "sha256": "abade1ba62ffb4198ebca28d5e1ee9005296a230b9cad21e1e1bba29e5e32dbf"
+    },
+    {
+      "old_path": "reports/daily/2026/09-01.md",
+      "archive_path": "report/archive/reports/daily/2026/09-01.md",
+      "sha256": "af0ea12bace23fbded3f15ac40cb58c1f167b53d914b08d21dc04fcf0109a4fe"
+    },
+    {
+      "old_path": "reports/daily/2026/09-02.md",
+      "archive_path": "report/archive/reports/daily/2026/09-02.md",
+      "sha256": "da550b3d4ca2466980e7cc5f41c74e50b6e95d3ea3075d04a3a8830aee6e3fd5"
+    },
+    {
+      "old_path": "reports/daily/2026/09-03.md",
+      "archive_path": "report/archive/reports/daily/2026/09-03.md",
+      "sha256": "6736b22bca8f614eeeea9ef4e63238e58f8267bfc10efc381e46e71801fc17e9"
+    },
+    {
+      "old_path": "reports/daily/2026/09-04.md",
+      "archive_path": "report/archive/reports/daily/2026/09-04.md",
+      "sha256": "daf39241335feaa7e039bfdc1d77f42d6d59021005ab545ce0f5ca00fa14a48c"
+    },
+    {
+      "old_path": "reports/daily/2026/09-05.md",
+      "archive_path": "report/archive/reports/daily/2026/09-05.md",
+      "sha256": "3ad786c06e35edd1eb2fc9ea2ab3c233f87ee0dc616290c598d4e50bdc19fc2a"
+    },
+    {
+      "old_path": "reports/daily/2026/09-07.md",
+      "archive_path": "report/archive/reports/daily/2026/09-07.md",
+      "sha256": "0d7e93c00447962bd2e8fae0e9f03403f271d366167907e6b403c79092fab0ad"
+    },
+    {
+      "old_path": "reports/daily/2026/09-08.md",
+      "archive_path": "report/archive/reports/daily/2026/09-08.md",
+      "sha256": "d31588a8547baca180151fe0a3b6f57cb7fc6bc30322cc014821e28d06c32c29"
+    },
+    {
+      "old_path": "reports/daily/2026/09-09.md",
+      "archive_path": "report/archive/reports/daily/2026/09-09.md",
+      "sha256": "3f153e58e501023a18f9fcad16d6e81046b4af3979654bf602a653f83c87e317"
+    },
+    {
+      "old_path": "reports/daily/2026/09-10.md",
+      "archive_path": "report/archive/reports/daily/2026/09-10.md",
+      "sha256": "3f9d42249cc4aa7c6b2c80214bc8193c492428596845deb1ce9308ea74cf0a84"
+    },
+    {
+      "old_path": "reports/daily/2026/09-11.md",
+      "archive_path": "report/archive/reports/daily/2026/09-11.md",
+      "sha256": "e6d56e17baabb4976725f5dbf3785935d49a14d69e0e62c0ade8ef87567f84f8"
+    },
+    {
+      "old_path": "reports/daily/2026/09-12.md",
+      "archive_path": "report/archive/reports/daily/2026/09-12.md",
+      "sha256": "e37335729e4cf4b5170fafcde17be988911419e4624f99d7c173ef0e4a963790"
+    },
+    {
+      "old_path": "reports/daily/2026/09-13.md",
+      "archive_path": "report/archive/reports/daily/2026/09-13.md",
+      "sha256": "80a62779ce69d67a0b0c31b98647a598f639f10b3942a73837086b76b8a232ce"
+    },
+    {
+      "old_path": "reports/daily/2026/09-14.md",
+      "archive_path": "report/archive/reports/daily/2026/09-14.md",
+      "sha256": "37ebe450d8135dc3597f025f808cb1157d0247e973b5b608c467fdc1033a6ec4"
+    },
+    {
+      "old_path": "reports/daily/2026/09-15.md",
+      "archive_path": "report/archive/reports/daily/2026/09-15.md",
+      "sha256": "2ed6a6fbc132ad644e7d93d2dbbaf6914b405abfd896cc2dcfa99ade20900cb3"
+    },
+    {
+      "old_path": "reports/daily/2026/09-16.md",
+      "archive_path": "report/archive/reports/daily/2026/09-16.md",
+      "sha256": "cc5b19d16cd3b8282733dcb167e6219eee34d0d451c1da905e4f2ea5aae82fd6"
+    },
+    {
+      "old_path": "reports/daily/2026/09-17.md",
+      "archive_path": "report/archive/reports/daily/2026/09-17.md",
+      "sha256": "8b5e3ad4dc2af9845b03a016b03a04816f8e700d9b24aaede82baa97b0e37a83"
+    },
+    {
+      "old_path": "reports/daily/2026/09-18.md",
+      "archive_path": "report/archive/reports/daily/2026/09-18.md",
+      "sha256": "5c5dbfe761f78440191c153c9343551ad3cbd4c67f8643e5318388f7cd0137d0"
+    },
+    {
+      "old_path": "reports/daily/2026/09-19.md",
+      "archive_path": "report/archive/reports/daily/2026/09-19.md",
+      "sha256": "c2c193a0011ded5c073b36abfa9afa0fc0f2d7a5e77acfad3b07a9bbc1fbfb82"
+    },
+    {
+      "old_path": "reports/daily/2026/09-20.md",
+      "archive_path": "report/archive/reports/daily/2026/09-20.md",
+      "sha256": "07d6a0f0edf684e6e1a591f336cffc87151eb74893a02ff53743ce9503f6f3b8"
+    },
+    {
+      "old_path": "reports/daily/2026/09-21.md",
+      "archive_path": "report/archive/reports/daily/2026/09-21.md",
+      "sha256": "e601afc9b29ec0c0ea18a6e7a7584a15a13b281723ebeeea937b68be858a6bfa"
+    },
+    {
+      "old_path": "reports/daily/2026/09-22.md",
+      "archive_path": "report/archive/reports/daily/2026/09-22.md",
+      "sha256": "88be01002ee8f67e884be7154fd82026cd054702b571c1a9fef6ece6df5803ca"
+    },
+    {
+      "old_path": "reports/daily/2026/09-23.md",
+      "archive_path": "report/archive/reports/daily/2026/09-23.md",
+      "sha256": "98a197613413e436cf8562c39bc6647660657f2636c7a9beef29e6d1fa37cb3c"
+    },
+    {
+      "old_path": "reports/daily/2026/09-24.md",
+      "archive_path": "report/archive/reports/daily/2026/09-24.md",
+      "sha256": "332cf0de58cb08788a023c58e7cb2107f916d4f785976e86f9151ea3238a7c2b"
+    },
+    {
+      "old_path": "reports/daily/2026/09-25.md",
+      "archive_path": "report/archive/reports/daily/2026/09-25.md",
+      "sha256": "858c6f9d5ee683fd430e6136d583d411ecad06d039af3628a161ed9f6c7ac1ab"
+    },
+    {
+      "old_path": "reports/daily/2026/09-26.md",
+      "archive_path": "report/archive/reports/daily/2026/09-26.md",
+      "sha256": "2682e62b7c77285515d4107003d4adc4e4ff632aea36a076253b45a61ae0f7ec"
+    },
+    {
+      "old_path": "reports/daily/2026/09-27.md",
+      "archive_path": "report/archive/reports/daily/2026/09-27.md",
+      "sha256": "acb4aa55879ca315076c5bc3832a0ab469e945bccbba426ce74b0c824c688ffa"
+    },
+    {
+      "old_path": "reports/daily/2026/09-28.md",
+      "archive_path": "report/archive/reports/daily/2026/09-28.md",
+      "sha256": "10ce977ecf2282d02dd71698aef39b3667d8e9bc11157156825aea8f3611b286"
+    },
+    {
+      "old_path": "reports/daily/2026/09-29.md",
+      "archive_path": "report/archive/reports/daily/2026/09-29.md",
+      "sha256": "526f539676fb9a2a9f2b006dc10f4228fc2007b605a34f7e761b4175cf6c6924"
+    },
+    {
+      "old_path": "reports/daily/2026/09-30.md",
+      "archive_path": "report/archive/reports/daily/2026/09-30.md",
+      "sha256": "51f050803c4d3ce399daefc8511c16c5412dea24bc87448e2c6f7cd14eaf8f47"
+    },
+    {
+      "old_path": "reports/daily/2026/10-01.md",
+      "archive_path": "report/archive/reports/daily/2026/10-01.md",
+      "sha256": "ae79c874415fb9f1802c6e861fca896e4516852d4bdeb200bab58dc3b2a72573"
+    },
+    {
+      "old_path": "reports/daily/2026/10-02.md",
+      "archive_path": "report/archive/reports/daily/2026/10-02.md",
+      "sha256": "015e1df399a9d9e13b8c188077b2315d8249c9393fda528f728dfd0265a97f6b"
+    },
+    {
+      "old_path": "reports/daily/2026/10-03.md",
+      "archive_path": "report/archive/reports/daily/2026/10-03.md",
+      "sha256": "aa8c63ac1691903996792cd8e5247cd9c7c5e2f575255546ff8165a352e2e001"
+    },
+    {
+      "old_path": "reports/daily/2026/10-05.md",
+      "archive_path": "report/archive/reports/daily/2026/10-05.md",
+      "sha256": "119881fea56e25b68e1df3a3a2df2af48fd414fe941bdc6bd3bd77097afb454c"
+    },
+    {
+      "old_path": "reports/daily/2026/10-06.md",
+      "archive_path": "report/archive/reports/daily/2026/10-06.md",
+      "sha256": "5ebbbf1d3afdf19b6a3e63c8fd7e3ad5d2e23e9b9edb75de77662963b6bd41a9"
+    },
+    {
+      "old_path": "reports/daily/2026/10-07.md",
+      "archive_path": "report/archive/reports/daily/2026/10-07.md",
+      "sha256": "0e373d7d10a29e9f066571b68a037ce9be1896b8e1f0571c56d8ac98285f1b06"
+    },
+    {
+      "old_path": "reports/daily/2026/10-08.md",
+      "archive_path": "report/archive/reports/daily/2026/10-08.md",
+      "sha256": "1abe9ff0f52dff12c019fc9cb13e44125e98fed3dc54698c547f7c6b5c9a0320"
+    },
+    {
+      "old_path": "reports/daily/2026/10-09.md",
+      "archive_path": "report/archive/reports/daily/2026/10-09.md",
+      "sha256": "1f0fb2a0f2bed12e847d8a10ed9da17456c5741b1503fc757a3d24b3a79f296a"
+    },
+    {
+      "old_path": "reports/daily/2026/10-10.md",
+      "archive_path": "report/archive/reports/daily/2026/10-10.md",
+      "sha256": "c30869388222600baea6da999c9612101b2f4141bb2d0bac9610075c01aaa966"
+    },
+    {
+      "old_path": "reports/daily/2026/10-11.md",
+      "archive_path": "report/archive/reports/daily/2026/10-11.md",
+      "sha256": "b1a3f3e182ad032679915ff5d6defa22e69f665f73adf5c06beb005f450e17e6"
+    },
+    {
+      "old_path": "reports/daily/2026/10-12.md",
+      "archive_path": "report/archive/reports/daily/2026/10-12.md",
+      "sha256": "4a55cc3a8d9ba07fe6049219c02495cfb82697f9416b4c31ef35447529a9ff00"
+    },
+    {
+      "old_path": "reports/daily/2026/10-13.md",
+      "archive_path": "report/archive/reports/daily/2026/10-13.md",
+      "sha256": "2f0a67939251963e3f41944f87e53c7205586ecba7872fb475dadedaed690662"
+    },
+    {
+      "old_path": "reports/daily/2026/10-14.md",
+      "archive_path": "report/archive/reports/daily/2026/10-14.md",
+      "sha256": "f22759a8238984dc01b809b21c9d895b6c6a5df1dd169e4e9d9a3868f72e3b9b"
+    },
+    {
+      "old_path": "reports/daily/2026/10-15.md",
+      "archive_path": "report/archive/reports/daily/2026/10-15.md",
+      "sha256": "c7a8aff839f0959cac0f95f9a8e031eaca689de0b5f054f757bd57e2b27ef926"
+    },
+    {
+      "old_path": "reports/daily/2026/10-16.md",
+      "archive_path": "report/archive/reports/daily/2026/10-16.md",
+      "sha256": "f2171c1dc844cc355a058cb3ba3aa433235dbf54b9281f163504678cdf0ef068"
+    },
+    {
+      "old_path": "reports/daily/2026/10-17.md",
+      "archive_path": "report/archive/reports/daily/2026/10-17.md",
+      "sha256": "79aa7f2ae1f1c8d8c63eed6ad217083b4a3cc51559361d1ebd7d942e4029cd11"
+    },
+    {
+      "old_path": "reports/daily/2026/10-18.md",
+      "archive_path": "report/archive/reports/daily/2026/10-18.md",
+      "sha256": "c57fd4e800ebde67fe4a42062b1e0ddc0cb0ccff77c8c1df048a1754dad2349f"
+    },
+    {
+      "old_path": "reports/daily/2026/10-19.md",
+      "archive_path": "report/archive/reports/daily/2026/10-19.md",
+      "sha256": "e8e7d427b42902ca30409cbc8f692b51638cf813edce45a0ba766eac6e2d3d5d"
+    },
+    {
+      "old_path": "reports/daily/2026/10-20.md",
+      "archive_path": "report/archive/reports/daily/2026/10-20.md",
+      "sha256": "f7f06cace7e6c9f5c5c0e00c9f651e1eeefa1a8b1618b6f77081a1c527ffa055"
+    },
+    {
+      "old_path": "reports/daily/2026/10-21.md",
+      "archive_path": "report/archive/reports/daily/2026/10-21.md",
+      "sha256": "56cf5ed7e2cf652d2ed338d93b0fa1d5822e65d629a5405687098a0acc09a889"
+    },
+    {
+      "old_path": "reports/daily/2026/10-22.md",
+      "archive_path": "report/archive/reports/daily/2026/10-22.md",
+      "sha256": "1dc726b2ac59410c573a68c2204e3a1842658b4a6bfa57b24c5c6435fc00265a"
+    },
+    {
+      "old_path": "reports/daily/2026/10-23.md",
+      "archive_path": "report/archive/reports/daily/2026/10-23.md",
+      "sha256": "36b62cadae1b63ddf00d0642e5e9e7a13e8ced3336965ada3c07629770c0b03b"
+    },
+    {
+      "old_path": "reports/daily/2026/10-24.md",
+      "archive_path": "report/archive/reports/daily/2026/10-24.md",
+      "sha256": "6aa31eba39d9cfaf3efb6861e0a825cafaf7c2a9062d4938fcc64cd71213dd67"
+    },
+    {
+      "old_path": "reports/daily/2026/10-25.md",
+      "archive_path": "report/archive/reports/daily/2026/10-25.md",
+      "sha256": "a06183e88bb6553e1cb038eca06c4b2f80c7e4c522c14b323b9f6f909a25320f"
+    },
+    {
+      "old_path": "reports/daily/2026/10-26.md",
+      "archive_path": "report/archive/reports/daily/2026/10-26.md",
+      "sha256": "67617e9ace887f2e91842e153f18242762ba9ed257973356f486754b3b719c49"
+    },
+    {
+      "old_path": "reports/daily/2026/10-27.md",
+      "archive_path": "report/archive/reports/daily/2026/10-27.md",
+      "sha256": "aff57a6304fb58859f6e85f53612fd26aeb187c5341addc095c21333c9ce7a31"
+    },
+    {
+      "old_path": "reports/daily/2026/10-28.md",
+      "archive_path": "report/archive/reports/daily/2026/10-28.md",
+      "sha256": "d323ca83e583010abd848308a575b4a62fbfd8b92311f5414eb3e0c329188906"
+    },
+    {
+      "old_path": "reports/daily/2026/10-29.md",
+      "archive_path": "report/archive/reports/daily/2026/10-29.md",
+      "sha256": "011cf32e42ab477a4e0f3e349c8387168d751062b8dd49285640e85aa6323051"
+    },
+    {
+      "old_path": "reports/daily/2026/10-30.md",
+      "archive_path": "report/archive/reports/daily/2026/10-30.md",
+      "sha256": "d099d83f60160818c9f43786eb44b10893fd2bf234a95dea4da679a8958b59be"
+    },
+    {
+      "old_path": "reports/daily/2026/10-31.md",
+      "archive_path": "report/archive/reports/daily/2026/10-31.md",
+      "sha256": "210bcb565fec8928e918e2ccb3ae95b2395340dc557db5c126d32c8975fdf435"
+    },
+    {
+      "old_path": "reports/daily/2026/11-01.md",
+      "archive_path": "report/archive/reports/daily/2026/11-01.md",
+      "sha256": "fc07d34fc3461e1169ab416605d2fdf293f3d09bfc94e9d4ec24f340061575ad"
+    },
+    {
+      "old_path": "reports/daily/2026/11-02.md",
+      "archive_path": "report/archive/reports/daily/2026/11-02.md",
+      "sha256": "aecb2848fb45857fef30945c50fe878a51b2419434ee9baa2a03c1b5c8920245"
+    },
+    {
+      "old_path": "reports/weekly/2026/07-17.md",
+      "archive_path": "report/archive/reports/weekly/2026/07-17.md",
+      "sha256": "79cee91821378202eaea9400375ef699d8688fc4e60b6d5ecb2795f27e66b0b4"
+    },
+    {
+      "old_path": "reports/weekly/2026/07-19.md",
+      "archive_path": "report/archive/reports/weekly/2026/07-19.md",
+      "sha256": "558577a76ea47370a01469d5fb7e83da9fee0978f345787adf04be939d8ded1b"
+    },
+    {
+      "old_path": "reports/weekly/2026/07-26.md",
+      "archive_path": "report/archive/reports/weekly/2026/07-26.md",
+      "sha256": "fdc5f57b4bf8168c3bb1dc4042002d57f9c179101e18eff66c0ee4f56ae61419"
+    },
+    {
+      "old_path": "reports/weekly/2026/08-02.md",
+      "archive_path": "report/archive/reports/weekly/2026/08-02.md",
+      "sha256": "62430d0c3064158c3573661fbfb815eaa7a0fffd679b5fe5c6126a2eb5f2f379"
+    },
+    {
+      "old_path": "reports/weekly/2026/08-09.md",
+      "archive_path": "report/archive/reports/weekly/2026/08-09.md",
+      "sha256": "3e34f460d93081a65b0c8ea0b5231f38299c7ce91d2510c402a6f62ac9acac57"
+    },
+    {
+      "old_path": "reports/weekly/2026/08-16.md",
+      "archive_path": "report/archive/reports/weekly/2026/08-16.md",
+      "sha256": "30e43db82a47346aba62990868b08880372ed3c78c9a3e83af53fee254817f31"
+    },
+    {
+      "old_path": "reports/weekly/2026/08-22.md",
+      "archive_path": "report/archive/reports/weekly/2026/08-22.md",
+      "sha256": "b3ebf38ac48a69e6d8d9482fb9530d0415f85c9205ec619a78d8c4177a6ff58f"
+    },
+    {
+      "old_path": "reports/weekly/2026/08-24.md",
+      "archive_path": "report/archive/reports/weekly/2026/08-24.md",
+      "sha256": "1a4d9a01154eb86d1b62bf4da462ca158a50916f2f53f0e3142f89c15022df25"
+    },
+    {
+      "old_path": "signals/2026/08.md",
+      "archive_path": "report/archive/signals/2026/08.md",
+      "sha256": "fd6a2c4a7d78352f3683b79c842746cf8f3591305579936e288055df00bb42d2"
+    }
+  ],
+  "counts": {
+    "knowledge": 67,
+    "archived_reports": 71,
+    "archived_signals": 1,
+    "archived_feedback": 1,
+    "archived_state": 2
+  }
+}

@@ -1,0 +1,42 @@
+---
+id: k-d6c113cecb02d6e2
+title: キーマップを機能カテゴリ別のプレフィックスで整理する
+type: principle
+topic: neovim
+topic_label: Neovim
+tags:
+  - Neovim
+  - キーマップ
+  - 操作設計
+updated: 2026-08-24
+support_streak: 0
+opposition_streak: 0
+history_status: unknown
+related:
+  - k-521ed05503772955
+opposes: []
+evidence: []
+history: []
+sources: []
+---
+
+# キーマップを機能カテゴリ別のプレフィックスで整理する
+
+Neovim のキーマップは、機能カテゴリごとに共通のプレフィックスを割り当てると、個別の操作を丸暗記せずに候補を絞り込める。
+
+たとえば、検索やファイル選択を担う Telescope 系を `<leader>t`、Git 系を `<leader>g`、Markdown 系を `<leader>m`、Explorer やターミナルなどを開く操作を `<leader>o` で始める。続くキーには、カテゴリ内の具体的な操作を割り当てる。`<leader>oe` を Explorer に割り当てれば、`o` で「開く」、`e` で「Explorer」と段階的に思い出せる。
+
+```text
+<leader>t*  Telescope 系
+<leader>g*  Git 系
+<leader>m*  Markdown 系
+<leader>o*  開く操作（例: <leader>oe で Explorer）
+```
+
+新しいキーマップを追加するときは、まず既存のカテゴリへ配置できるか確認する。カテゴリに属する操作を同じプレフィックスへ集めることで、キーを「どのカテゴリの操作か」から段階的に思い出せるようになり、認知負荷を抑えられる。
+
+カテゴリは細かく分けすぎず、既存の割り当てとの衝突や一貫性も確認する。
+
+## 関連ナレッジ
+
+- [Quickfixは一連の移動操作で覚える](k-521ed05503772955.md): 一連の操作を機能カテゴリとしてまとめる具体例。

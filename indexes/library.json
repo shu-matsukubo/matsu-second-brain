@@ -1,0 +1,1023 @@
+{
+  "documents": [
+    {
+      "id": "k-09eeb3ef9aafd09d",
+      "path": "knowledge/facts/app-development/k-09eeb3ef9aafd09d.md",
+      "kind": "fact",
+      "title": "Hono で Google ログインを実装する",
+      "topic": "app-development",
+      "topicLabel": "アプリ開発",
+      "tags": [
+        "アプリ開発",
+        "Hono",
+        "Google",
+        "OAuth"
+      ],
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "k-63ec6b4ce9ba5b6b",
+      "path": "knowledge/facts/app-development/k-63ec6b4ce9ba5b6b.md",
+      "kind": "fact",
+      "title": "OAuth ログイン後のアプリセッションを設計する",
+      "topic": "app-development",
+      "topicLabel": "アプリ開発",
+      "tags": [
+        "OAuth",
+        "OpenID Connect",
+        "認証",
+        "セッション"
+      ],
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "k-a399c0657f69c609",
+      "path": "knowledge/facts/app-development/k-a399c0657f69c609.md",
+      "kind": "fact",
+      "title": "LINE Messaging API の送信方式を選ぶ",
+      "topic": "app-development",
+      "topicLabel": "アプリ開発",
+      "tags": [
+        "アプリ開発",
+        "通知",
+        "LINE"
+      ],
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "k-db267f70c5bcb7b4",
+      "path": "knowledge/facts/app-development/k-db267f70c5bcb7b4.md",
+      "kind": "fact",
+      "title": "OpenID Connectのユーザー識別にはissとsubを使う",
+      "topic": "app-development",
+      "topicLabel": "アプリ開発",
+      "tags": [
+        "OpenID Connect",
+        "ユーザー識別"
+      ],
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "k-80d43c7d7d3971e7",
+      "path": "knowledge/facts/aws/k-80d43c7d7d3971e7.md",
+      "kind": "fact",
+      "title": "API Gateway HTTP API の JWT オーソライザー設定",
+      "topic": "aws",
+      "topicLabel": "AWS",
+      "tags": [
+        "AWS",
+        "API Gateway",
+        "JWT",
+        "認証認可"
+      ],
+      "updated": "2026-08-26"
+    },
+    {
+      "id": "k-8d3f67394f671d3c",
+      "path": "knowledge/facts/aws/k-8d3f67394f671d3c.md",
+      "kind": "fact",
+      "title": "API Gateway の REST API と HTTP API における JWT 認証",
+      "topic": "aws",
+      "topicLabel": "AWS",
+      "tags": [
+        "AWS",
+        "API Gateway",
+        "JWT",
+        "認証認可"
+      ],
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "k-97d6709958a83deb",
+      "path": "knowledge/facts/cloudflare/k-97d6709958a83deb.md",
+      "kind": "fact",
+      "title": "Cloudflare Workers の初回デプロイ手順",
+      "topic": "cloudflare",
+      "topicLabel": "Cloudflare",
+      "tags": [
+        "Cloudflare",
+        "Workers",
+        "Wrangler"
+      ],
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "k-aa6d85a855837646",
+      "path": "knowledge/facts/cloudflare/k-aa6d85a855837646.md",
+      "kind": "fact",
+      "title": "Cloudflare Workers 無料枠の概要",
+      "topic": "cloudflare",
+      "topicLabel": "Cloudflare",
+      "tags": [
+        "Cloudflare",
+        "Workers",
+        "サーバーレス"
+      ],
+      "updated": "2026-08-29"
+    },
+    {
+      "id": "k-f7e33e41fd6f8b95",
+      "path": "knowledge/facts/cloudflare/k-f7e33e41fd6f8b95.md",
+      "kind": "fact",
+      "title": "Cloudflare Workers のシークレット管理",
+      "topic": "cloudflare",
+      "topicLabel": "Cloudflare",
+      "tags": [
+        "Cloudflare",
+        "Workers",
+        "Wrangler",
+        "シークレット"
+      ],
+      "updated": "2026-08-28"
+    },
+    {
+      "id": "k-15f9bd7c222b1115",
+      "path": "knowledge/facts/codex/k-15f9bd7c222b1115.md",
+      "kind": "fact",
+      "title": "GitHub から Codex cloud にタスクを委譲する",
+      "topic": "codex",
+      "topicLabel": "Codex",
+      "tags": [
+        "Codex",
+        "GitHub",
+        "クラウド実行"
+      ],
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "k-33a5d4987fc0872f",
+      "path": "knowledge/facts/codex/k-33a5d4987fc0872f.md",
+      "kind": "fact",
+      "title": "ChatGPT Sitesの公開共有と利用条件",
+      "topic": "codex",
+      "topicLabel": "Codex",
+      "tags": [
+        "ChatGPT Sites",
+        "公開共有",
+        "プラン"
+      ],
+      "updated": "2026-09-30"
+    },
+    {
+      "id": "k-9295e908c1b088c6",
+      "path": "knowledge/facts/codex/k-9295e908c1b088c6.md",
+      "kind": "fact",
+      "title": "Codex cloud の実行環境設定",
+      "topic": "codex",
+      "topicLabel": "Codex",
+      "tags": [
+        "Codex",
+        "クラウド実行",
+        "開発環境"
+      ],
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "k-5c212626fd61d868",
+      "path": "knowledge/facts/docker/k-5c212626fd61d868.md",
+      "kind": "fact",
+      "title": "Windows コンテナの実行条件",
+      "topic": "docker",
+      "topicLabel": "Docker",
+      "tags": [
+        "Docker",
+        "Windows",
+        "コンテナ"
+      ],
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "k-72df4a0acb401aee",
+      "path": "knowledge/facts/docker/k-72df4a0acb401aee.md",
+      "kind": "fact",
+      "title": "Docker コンテナの基本",
+      "topic": "docker",
+      "topicLabel": "Docker",
+      "tags": [
+        "Docker",
+        "コンテナ",
+        "開発環境"
+      ],
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "k-db6a704b4c1b4cca",
+      "path": "knowledge/facts/docker/k-db6a704b4c1b4cca.md",
+      "kind": "fact",
+      "title": "Dockerfile と Compose で開発環境を共有する",
+      "topic": "docker",
+      "topicLabel": "Docker",
+      "tags": [
+        "Docker",
+        "Dockerfile",
+        "Docker Compose",
+        "開発環境"
+      ],
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "k-0ad4026c9667ce8a",
+      "path": "knowledge/facts/git/k-0ad4026c9667ce8a.md",
+      "kind": "fact",
+      "title": "Git の作業領域とリモートの全体像",
+      "topic": "git",
+      "topicLabel": "Git",
+      "tags": [
+        "Git",
+        "バージョン管理"
+      ],
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "k-5baba0e54a9f1187",
+      "path": "knowledge/facts/git/k-5baba0e54a9f1187.md",
+      "kind": "fact",
+      "title": "Git の commit・merge・rebase の使い分け",
+      "topic": "git",
+      "topicLabel": "Git",
+      "tags": [
+        "Git",
+        "バージョン管理",
+        "ブランチ"
+      ],
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "k-ef264754e56ae439",
+      "path": "knowledge/facts/git/k-ef264754e56ae439.md",
+      "kind": "fact",
+      "title": "Git でコミットに含める差分を選ぶ",
+      "topic": "git",
+      "topicLabel": "Git",
+      "tags": [
+        "Git",
+        "バージョン管理",
+        "コミット"
+      ],
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "k-3a1a3f3653452faf",
+      "path": "knowledge/ideas/app-development/k-3a1a3f3653452faf.md",
+      "kind": "idea",
+      "title": "AWS LambdaでHonoを使う案",
+      "topic": "app-development",
+      "topicLabel": "アプリ開発",
+      "tags": [
+        "AWS Lambda",
+        "Hono"
+      ],
+      "updated": "2026-09-26"
+    },
+    {
+      "id": "k-6cfc44888ba6b730",
+      "path": "knowledge/ideas/aws/k-6cfc44888ba6b730.md",
+      "kind": "idea",
+      "title": "S3とCloudFrontで非公開コンテンツを配信する案",
+      "topic": "aws",
+      "topicLabel": "AWS",
+      "tags": [
+        "Amazon S3",
+        "CloudFront",
+        "配信"
+      ],
+      "updated": "2026-09-29"
+    },
+    {
+      "id": "k-b60be5784b16a225",
+      "path": "knowledge/ideas/codex/k-b60be5784b16a225.md",
+      "kind": "idea",
+      "title": "Codex Schedulerで作業を継続する案",
+      "topic": "codex",
+      "topicLabel": "Codex",
+      "tags": [
+        "Codex",
+        "Scheduler",
+        "state管理"
+      ],
+      "updated": "2026-10-02"
+    },
+    {
+      "id": "k-f3633df9248e801a",
+      "path": "knowledge/ideas/codex/k-f3633df9248e801a.md",
+      "kind": "idea",
+      "title": "ChatGPT Sitesをチーム向け小アプリに使う案",
+      "topic": "codex",
+      "topicLabel": "Codex",
+      "tags": [
+        "ChatGPT Sites",
+        "チーム共有",
+        "軽量アプリ"
+      ],
+      "updated": "2026-09-30"
+    },
+    {
+      "id": "k-68d79effd0909df6",
+      "path": "knowledge/ideas/development-process/k-68d79effd0909df6.md",
+      "kind": "idea",
+      "title": "AI判断とWorkflow分岐を分けてテストする案",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "AIエージェント",
+        "テスト",
+        "ワークフロー"
+      ],
+      "updated": "2026-11-03"
+    },
+    {
+      "id": "k-9b3a81a9daaf7d5a",
+      "path": "knowledge/ideas/development-process/k-9b3a81a9daaf7d5a.md",
+      "kind": "idea",
+      "title": "ドキュメントを読者と参照頻度で分ける案",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "ドキュメント設計",
+        "情報設計"
+      ],
+      "updated": "2026-11-03"
+    },
+    {
+      "id": "k-d8c1f72c69667e83",
+      "path": "knowledge/ideas/development-process/k-d8c1f72c69667e83.md",
+      "kind": "idea",
+      "title": "AI処理はキャッシュ効率を運用データで検証する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "AIツール",
+        "コスト最適化",
+        "キャッシュ"
+      ],
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "k-f36bc045f746da9e",
+      "path": "knowledge/ideas/development-process/k-f36bc045f746da9e.md",
+      "kind": "idea",
+      "title": "独立した手続きにSkillを絞る案",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "Skill",
+        "ワークフロー設計"
+      ],
+      "updated": "2026-11-03"
+    },
+    {
+      "id": "k-483e48a6197921ea",
+      "path": "knowledge/principles/app-development/k-483e48a6197921ea.md",
+      "kind": "principle",
+      "title": "アプリの通知先に Discord と LINE を使う際の選び方",
+      "topic": "app-development",
+      "topicLabel": "アプリ開発",
+      "tags": [
+        "アプリ開発",
+        "通知",
+        "Discord",
+        "LINE"
+      ],
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "k-082f394197334891",
+      "path": "knowledge/principles/development-process/k-082f394197334891.md",
+      "kind": "principle",
+      "title": "観測と改善を分離する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "観測",
+        "改善",
+        "Scope creep"
+      ],
+      "updated": "2026-09-24"
+    },
+    {
+      "id": "k-0c0c7182767c137a",
+      "path": "knowledge/principles/development-process/k-0c0c7182767c137a.md",
+      "kind": "principle",
+      "title": "安全策は脅威モデルから選ぶ",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "セキュリティ",
+        "脅威モデル"
+      ],
+      "updated": "2026-10-04"
+    },
+    {
+      "id": "k-12584bf597c40b01",
+      "path": "knowledge/principles/development-process/k-12584bf597c40b01.md",
+      "kind": "principle",
+      "title": "自己レビューと独立レビューで異なる失敗を検出する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "レビュー",
+        "独立レビュー",
+        "品質"
+      ],
+      "updated": "2026-10-21"
+    },
+    {
+      "id": "k-12ebb55403b0808f",
+      "path": "knowledge/principles/development-process/k-12ebb55403b0808f.md",
+      "kind": "principle",
+      "title": "仕様を詰める対話と実装エージェントは分ける",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "AI",
+        "仕様検討",
+        "壁打ち"
+      ],
+      "updated": "2026-08-27"
+    },
+    {
+      "id": "k-18612ffa4bd0558c",
+      "path": "knowledge/principles/development-process/k-18612ffa4bd0558c.md",
+      "kind": "principle",
+      "title": "設計では技術以外の制約条件も明示する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "設計",
+        "意思決定"
+      ],
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "k-18cd4b4f19159d05",
+      "path": "knowledge/principles/development-process/k-18cd4b4f19159d05.md",
+      "kind": "principle",
+      "title": "品質ゲートは追加価値で増やす",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "品質",
+        "レビュー",
+        "検証"
+      ],
+      "updated": "2026-10-31"
+    },
+    {
+      "id": "k-1c336721577e40fb",
+      "path": "knowledge/principles/development-process/k-1c336721577e40fb.md",
+      "kind": "principle",
+      "title": "AIフローでは能力・制御・判断知識を分離する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "AIエージェント",
+        "アーキテクチャ",
+        "責務分離"
+      ],
+      "updated": "2026-11-02"
+    },
+    {
+      "id": "k-1c9d5e44b0d5304d",
+      "path": "knowledge/principles/development-process/k-1c9d5e44b0d5304d.md",
+      "kind": "principle",
+      "title": "ツールは継続的な価値で採用を判断する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "ツール選定",
+        "意思決定"
+      ],
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "k-1fd2110eaa47e4f6",
+      "path": "knowledge/principles/development-process/k-1fd2110eaa47e4f6.md",
+      "kind": "principle",
+      "title": "品質保証レベルは入口で選ぶ",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "品質保証",
+        "Workflow",
+        "サービスレベル"
+      ],
+      "updated": "2026-10-23"
+    },
+    {
+      "id": "k-284229ca7cd4221b",
+      "path": "knowledge/principles/development-process/k-284229ca7cd4221b.md",
+      "kind": "principle",
+      "title": "上位Agentへの相談は必要時の共通能力にする",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "AIエージェント",
+        "エスカレーション",
+        "レビュー"
+      ],
+      "updated": "2026-10-08"
+    },
+    {
+      "id": "k-37ea96230a1cf568",
+      "path": "knowledge/principles/development-process/k-37ea96230a1cf568.md",
+      "kind": "principle",
+      "title": "標準規格は相互運用性の最低境界として使う",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "標準規格",
+        "相互運用性",
+        "lock-in"
+      ],
+      "updated": "2026-10-19"
+    },
+    {
+      "id": "k-3953b9c0e4266be4",
+      "path": "knowledge/principles/development-process/k-3953b9c0e4266be4.md",
+      "kind": "principle",
+      "title": "Agentは必要最小限にし専門性は知識で拡張する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "AIエージェント",
+        "専門性",
+        "Skill"
+      ],
+      "updated": "2026-10-22"
+    },
+    {
+      "id": "k-3ddb79c59977a9f0",
+      "path": "knowledge/principles/development-process/k-3ddb79c59977a9f0.md",
+      "kind": "principle",
+      "title": "長寿命なCoreを短寿命なClientへ依存させない",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "アーキテクチャ",
+        "正本",
+        "依存関係"
+      ],
+      "updated": "2026-08-31"
+    },
+    {
+      "id": "k-3e976cb288ac805d",
+      "path": "knowledge/principles/development-process/k-3e976cb288ac805d.md",
+      "kind": "principle",
+      "title": "Review単位とIntegration単位を分ける",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "レビュー",
+        "統合",
+        "Requirement",
+        "Task"
+      ],
+      "updated": "2026-09-02"
+    },
+    {
+      "id": "k-3f83490d1cf6bf02",
+      "path": "knowledge/principles/development-process/k-3f83490d1cf6bf02.md",
+      "kind": "principle",
+      "title": "暫定対応は恒久対応までの総コストで判断する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "意思決定"
+      ],
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "k-53b874d26fbc1ddd",
+      "path": "knowledge/principles/development-process/k-53b874d26fbc1ddd.md",
+      "kind": "principle",
+      "title": "AIツールは認知コストの削減で投資判断する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "AIツール",
+        "意思決定",
+        "認知負荷"
+      ],
+      "updated": "2026-10-06"
+    },
+    {
+      "id": "k-55e0d5d013745fda",
+      "path": "knowledge/principles/development-process/k-55e0d5d013745fda.md",
+      "kind": "principle",
+      "title": "定期処理は停止時間を抑える頻度で実行する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "定期処理",
+        "自動化",
+        "可用性"
+      ],
+      "updated": "2026-09-26"
+    },
+    {
+      "id": "k-5c5789a9053c209a",
+      "path": "knowledge/principles/development-process/k-5c5789a9053c209a.md",
+      "kind": "principle",
+      "title": "改善バックログは現在状態から再評価する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "改善",
+        "バックログ",
+        "現状確認"
+      ],
+      "updated": "2026-10-13"
+    },
+    {
+      "id": "k-7c01507f86f46660",
+      "path": "knowledge/principles/development-process/k-7c01507f86f46660.md",
+      "kind": "principle",
+      "title": "外部依存のリスクはUpstream Issueも確認する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "外部依存",
+        "OSS",
+        "Upstream Issue"
+      ],
+      "updated": "2026-10-27"
+    },
+    {
+      "id": "k-7edd2b79c450ab07",
+      "path": "knowledge/principles/development-process/k-7edd2b79c450ab07.md",
+      "kind": "principle",
+      "title": "局所品質が十分なら検証対象を上位へ移す",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "品質検証",
+        "Component",
+        "Workflow"
+      ],
+      "updated": "2026-10-30"
+    },
+    {
+      "id": "k-8f683f6261a605b6",
+      "path": "knowledge/principles/development-process/k-8f683f6261a605b6.md",
+      "kind": "principle",
+      "title": "汎用Workflowは解決する問題を一般化する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "Workflow設計",
+        "抽象化",
+        "Git運用"
+      ],
+      "updated": "2026-11-01"
+    },
+    {
+      "id": "k-95ab8cac0e648a55",
+      "path": "knowledge/principles/development-process/k-95ab8cac0e648a55.md",
+      "kind": "principle",
+      "title": "複雑な計算の不具合は計算経路から調べる",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "計算グラフ",
+        "派生値",
+        "デバッグ"
+      ],
+      "updated": "2026-10-25"
+    },
+    {
+      "id": "k-a9b0faffeeed8800",
+      "path": "knowledge/principles/development-process/k-a9b0faffeeed8800.md",
+      "kind": "principle",
+      "title": "Issueは現在の実装に照合してから設計する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "Issue",
+        "設計",
+        "実装確認"
+      ],
+      "updated": "2026-08-30"
+    },
+    {
+      "id": "k-b6bac51054c079bf",
+      "path": "knowledge/principles/development-process/k-b6bac51054c079bf.md",
+      "kind": "principle",
+      "title": "AIに設計を依頼するときは現在の構成を共有する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "設計",
+        "AI"
+      ],
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "k-bd28870e8387958e",
+      "path": "knowledge/principles/development-process/k-bd28870e8387958e.md",
+      "kind": "principle",
+      "title": "承認ゲートは責任境界として設計する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "承認",
+        "責任境界",
+        "Human-in-the-loop"
+      ],
+      "updated": "2026-09-24"
+    },
+    {
+      "id": "k-c2677cc313efd69a",
+      "path": "knowledge/principles/development-process/k-c2677cc313efd69a.md",
+      "kind": "principle",
+      "title": "AIセキュリティは入力経路と実行権限をセットで考える",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "AIエージェント",
+        "セキュリティ",
+        "最小権限"
+      ],
+      "updated": "2026-10-04"
+    },
+    {
+      "id": "k-c7312886320ad33f",
+      "path": "knowledge/principles/development-process/k-c7312886320ad33f.md",
+      "kind": "principle",
+      "title": "AIの操作制約はPolicyで結果を制限する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "AIエージェント",
+        "Policy",
+        "実行権限"
+      ],
+      "updated": "2026-10-24"
+    },
+    {
+      "id": "k-c8c18cc4a6746b87",
+      "path": "knowledge/principles/development-process/k-c8c18cc4a6746b87.md",
+      "kind": "principle",
+      "title": "抽象化は複数の具体例から行う",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "抽象化",
+        "共通化",
+        "ソフトウェア設計"
+      ],
+      "updated": "2026-10-20"
+    },
+    {
+      "id": "k-cace147d56d039c9",
+      "path": "knowledge/principles/development-process/k-cace147d56d039c9.md",
+      "kind": "principle",
+      "title": "マルチエージェントの並列度はタスク構造で決める",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "AIエージェント",
+        "タスク分解"
+      ],
+      "updated": "2026-10-18"
+    },
+    {
+      "id": "k-cb4b907775bc93a7",
+      "path": "knowledge/principles/development-process/k-cb4b907775bc93a7.md",
+      "kind": "principle",
+      "title": "AI Workflowは探索量と完了時間で評価する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "AIエージェント",
+        "Workflow",
+        "効率"
+      ],
+      "updated": "2026-10-16"
+    },
+    {
+      "id": "k-cff4d20a9bc43e30",
+      "path": "knowledge/principles/development-process/k-cff4d20a9bc43e30.md",
+      "kind": "principle",
+      "title": "AIの実行場所は責務から決める",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "AIエージェント",
+        "実行環境",
+        "最小権限"
+      ],
+      "updated": "2026-08-30"
+    },
+    {
+      "id": "k-d00d5434cb5bb73e",
+      "path": "knowledge/principles/development-process/k-d00d5434cb5bb73e.md",
+      "kind": "principle",
+      "title": "AIへの依頼は実装結果とともに保存する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "AIタスク",
+        "ナレッジ管理"
+      ],
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "k-d24184b6e646329f",
+      "path": "knowledge/principles/development-process/k-d24184b6e646329f.md",
+      "kind": "principle",
+      "title": "設計原則は将来の変更で検証可能にする",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "設計",
+        "レビュー",
+        "契約テスト"
+      ],
+      "updated": "2026-10-12"
+    },
+    {
+      "id": "k-dd48dc1f30a5dbac",
+      "path": "knowledge/principles/development-process/k-dd48dc1f30a5dbac.md",
+      "kind": "principle",
+      "title": "状態管理方式は現在の不変条件で選ぶ",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "状態管理",
+        "永続化",
+        "設計判断"
+      ],
+      "updated": "2026-10-29"
+    },
+    {
+      "id": "k-e4905c42b314c4c4",
+      "path": "knowledge/principles/development-process/k-e4905c42b314c4c4.md",
+      "kind": "principle",
+      "title": "パフォーマンス改善は発生頻度と影響度で優先順位を決める",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "開発プロセス",
+        "パフォーマンス",
+        "意思決定"
+      ],
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "k-ed9431132a1300be",
+      "path": "knowledge/principles/development-process/k-ed9431132a1300be.md",
+      "kind": "principle",
+      "title": "AIチャットは永続状態の更新境界で切り替える",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "AIチャット",
+        "永続状態",
+        "Source of Truth"
+      ],
+      "updated": "2026-10-28"
+    },
+    {
+      "id": "k-f1b6da308d1daaf7",
+      "path": "knowledge/principles/development-process/k-f1b6da308d1daaf7.md",
+      "kind": "principle",
+      "title": "エージェントのモデルは責務に応じて選ぶ",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "AIエージェント",
+        "モデル選択"
+      ],
+      "updated": "2026-10-09"
+    },
+    {
+      "id": "k-f51a362201719cec",
+      "path": "knowledge/principles/development-process/k-f51a362201719cec.md",
+      "kind": "principle",
+      "title": "AIエージェントには覚えておく仕事を任せる",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "AIエージェント",
+        "認知負荷"
+      ],
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "k-faeac1f2745de751",
+      "path": "knowledge/principles/development-process/k-faeac1f2745de751.md",
+      "kind": "principle",
+      "title": "不採用アーキテクチャは前提が変わったら再評価する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "アーキテクチャ",
+        "設計判断",
+        "前提条件"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "k-a3cbbc2c7f124a3d",
+      "path": "knowledge/principles/development-tools/k-a3cbbc2c7f124a3d.md",
+      "kind": "principle",
+      "title": "grepツールは検索性能と運用性で選ぶ",
+      "topic": "development-tools",
+      "topicLabel": "開発ツール",
+      "tags": [
+        "検索",
+        "ツール選定"
+      ],
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "k-20bf6db73d8aa7b6",
+      "path": "knowledge/principles/git/k-20bf6db73d8aa7b6.md",
+      "kind": "principle",
+      "title": "Git worktreeは独立案の比較に使う",
+      "topic": "git",
+      "topicLabel": "Git",
+      "tags": [
+        "Git worktree",
+        "案の比較",
+        "開発フロー"
+      ],
+      "updated": "2026-09-30"
+    },
+    {
+      "id": "k-521ed05503772955",
+      "path": "knowledge/principles/neovim/k-521ed05503772955.md",
+      "kind": "principle",
+      "title": "Quickfixは一連の移動操作で覚える",
+      "topic": "neovim",
+      "topicLabel": "Neovim",
+      "tags": [
+        "Neovim",
+        "Quickfix",
+        "操作設計"
+      ],
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "k-d6c113cecb02d6e2",
+      "path": "knowledge/principles/neovim/k-d6c113cecb02d6e2.md",
+      "kind": "principle",
+      "title": "キーマップを機能カテゴリ別のプレフィックスで整理する",
+      "topic": "neovim",
+      "topicLabel": "Neovim",
+      "tags": [
+        "Neovim",
+        "キーマップ",
+        "操作設計"
+      ],
+      "updated": "2026-08-24"
+    }
+  ],
+  "topics": [
+    {
+      "key": "app-development",
+      "label": "アプリ開発",
+      "path": "indexes/topics/app-development.md"
+    },
+    {
+      "key": "aws",
+      "label": "AWS",
+      "path": "indexes/topics/aws.md"
+    },
+    {
+      "key": "cloudflare",
+      "label": "Cloudflare",
+      "path": "indexes/topics/cloudflare.md"
+    },
+    {
+      "key": "codex",
+      "label": "Codex",
+      "path": "indexes/topics/codex.md"
+    },
+    {
+      "key": "development-process",
+      "label": "開発プロセス",
+      "path": "indexes/topics/development-process.md"
+    },
+    {
+      "key": "development-tools",
+      "label": "開発ツール",
+      "path": "indexes/topics/development-tools.md"
+    },
+    {
+      "key": "docker",
+      "label": "Docker",
+      "path": "indexes/topics/docker.md"
+    },
+    {
+      "key": "git",
+      "label": "Git",
+      "path": "indexes/topics/git.md"
+    },
+    {
+      "key": "neovim",
+      "label": "Neovim",
+      "path": "indexes/topics/neovim.md"
+    }
+  ]
+}

@@ -1,5 +1,12 @@
 import { parse as parseYaml } from 'yaml';
+import { validateKnowledge } from '../../../../scripts/lib/schema.mjs';
 import type { DocumentKind, KnowledgeDocument } from './library.ts';
+
+const TYPE_DIRECTORIES: Record<DocumentKind, string> = {
+  fact: 'facts',
+  principle: 'principles',
+  idea: 'ideas',
+};
 
 export function isAllowedMarkdownPath(path: string): boolean {
   // biome-ignore lint/suspicious/noControlCharactersInRegex: Reject control characters in user-supplied paths.
@@ -7,11 +14,11 @@ export function isAllowedMarkdownPath(path: string): boolean {
   const segments = path.split('/');
   if (segments.some((segment) => segment === '.' || segment === '..' || segment === ''))
     return false;
-  if (path.startsWith('indexes/')) return true;
   return (
+    segments.length === 4 &&
     segments[0] === 'knowledge' &&
-    ['01-facts', '02-principles', '03-ideas'].includes(segments[1] ?? '') &&
-    segments.length >= 4
+    ['facts', 'principles', 'ideas'].includes(segments[1] ?? '') &&
+    /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(segments[2] ?? '')
   );
 }
 
@@ -19,35 +26,30 @@ export function parseDocument(path: string, source: string): KnowledgeDocument |
   if (!isAllowedMarkdownPath(path)) return null;
   try {
     const frontmatter = source.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/);
-    const metadata: unknown = frontmatter ? parseYaml(frontmatter[1] ?? '') : {};
-    if (!metadata || typeof metadata !== 'object' || Array.isArray(metadata)) return null;
+    if (!frontmatter) return null;
+    const metadata: unknown = parseYaml(frontmatter[1] ?? '');
+    const validation = validateKnowledge(metadata);
+    if (!validation.valid || !metadata || typeof metadata !== 'object') return null;
     const fields = metadata as Record<string, unknown>;
-    const body = frontmatter ? source.slice(frontmatter[0].length) : source;
-    const filename = path.split('/').at(-1)?.replace(/\.md$/i, '') ?? path;
-    const title =
-      typeof fields.title === 'string' && fields.title.trim()
-        ? fields.title.trim()
-        : (body.match(/^#\s+(.+)$/m)?.[1]?.trim() ?? filename);
-    const kind: DocumentKind = path.startsWith('indexes/')
-      ? 'index'
-      : path.startsWith('knowledge/01-facts/')
-        ? 'fact'
-        : path.startsWith('knowledge/02-principles/')
-          ? 'principle'
-          : 'idea';
-    const topic =
-      typeof fields.topic === 'string'
-        ? fields.topic
-        : kind === 'index'
-          ? path.startsWith('indexes/topics/')
-            ? filename
-            : ''
-          : (path.split('/')[2] ?? '');
-    const tags = Array.isArray(fields.tags)
-      ? fields.tags.filter((tag): tag is string => typeof tag === 'string')
-      : [];
-    const updated = typeof fields.updated === 'string' ? fields.updated : undefined;
-    return { path, kind, title, topic, tags, ...(updated ? { updated } : {}), body: body.trim() };
+    const type = fields.type as DocumentKind;
+    const parts = path.split('/');
+    if (
+      parts[1] !== TYPE_DIRECTORIES[type] ||
+      parts[2] !== fields.topic ||
+      parts.at(-1) !== `${fields.id}.md`
+    )
+      return null;
+    return {
+      id: fields.id as string,
+      path,
+      kind: type,
+      title: fields.title as string,
+      topic: fields.topic as string,
+      topicLabel: fields.topic_label as string,
+      tags: fields.tags as string[],
+      updated: fields.updated as string,
+      body: source.slice(frontmatter[0].length).trim(),
+    };
   } catch {
     return null;
   }
