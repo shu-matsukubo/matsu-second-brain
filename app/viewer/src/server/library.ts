@@ -1,8 +1,14 @@
-import type { Article, DocumentMetadata, Library, ViewerIndex } from '../shared/library';
+import type {
+  Article,
+  DocumentMetadata,
+  Library,
+  TopicMetadata,
+  ViewerIndex,
+} from '../shared/library';
 import { isAllowedMarkdownPath, parseDocument } from '../shared/markdown';
 
 const REPOSITORY_API = 'https://api.github.com/repos/shu-matsukubo/matsu-second-brain';
-const INDEX_PATH = 'app/viewer/library-index.json';
+const INDEX_PATH = 'indexes/library.json';
 const CACHE_TTL = 60_000;
 export const SHA_PATTERN = /^[a-f0-9]{40}$/;
 
@@ -87,33 +93,75 @@ async function getLatestMainCommit(token: string): Promise<GithubCommit> {
 
 function readIndex(source: string): ViewerIndex {
   const index = JSON.parse(source) as ViewerIndex;
-  if (!Array.isArray(index.documents)) throw new Error('invalid_index');
-  const seen = new Set<string>();
+  if (!Array.isArray(index.documents) || !Array.isArray(index.topics))
+    throw new Error('invalid_index');
+  const seenPaths = new Set<string>();
+  const seenIds = new Set<string>();
   const documents = index.documents.map((doc): DocumentMetadata => {
     if (
+      typeof doc.id !== 'string' ||
+      !doc.id ||
       typeof doc.path !== 'string' ||
       !isAllowedMarkdownPath(doc.path) ||
-      seen.has(doc.path) ||
-      !['index', 'fact', 'principle', 'idea'].includes(doc.kind) ||
+      doc.path.split('/').at(-1) !== `${doc.id}.md` ||
+      doc.path.split('/')[1] !==
+        ({ fact: 'facts', principle: 'principles', idea: 'ideas' } as const)[
+          doc.kind as 'fact' | 'principle' | 'idea'
+        ] ||
+      doc.path.split('/')[2] !== doc.topic ||
+      seenPaths.has(doc.path) ||
+      seenIds.has(doc.id) ||
+      !['fact', 'principle', 'idea'].includes(doc.kind) ||
       typeof doc.title !== 'string' ||
+      !doc.title.trim() ||
       typeof doc.topic !== 'string' ||
+      !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(doc.topic) ||
+      typeof doc.topicLabel !== 'string' ||
+      !doc.topicLabel.trim() ||
       !Array.isArray(doc.tags) ||
       !doc.tags.every((tag) => typeof tag === 'string') ||
-      (doc.updated !== undefined && typeof doc.updated !== 'string')
+      typeof doc.updated !== 'string' ||
+      Number.isNaN(Date.parse(doc.updated))
     )
       throw new Error('invalid_index');
-    seen.add(doc.path);
+    seenPaths.add(doc.path);
+    seenIds.add(doc.id);
     // Explicit projection prevents an accidentally committed body from reaching the client.
     return {
+      id: doc.id,
       path: doc.path,
       kind: doc.kind,
       title: doc.title,
       topic: doc.topic,
+      topicLabel: doc.topicLabel,
       tags: doc.tags,
-      ...(doc.updated ? { updated: doc.updated } : {}),
+      updated: doc.updated,
     };
   });
-  return { documents };
+  const topicMap = new Map<string, TopicMetadata>();
+  for (const topic of index.topics) {
+    if (
+      !topic ||
+      typeof topic.key !== 'string' ||
+      !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(topic.key) ||
+      typeof topic.label !== 'string' ||
+      typeof topic.path !== 'string' ||
+      topic.path !== `indexes/topics/${topic.key}.md` ||
+      topicMap.has(topic.key)
+    )
+      throw new Error('invalid_index');
+    topicMap.set(topic.key, { key: topic.key, label: topic.label, path: topic.path });
+  }
+  const documentTopics = new Set(documents.map((doc) => doc.topic));
+  if (
+    topicMap.size !== documentTopics.size ||
+    [...documentTopics].some((key) => !topicMap.has(key)) ||
+    documents.some(
+      (doc) => !topicMap.has(doc.topic) || topicMap.get(doc.topic)?.label !== doc.topicLabel,
+    )
+  )
+    throw new Error('invalid_index');
+  return { documents, topics: [...topicMap.values()] };
 }
 
 async function getLibraryAtCommit(commit: GithubCommit, token: string): Promise<Library> {
@@ -137,7 +185,8 @@ export async function getArticle(path: string, snapshot: string, token: string):
   // A caller cannot use this API to read arbitrary historical commits.
   if (snapshot !== commit.sha) throw new Error('snapshot_changed');
   const library = await getLibraryAtCommit(commit, token);
-  if (!library.documents.some((doc) => doc.path === path)) throw new Error('document_not_found');
+  const indexedDocument = library.documents.find((doc) => doc.path === path);
+  if (!indexedDocument) throw new Error('document_not_found');
   return cached(`article:${snapshot}:${path}`, async () => {
     const tree = await cached(`tree:${commit.commit.tree.sha}`, () =>
       githubJson<{ tree: TreeEntry[]; truncated: boolean }>(
@@ -156,7 +205,17 @@ export async function getArticle(path: string, snapshot: string, token: string):
       ),
     );
     const document = parseDocument(path, source);
-    if (!document) throw new Error('invalid_document');
+    if (
+      !document ||
+      document.id !== indexedDocument.id ||
+      document.kind !== indexedDocument.kind ||
+      document.title !== indexedDocument.title ||
+      document.topic !== indexedDocument.topic ||
+      document.topicLabel !== indexedDocument.topicLabel ||
+      document.updated !== indexedDocument.updated ||
+      JSON.stringify(document.tags) !== JSON.stringify(indexedDocument.tags)
+    )
+      throw new Error('invalid_document');
     return { path, snapshot, body: document.body };
   });
 }

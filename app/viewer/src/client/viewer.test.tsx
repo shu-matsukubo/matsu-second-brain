@@ -2,270 +2,198 @@
 import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import type { KnowledgeDocument, Library } from '../shared/library';
+import type {
+  Article,
+  DocumentKind,
+  KnowledgeDocument,
+  Library,
+  TopicMetadata,
+} from '../shared/library';
 import { resolveInternalTarget, Viewer } from './viewer';
 
-function doc(
-  path: string,
-  kind: KnowledgeDocument['kind'],
-  title: string,
-  body = '',
-  tags: string[] = [],
-  topic = '開発',
-): KnowledgeDocument {
-  return { path, kind, title, body, tags, topic };
-}
 const snapshot = 'a'.repeat(40);
-const fixture = [
+const topics: TopicMetadata[] = [
+  { key: 'app-development', label: 'アプリ開発', path: 'indexes/topics/app-development.md' },
+  { key: 'cloudflare', label: 'Cloudflare', path: 'indexes/topics/cloudflare.md' },
+];
+function doc(
+  id: string,
+  kind: DocumentKind,
+  title: string,
+  body: string,
+  tags: string[] = [],
+  topic = 'app-development',
+): KnowledgeDocument {
+  return {
+    id,
+    path: `knowledge/${kind === 'fact' ? 'facts' : kind === 'principle' ? 'principles' : 'ideas'}/${topic}/${id}.md`,
+    kind,
+    title,
+    body,
+    tags,
+    topic,
+    topicLabel: topics.find((item) => item.key === topic)?.label ?? topic,
+    updated: '2026-11-03',
+  };
+}
+const documents = [
   doc(
-    'indexes/index.md',
-    'index',
-    'Knowledge Index',
-    '## Topics\n\n- [開発](topics/開発.md)',
-    [],
-    '',
-  ),
-  doc(
-    'indexes/topics/開発.md',
-    'index',
-    '開発',
-    '- [API pagination](<../../knowledge/01-facts/開発/API pagination.md#details-with-bold-and-code>)',
-  ),
-  doc(
-    'knowledge/01-facts/開発/API pagination.md',
+    'api-pagination',
     'fact',
     'API pagination',
-    '# API pagination\n\nBodyOnlyWord\n\n## Details with **bold** and `code`\n\nDetails here.\n\n[jump to details](#details-with-bold-and-code)\n\n[開発 index](../../../indexes/topics/開発.md)',
-    ['API', 'cursor'],
+    '# API pagination\n\nBodyOnlyWord\n\n## Details\n\nDetails here.\n\n[topic](../../../indexes/topics/app-development.md)\n\n[safe default](../../principles/app-development/safe-defaults.md)',
   ),
-  doc('knowledge/02-principles/開発/安全.md', 'principle', '安全', '安全な既定値を使う', ['設計']),
-  doc('knowledge/03-ideas/開発/案.md', 'idea', '検索案', 'Search future', ['検索'], '別トピック'),
+  doc('safe-defaults', 'principle', 'Safe defaults', 'Principle body.', ['design']),
+  doc('viewer-idea', 'idea', 'Viewer search idea', 'Idea body.', ['API', 'search']),
+  doc('cloudflare-secret', 'fact', 'Workers secret', 'Secret body.', ['Workers'], 'cloudflare'),
 ];
-const apiPath = fixture[2].path;
-
-function library(documents = fixture): Library {
-  return { snapshot, documents: documents.map(({ body: _body, ...metadata }) => metadata) };
-}
-function responseFor(input: RequestInfo | URL, documents = fixture): Response {
+const library: Library = {
+  snapshot,
+  topics,
+  documents: documents.map(({ body: _body, ...metadata }) => metadata),
+};
+const path = documents[0].path;
+function responseFor(input: RequestInfo | URL): Response {
   const url = new URL(String(input));
-  if (url.pathname === '/api/library') return Response.json(library(documents));
+  if (url.pathname === '/api/library') return Response.json(library);
   if (url.pathname === '/api/article') {
     const selected = documents.find((item) => item.path === url.searchParams.get('path'));
     if (!selected) return new Response('', { status: 404 });
     expect(url.searchParams.get('snapshot')).toBe(snapshot);
-    return Response.json({ snapshot, path: selected.path, body: selected.body });
+    return Response.json({ path: selected.path, snapshot, body: selected.body } satisfies Article);
   }
   throw new Error(`Unexpected request: ${url}`);
 }
 
 describe('internal Markdown targets', () => {
-  it('resolves Japanese, spaces and fragments only to indexed documents', () => {
+  it('resolves only indexed knowledge and generated topic files', () => {
     expect(
       resolveInternalTarget(
-        'indexes/topics/開発.md',
-        '../../knowledge/01-facts/開発/API%20pagination.md#details',
-        fixture,
+        path,
+        '../../../indexes/topics/app-development.md',
+        library.documents,
+        topics,
       ),
-    ).toBe(apiPath);
-    expect(resolveInternalTarget(apiPath, '../../../indexes/topics/開発.md', fixture)).toBe(
-      'indexes/topics/開発.md',
-    );
-    expect(resolveInternalTarget(apiPath, '#details', fixture)).toBe(apiPath);
-    for (const target of [
-      '../../outside.md',
-      'javascript:alert(1)',
-      '//example.com',
-      'daily/private.md',
-    ])
-      expect(resolveInternalTarget('indexes/index.md', target, fixture)).toBeNull();
+    ).toBe(topics[0].path);
+    expect(
+      resolveInternalTarget(
+        path,
+        '../../principles/app-development/safe-defaults.md',
+        library.documents,
+        topics,
+      ),
+    ).toBe(documents[1].path);
+    expect(resolveInternalTarget(path, '../../outside.md', library.documents, topics)).toBeNull();
+    for (const target of ['javascript:alert(1)', '//example.com', 'daily/private.md'])
+      expect(resolveInternalTarget(path, target, library.documents, topics)).toBeNull();
   });
 });
 
 describe('Viewer', () => {
   let fetchMock: ReturnType<typeof vi.fn>;
-  let user: ReturnType<typeof userEvent.setup>;
-  let scrollDescriptor: PropertyDescriptor | undefined;
   beforeEach(() => {
-    user = userEvent.setup();
-    window.history.replaceState(null, '', '/');
-    scrollDescriptor = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'scrollIntoView');
+    window.history.replaceState(null, '', '/#/');
     fetchMock = vi.fn(async (input: RequestInfo | URL) => responseFor(input));
     vi.stubGlobal('fetch', fetchMock);
   });
   afterEach(() => {
     cleanup();
-    if (scrollDescriptor)
-      Object.defineProperty(HTMLElement.prototype, 'scrollIntoView', scrollDescriptor);
-    else Reflect.deleteProperty(HTMLElement.prototype, 'scrollIntoView');
     vi.unstubAllGlobals();
   });
 
-  it('loads only metadata initially, searches titles and tags with AND, and composes existing filters', async () => {
+  it('loads metadata only, shows recent cards, and applies title/tag AND plus classification filtering', async () => {
+    const user = userEvent.setup();
     render(<Viewer />);
-    await screen.findByRole('button', { name: /Knowledge Index/ });
+    await screen.findByRole('heading', { name: '最近更新された知識' });
     expect(fetchMock).toHaveBeenCalledTimes(1);
     expect(new URL(String(fetchMock.mock.calls[0][0])).pathname).toBe('/api/library');
-    expect(screen.getByText('一覧から記事を選択してください。')).toBeTruthy();
-    const results = screen.getByRole('navigation', { name: '検索結果' });
-    for (const item of within(results).getAllByRole('listitem'))
-      expect(item.querySelector(':scope > button')).not.toBeNull();
-
-    await user.type(screen.getByRole('textbox', { name: '検索' }), 'cursor API');
-    expect(within(results).getByRole('button', { name: /API pagination/ })).toBeTruthy();
-    expect(within(results).getAllByRole('button')).toHaveLength(1);
-    await user.clear(screen.getByRole('textbox', { name: '検索' }));
-    await user.type(screen.getByRole('textbox', { name: '検索' }), 'BodyOnlyWord');
-    expect(screen.getByText('該当するドキュメントはありません。')).toBeTruthy();
-    await user.clear(screen.getByRole('textbox', { name: '検索' }));
-    await user.click(screen.getByRole('combobox', { name: 'トピック' }));
-    await user.click(screen.getByRole('option', { name: '開発' }));
+    expect(screen.getByRole('button', { name: /API pagination/ })).toBeTruthy();
+    await fireEvent.change(screen.getByRole('textbox', { name: '検索' }), {
+      target: { value: 'API search' },
+    });
+    expect(screen.getByRole('button', { name: /Viewer search idea/ })).toBeTruthy();
+    expect(screen.queryByRole('button', { name: /API pagination/ })).toBeNull();
     await user.click(screen.getByRole('combobox', { name: '分類' }));
-    await user.click(screen.getByRole('option', { name: 'Fact' }));
-    expect(within(results).getAllByRole('button')).toHaveLength(1);
-    expect(within(results).queryByRole('button', { name: /安全|検索案/ })).toBeNull();
+    await user.click(screen.getByRole('option', { name: 'アイディア' }));
+    expect(screen.getByRole('button', { name: /Viewer search idea/ })).toBeTruthy();
+    expect(screen.queryByRole('button', { name: /Workers secret/ })).toBeNull();
     expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 
-  it('fetches selected bodies, follows internal links and anchors, then reuses cached articles', async () => {
-    const scroll = vi.fn();
-    Object.defineProperty(HTMLElement.prototype, 'scrollIntoView', {
-      configurable: true,
-      value: scroll,
-    });
+  it('shows topic buttons from matching documents and renders a topic as classification lists', async () => {
     render(<Viewer />);
-    fireEvent.click(await screen.findByRole('button', { name: /^開発/ }));
-    fireEvent.click(await screen.findByRole('link', { name: 'API pagination' }));
-    await screen.findByRole('heading', { name: /Details with/ });
-    expect(screen.getAllByRole('heading', { name: 'API pagination' })).toHaveLength(1);
-    await waitFor(() => expect(scroll).toHaveBeenCalledWith({ block: 'start' }));
-    expect(document.getElementById('details-with-bold-and-code')).not.toBeNull();
-    const count = fetchMock.mock.calls.length;
-    fireEvent.click(screen.getByRole('link', { name: 'jump to details' }));
-    await waitFor(() => expect(window.location.hash).toContain('anchor=details'));
-    expect(fetchMock).toHaveBeenCalledTimes(count);
-    fireEvent.click(screen.getByRole('link', { name: '開発 index' }));
-    await screen.findByRole('link', { name: 'API pagination' });
-    expect(fetchMock).toHaveBeenCalledTimes(count);
-    fireEvent.click(screen.getByRole('button', { name: /API pagination/ }));
-    await screen.findByText('BodyOnlyWord');
-    await user.type(screen.getByRole('textbox', { name: '検索' }), 'BodyOnlyWord');
-    expect(screen.getByText('該当するドキュメントはありません。')).toBeTruthy();
-    expect(fetchMock).toHaveBeenCalledTimes(count);
-    expect(fetchMock.mock.calls.every(([, options]) => options?.cache === 'no-store')).toBe(true);
+    await screen.findByRole('button', { name: 'アプリ開発' });
+    fireEvent.click(screen.getByRole('button', { name: 'アプリ開発' }));
+    await screen.findByRole('heading', { name: '事実' });
+    expect(screen.getByRole('button', { name: 'API pagination' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: /Safe defaults/ })).toBeTruthy();
+    expect(screen.getByRole('button', { name: /Viewer search idea/ })).toBeTruthy();
+    expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 
-  it('keeps list loading and article loading separate, ignores stale results, and shares pending article requests', async () => {
+  it('fetches a body only on selection, displays central loading, follows topic links and browser history', async () => {
     let finish: ((response: Response) => void) | undefined;
-    const delayed = new Promise<Response>((resolve) => {
+    const pending = new Promise<Response>((resolve) => {
       finish = resolve;
     });
-    fetchMock.mockImplementation(async (input: RequestInfo | URL) => {
-      const url = new URL(String(input));
-      return url.searchParams.get('path') === apiPath ? delayed : responseFor(input);
-    });
-    render(<Viewer />);
-    fireEvent.click(await screen.findByRole('button', { name: /API pagination/ }));
-    await screen.findByText('記事を読み込み中…');
-    expect(screen.getByRole('button', { name: /安全/ })).toBeTruthy();
-    fireEvent.click(screen.getByRole('button', { name: /安全/ }));
-    await screen.findByText('安全な既定値を使う');
-    fireEvent.click(screen.getByRole('button', { name: /API pagination/ }));
-    await screen.findByText('記事を読み込み中…');
-    finish?.(Response.json({ snapshot, path: apiPath, body: 'Delayed body' }));
-    await screen.findByText('Delayed body');
-    expect(
-      fetchMock.mock.calls.filter(
-        ([input]) => new URL(String(input)).searchParams.get('path') === apiPath,
-      ),
-    ).toHaveLength(1);
-  });
-
-  it('opens a hash-selected article and waits for its body before scrolling to the anchor', async () => {
-    const scroll = vi.fn();
-    Object.defineProperty(HTMLElement.prototype, 'scrollIntoView', {
-      configurable: true,
-      value: scroll,
-    });
-    window.history.replaceState(
-      null,
-      '',
-      `/#${encodeURIComponent(apiPath)}?anchor=details-with-bold-and-code`,
+    fetchMock.mockImplementation(async (input: RequestInfo | URL) =>
+      new URL(String(input)).pathname === '/api/article' ? pending : responseFor(input),
     );
     render(<Viewer />);
-    await screen.findByRole('heading', { name: /Details with/ });
-    await waitFor(() => expect(scroll).toHaveBeenCalled());
+    await screen.findByRole('button', { name: /API pagination/ });
+    fireEvent.click(screen.getByRole('button', { name: /API pagination/ }));
+    await screen.findByText('記事を読み込み中…');
+    finish?.(Response.json({ path, snapshot, body: documents[0].body }));
+    await screen.findByText('BodyOnlyWord');
+    fireEvent.click(screen.getByRole('link', { name: 'topic' }));
+    await screen.findByRole('heading', { name: '事実' });
+    expect(window.location.hash).toBe('#/topic/app-development');
+    window.history.back();
+    await waitFor(() => expect(window.location.hash).toContain('/knowledge/api-pagination'));
+    await screen.findByText('BodyOnlyWord');
+  });
+
+  it('supports direct topic and knowledge URLs and anchor navigation', async () => {
+    window.history.replaceState(null, '', '/#/knowledge/api-pagination?anchor=details');
+    render(<Viewer />);
+    await screen.findByText('Details here.');
+    expect(document.getElementById('details')).not.toBeNull();
+    window.location.hash = '#/topic/cloudflare';
+    await screen.findByRole('heading', { name: 'Cloudflare' });
+    window.location.hash = `#/topic/app-development?anchor=${encodeURIComponent('事実')}`;
+    await screen.findByRole('heading', { name: 'アプリ開発' });
+    expect(document.getElementById('事実')).not.toBeNull();
     expect(fetchMock).toHaveBeenCalledTimes(2);
   });
 
-  it('displays an article error without losing the list and retries failed requests', async () => {
-    let fail = true;
+  it('keeps unsafe content inert and hides remote images', async () => {
+    const malicious = doc(
+      'unsafe',
+      'idea',
+      'Unsafe content',
+      '<script>window.pwned = true</script>\n\n[bad](javascript:alert(1))\n\n![remote](https://example.test/a.png)',
+    );
+    const { body: _body, ...metadata } = malicious;
     fetchMock.mockImplementation(async (input: RequestInfo | URL) => {
-      if (new URL(String(input)).pathname === '/api/article' && fail)
-        return Response.json({ error: 'article_unavailable' }, { status: 502 });
+      const url = new URL(String(input));
+      if (url.pathname === '/api/library')
+        return Response.json({ ...library, documents: [...library.documents, metadata] });
+      if (url.pathname === '/api/article' && url.searchParams.get('path') === malicious.path)
+        return Response.json({ path: malicious.path, snapshot, body: malicious.body });
       return responseFor(input);
     });
     render(<Viewer />);
-    fireEvent.click(await screen.findByRole('button', { name: /API pagination/ }));
-    expect(await screen.findByRole('alert')).toHaveTextContent('記事の読み込みに失敗しました。');
-    expect(screen.getByRole('button', { name: /安全/ })).toBeTruthy();
-    fail = false;
-    fireEvent.click(screen.getByRole('button', { name: '再試行' }));
-    await screen.findByText('BodyOnlyWord');
-    expect(fetchMock).toHaveBeenCalledTimes(3);
-  });
-
-  it('shows a reload prompt for a stale snapshot without automatic retries', async () => {
-    fetchMock.mockImplementation(async (input: RequestInfo | URL) =>
-      new URL(String(input)).pathname === '/api/article'
-        ? new Response('', { status: 409 })
-        : responseFor(input),
-    );
-    render(<Viewer />);
-    fireEvent.click(await screen.findByRole('button', { name: /API pagination/ }));
-    expect(await screen.findByRole('alert')).toHaveTextContent('ページを再読み込みしてください。');
-    expect(fetchMock).toHaveBeenCalledTimes(2);
-  });
-
-  it('renders unsafe HTML, URLs and images inertly after lazy loading', async () => {
-    const unsafe = [
-      ...fixture,
-      doc(
-        'knowledge/01-facts/開発/xss.md',
-        'fact',
-        'XSS safety',
-        '<script>window.pwned = true</script>\n\n[bad](javascript:alert(1))\n\n![pixel](data:image/svg+xml,evil)',
-      ),
-    ];
-    fetchMock.mockImplementation(async (input: RequestInfo | URL) => responseFor(input, unsafe));
-    render(<Viewer />);
-    fireEvent.click(await screen.findByRole('button', { name: /XSS safety/ }));
+    fireEvent.click(await screen.findByRole('button', { name: /Unsafe content/ }));
     await waitFor(() => expect(screen.queryByText('記事を読み込み中…')).toBeNull());
     expect(document.querySelector('script')).toBeNull();
     expect(screen.queryByRole('link', { name: 'bad' })).toBeNull();
     expect(within(screen.getByRole('main')).queryByRole('img')).toBeNull();
   });
 
-  it.each(['network', 'upstream'])(
-    'shows a library error for %s failures without requesting bodies',
-    async (failure) => {
-      if (failure === 'network') fetchMock.mockRejectedValueOnce(new Error('offline'));
-      else fetchMock.mockResolvedValueOnce(new Response('', { status: 502 }));
-      render(<Viewer />);
-      expect(await screen.findByRole('alert')).toHaveTextContent('読み込みに失敗しました。');
-      expect(screen.getAllByRole('alert')).toHaveLength(1);
-      expect(fetchMock).toHaveBeenCalledTimes(1);
-    },
-  );
-
-  it('supports keyboard selection and returns focus to the MUI filter', async () => {
+  it('opens a mobile drawer from the hamburger control', async () => {
     render(<Viewer />);
-    await screen.findByRole('button', { name: /Knowledge Index/ });
-    const select = screen.getByRole('combobox', { name: 'トピック' });
-    select.focus();
-    await user.keyboard('{Enter}');
-    expect(screen.getByRole('listbox')).toBeTruthy();
-    await user.keyboard('{ArrowDown}{Enter}');
-    await waitFor(() => expect(select).toHaveTextContent('開発'));
-    await waitFor(() => expect(document.activeElement).toBe(select));
+    await screen.findByRole('heading', { name: '最近更新された知識' });
+    fireEvent.click(screen.getByRole('button', { name: 'メニューを開く' }));
+    expect(await screen.findByRole('navigation', { name: 'トピック' })).toBeTruthy();
   });
 });

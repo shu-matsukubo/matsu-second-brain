@@ -1,0 +1,15 @@
+{
+  "name": "matsu-second-brain-workflow",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "brain": "node scripts/brain.mjs",
+    "test": "node --test scripts/test/*.test.mjs",
+    "test:workflow": "node --test scripts/test/*.test.mjs",
+    "index:generate": "node app/viewer/scripts/generate-index.ts",
+    "index:check": "node app/viewer/scripts/generate-index.ts --check"
+  },
+  "dependencies": {
+    "yaml": "2.9.1"
+  }
+}

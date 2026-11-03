@@ -1,0 +1,64 @@
+---
+id: k-72df4a0acb401aee
+title: Docker コンテナの基本
+type: fact
+topic: docker
+topic_label: Docker
+tags:
+  - Docker
+  - コンテナ
+  - 開発環境
+updated: 2026-08-24
+support_streak: 0
+opposition_streak: 0
+history_status: unknown
+related:
+  - k-db6a704b4c1b4cca
+  - k-5c212626fd61d868
+opposes: []
+evidence: []
+history: []
+sources:
+  - url: https://docs.docker.com/get-started/docker-overview/
+  - url: https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/
+  - url: https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-an-image/
+  - url: https://docs.docker.com/engine/containers/run/
+---
+
+# Docker コンテナの基本
+
+Docker は、アプリケーションとその実行に必要なファイルをまとめ、コンテナという隔離された環境で動かすためのプラットフォームである。
+
+コンテナは「仮想サーバー」というより、ホスト上で動く隔離されたプロセスとして捉えると正確である。コンテナごとにファイルシステム、ネットワーク、プロセスツリーなどが分離される一方、仮想マシンとは異なり、通常はホストのカーネルを共有する。
+
+## イメージとコンテナの関係
+
+イメージは、コンテナの実行に必要なファイル、ライブラリ、設定などをまとめた標準化されたパッケージである。コンテナは、そのイメージをもとに作成・起動される実行可能なインスタンスにあたる。
+
+ただし、コンテナ自体が常にサーバーになるわけではない。Web サーバーのような常駐プロセスだけでなく、バッチ処理やコマンドなどもコンテナで実行できる。コンテナの役割は、イメージや起動時に指定されたコマンドによって決まる。
+
+## 環境を揃えやすい理由
+
+コンテナは、アプリケーション本体だけでなく、ライブラリやランタイムなどの依存関係も含めて実行できる。同じイメージと同じ起動時の設定を使えば、開発者ごとの端末や検証・本番環境の違いによる影響を減らし、同じ構成を再現しやすくなる。
+
+ただし、Docker を使えば無条件に完全に同一の動作が保証されるわけではない。CPU アーキテクチャ、永続データ、環境変数、外部サービス、Docker の実行基盤など、イメージの外にある条件も動作に影響する。
+
+開発チームでイメージの構築手順と複数サービスの起動設定を共有する方法は、[Dockerfile と Compose で開発環境を共有する](k-db6a704b4c1b4cca.md)を参照する。
+
+Linux コンテナと Windows コンテナでは必要な実行基盤が異なる。Windows コンテナをローカルで扱う際の条件は、[Windows コンテナの実行条件](k-5c212626fd61d868.md)を参照する。
+
+## コンテナと仮想マシンの違い
+
+| 項目 | コンテナ | 仮想マシン |
+| --- | --- | --- |
+| 隔離の単位 | プロセス | OS 全体 |
+| カーネル | 通常はホストと共有 | ゲスト OS ごとに持つ |
+| 起動やサイズ | 比較的軽量 | 比較的大きい |
+| 主な用途 | アプリケーションと依存関係の配布・実行 | OS を含む環境全体の分離 |
+
+## 公式情報
+
+- [What is Docker?](https://docs.docker.com/get-started/docker-overview/)
+- [What is a container?](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/)
+- [What is an image?](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-an-image/)
+- [Running containers](https://docs.docker.com/engine/containers/run/)
