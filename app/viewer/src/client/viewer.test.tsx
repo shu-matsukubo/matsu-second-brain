@@ -1,5 +1,6 @@
 // @vitest-environment jsdom
 import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { KnowledgeDocument, LibraryPage } from '../shared/library';
 import { resolveInternalTarget, Viewer } from './viewer';
@@ -78,8 +79,10 @@ describe('internal markdown targets', () => {
 
 describe('Viewer', () => {
   let fetchMock: ReturnType<typeof vi.fn>;
+  let user: ReturnType<typeof userEvent.setup>;
   let scrollIntoViewDescriptor: PropertyDescriptor | undefined;
   beforeEach(() => {
+    user = userEvent.setup();
     window.history.replaceState(null, '', '/');
     scrollIntoViewDescriptor = Object.getOwnPropertyDescriptor(
       HTMLElement.prototype,
@@ -120,10 +123,18 @@ describe('Viewer', () => {
     });
     render(<Viewer />);
     await screen.findByRole('button', { name: /Knowledge Index/ });
+    const resultList = within(screen.getByRole('navigation', { name: '検索結果' })).getByRole(
+      'list',
+    );
+    const resultItems = within(resultList).getAllByRole('listitem');
+    expect(resultItems.length).toBeGreaterThan(0);
+    for (const item of resultItems) {
+      expect(item.querySelector(':scope > button')).not.toBeNull();
+    }
     await waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(2));
     const countAfterLoad = fetchMock.mock.calls.length;
     expect(fetchMock.mock.calls.every(([, options]) => options?.cache === 'no-store')).toBe(true);
-    fireEvent.click(screen.getByRole('button', { name: /^開発Index$/ }));
+    fireEvent.click(screen.getByRole('button', { name: /^開発/ }));
     await waitFor(() => expect(screen.getByRole('heading', { name: '開発' })).toBeTruthy());
     fireEvent.click(screen.getByRole('link', { name: /API pagination/ }));
     await waitFor(() =>
@@ -146,9 +157,11 @@ describe('Viewer', () => {
     fireEvent.click(screen.getByRole('button', { name: /安全/ }));
     await waitFor(() => expect(screen.getByRole('heading', { name: '安全' })).toBeTruthy());
     expect(reader.scrollTop).toBe(0);
-    fireEvent.change(screen.getByLabelText('トピック'), { target: { value: '開発' } });
-    fireEvent.change(screen.getByLabelText('分類'), { target: { value: 'fact' } });
-    fireEvent.change(screen.getByLabelText('検索'), { target: { value: 'cursor API' } });
+    await user.click(screen.getByRole('combobox', { name: 'トピック' }));
+    await user.click(screen.getByRole('option', { name: '開発' }));
+    await user.click(screen.getByRole('combobox', { name: '分類' }));
+    await user.click(screen.getByRole('option', { name: 'Fact' }));
+    await user.type(screen.getByRole('textbox', { name: '検索' }), 'cursor API');
     expect(await screen.findByRole('button', { name: /API pagination/ })).toBeTruthy();
     expect(screen.queryByRole('button', { name: /安全/ })).toBeNull();
     expect(fetchMock).toHaveBeenCalledTimes(countAfterLoad);
@@ -228,6 +241,7 @@ describe('Viewer', () => {
 
     render(<Viewer />);
     expect(await screen.findByRole('alert')).toHaveTextContent('読み込みに失敗しました。');
+    expect(screen.getAllByRole('alert')).toHaveLength(1);
     expect(fetchMock).toHaveBeenCalledTimes(4);
     expect(screen.queryByRole('button', { name: /Retry 0/ })).toBeNull();
   });
@@ -251,9 +265,10 @@ describe('Viewer', () => {
     });
     render(<Viewer />);
     await screen.findByRole('button', { name: /Knowledge Index/ });
-    fireEvent.change(screen.getByLabelText('検索'), { target: { value: 'pagination API' } });
+    await user.type(screen.getByRole('textbox', { name: '検索' }), 'pagination API');
     expect(await screen.findByRole('button', { name: /API pagination/ })).toBeTruthy();
-    fireEvent.change(screen.getByLabelText('検索'), { target: { value: 'javascript' } });
+    await user.clear(screen.getByRole('textbox', { name: '検索' }));
+    await user.type(screen.getByRole('textbox', { name: '検索' }), 'javascript');
     // Search includes the literal markdown body.
     expect(await screen.findByRole('button', { name: /XSS safety/ })).toBeTruthy();
     fireEvent.click(screen.getByRole('button', { name: /XSS safety/ }));
@@ -266,7 +281,7 @@ describe('Viewer', () => {
   it('shows empty and network error states', async () => {
     render(<Viewer />);
     await screen.findByRole('button', { name: /Knowledge Index/ });
-    fireEvent.change(screen.getByLabelText('検索'), { target: { value: 'no match at all' } });
+    await user.type(screen.getByRole('textbox', { name: '検索' }), 'no match at all');
     expect(screen.getByText('該当するドキュメントはありません。')).toBeTruthy();
   });
 
@@ -274,6 +289,19 @@ describe('Viewer', () => {
     fetchMock.mockRejectedValueOnce(new Error('offline'));
     render(<Viewer />);
     expect(await screen.findByRole('alert')).toHaveTextContent('読み込みに失敗しました。');
+    expect(screen.getAllByRole('alert')).toHaveLength(1);
     expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('supports keyboard selection in MUI menus and returns focus to the trigger', async () => {
+    render(<Viewer />);
+    await screen.findByRole('button', { name: /Knowledge Index/ });
+    const topicSelect = screen.getByRole('combobox', { name: 'トピック' });
+    topicSelect.focus();
+    await user.keyboard('{Enter}');
+    expect(screen.getByRole('listbox')).toBeTruthy();
+    await user.keyboard('{ArrowDown}{Enter}');
+    await waitFor(() => expect(topicSelect).toHaveTextContent('開発'));
+    await waitFor(() => expect(document.activeElement).toBe(topicSelect));
   });
 });

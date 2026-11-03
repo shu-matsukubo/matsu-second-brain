@@ -1,3 +1,21 @@
+import {
+  Alert,
+  Box,
+  Chip,
+  CircularProgress,
+  Divider,
+  FormControl,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  MenuItem,
+  Paper,
+  Select,
+  Stack,
+  TextField,
+  Typography,
+} from '@mui/material';
 import type { ReactNode } from 'react';
 import { isValidElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
@@ -204,76 +222,120 @@ export function Viewer() {
   }, []);
 
   return (
-    <div className="viewer-shell">
-      <aside className="sidebar" aria-label="ドキュメント一覧">
-        <div className="controls">
-          <input
-            aria-label="検索"
+    <Box className="viewer-shell">
+      <Paper
+        component="aside"
+        square
+        elevation={0}
+        className="sidebar"
+        aria-label="ドキュメント一覧"
+      >
+        <Stack className="controls" spacing={1.25}>
+          <TextField
+            size="small"
+            fullWidth
+            slotProps={{ htmlInput: { 'aria-label': '検索' } }}
             placeholder="検索"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
           />
-          <select
-            aria-label="トピック"
-            value={topic}
-            onChange={(event) => setTopic(event.target.value)}
-          >
-            <option value="">すべてのトピック</option>
-            {topics.map((value) => (
-              <option key={value}>{value}</option>
-            ))}
-          </select>
-          <select
-            aria-label="分類"
-            value={kind}
-            onChange={(event) => setKind(event.target.value as DocumentKind | '')}
-          >
-            {kinds.map((value) => (
-              <option key={value || 'all'} value={value}>
-                {value ? kindNames[value] : 'すべての分類'}
-              </option>
-            ))}
-          </select>
-        </div>
-        <nav className="document-list" aria-label="検索結果">
-          {status === 'loading' && <p className="state">読み込み中…</p>}
+          <FormControl size="small" fullWidth>
+            <Select
+              aria-label="トピック"
+              displayEmpty
+              value={topic}
+              renderValue={(value) => value || 'すべてのトピック'}
+              onChange={(event) => setTopic(event.target.value)}
+            >
+              <MenuItem value="">すべてのトピック</MenuItem>
+              {topics.map((value) => (
+                <MenuItem key={value} value={value}>
+                  {value}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+          <FormControl size="small" fullWidth>
+            <Select
+              aria-label="分類"
+              displayEmpty
+              value={kind}
+              renderValue={(value) => (value ? kindNames[value] : 'すべての分類')}
+              onChange={(event) => setKind(event.target.value as DocumentKind | '')}
+            >
+              {kinds.map((value) => (
+                <MenuItem key={value || 'all'} value={value}>
+                  {value ? kindNames[value] : 'すべての分類'}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Stack>
+        <Divider />
+        <Box component="nav" className="document-list" aria-label="検索結果">
+          {status === 'loading' && (
+            <Box className="state" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+              <CircularProgress size={18} aria-label="読み込み中" />
+              <Typography color="text.secondary">読み込み中…</Typography>
+            </Box>
+          )}
           {status === 'error' && (
-            <p className="state" role="alert">
+            <Alert severity="error" className="state">
               読み込みに失敗しました。
-            </p>
+            </Alert>
           )}
           {status === 'ready' && visible.length === 0 && (
-            <p className="state">該当するドキュメントはありません。</p>
+            <Typography className="state" color="text.secondary">
+              該当するドキュメントはありません。
+            </Typography>
           )}
-          {visible.map((doc) => (
-            <button
-              type="button"
-              key={doc.path}
-              className={`document-row${selected?.path === doc.path ? ' selected' : ''}`}
-              aria-current={selected?.path === doc.path ? 'page' : undefined}
-              onClick={() => navigate(doc.path)}
-            >
-              <span className="row-title">{doc.title}</span>
-              <span className="row-meta">
-                {kindNames[doc.kind]}
-                {doc.kind !== 'index' ? ` · ${doc.topic}` : ''}
-              </span>
-            </button>
-          ))}
-        </nav>
-      </aside>
-      <main ref={readerRef} className="reader" aria-live="polite">
+          <List disablePadding>
+            {visible.map((doc) => (
+              <ListItem key={doc.path} disablePadding>
+                <ListItemButton
+                  component="button"
+                  type="button"
+                  selected={selected?.path === doc.path}
+                  aria-current={selected?.path === doc.path ? 'page' : undefined}
+                  onClick={() => navigate(doc.path)}
+                >
+                  <ListItemText
+                    primary={doc.title}
+                    secondary={`${kindNames[doc.kind]}${doc.kind !== 'index' ? ` · ${doc.topic}` : ''}`}
+                    slotProps={{
+                      primary: { sx: { fontWeight: 600, overflowWrap: 'anywhere' } },
+                      secondary: { sx: { fontSize: '0.78rem' } },
+                    }}
+                  />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+      </Paper>
+      <Box component="main" ref={readerRef} className="reader" aria-live="polite">
         {status === 'error' ? (
-          <p className="reader-state">ドキュメントを読み込めませんでした。</p>
+          <Typography component="p" className="reader-state" color="error.main">
+            ドキュメントを読み込めませんでした。
+          </Typography>
         ) : selected ? (
           <article className="article">
             <header className="article-header">
-              <span className="kind-label">{kindNames[selected.kind]}</span>
-              <h1>{selected.title}</h1>
+              <Typography
+                component="span"
+                variant="overline"
+                color="primary.main"
+                sx={{ fontWeight: 700 }}
+              >
+                {kindNames[selected.kind]}
+              </Typography>
+              <Typography component="h1" variant="h1">
+                {selected.title}
+              </Typography>
               {selected.tags.length > 0 && (
                 <div className="tags">
                   {selected.tags.map((tag) => (
-                    <span key={tag}>{tag}</span>
+                    <Chip key={tag} size="small" label={tag} />
                   ))}
                 </div>
               )}
@@ -318,34 +380,64 @@ export function Viewer() {
                     );
                   },
                   h1: ({ children, node: _node, ...props }) => (
-                    <h1 id={headingSlug(textContent(children))} {...props}>
+                    <Typography
+                      component="h1"
+                      variant="h1"
+                      id={headingSlug(textContent(children))}
+                      {...props}
+                    >
                       {children}
-                    </h1>
+                    </Typography>
                   ),
                   h2: ({ children, node: _node, ...props }) => (
-                    <h2 id={headingSlug(textContent(children))} {...props}>
+                    <Typography
+                      component="h2"
+                      variant="h2"
+                      id={headingSlug(textContent(children))}
+                      {...props}
+                    >
                       {children}
-                    </h2>
+                    </Typography>
                   ),
                   h3: ({ children, node: _node, ...props }) => (
-                    <h3 id={headingSlug(textContent(children))} {...props}>
+                    <Typography
+                      component="h3"
+                      variant="h3"
+                      id={headingSlug(textContent(children))}
+                      {...props}
+                    >
                       {children}
-                    </h3>
+                    </Typography>
                   ),
                   h4: ({ children, node: _node, ...props }) => (
-                    <h4 id={headingSlug(textContent(children))} {...props}>
+                    <Typography
+                      component="h4"
+                      variant="h4"
+                      id={headingSlug(textContent(children))}
+                      {...props}
+                    >
                       {children}
-                    </h4>
+                    </Typography>
                   ),
                   h5: ({ children, node: _node, ...props }) => (
-                    <h5 id={headingSlug(textContent(children))} {...props}>
+                    <Typography
+                      component="h5"
+                      variant="h5"
+                      id={headingSlug(textContent(children))}
+                      {...props}
+                    >
                       {children}
-                    </h5>
+                    </Typography>
                   ),
                   h6: ({ children, node: _node, ...props }) => (
-                    <h6 id={headingSlug(textContent(children))} {...props}>
+                    <Typography
+                      component="h6"
+                      variant="h6"
+                      id={headingSlug(textContent(children))}
+                      {...props}
+                    >
                       {children}
-                    </h6>
+                    </Typography>
                   ),
                   img: ({ alt }) => <span className="image-alt">{alt ?? ''}</span>,
                 }}
@@ -357,7 +449,7 @@ export function Viewer() {
         ) : (
           <p className="reader-state">ドキュメントがありません。</p>
         )}
-      </main>
-    </div>
+      </Box>
+    </Box>
   );
 }
