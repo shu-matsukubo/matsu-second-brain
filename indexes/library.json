@@ -336,7 +336,7 @@
         "ドキュメント設計",
         "情報設計"
       ],
-      "updated": "2026-11-03"
+      "updated": "2026-11-04"
     },
     {
       "id": "k-d8c1f72c69667e83",
@@ -393,6 +393,19 @@
         "Scope creep"
       ],
       "updated": "2026-09-24"
+    },
+    {
+      "id": "k-0befd2ddf54d4781",
+      "path": "knowledge/principles/development-process/k-0befd2ddf54d4781.md",
+      "kind": "principle",
+      "title": "Workflowの状態は既存成果物から導出する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "Workflow設計",
+        "状態管理"
+      ],
+      "updated": "2026-11-05"
     },
     {
       "id": "k-0c0c7182767c137a",
@@ -474,7 +487,7 @@
         "アーキテクチャ",
         "責務分離"
       ],
-      "updated": "2026-11-02"
+      "updated": "2026-11-05"
     },
     {
       "id": "k-1c9d5e44b0d5304d",
@@ -598,7 +611,7 @@
         "意思決定",
         "認知負荷"
       ],
-      "updated": "2026-10-06"
+      "updated": "2026-11-04"
     },
     {
       "id": "k-55e0d5d013745fda",
@@ -737,7 +750,7 @@
         "セキュリティ",
         "最小権限"
       ],
-      "updated": "2026-10-04"
+      "updated": "2026-11-04"
     },
     {
       "id": "k-c7312886320ad33f",
@@ -942,7 +955,21 @@
         "案の比較",
         "開発フロー"
       ],
-      "updated": "2026-09-30"
+      "updated": "2026-11-04"
+    },
+    {
+      "id": "k-ea486b2c30bdf5ec",
+      "path": "knowledge/principles/learning/k-ea486b2c30bdf5ec.md",
+      "kind": "principle",
+      "title": "学習は全体像から実践課題を通じて深める",
+      "topic": "learning",
+      "topicLabel": "学習",
+      "tags": [
+        "学習",
+        "実践",
+        "体系学習"
+      ],
+      "updated": "2026-11-05"
     },
     {
       "id": "k-521ed05503772955",
@@ -1013,6 +1040,11 @@
       "key": "git",
       "label": "Git",
       "path": "indexes/topics/git.md"
+    },
+    {
+      "key": "learning",
+      "label": "学習",
+      "path": "indexes/topics/learning.md"
     },
     {
       "key": "neovim",

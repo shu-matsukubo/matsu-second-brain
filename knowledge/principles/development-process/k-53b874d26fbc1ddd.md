@@ -8,8 +8,8 @@ tags:
   - AIツール
   - 意思決定
   - 認知負荷
-updated: 2026-10-06
-support_streak: 0
+updated: 2026-11-04
+support_streak: 1
 opposition_streak: 0
 history_status: unknown
 related:
@@ -17,8 +17,18 @@ related:
   - k-1c9d5e44b0d5304d
   - k-d8c1f72c69667e83
 opposes: []
-evidence: []
-history: []
+evidence:
+  - direction: support
+    background: AIの生成コストが下がっても成果物の選択・理解・保守負担は残るため、余剰能力を成果物やRepositoryの量産ではなく、反復する判断基準や設計原則を再利用可能な知識として外部化することにも使う考えを明示した。人の認知コストを継続的に下げるという既存原則を支持している。
+    source_id: daily/2026/10/06-011049.md
+    origin: user
+    input_digest: 793ce8db2f4bd653334827afc2c1aa93b06463f659186d55507843b2946585c4
+    counted: true
+history:
+  - from: principle
+    to: principle
+    at: 2026-11-04
+    reason: 人間のdailyから、AIの余剰生成能力を判断基準の外部化へ使い、成果物量産による理解・保守負担を増やさない観点を補足した。
 sources: []
 ---
 
@@ -46,3 +56,5 @@ AIツールへの投資は、利用時間や作業時間の短縮だけでなく
 - [AIエージェントには覚えておく仕事を任せる](k-f51a362201719cec.md)
 - [ツールは継続的な価値で採用を判断する](k-1c9d5e44b0d5304d.md)
 - [AI処理はキャッシュ効率を運用データで検証する](../../ideas/development-process/k-d8c1f72c69667e83.md)
+
+AIの生成能力が余っていても、それだけを理由に機能やRepositoryを増やさない。生成物の理解・選択・保守にかかる認知負担も含めて価値を判断し、余力を繰り返す判断や設計原則の外部化へ使う選択肢を持つ。成果物そのものと、それを生む判断基準は別の資産として扱う。

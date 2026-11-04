@@ -1,0 +1,16 @@
+{
+  "notion:40e013b8-a22b-8164-833d-effabbf6908a": {
+    "source_digest": "56e6853dd807682c277d00cda1f9b844c864848a1524fe1a17b84aabfa110a15",
+    "input_key": "legacy-f6be3cb68d682f3ccb7015c81d36bd1ae989d698643976bc3c483a4abeabb039",
+    "operation_digest": "aa1e5c2eeda8ba0adc05239e1ea4dd87321c3c05686d23f96d4a18532affdb3e",
+    "knowledge_ids": [
+      "k-0befd2ddf54d4781",
+      "k-1c336721577e40fb"
+    ],
+    "paths": [
+      "knowledge/principles/development-process/k-0befd2ddf54d4781.md",
+      "knowledge/principles/development-process/k-1c336721577e40fb.md"
+    ],
+    "evidence_digest": "42887ae768a1f581d01a5b7575c61733e63753f33c5cbcffbfdfd1d048c65315"
+  }
+}

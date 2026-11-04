@@ -82,7 +82,7 @@ export function validateOperationPlan(value) {
     .map((key) => `unknown operation plan field: ${key}`);
   errors.push(...errorsFor(value, [
     ['version', (v) => v === 1, 'must equal 1'],
-    ['kind', (v) => ['daily', 'report', 'review'].includes(v), 'is invalid'],
+    ['kind', (v) => ['input', 'daily', 'report', 'review'].includes(v), 'is invalid'],
     ['source_id', (v) => typeof v === 'string' && !!v, 'must be non-empty'],
     ['source_digest', (v) => typeof v === 'string' && /^[a-f0-9]{64}$/.test(v), 'must be a SHA-256 hex digest'],
     ['writes', Array.isArray, 'must be an array'],

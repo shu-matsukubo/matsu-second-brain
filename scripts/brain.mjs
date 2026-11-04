@@ -5,17 +5,21 @@ import crypto from 'node:crypto';
 import process from 'node:process';
 import { spawnSync } from 'node:child_process';
 import YAML from 'yaml';
+import { inputStore, validateInputBody, parseInputRecord } from './lib/notion-input.mjs';
 import { validateKnowledge, validateReport, validateWorkflowState, validateOperationPlan } from './lib/schema.mjs';
 
 const rootFlag = process.argv.indexOf('--root');
 const root = path.resolve(rootFlag >= 0 ? process.argv[rootFlag + 1] : process.cwd());
 const args = process.argv.slice(2).filter((_, i, a) => a[i - 1] !== '--root' && a[i] !== '--root');
 const cmd = args[0] ?? 'help';
+const inputs = inputStore(root);
+const notionMode = fs.existsSync(path.join(root, 'config', 'notion-input.json'));
 const sha = (s) => crypto.createHash('sha256').update(s).digest('hex');
 const statePath = path.join(root, 'state', 'workflow.json');
 const journalPath = path.join(root, 'state', 'journal.json');
 const appliedDailyPath = path.join(root, 'state', 'applied-daily.json');
 const read = (p) => fs.readFileSync(p, 'utf8');
+const readJsonArgument = (p) => JSON.parse(p === '-' ? fs.readFileSync(0, 'utf8') : read(path.resolve(p)));
 const walk = (dir, accept = () => true) => {
   if (!fs.existsSync(dir)) return [];
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((d) => {
@@ -168,6 +172,7 @@ function validateTransitions(plan) {
   return errors;
 }
 function sourceDigestFor(file, kind) {
+  if (kind === 'input') return inputs.next()?.digest;
   const raw = read(file);
   if (kind === 'report') {
     const { meta, body } = yamlFromMarkdown(raw);
@@ -256,6 +261,7 @@ function reportItems() {
     .sort((a, b) => String(a.date).localeCompare(String(b.date)) || a.path.localeCompare(b.path));
 }
 function sourceHuman(pathname) {
+  if (pathname.startsWith('notion:')) return Boolean(inputs.source(pathname));
   const abs = path.resolve(root, pathname);
   if (!abs.startsWith(root + path.sep) || !fs.existsSync(abs) || hasSymlinkComponent(path.relative(root, abs).replaceAll('\\', '/'))) return false;
   const rel = path.relative(root, abs).replaceAll('\\', '/');
@@ -272,7 +278,10 @@ function validateKnowledgeSemantics(meta, filePath) {
     seen.add(e.input_digest);
     if (e.counted) {
       if (!sourceHuman(e.source_id)) return [`counted evidence source is not a human input: ${e.source_id}`];
-      if (!isSafeRelative(e.source_id) || !e.source_id.startsWith('daily/') && !e.source_id.startsWith('report/')) return [`counted evidence has an invalid source path: ${e.source_id}`];
+      if (e.source_id.startsWith('notion:')) {
+        const receipt = inputs.source(e.source_id);
+        if (receipt?.source_digest !== e.input_digest || receipt.input_key !== e.input_key) return [`counted Notion evidence does not match its receipt: ${e.source_id}`];
+      } else if (!isSafeRelative(e.source_id) || !e.source_id.startsWith('daily/') && !e.source_id.startsWith('report/')) return [`counted evidence has an invalid source path: ${e.source_id}`];
       if (e.direction === 'support') { support++; oppose = 0; }
       if (e.direction === 'oppose') { oppose++; support = 0; }
     }
@@ -295,13 +304,14 @@ function validateAll() {
     else { const r = validateReport(meta); if (!r.valid) failures.push(`${path.relative(root, p)}: ${r.errors.join('; ')}`); }
   }
   try { const s = loadState(); const v = validateWorkflowState(s); if (!v.valid) failures.push(`state: ${v.errors.join('; ')}`); } catch (e) { failures.push(e.message); }
+  try { inputs.next(); inputs.ledger(); } catch (e) { failures.push(`input: ${e.message}`); }
   return failures;
 }
 function planFromJournal(journal) {
   const allowedKeys = new Set(['version', 'kind', 'source_id', 'source_digest', 'writes', 'moves', 'daily_status_path', 'plan_digest', 'operation_digest', 'nextWrite', 'nextMove', 'phase']);
   if (!journal || typeof journal !== 'object' || Array.isArray(journal)) throw new Error('invalid pending journal: must be an object');
   if (Object.keys(journal).some((key) => !allowedKeys.has(key))) throw new Error('invalid pending journal: unexpected field');
-  if (!['daily', 'report', 'review'].includes(journal.kind)) throw new Error('invalid pending journal: missing or invalid kind');
+  if (!['input', 'daily', 'report', 'review'].includes(journal.kind)) throw new Error('invalid pending journal: missing or invalid kind');
   if (!Number.isInteger(journal.nextWrite) || !Number.isInteger(journal.nextMove)) throw new Error('invalid pending journal: invalid progress cursor');
   if (journal.phase !== undefined && journal.phase !== 'index-complete') throw new Error('invalid pending journal: invalid phase');
   const plan = {
@@ -327,7 +337,9 @@ function planFromJournal(journal) {
 }
 function selectNext() {
   if (fs.existsSync(journalPath)) return { kind: 'resume', journal: path.relative(root, journalPath).replaceAll('\\', '/') };
-  const daily = dailyItems()[0]; if (daily) return { kind: 'daily', ...daily };
+  const input = inputs.next(); if (input) return input;
+  if (notionMode && !args.includes('--input-empty')) return { kind: 'input_fetch', config: 'config/notion-input.json' };
+  const daily = !notionMode && dailyItems()[0]; if (daily) return { kind: 'daily', ...daily };
   const reports = reportItems();
   const selected = reports.find((r) => r.reopened || !['deferred', 'blocked', 'completed'].includes(r.status));
   if (selected) return { kind: 'report', ...selected };
@@ -337,14 +349,43 @@ function selectNext() {
 }
 function fail(message) { console.error(message); process.exitCode = 1; }
 function help() {
-  console.log(`Second Brain workflow CLI\n\nUsage: node scripts/brain.mjs <command> [options]\n\nCommands:\n  validate                      Validate knowledge/report/state files\n  next                          Print the next eligible primary target as JSON\n  apply PLAN.json               Validate and apply a deterministic plan\n  resume                        Resume the exact operation saved in state/journal.json; errors if absent\n  report-add REPORT.json        Add a report once by fingerprint\n  review-state                  Show whether review inputs changed since last idle checkpoint\n  review-complete FINGERPRINT   Check no work remains, then persist the idle checkpoint\nOptions: --root DIR              Operate on a fixture or repository root`);
+  console.log('Second Brain workflow CLI\n\nUsage: node scripts/brain.mjs <command> [JSON-file|-] [--root DIR]\n\nCommands:\n  next [--input-empty]           Resume input, request a Notion fetch, or select report/review\n  input-record FILE|-           Parse page_id/markdown into a canonical snapshot\n  input-stage FILE|-            Stage one verified Notion input\n  input-verify FILE|-           Compare the fetched input with the staged snapshot\n  apply FILE|-                  Apply a validated knowledge/report plan\n  resume                        Recover the exact saved journal\n  input-ack FILE|-              Clear the snapshot after verified Notion completion\n  validate                      Validate knowledge/report/state\n  report-add FILE               Add a report once by fingerprint\n  review-state [--input-empty]   Inspect review inputs\n  review-complete FINGERPRINT --input-empty\n                                Checkpoint after a successful empty Notion query');
+}
+
+// Serialize mutations across unattended runs; stale locks from dead processes are recoverable.
+let mutationLock;
+function acquireMutationLock() {
+  if (!['apply', 'resume', 'input-stage', 'input-ack', 'report-add', 'review-complete'].includes(cmd)) return;
+  const file = path.join(root, 'state', 'brain.lock');
+  if (hasSymlinkComponent('state/brain.lock')) throw new Error('workflow lock path contains a symlink');
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  if (fs.existsSync(file)) {
+    const owner = JSON.parse(read(file));
+    if (!Number.isInteger(owner.pid) || owner.pid <= 0) throw new Error('invalid workflow lock');
+    try { process.kill(owner.pid, 0); throw new Error('another workflow command is running'); }
+    catch (error) { if (error.code !== 'ESRCH') throw error; }
+    fs.unlinkSync(file);
+  }
+  const fd = fs.openSync(file, 'wx');
+  try { fs.writeFileSync(fd, JSON.stringify({ pid: process.pid })); } finally { fs.closeSync(fd); }
+  mutationLock = file;
 }
 
 try {
+  acquireMutationLock();
   if (cmd === 'help' || cmd === '--help' || cmd === '-h') help();
   else if (cmd === 'validate') {
     const failures = validateAll();
     if (failures.length) { console.error(failures.join('\n')); process.exitCode = 1; } else console.log('valid');
+  } else if (cmd === 'input-record') {
+    const value = readJsonArgument(args[1]);
+    console.log(JSON.stringify(parseInputRecord(value.page_id, value.markdown)));
+  } else if (cmd === 'input-stage' || cmd === 'input-verify' || cmd === 'input-ack') {
+    if (!args[1]) throw new Error(`${cmd} requires a JSON file`);
+    const value = readJsonArgument(args[1]);
+    if (cmd !== 'input-verify' && fs.existsSync(journalPath)) throw new Error('resume the journal before staging or acknowledging an input');
+    const method = cmd === 'input-stage' ? 'stage' : cmd === 'input-verify' ? 'verify' : 'ack';
+    console.log(JSON.stringify(inputs[method](value)));
   } else if (cmd === 'next') console.log(JSON.stringify(selectNext()));
   else if (cmd === 'review-state') {
     const state = loadState(), cur = inputFingerprint();
@@ -352,7 +393,8 @@ try {
   } else if (cmd === 'review-complete') {
     const fingerprint = args[1];
     if (!fingerprint) throw new Error('review-complete requires the fingerprint returned by review-state');
-    if (fs.existsSync(journalPath) || dailyItems().length || reportItems().length) throw new Error('cannot checkpoint while journal, daily, or report work is pending');
+    if (notionMode && !args.includes('--input-empty')) throw new Error('query the Notion pending view successfully before review-complete --input-empty');
+    if (fs.existsSync(journalPath) || inputs.next() || (!notionMode && dailyItems().length) || reportItems().length) throw new Error('cannot checkpoint while journal, input, daily, or report work is pending');
     const current = inputFingerprint();
     if (fingerprint !== current.fingerprint) throw new Error('input fingerprint changed during review');
     const state = loadState();
@@ -389,8 +431,7 @@ try {
       pendingJournal = JSON.parse(read(journalPath));
       plan = planFromJournal(pendingJournal);
     } else {
-      const planPath = path.resolve(args[1] ?? '');
-      plan = JSON.parse(read(planPath));
+      plan = readJsonArgument(args[1] ?? '');
       if (fs.existsSync(journalPath)) {
         if (hasSymlinkComponent('state/journal.json')) throw new Error('pending journal path contains a symlink');
         pendingJournal = JSON.parse(read(journalPath));
@@ -400,11 +441,16 @@ try {
     }
     const planValidation = validateOperationPlan(plan);
     if (!planValidation.valid) throw new Error(`invalid plan: ${planValidation.errors.join('; ')}`);
-    const sourcePath = path.resolve(root, plan.source_id);
-    if (!isSafeRelative(plan.source_id) || !sourcePath.startsWith(root + path.sep) || !fs.existsSync(sourcePath) || hasSymlinkComponent(plan.source_id)) throw new Error('plan source must be a safe existing in-root file');
+    const sourcePath = plan.kind === 'input' ? path.join(root, 'state', 'notion-input.json') : path.resolve(root, plan.source_id);
+    if (plan.kind === 'input') {
+      const current = inputs.next();
+      if (!current || current.source_id !== plan.source_id || current.digest !== plan.source_digest) throw new Error('plan input must match the active Notion snapshot');
+      if (current.kind === 'input_ack' && !pendingJournal) throw new Error('input already applied; only Notion completion is pending');
+    } else if (!isSafeRelative(plan.source_id) || !sourcePath.startsWith(root + path.sep) || !fs.existsSync(sourcePath) || hasSymlinkComponent(plan.source_id)) throw new Error('plan source must be a safe existing in-root file');
     if (sourceDigestFor(sourcePath, plan.kind) !== plan.source_digest) throw new Error('source digest precondition failed');
     if (plan.kind === 'daily' && (!/^daily\/[A-Za-z0-9._/-]+\.md$/.test(plan.source_id) || !sourceHuman(plan.source_id))) throw new Error('daily source is not eligible');
     if (plan.kind === 'daily' && plan.daily_status_path !== plan.source_id) throw new Error('daily plans must update status on their source file');
+    if (plan.kind === 'daily' && notionMode && !pendingJournal) throw new Error('daily is archived; use the Notion input queue');
     if (plan.kind !== 'daily' && plan.daily_status_path !== null) throw new Error('only daily plans may update daily status');
     const reportTargetOutput = plan.kind === 'report' ? plan.writes.find((w) => w.path === plan.source_id) : null;
     if (plan.kind === 'report') {
@@ -446,6 +492,14 @@ try {
       const existingMeta = fs.existsSync(destination) ? yamlFromMarkdown(read(destination)).meta : movedSource && fs.existsSync(movedSource) ? yamlFromMarkdown(read(movedSource)).meta : null;
       const priorEvidence = existingMeta?.evidence ?? [];
       const additions = parsed.meta.evidence.slice(priorEvidence.length);
+      if (plan.kind === 'input') {
+        const snapshot = inputs.active();
+        validateInputBody(parsed.body.replace(/\r\n/g, '\n').trimStart(), snapshot, w.path);
+        for (const entry of additions) {
+          if (entry.quote !== snapshot.quote || entry.occurred_at !== snapshot.occurred_at || entry.source_ref !== snapshot.source_ref || entry.input_key !== snapshot.input_key) throw new Error('input evidence must preserve quote, date, source reference and input key');
+        }
+        if (!existingMeta && additions.length === 0) throw new Error('new input knowledge requires source evidence');
+      }
       for (const entry of additions) {
         const expectedOrigin = sourceHuman(plan.source_id) ? 'user' : 'ai';
         if (entry.source_id !== plan.source_id || entry.input_digest !== plan.source_digest || entry.origin !== expectedOrigin) throw new Error(`new evidence must reference this exact source and digest: ${w.path}`);
@@ -558,6 +612,10 @@ try {
       applied[plan.source_id] = { source_digest: plan.source_digest, operation_digest: operationDigest };
       atomicWrite(appliedDailyPath, JSON.stringify(applied, null, 2));
     }
+    if (plan.kind === 'input') {
+      inputs.record(plan, operationDigest, plan.writes.filter((w) => w.path.startsWith('knowledge/')).map((w) => yamlFromMarkdown(w.content).meta.id));
+      if (process.env.BRAIN_FAIL_AFTER_INPUT_RECEIPT === '1') throw new Error('injected failure after input receipt');
+    }
     if (plan.kind === 'report') {
       const completed = yamlFromMarkdown(read(path.resolve(root, plan.source_id))).meta;
       if (['completed', 'deferred', 'blocked'].includes(completed?.status)) {
@@ -571,3 +629,4 @@ try {
     console.log('applied');
   } else throw new Error(`unknown command: ${cmd}`);
 } catch (error) { fail(error.message); }
+finally { if (mutationLock) fs.unlinkSync(mutationLock); }

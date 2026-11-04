@@ -1,0 +1,9 @@
+{
+  "instructions_version": "0.0.6",
+  "database_url": "https://app.notion.com/p/9e7aaa31478844e0b828515a8df463fb",
+  "data_source_url": "collection://d632624f-58fe-4b86-9a83-5d0d5aba12f1",
+  "pending_view_url": "view://40e013b8-a22b-8117-acf4-000c9b287c13",
+  "keys_view_url": "view://40e013b8-a22b-8197-8d11-000cbee94095",
+  "timezone": "Asia/Tokyo",
+  "completion": "status"
+}

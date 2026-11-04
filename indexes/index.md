@@ -8,4 +8,5 @@
 - [開発ツール](topics/development-tools.md) (development-tools)
 - [Docker](topics/docker.md) (docker)
 - [Git](topics/git.md) (git)
+- [学習](topics/learning.md) (learning)
 - [Neovim](topics/neovim.md) (neovim)

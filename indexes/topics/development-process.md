@@ -19,6 +19,7 @@
 - [AIへの依頼は実装結果とともに保存する](../../knowledge/principles/development-process/k-d00d5434cb5bb73e.md) (k-d00d5434cb5bb73e)
 - [Issueは現在の実装に照合してから設計する](../../knowledge/principles/development-process/k-a9b0faffeeed8800.md) (k-a9b0faffeeed8800)
 - [Review単位とIntegration単位を分ける](../../knowledge/principles/development-process/k-3e976cb288ac805d.md) (k-3e976cb288ac805d)
+- [Workflowの状態は既存成果物から導出する](../../knowledge/principles/development-process/k-0befd2ddf54d4781.md) (k-0befd2ddf54d4781)
 - [エージェントのモデルは責務に応じて選ぶ](../../knowledge/principles/development-process/k-f1b6da308d1daaf7.md) (k-f1b6da308d1daaf7)
 - [ツールは継続的な価値で採用を判断する](../../knowledge/principles/development-process/k-1c9d5e44b0d5304d.md) (k-1c9d5e44b0d5304d)
 - [パフォーマンス改善は発生頻度と影響度で優先順位を決める](../../knowledge/principles/development-process/k-e4905c42b314c4c4.md) (k-e4905c42b314c4c4)

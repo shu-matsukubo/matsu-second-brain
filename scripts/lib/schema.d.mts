@@ -7,6 +7,10 @@ export interface EvidenceEntry {
   origin: 'user' | 'ai';
   input_digest: string;
   counted?: boolean;
+  quote?: string;
+  occurred_at?: string;
+  source_ref?: string;
+  input_key?: string;
 }
 export interface KnowledgeMetadata {
   id: string; title: string; type: KnowledgeType; topic: string; topic_label: string;
@@ -16,7 +20,7 @@ export interface KnowledgeMetadata {
 }
 export interface ValidationResult { valid: boolean; errors: string[] }
 export interface OperationPlan {
-  version: 1; kind: 'daily'|'report'|'review'; source_id: string; source_digest: string;
+  version: 1; kind: 'input'|'daily'|'report'|'review'; source_id: string; source_digest: string;
   writes: Array<{ path: string; content: string; expected_digest: string }>;
   moves?: Array<{ from_path: string; to_path: string; id: string; expected_digest: string }>;
   daily_status_path: string|null;

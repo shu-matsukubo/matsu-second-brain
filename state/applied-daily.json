@@ -10,5 +10,25 @@
   "daily/2026/09/29-040611.md": {
     "source_digest": "517f7aec55ccce542374452d97eaaf25482a70fb18d3545bcb88ce9e0a389c37",
     "operation_digest": "6f0e105e4a3ec2c94794cf0fb17448f6b430ac5a00dbe8a4be6e645c97e2912f"
+  },
+  "daily/2026/10/01-161832.md": {
+    "source_digest": "18043bc2c0fc32d163bb7c395a2398692dcce39e12bc4ca6b660e07b198700e4",
+    "operation_digest": "4ceec8e58e9413b17f051c0817d6673e4ebbedb8d9df4204b418ebcc71f3f609"
+  },
+  "daily/2026/10/02-071301.md": {
+    "source_digest": "ed13f5d05178d7ec5b43a10a02a3ba5c5e877fd9d5e6cbd230272f7daf30ab6d",
+    "operation_digest": "ebbeb123eae37889d40ca95e1dcbe38e43b0ab94f9c8a661f80bdeffda0c9ea8"
+  },
+  "daily/2026/10/05-011649.md": {
+    "source_digest": "322c005752f7f99a98dc4415b62bb84e890c758f7be96849af9e643f452a6d38",
+    "operation_digest": "fd46b9f6ac6431a3142d8f4c3e371663179f66d5b8a0d414227cad4f69b80cce"
+  },
+  "daily/2026/10/06-011049.md": {
+    "source_digest": "793ce8db2f4bd653334827afc2c1aa93b06463f659186d55507843b2946585c4",
+    "operation_digest": "b462894a97b840becd8fe78ef53873084760e1eae67209cc8ac1e6fcef76c117"
+  },
+  "daily/2026/10/06-225017.md": {
+    "source_digest": "4469071a9c265f0d7d62d1d5b594592acd9202c99a171618061ab5fbb33f23f3",
+    "operation_digest": "e5309b80b2c20889f783ee993eed0d37cc19452c528d90154f30e83e8b8cb005"
   }
 }
