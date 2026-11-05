@@ -33,7 +33,7 @@ node scripts/brain.mjs <command> [FILE.json|-]
 | source_id | CLIが返した主対象 |
 | source_digest | CLIが返したdigest |
 | writes | `path/content/expected_digest`の配列 |
-| daily_status_path | `null`。旧daily journalの再開はCLIに任せる |
+| daily_status_path | `null` |
 | moves | 必要時のみ`from_path/to_path/id/expected_digest`の配列 |
 
 - `expected_digest`: 変更前のUTF-8内容のSHA-256。新規ファイルは空文字列のdigest。

@@ -16,7 +16,6 @@
 | [state/](state/) | 処理中の一件・反映台帳・再開情報 |
 | [indexes/](indexes/) | Markdownから再生成する閲覧・検索データ |
 | [app/viewer/](app/viewer/README.md) | knowledge閲覧アプリ |
-| [daily/](daily/) | 旧入力の保全用アーカイブ |
 
 ## 入力範囲
 
@@ -31,10 +30,10 @@
 | 処理 | 実行 | 入口 |
 | --- | --- | --- |
 | Codex収集 | 毎日07:00、Asia/Tokyo。`codex-notion-input`。PC・アプリの起動が必要 | [プロンプト](prompts/collect-codex-input.md) / [Skill](.agents/skills/collect-conversation-input/SKILL.md) |
-| ChatGPT cloud収集 | 毎日07:10を推奨。既存の履歴取得タスクへ設定 | [コピー用プロンプト](prompts/collect-chatgpt-input.md) |
-| 整理 | 既存の「第二の脳の継続改善」。間隔・通知・実行先はアプリ設定を参照 | [プロンプト](prompts/curate-second-brain.md) / [Skill](.agents/skills/curate-second-brain/SKILL.md) |
+| ChatGPT cloud収集 | 毎日07:10を推奨。ChatGPTのタスクへ設定 | [コピー用プロンプト](prompts/collect-chatgpt-input.md) |
+| 整理 | 「第二の脳の継続改善」。間隔・通知・実行先はアプリ設定を参照 | [プロンプト](prompts/curate-second-brain.md) / [Skill](.agents/skills/curate-second-brain/SKILL.md) |
 
-- cloud側タスクは未作成。ローカル用ツールからは作成しない。
+- ChatGPT cloudのタスクはChatGPT側で設定する。
 - 実行プロンプトは作業場所・目的・Skill呼出しに絞る。
 - cloud用だけは、単独実行に必要な手順を含める。
 
@@ -88,13 +87,6 @@ node scripts/brain.mjs next
 - [GitHub連携手順](.agents/skills/curate-second-brain/references/github-flow.md)に従う。
 - CI失敗は同じブランチで修正する。差分なしならcommit・PRを作らない。
 - Skill・READMEの変更は[記述方針](docs/skill-design.md)を使う。
-
-## 旧入力
-
-- 未処理58件はNotionへ移行済み。
-- 対応・元ファイルdigest: [移行台帳](state/legacy-input-migration.json)。
-- daily本文は保全済み。旧`status: new`ではなくNotionの状態を参照する。
-- 再移行時は台帳と入力キーを照合し、再登録しない。
 
 ## 検証
 
