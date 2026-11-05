@@ -381,6 +381,20 @@
       "updated": "2026-08-24"
     },
     {
+      "id": "k-a25b1a83b8aa3cea",
+      "path": "knowledge/principles/app-development/k-a25b1a83b8aa3cea.md",
+      "kind": "principle",
+      "title": "型の評価では安全性と仕様表現力を区別する",
+      "topic": "app-development",
+      "topicLabel": "アプリ開発",
+      "tags": [
+        "型システム",
+        "API設計",
+        "仕様"
+      ],
+      "updated": "2026-11-06"
+    },
+    {
       "id": "k-082f394197334891",
       "path": "knowledge/principles/development-process/k-082f394197334891.md",
       "kind": "principle",

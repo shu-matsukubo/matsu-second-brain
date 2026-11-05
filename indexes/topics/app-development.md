@@ -10,6 +10,7 @@
 ## 思想
 
 - [アプリの通知先に Discord と LINE を使う際の選び方](../../knowledge/principles/app-development/k-483e48a6197921ea.md) (k-483e48a6197921ea)
+- [型の評価では安全性と仕様表現力を区別する](../../knowledge/principles/app-development/k-a25b1a83b8aa3cea.md) (k-a25b1a83b8aa3cea)
 
 ## アイディア
 
