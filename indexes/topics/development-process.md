@@ -36,6 +36,7 @@
 - [定期処理は停止時間を抑える頻度で実行する](../../knowledge/principles/development-process/k-55e0d5d013745fda.md) (k-55e0d5d013745fda)
 - [局所品質が十分なら検証対象を上位へ移す](../../knowledge/principles/development-process/k-7edd2b79c450ab07.md) (k-7edd2b79c450ab07)
 - [承認ゲートは責任境界として設計する](../../knowledge/principles/development-process/k-bd28870e8387958e.md) (k-bd28870e8387958e)
+- [技術の広さと深さは機会費用を踏まえて選ぶ](../../knowledge/principles/development-process/k-1473d6f6b0390549.md) (k-1473d6f6b0390549)
 - [抽象化は複数の具体例から行う](../../knowledge/principles/development-process/k-c8c18cc4a6746b87.md) (k-c8c18cc4a6746b87)
 - [改善バックログは現在状態から再評価する](../../knowledge/principles/development-process/k-5c5789a9053c209a.md) (k-5c5789a9053c209a)
 - [文書の正確性と読みやすさは別々に保守する](../../knowledge/principles/development-process/k-59ebcac46c07180e.md) (k-59ebcac46c07180e)
