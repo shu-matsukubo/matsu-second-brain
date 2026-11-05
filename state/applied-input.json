@@ -120,5 +120,17 @@
     "paths": [
       "knowledge/principles/app-development/k-a25b1a83b8aa3cea.md"
     ]
+  },
+  "notion:40e013b8-a22b-81e7-b4d3-e0a07215ca2c": {
+    "source_digest": "73705c28e2c15b49d137158202d64ddb68e2b389af6067648fb51e3212533377",
+    "input_key": "legacy-02e64e8c4cd7e28450b8c572b48157ce96f31d56b66f429ead4873c6f68fbf41",
+    "evidence_digest": "5d994f0ec38b9ad73e809376a10a0672c70adb52ac977146de3b2739345243a3",
+    "operation_digest": "c01f83b02d2789bb4ef2e7f0c368a33d71e9414f017769a949e4ce798f8300fc",
+    "knowledge_ids": [
+      "k-b984fc96e28cd8c7"
+    ],
+    "paths": [
+      "knowledge/principles/app-development/k-b984fc96e28cd8c7.md"
+    ]
   }
 }
