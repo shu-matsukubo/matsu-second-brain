@@ -395,6 +395,20 @@
       "updated": "2026-11-06"
     },
     {
+      "id": "k-b984fc96e28cd8c7",
+      "path": "knowledge/principles/app-development/k-b984fc96e28cd8c7.md",
+      "kind": "principle",
+      "title": "AI開発の技術選定では標準機能への誘導も評価する",
+      "topic": "app-development",
+      "topicLabel": "アプリ開発",
+      "tags": [
+        "技術選定",
+        "AIエージェント",
+        "フレームワーク"
+      ],
+      "updated": "2026-11-06"
+    },
+    {
       "id": "k-082f394197334891",
       "path": "knowledge/principles/development-process/k-082f394197334891.md",
       "kind": "principle",
