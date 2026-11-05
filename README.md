@@ -10,7 +10,9 @@ Codex／ChatGPTの前日の本人の会話から開発に直接関係する意�
 
 - Codex: 毎日07:00（Asia/Tokyo）、ローカルのオートメーション`codex-notion-input`。[実行プロンプト](prompts/collect-codex-input.md)、[収集Skill](.agents/skills/collect-conversation-input/SKILL.md)。PCとアプリの起動が必要です。
 - ChatGPT cloud: 毎日07:10（Asia/Tokyo）を推奨。[コピー用プロンプト](prompts/collect-chatgpt-input.md)を既存の履歴取得タスクへ設定してください。この環境のオートメーション作成ツールはローカル用のため、cloud側タスクは作成していません。
-- 整理: 既存の「第二の脳の継続改善」を5時間ごとのままNotion入力へ更新。[統合Skill](.agents/skills/curate-second-brain/SKILL.md)が一件ずつ処理します。
+- 整理: 既存の「第二の脳の継続改善」で[統合Skill](.agents/skills/curate-second-brain/SKILL.md)が一件ずつ処理します。[実行プロンプト](prompts/curate-second-brain.md)。実行間隔・通知・実行先はアプリの設定を参照してください。
+
+実行プロンプトは作業場所とSkill呼出しを中心に短く保ち、処理の流れ・判断条件・再開手順はSkillとreferenceで管理します。収集と整理で共通の[対象範囲](.agents/skills/curate-second-brain/references/input-scope.md)を使います。ChatGPT cloud用はローカルSkillを参照できないため、単独実行に必要な登録手順をコピー用プロンプトに含めます。
 
 ローカルのCodex collectorは、対話用Desktop／CLIの本人のメッセージを読みます。非対話exec、内部エージェント、システム指示、Skill注入は対象外です。元発言の日時をAsia/Tokyoの前日で判定し、fork等で再掲される同じメッセージを重複排除します。原文の一時出力はリポジトリ外へ置きます。収集実行とその一時ファイルの読み取りは同じshell呼出しで行ってください。
 

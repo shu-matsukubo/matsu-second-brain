@@ -11,9 +11,7 @@ description: Notion input・report対応・knowledge評価を優先順に一件�
 
 ## 入力の選択と再開
 
-Notionから新しく選んだ項目は、input-stageより前に開発との直接の関係を確認する。対象外・関係不明はNotionを保留にし、理由だけを結果へ記録する。原文を削除・改変せず、ローカルの処理中snapshotを作らない。混在する対象外の情報をknowledgeへ転載しない。既存journalやsnapshotの再開は内容をすり替えず、安全な再開手順を優先する。
-
-開発に関する雑談・感想・疑問形の評価は、正式な意思決定でないことを理由に除外しない。「gitってあんま良くないよねー？」も未確定の考えとして整理できる。疑問を事実・採用/不採用の決定・明確な反対へ変換せず、曖昧な支持・反対は計数しない。対象外一件を保留にした実行は、その一件の処理で終了する。
+新しく選んだinputは、input-stageより前に[対象範囲の判断基準](references/input-scope.md)で確認する。保留にする項目の処理中snapshotは作らない。既存journalやsnapshotの再開は内容をすり替えず、以下の安全な再開手順を優先する。
 
 1. `next` を実行する。resumeなら `node scripts/brain.mjs resume` でjournalから同じ処理を再開する。元temp planを探したり内容を再生成したりしない。再開した主対象の完了通知まで行って終了する。
 2. input_ackならローカル反映済み。以下のNotion完了通知だけ再試行し、knowledgeや支持回数を再適用しない。

@@ -1,7 +1,7 @@
 # Codexの収集タスク
 
-毎日07:00（Asia/Tokyo）にローカル実行する。
+実行手順は[収集Skill](../.agents/skills/collect-conversation-input/SKILL.md)で管理する。時刻と通知はアプリの設定を参照する。
 
 ```text
-C:/work/10_second-brain/matsu-second-brain を作業場所とし、$collect-conversation-input を使用する。現在のAGENTS.md、Skill、config/notion-input.jsonに従い、Asia/Tokyoの前日の本人のCodex会話から、開発・設計・実装・テスト・レビュー・インフラ・開発ツール・開発ワークフローに直接関係する意思決定だけをNotion inputへ登録する。資産運用・投資判断・家計・健康・趣味・生活など開発に無関係な話と、開発との関係が不明な話は登録しない。混在発言では開発部分だけを抜粋し、原文・要約・背景・タイトル・会話参照に対象外の情報を混ぜない。開発の範囲では希望・比較・否定・保留に加え、雑談・感想・疑問形の評価も拾う。「gitってあんま良くないよねー？」も未確定の考えとして残し、正式な決定だけに絞らず、客観的事実や利用中止の決定へ変えない。内部エージェントや非対話CLIの記録を除き、元メッセージIDで重複排除する。本文JSONとプロパティを保存して読み戻す。knowledge整理や既存項目の削除は行わない。対象日、追加・重複・対象外の件数と取得不能な範囲を報告し、対象外の内容そのものは転載しない。
+C:/work/10_second-brain/matsu-second-brain を作業場所とし、$collect-conversation-input を実行する。
 ```
