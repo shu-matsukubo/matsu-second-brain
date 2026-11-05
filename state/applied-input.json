@@ -96,5 +96,17 @@
     "paths": [
       "knowledge/principles/development-process/k-1473d6f6b0390549.md"
     ]
+  },
+  "notion:40e013b8-a22b-8167-a7a4-f30feb38491b": {
+    "source_digest": "aaf04153b6f2e513c975fad8b4b4c088465468e6b1f050835a6c7938ef08e30e",
+    "input_key": "legacy-31a5ffd2e0c5cbeb97297e5d9bd49a9b2d555ae6675c950c3b933336f9cbeaf0",
+    "evidence_digest": "42636ebf8a89d0a84219c4943bfc3e14ba8d6fd8489fcd847c33e9ad89e18d60",
+    "operation_digest": "e6dd65239b43ef59c9795021877fa293db2624f84149804cb7a55d0d00a39996",
+    "knowledge_ids": [
+      "k-18cd4b4f19159d05"
+    ],
+    "paths": [
+      "knowledge/principles/development-process/k-18cd4b4f19159d05.md"
+    ]
   }
 }
