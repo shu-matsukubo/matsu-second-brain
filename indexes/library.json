@@ -463,6 +463,20 @@
       "updated": "2026-08-27"
     },
     {
+      "id": "k-1473d6f6b0390549",
+      "path": "knowledge/principles/development-process/k-1473d6f6b0390549.md",
+      "kind": "principle",
+      "title": "技術の広さと深さは機会費用を踏まえて選ぶ",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "技術力",
+        "学習",
+        "専門性"
+      ],
+      "updated": "2026-11-05"
+    },
+    {
       "id": "k-18612ffa4bd0558c",
       "path": "knowledge/principles/development-process/k-18612ffa4bd0558c.md",
       "kind": "principle",
