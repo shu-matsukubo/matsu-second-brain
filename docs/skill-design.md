@@ -1,10 +1,9 @@
 # SkillとREADMEの記述
 
-## 参照元
+## 設計資料
 
 - [plugin-skill-authoring](https://github.com/shu-matsukubo/matsu-artifact-delivery/blob/main/.agents/skills/plugin-skill-authoring/SKILL.md)
 - [Skill設計の方針](https://github.com/shu-matsukubo/matsu-artifact-delivery/blob/main/.agents/skills/plugin-skill-authoring/references/design-policy.md)
-- 参照日: 2026-11-05
 
 ## 配置
 
@@ -15,6 +14,12 @@
 | `docs/` | 複数Skillで共有する契約・方針 |
 | `scripts/` | 決定的な選択・変換・検証・適用 |
 | `README.md` | 利用者向けの構成・起動・操作の入口 |
+
+## 記述範囲
+
+- README・Skill・reference・仕様文書は、現在の仕様と利用手順で完結させる。
+- 旧構成・移行実績・作業経緯・一時的な進捗を持ち込まない。
+- 背景・判断理由・変更経緯は、knowledgeの根拠・履歴や対応記録に残す。
 
 ## 表現
 

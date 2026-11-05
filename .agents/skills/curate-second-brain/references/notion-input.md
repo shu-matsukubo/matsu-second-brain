@@ -50,7 +50,7 @@
 
 - 失敗を完了にせず、箇所・影響・再開方法をfailure reportへ残す。
 - journal・snapshot・receiptを保持する。元temp planの探索・再生成や手動削除はしない。
-- Notion取得失敗を空と扱わず、daily等の代替へ切り替えない。
+- Notion取得失敗を空と扱わず、入力元を切り替えない。
 - 保留中も未処理ビューを毎回確認する。
 - 空なら`review-state --input-empty`で入力変更を確認する。
 - 変更なしなら探索・書き込みをしない。

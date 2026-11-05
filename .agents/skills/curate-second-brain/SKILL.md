@@ -15,7 +15,7 @@ description: Notion input・report対応・knowledge評価を優先順に一件�
 - 意味判断は[AGENTS.md](../../../AGENTS.md)と[knowledge-policy](../../../knowledge-policy/)に従う。
 - Notion接続先は[設定](../../../config/notion-input.json)を参照する。
 - Notionのガイドと有効Skillを確認し、全MCP呼出しに現在の`instructions_version`を付ける。
-- 取得失敗を対象なしと扱わない。dailyへの切替やsnapshotのすり替えは行わない。
+- 取得失敗を対象なしと扱わない。入力元の切替やsnapshotのすり替えは行わない。
 - 主対象の完了時にSkill改善の必要性を確認し、必要な場合だけreportへ提案する。
 
 ## フロー
