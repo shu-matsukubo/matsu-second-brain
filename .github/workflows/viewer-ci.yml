@@ -31,7 +31,7 @@ jobs:
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         shell: bash
         run: |
-          if git diff --quiet --no-renames "${BASE_SHA}...${HEAD_SHA}" -- AGENTS.md app/ daily/ knowledge/ knowledge-policy/ indexes/ report/ scripts/ state/ .agents/skills/ package.json package-lock.json .github/workflows/viewer-ci.yml; then
+          if git diff --quiet --no-renames "${BASE_SHA}...${HEAD_SHA}" -- AGENTS.md README.md docs/ app/ daily/ knowledge/ knowledge-policy/ indexes/ report/ scripts/ state/ .agents/skills/ package.json package-lock.json .github/workflows/viewer-ci.yml; then
             echo "app_changed=false" >> "${GITHUB_OUTPUT}"
           else
             diff_status=$?
@@ -73,6 +73,10 @@ jobs:
       - name: Run workflow tests
         working-directory: .
         run: npm test
+
+      - name: Check Skill structure and documentation links
+        working-directory: .
+        run: npm run check:skills
 
       - name: Validate workflow data
         working-directory: .

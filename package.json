@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "check:skills": "node scripts/check-skills.mjs",
     "brain": "node scripts/brain.mjs",
     "test": "node --test scripts/test/*.test.mjs",
     "test:workflow": "node --test scripts/test/*.test.mjs",
@@ -10,6 +11,8 @@
     "index:check": "node app/viewer/scripts/generate-index.ts --check"
   },
   "dependencies": {
+    "github-slugger": "2.0.0",
+    "marked": "18.0.14",
     "yaml": "2.9.1"
   }
 }
