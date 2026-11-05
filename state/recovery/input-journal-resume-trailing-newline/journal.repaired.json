@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "kind": "input",
+  "source_id": "notion:40e013b8-a22b-819f-9912-d6bf5ac33308",
+  "source_digest": "2ed3fc39d6878836e45be78f6817f60ab4d51f31ce90f55783cc56505c3337ca",
+  "writes": [
+    {
+      "path": "knowledge/principles/development-process/k-c7312886320ad33f.md",
+      "content": "---\nid: k-c7312886320ad33f\ntitle: AIの操作制約はPolicyで結果を制限する\ntype: principle\ntopic: development-process\ntopic_label: 開発プロセス\ntags:\n  - AIエージェント\n  - Policy\n  - 実行権限\nupdated: 2026-11-05\nsupport_streak: 1\nopposition_streak: 0\nhistory_status: unknown\nrelated:\n  - k-c2677cc313efd69a\nopposes: []\nevidence:\n  - source_id: notion:40e013b8-a22b-819f-9912-d6bf5ac33308\n    input_digest: 2ed3fc39d6878836e45be78f6817f60ab4d51f31ce90f55783cc56505c3337ca\n    input_key: legacy-5d44bcabd688e1449a722a72f79e96fa757875d5a94ce3ac69f4ccfbf898a4ff\n    quote: \"## 操作手段の柔軟性と安全制約を分離する\\r\n\n      \\r\n\n      AI Agentの操作手段を、\\r\n\n      特定のPluginやCLIへ過度に依存させない。\\r\n\n      \\r\n\n      利用可能な手段を優先順位に従って選択し、\\r\n\n      環境差分や一部ツールの障害に対応できるようにする。\\r\n\n      \\r\n\n      一方、安全性を操作手段の選択へ委ねない。\\r\n\n      \\r\n\n      危険な操作については、\\r\n\n      実行前に対象・権限・操作内容を検証する\\r\n\n      共通の安全な経路を用意する。\\r\n\n      \\r\n\n      Agentへの指示は行動方針として使い、\\r\n\n      重要な制約は実行時の検証でも担保する。\\r\n\n      \\r\n\n      また、人間とAgentでは操作特性が異なるため、\\r\n\n      必要に応じて制約の適用範囲を分離する。\\r\n\n      \\r\n\n      操作手段は柔軟に。\\r\n\n      安全制約は明確に。\"\n    occurred_at: 2026-10-08T23:47:06+09:00\n    source_ref: daily/2026/10/08-234706.md\n    origin: user\n    direction: support\n    background: 操作手段は環境や利用可能な機能に応じて選べるようにしながら、安全性は手段任せにせず共通の実行時検証で担保するという考えを明示した。人間とAgentの操作特性に合わせて制約の適用範囲を分ける点も既存のPolicy原則を具体化している。\n    counted: true\nhistory:\n  - from: principle\n    to: principle\n    at: 2026-11-05\n    reason: Notion inputから操作手段の柔軟性と安全制約の共通検証を追記し、本文を現行のinput形式に整理した。\n    previous_body: \"\\r\n\n      # AIの操作制約はPolicyで結果を制限する\\r\n\n      \\r\n\n      AIの利用可能なコマンドをすべて列挙するのではなく、変更可能な対象、禁止する状態遷移、必要な事前条件、承認済みscope、公開や不可逆操作の境界な\\\n      ど、守るべきPolicyを定義する。\\r\n\n      \\r\n\n      安全な操作では既存ツールの能力を活用し、危険な境界はMCPやHookなど強制可能な実行層で拒否する。能力の数を一律に制限するより、許容できない結果\\\n      を防ぐ。\\r\n\n      \\r\n\n      ## 関連\\r\n\n      \\r\n\n      - [AIセキュリティは入力経路と実行権限をセットで考える](k-c2677cc313efd69a.md)\\r\\n\"\n    previous_path: knowledge/principles/development-process/k-c7312886320ad33f.md\nsources: []\n---\n# 内容\n\nAIの操作制約は、利用可能なツールの列挙ではなく、変更可能な対象、必要な事前条件、承認された範囲、禁止する結果を定めるPolicyで表す。\n\nPluginやCLIなど操作手段は、利用可能性や環境に応じて選べるようにする。安全性は特定の手段に依存させず、危険な操作では対象・権限・操作内容を実行前に検証する共通の安全な経路を通す。Agentへの指示は行動方針として使い、重要な制約は実行時にも強制する。人間とAgentで操作特性が異なる場合は、それぞれに必要な制約範囲を分ける。\n\n## 関連リンク\n\n- [AIセキュリティは入力経路と実行権限をセットで考える](k-c2677cc313efd69a.md)\n\n# 根拠・思考の履歴\n\n### 2026-10-08T23:47:06+09:00\n\n入力元: legacy-daily\n会話参照: daily/2026/10/08-234706.md\n背景: 旧入力を失わずNotionへ移行した。原文はdailyにも保全している。\n入力キー: legacy-5d44bcabd688e1449a722a72f79e96fa757875d5a94ce3ac69f4ccfbf898a4ff\n\n本人の発言（原文）:\n\n```text\n## 操作手段の柔軟性と安全制約を分離する\r\n\r\nAI Agentの操作手段を、\r\n特定のPluginやCLIへ過度に依存させない。\r\n\r\n利用可能な手段を優先順位に従って選択し、\r\n環境差分や一部ツールの障害に対応できるようにする。\r\n\r\n一方、安全性を操作手段の選択へ委ねない。\r\n\r\n危険な操作については、\r\n実行前に対象・権限・操作内容を検証する\r\n共通の安全な経路を用意する。\r\n\r\nAgentへの指示は行動方針として使い、\r\n重要な制約は実行時の検証でも担保する。\r\n\r\nまた、人間とAgentでは操作特性が異なるため、\r\n必要に応じて制約の適用範囲を分離する。\r\n\r\n操作手段は柔軟に。\r\n安全制約は明確に。\n```\n",
+      "expected_digest": "228a34668c5dc40f19324d3f12ba25007dcc3c941b887bcf3f027c5e510e1978"
+    }
+  ],
+  "daily_status_path": null,
+  "plan_digest": "bb89354cb21973b1f7520923df7f6fb74d6f134d8fa9b2a92edb4522aa1f3766",
+  "operation_digest": "0f2747bcee153eee2a47c55dd222081886dce612a8664dea11a35f4fb81d5107",
+  "nextWrite": 0,
+  "nextMove": 0
+}

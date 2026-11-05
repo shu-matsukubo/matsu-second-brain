@@ -2,7 +2,9 @@
 
 入力は[Notion「第2の脳 input」](https://app.notion.com/p/9e7aaa31478844e0b828515a8df463fb)、整理済みknowledgeの正本はこのリポジトリのMarkdownです。
 
-Codex／ChatGPTの前日の本人の会話から意思を収集し、既存の整理タスクが一回につきinput一件を反映します。Notionは未処理・処理中・完了・保留・エラーを管理し、処理済みは未処理ビューから外します。初期運用では削除しません。
+Codex／ChatGPTの前日の本人の会話から開発に直接関係する意思決定だけを収集し、既存の整理タスクが一回につきinput一件を反映します。Notionは未処理・処理中・完了・保留・エラーを管理し、処理済みは未処理ビューから外します。初期運用では削除しません。
+
+資産運用・投資判断など開発と無関係な情報は、原文・要約・背景を含め入力へ登録しません。開発との関係が不明なものも除外します。
 
 ## 日次の収集
 
@@ -19,6 +21,8 @@ Codex／ChatGPTの前日の本人の会話から意思を収集し、既存の�
 一覧用プロパティとは別に、各ページ本文の唯一のJSONコードブロックを取り込みの正本とします。input_key/source/source_ref/occurred_at/quote/summary/contextを保存し、Notionの表示用Markdown変換で原文や出典が変わるのを避けます。本文の入力記録と表示用プロパティを食い違わせず、処理開始後の訂正は新しい入力として登録してください。
 
 ## 整理と再開
+
+リポジトリに変更を加える改善処理は、最新main → 新しい`codex/`ブランチ → 一件の修正・reportと検証 → commit/push・PR → CI成功確認 → マージまで実施します。[GitHub連携手順](.agents/skills/curate-second-brain/references/github-flow.md)が開始・再開・失敗時の共通手順です。CI失敗時はマージせず、同じブランチで修正して再確認します。差分がなければPRは作りません。
 
 ```powershell
 npm ci

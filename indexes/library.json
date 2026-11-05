@@ -395,6 +395,20 @@
       "updated": "2026-09-24"
     },
     {
+      "id": "k-094d1e9c150747ec",
+      "path": "knowledge/principles/development-process/k-094d1e9c150747ec.md",
+      "kind": "principle",
+      "title": "簡素化では複雑さの移動でなくルールと判断負荷を減らす",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "簡素化",
+        "設計",
+        "認知負荷"
+      ],
+      "updated": "2026-11-05"
+    },
+    {
       "id": "k-0befd2ddf54d4781",
       "path": "knowledge/principles/development-process/k-0befd2ddf54d4781.md",
       "kind": "principle",
@@ -628,6 +642,20 @@
       "updated": "2026-09-26"
     },
     {
+      "id": "k-59ebcac46c07180e",
+      "path": "knowledge/principles/development-process/k-59ebcac46c07180e.md",
+      "kind": "principle",
+      "title": "文書の正確性と読みやすさは別々に保守する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "ドキュメント",
+        "保守",
+        "推敲"
+      ],
+      "updated": "2026-11-05"
+    },
+    {
       "id": "k-5c5789a9053c209a",
       "path": "knowledge/principles/development-process/k-5c5789a9053c209a.md",
       "kind": "principle",
@@ -640,6 +668,20 @@
         "現状確認"
       ],
       "updated": "2026-10-13"
+    },
+    {
+      "id": "k-5caa30903bcc5de2",
+      "path": "knowledge/principles/development-process/k-5caa30903bcc5de2.md",
+      "kind": "principle",
+      "title": "品質保証は人間のレビュー対象から設計する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "品質保証",
+        "レビュー",
+        "責任分担"
+      ],
+      "updated": "2026-11-05"
     },
     {
       "id": "k-7c01507f86f46660",
@@ -712,6 +754,20 @@
       "updated": "2026-08-30"
     },
     {
+      "id": "k-b3e6e58729bb7709",
+      "path": "knowledge/principles/development-process/k-b3e6e58729bb7709.md",
+      "kind": "principle",
+      "title": "開発環境に製品本体の機能を再実装しない",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "開発環境",
+        "責務分離",
+        "保守"
+      ],
+      "updated": "2026-11-05"
+    },
+    {
       "id": "k-b6bac51054c079bf",
       "path": "knowledge/principles/development-process/k-b6bac51054c079bf.md",
       "kind": "principle",
@@ -764,7 +820,7 @@
         "Policy",
         "実行権限"
       ],
-      "updated": "2026-10-24"
+      "updated": "2026-11-05"
     },
     {
       "id": "k-c8c18cc4a6746b87",
@@ -806,6 +862,20 @@
         "効率"
       ],
       "updated": "2026-10-16"
+    },
+    {
+      "id": "k-cfb0bb408a84ca5f",
+      "path": "knowledge/principles/development-process/k-cfb0bb408a84ca5f.md",
+      "kind": "principle",
+      "title": "Workflowは実行契機から独立させる",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "Workflow",
+        "責務分離",
+        "定期実行"
+      ],
+      "updated": "2026-11-05"
     },
     {
       "id": "k-cff4d20a9bc43e30",
