@@ -12,5 +12,77 @@
       "knowledge/principles/development-process/k-1c336721577e40fb.md"
     ],
     "evidence_digest": "42887ae768a1f581d01a5b7575c61733e63753f33c5cbcffbfdfd1d048c65315"
+  },
+  "notion:40e013b8-a22b-819f-9912-d6bf5ac33308": {
+    "source_digest": "2ed3fc39d6878836e45be78f6817f60ab4d51f31ce90f55783cc56505c3337ca",
+    "input_key": "legacy-5d44bcabd688e1449a722a72f79e96fa757875d5a94ce3ac69f4ccfbf898a4ff",
+    "evidence_digest": "e399efd0d5c6a132e51324a697629bb2290c668700a6b56f8a528178a4be734f",
+    "operation_digest": "0f2747bcee153eee2a47c55dd222081886dce612a8664dea11a35f4fb81d5107",
+    "knowledge_ids": [
+      "k-c7312886320ad33f"
+    ],
+    "paths": [
+      "knowledge/principles/development-process/k-c7312886320ad33f.md"
+    ]
+  },
+  "notion:40e013b8-a22b-8111-832c-e70004f82ca1": {
+    "source_digest": "d6e648e1bcea4f34930bc32b674c725d57e65ccb1ac9733eb639fbc2c30d36e2",
+    "input_key": "legacy-1e681f4400d88e1625e8d7c14de9d5c40a0c83727393bf68eb58122dffb4aa9e",
+    "evidence_digest": "b9c9788fcf9bc85e0460a4e5441b85858dd6d181ed7e2adf6d372f043c2eef0f",
+    "operation_digest": "4da36cd68dfc52453fad2d903a787388e194293fa84536e8e4650f0b0c19ab64",
+    "knowledge_ids": [
+      "k-cfb0bb408a84ca5f"
+    ],
+    "paths": [
+      "knowledge/principles/development-process/k-cfb0bb408a84ca5f.md"
+    ]
+  },
+  "notion:40e013b8-a22b-8183-b8eb-d877a499e4ec": {
+    "source_digest": "b2bbf26ae9832b73bf7a0687eacc3b3b19689d70fe1bee3f4af88f14aefdfeb3",
+    "input_key": "legacy-c4d399219acd616595520e38817398390680b3832db59e5777b65ea88c821af7",
+    "evidence_digest": "6e99443758923f990e281708fdf1202177e86e49ca8cfc93070d78e9b8a81e12",
+    "operation_digest": "050cf40ad1b9eff06f1fa393e85e0120dc7314f11ebd0ead45916635703d28b1",
+    "knowledge_ids": [
+      "k-5caa30903bcc5de2"
+    ],
+    "paths": [
+      "knowledge/principles/development-process/k-5caa30903bcc5de2.md"
+    ]
+  },
+  "notion:40e013b8-a22b-8168-851b-fbdbff343142": {
+    "source_digest": "e18735b8c8e7251066da0bae8eddd14830b89d0e4d991f0149f3f47fa3be935c",
+    "input_key": "legacy-157b0343b7fb664926bd3f24a51c2cfa45978ae744935b7108f2ad7eecebc1d9",
+    "evidence_digest": "0308bcb0edb07d3791cd061e23f092ead324cbaa2c44186f3ad85743680c01af",
+    "operation_digest": "ae8042b9244d45a6f54fa3fb7fcea02f6f02671956dd2f273b0e49ed8a58bf87",
+    "knowledge_ids": [
+      "k-59ebcac46c07180e"
+    ],
+    "paths": [
+      "knowledge/principles/development-process/k-59ebcac46c07180e.md"
+    ]
+  },
+  "notion:40e013b8-a22b-813f-8648-c335d62fd3e3": {
+    "source_digest": "e3032133601bad1c1521740e1bb64f330b96f65ecbfdde19335c0b0ea326d253",
+    "input_key": "legacy-232c8abc6b96dd05f9f68d6e303947708ffb0081bf26ad6eeb109ec4f1a434c7",
+    "evidence_digest": "c225c7e8e45f1f6d6c48cf6858933625c01559af060805e0e320479bb476e240",
+    "operation_digest": "8b93601d092e261df9b0b1cfd919a9878aae0ac233557efae59a8b84854acc98",
+    "knowledge_ids": [
+      "k-b3e6e58729bb7709"
+    ],
+    "paths": [
+      "knowledge/principles/development-process/k-b3e6e58729bb7709.md"
+    ]
+  },
+  "notion:40e013b8-a22b-8125-a4fa-f273184d1426": {
+    "source_digest": "a84f8139de7fa1431adb6ec0a4d1aa351dacec291bb55ae158d02d372b898a33",
+    "input_key": "legacy-cfbdf6264b6fe09fb0c3a124246d56f29e672ce8271584efe883b5eb35c1bf7f",
+    "evidence_digest": "ff2bbcf36c9314327cbcbcc8b66bae4c0981b7a8a40e1cd34a2e384e0a9e822b",
+    "operation_digest": "7d8f4b4c3997de6d1ca6fa34a1f6479d6502798a4737fb4576febb912ceb4fb0",
+    "knowledge_ids": [
+      "k-094d1e9c150747ec"
+    ],
+    "paths": [
+      "knowledge/principles/development-process/k-094d1e9c150747ec.md"
+    ]
   }
 }

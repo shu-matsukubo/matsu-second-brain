@@ -7,7 +7,13 @@ description: Notion input・report対応・knowledge評価を優先順に一件�
 
 意味判断はAGENTS.mdとknowledge-policy、選択・検証・適用は `node scripts/brain.mjs` を使う。接続先は `config/notion-input.json`。Notionのガイドを読み、全MCP呼出しに現在のinstructions_versionを付ける。
 
+開始時に[GitHub連携手順](references/github-flow.md)を読み、最新mainから作業ブランチを用意する。下位Skillを含む一件の処理を終えたら、差分があれば同手順でPR公開・CI完了確認・マージまで進める。既存の未完了ブランチ・PRがある場合はその処理を再開し、knowledgeの再適用を避ける。
+
 ## 入力の選択と再開
+
+Notionから新しく選んだ項目は、input-stageより前に開発との直接の関係を確認する。対象外・関係不明はNotionを保留にし、理由だけを結果へ記録する。原文を削除・改変せず、ローカルの処理中snapshotを作らない。混在する対象外の情報をknowledgeへ転載しない。既存journalやsnapshotの再開は内容をすり替えず、安全な再開手順を優先する。
+
+開発に関する雑談・感想・疑問形の評価は、正式な意思決定でないことを理由に除外しない。「gitってあんま良くないよねー？」も未確定の考えとして整理できる。疑問を事実・採用/不採用の決定・明確な反対へ変換せず、曖昧な支持・反対は計数しない。対象外一件を保留にした実行は、その一件の処理で終了する。
 
 1. `next` を実行する。resumeなら `node scripts/brain.mjs resume` でjournalから同じ処理を再開する。元temp planを探したり内容を再生成したりしない。再開した主対象の完了通知まで行って終了する。
 2. input_ackならローカル反映済み。以下のNotion完了通知だけ再試行し、knowledgeや支持回数を再適用しない。
@@ -31,4 +37,4 @@ nextがinput_ackを返したらNotionをfetchしてinput-verifyする。同じ�
 
 保留中でもNotionの未処理ビューを毎回確認する。空なら `review-state --input-empty` でローカル入力を確認し、変更がなければ探索も書き込みもしない。候補がなければ `review-complete FINGERPRINT --input-empty` で保留する。AI自身のindexやstatus/resultだけで再探索しない。pending/in_progress/reopened reportがある間はreviewへ進まない。
 
-report-addは安定ID/fingerprintで重複排除する。request/resultはfrontmatterを正本とする。未承認のpolicy/Skill変更はdeferredにし、曖昧な判断を独自ルールで補わない。主対象の完了時にSkill改善の必要性を確認し、必要な場合だけreportに提案する。自動commit/push/deployは通常運用に含めない。
+report-addは安定ID/fingerprintで重複排除する。request/resultはfrontmatterを正本とする。未承認のpolicy/Skill変更はdeferredにし、曖昧な判断を独自ルールで補わない。主対象の完了時にSkill改善の必要性を確認し、必要な場合だけreportに提案する。リポジトリの変更はGitHub連携手順でmainへ統合する。deployはこの手続きでは実行しない。
