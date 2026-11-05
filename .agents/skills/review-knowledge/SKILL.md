@@ -5,23 +5,24 @@ description: knowledge全体を現在の人間policyと照らして評価し、�
 
 # Knowledge全体を評価する
 
-統合ワークフローからknowledge全体の探索を割り当てられたときに使う。`AGENTS.md`と`knowledge-policy/`を基準に評価し、レポートは観測と提案を分ける。policyが曖昧ならルールを補わず、曖昧な判断そのものをreport候補にする。
+## 概要
 
-## 評価範囲
+- 統合親から全体評価を割り当てられたときに使う。
+- 観測と提案を分け、根拠のある候補をreportへ残す。
 
-- facts/principles/ideasの分類、主題の独立性、根拠と出典、topicの一貫性、タイトル、安定ID、関連/反対リンク、履歴と昇降格の根拠を確認する。
-- まず明確に確認できる問題を探し、全件を一括改修しない。個々のknowledge修正は後続のreport対応または明示されたNotion input処理で行う。
-- principleとideaの意味分類で「明示された意思/複数の独立入力」と「5連続支持による昇格」の関係など、現行policy・実装だけで確定できない点は誤りとして断定しない。人間判断が必要なreportへ提案する。
-- 既存履歴が不足している場合は不明とし、過去の支持回数や昇降格を捏造しない。履歴不明のみを理由にknowledgeを降格候補にしない。
-- Indexの同期を評価する場合は`node app/viewer/scripts/generate-index.ts --check`で非破壊検証する。検証失敗をIndexの不整合と断定せず、確認不能として扱う。knowledge変更の適用時はcore CLIがindexを生成するため、別途生成しない。
+## 制約と責務範囲
 
-## 候補登録
+- [AGENTS.md](../../../AGENTS.md)と[knowledge-policy](../../../knowledge-policy/)に従う。
+- 対象は分類・主題分割・根拠と出典・topic・タイトル・安定ID・関連/反対リンク・履歴と昇降格。
+- 変更はreportと必要なstateに限る。knowledge本文の修正は後続の処理へ渡す。
+- policyの曖昧さは質問として提案する。明示意思と5連続支持の関係を独断で確定しない。
+- 履歴不明だけを降格理由にしない。支持数や昇降格履歴を捏造しない。
+- 候補はAI由来とし、本人の意思・支持/反対の証拠へ混入させない。
 
-1. 問題ごとに対象ID/パス、現在の証拠、policyとの差、影響、提案する次の確認または修正を特定する。
-2. active/archiveを含む既存reportのstable ID/fingerprintと照合して、同じ改善を重複追加しない。既知で未承認のpolicy/Skill提案だけが残り新規の実行可能候補がない場合は既存reportを保ち、review-completeで入力変更を待つ。新しい根拠で同じcompleted問題が再発した場合は同じreport path/IDのままstatusをpendingへ戻し、新しい根拠をresultへ追記しupdatedを更新するoperation planを作る。request/bodyは保持し、CLIが後で同IDを再選択できるようにする。人間によるrequest/body変更はCLIのreopened状態で再開する。候補はAI由来として記録し、人間入力の意思や支持/反対履歴に混入させない。
-3. knowledge改善、policy質問、Skill不具合など適切な種類でreport候補を作る。人間の承認が必要な提案は後続workflowが再試行し続けない状態へ送る。
-4. 全体を確認しても有用な候補がなければ、CLI契約に従い現在の入力fingerprintに対する保留を記録する。入力変更なしに再探索を起こさない。
+## フロー
 
-review-completeには、親がNotionの未処理ビューを取得して空と確認した実行だけ`--input-empty`を付ける。
-
-この評価手続きはreportと必要なstate以外を変更しない。改善案をその場でknowledgeへ適用しない。
+1. `node scripts/brain.mjs review-state --input-empty`で入力変更を確認する。未処理ビューが空と確認できた実行だけ`--input-empty`を使う。
+2. 変更がなければ終了する。変更があれば全体を評価し、明確な問題から候補化する。
+3. Index評価には`npm run index:check`を使う。検証自体の失敗は不整合と断定せず、確認不能として扱う。
+4. [候補登録と再開](references/report-candidates.md)で既存reportと照合し、[CLI契約](../../../docs/workflow-contract.md)で登録・再開する。
+5. 新規の実行可能候補がなければ`review-complete FINGERPRINT --input-empty`で入力変更待ちにする。

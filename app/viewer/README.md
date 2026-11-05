@@ -1,92 +1,137 @@
 # Knowledge Viewer
 
-Void 1.5.0、Vite 8、React、TypeScript、Material UIで作った、`knowledge/` と `indexes/` の閲覧アプリです。MUIテーマで画面全体の色・文字・操作部品を揃えています。
+- 対象: `knowledge/`と`indexes/`の閲覧。
+- 構成: Void 1.5.0 / Vite 8 / React / TypeScript / Material UI。
+- 表示: MUIテーマで色・文字・操作部品を統一。
 
-## ローカルで起動する
+## ローカル起動
 
-Node.js 26.13.0を使います。`VIEWER_DATA_SOURCE` の既定値は `mock` なので、トークンや `.env` を用意せずに起動できます。
+- Node.js: 26.13.0。
+- 実行場所: `app/viewer/`。
+- 既定値: `mock`。トークン・`.env`は不要。
 
 ```sh
 npm ci
 npm run dev
 ```
 
-表示されたローカルURLをブラウザーで開きます。開発サーバーは通常 `http://localhost:5173` で起動します。
-
-Voidの環境設定を使いたい場合は、`env.mock.example` を `.env` にコピーできます。Voidが読むdotenvファイルはプロジェクトルートの `.env` です。
-
-```sh
-cp env.mock.example .env
-```
+- 表示されたローカルURLを開く。通常は`http://localhost:5173`。
+- Voidの環境設定が必要なら[env.mock.example](env.mock.example)を`.env`へコピーする。
+- dotenvの読み込み先: `app/viewer/.env`。
 
 ## 開発コマンド
 
-`app/viewer/` で実行します。
+| コマンド                 | 内容                                |
+| ------------------------ | ----------------------------------- |
+| `npm run dev`            | Void/Vite開発サーバー               |
+| `npm run check`          | Biomeのlint・format確認             |
+| `npm run fix`            | Biomeの自動修正                     |
+| `npm run typecheck`      | 環境型生成・TypeScript検査          |
+| `npm run index:generate` | Markdownからindex生成。事前にnpm ci |
+| `npm run index:check`    | indexの非破壊検証                   |
+| `npm test`               | Vitest                              |
+| `npm run build`          | 本番ビルド                          |
 
-| コマンド                 | 内容                                                         |
-| ------------------------ | ------------------------------------------------------------ |
-| `npm run dev`            | VoidとViteの開発サーバーを起動                               |
-| `npm run check`          | BiomeでLintとフォーマットを確認                              |
-| `npm run fix`            | Biomeで自動修正可能なLintとフォーマットを適用                |
-| `npm run typecheck`      | `void env types` で環境型を生成し、TypeScriptの型を確認      |
-| `npm run index:generate` | MarkdownからViewer用JSONを生成する（事前に `npm ci` が必要） |
-| `npm run index:check`    | Viewer用JSONの整合性をファイル変更なしで検証する             |
-| `npm test`               | Vitestのテストを実行                                         |
-| `npm run build`          | Void/Viteの本番ビルドを実行                                  |
+## データと環境変数
 
-## データソースと環境変数
+| 変数                            | 値・用途                                     |
+| ------------------------------- | -------------------------------------------- |
+| `VIEWER_DATA_SOURCE`            | `mock` / `github`。既定はmock                |
+| `MATSU_SECOND_BRAIN_READ_TOKEN` | githubモード必須のサーバー用読み取りトークン |
 
-| 変数                            | 用途                                                               |
-| ------------------------------- | ------------------------------------------------------------------ |
-| `VIEWER_DATA_SOURCE`            | `mock` または `github`。未設定時は `mock`                          |
-| `MATSU_SECOND_BRAIN_READ_TOKEN` | GitHubモードでサーバーが使う読み取りトークン。GitHubモードでは必須 |
+- 定義: [src/env.ts](src/env.ts)。
+- ローカルのgithubモード: `.env`へ上記2値を設定する。
+- トークン: 対象リポジトリだけにアクセスできるFine-grained PAT。`Contents: Read-only`。
+- 実トークン・`.env`はコミットしない。ブラウザーやクライアントビルドへ渡さない。
+- CI: mockを使用。本番Secretは不要。
+- 認証: なし。githubモードでは読み込んだknowledge/indexesをページ利用者へ公開する。
 
-ローカルでGitHubデータを確認する場合は、任意で `.env` に `VIEWER_DATA_SOURCE=github` と `MATSU_SECOND_BRAIN_READ_TOKEN` を設定できます。値は `src/env.ts` で定義し、トークンはクライアントへ渡しません。`.env` はGit管理対象外なので、設定した実トークンやそれを含む `.env` をコミットしないでください。CIはモックで動作し、本番トークンは不要です。`env.mock.example` にはモック設定だけを置いています。
+## 取得と表示
 
-GitHubモードは `shu-matsukubo/matsu-second-brain` の `main` からデータを読みます。初期表示では `/api/library` から `indexes/library.json` のメタデータだけを取得し、タイトル・タグ検索と分類条件をブラウザー上で組み合わせます。topic一覧は検索・分類の両方に一致するKnowledgeから作ります。ホームには最近更新された10件、topic画面には分類別のKnowledge一覧を表示します。topic本文は取得しません。knowledge選択時だけ `/api/article?path=...&snapshot=...` で本文を取得し、ブラウザーではsnapshotとpath単位で取得済み・通信中の本文をキャッシュします。更新確認ボタンで新しいsnapshotを読むと、旧snapshotの本文キャッシュを破棄します。サーバーには60秒のメモリキャッシュと最大4件の同時取得制限があり、本文は一覧と同じコミットの許可対象knowledge Markdown（通常ファイル）だけを返します。内部リンクはtopic/knowledgeのURLへ移動し、戻る・進むと直接URLにも対応します。
+```text
+mainの同じコミット
+├─ indexes/library.json → /api/library → 検索・topic・最近の更新
+└─ 許可対象knowledge  → /api/article → 選択時の本文取得
+```
 
-`indexes/library.json` とtopic MarkdownはKnowledge Markdownから生成する派生データです。正本の `id`, `title`, `type`, `topic`, `topic_label`, `tags`, `updated` を検証し、ID/path/topic/classification/linkの不整合やsymlinkを拒否します。JSONには本文を含めません。生成はリポジトリルートで `npm run index:generate`、非破壊検証は `npm run index:check` です。生成は内容が変わったファイルだけを置換し、古い生成topic pageを除去します。
+| 項目                 | 動作                                               |
+| -------------------- | -------------------------------------------------- |
+| GitHub取得元         | `shu-matsukubo/matsu-second-brain`のmain           |
+| 初期取得             | indexメタデータだけ。本文は含めない                |
+| 検索                 | タイトル・タグの部分一致 AND 分類条件              |
+| topic一覧            | 検索・分類の両方に一致するknowledgeから生成        |
+| ホーム               | 最近更新された10件                                 |
+| topic画面            | 分類別のknowledge一覧。topic本文は取得しない       |
+| 本文                 | `/api/article?path=...&snapshot=...`で遅延取得     |
+| ブラウザーキャッシュ | snapshot/path単位で取得済み・通信中を共有          |
+| 更新確認             | 新snapshot取得時に旧本文キャッシュを破棄           |
+| サーバー             | 60秒メモリキャッシュ・最大4件同時取得              |
+| 本文の許可対象       | 一覧と同じコミットのknowledge Markdown通常ファイル |
+| 画面遷移             | topic/knowledge内部リンク・戻る/進む・直接URL      |
 
-このViewerは認証を設けず、読み込んだknowledgeとindexesをページ利用者に表示します。GitHubモードへ切り替えると、対象内容は公開情報として閲覧可能になります。公開を前提に扱える内容だけを置いてください。
+## Index
 
-トークンが必要な場合は、対象リポジトリだけにアクセスできるFine-grained personal access tokenを作り、**Contents: Read-only**だけを許可します。トークンをブラウザーのコードへ埋め込まないでください。
+- 正本: Knowledge Markdownの`id/title/type/topic/topic_label/tags/updated`。
+- 派生物: `indexes/library.json`とtopic Markdown。
+- 検証: ID/path/topic/classification/linkの不整合・symlinkを拒否。
+- 生成: 内容が変わったファイルだけ置換し、古い生成topic pageを除去。
+- rootでも`npm run index:generate` / `npm run index:check`を実行できる。
 
 ## Pull request CI
 
-`main` 宛てのPull requestでは `Knowledge Viewer` ワークフローが毎回起動します。`app/`、`knowledge/`、`knowledge-policy/`、`indexes/`、`scripts/`、`.agents/skills/`、package設定またはworkflowに差分がある場合、Node.js 26.13.0でルートのworkflow testとViewerのlint、index check、型検査、テスト、buildを実行します。本番Secretは不要です。対象差分がない場合は検証を省略し、集約ジョブが成功を報告します。変更検出または必要な検証が失敗・キャンセルされた場合、集約ジョブも成功扱いにしません。
+- 対象: main向けPR。
+- 正本: [Knowledge Viewer workflow](../../.github/workflows/viewer-ci.yml)。
+- 検証: Skill構造・リンク、workflow test、データ検証、Viewer lint・index・型・test・build。
+- 変更検出対象に差分がなければ検証jobをskip。
+- 変更検出・必要な検証の失敗/cancelは集約jobも失敗。
+- Required status check名: **Viewer CI**。
+- CIからの自動公開: なし。
 
-ブランチ保護でRequired status checkを指定する場合は、固定名の **Viewer CI** を選択します。検証設定だけを追加しており、デプロイ処理はありません。
+## Cloudflareデプロイ
 
-## Cloudflareへのデプロイ
+| 設定                | 値                                                                     |
+| ------------------- | ---------------------------------------------------------------------- |
+| Worker              | `second-brain-viewer`                                                  |
+| workers.dev         | 有効                                                                   |
+| preview URL         | 無効                                                                   |
+| custom domain route | 未設定                                                                 |
+| 公開先              | [Knowledge Viewer](https://second-brain-viewer.matsu-app.workers.dev/) |
+| データ              | githubモードでmainを表示                                               |
+| 設定ファイル        | [void.config.ts](void.config.ts)                                       |
 
-Cloudflare Deploy Skillと[Voidのデプロイ手順](https://void.cloud/reference/cli/deploy)を使います。`app/viewer/` で実行してください。Worker名は `second-brain-viewer` です。`void.config.ts` はworkers.devでの公開を有効にし、プレビューURLを無効にしています。カスタムドメインのルートは設定していません。
-
-公開URLは [Knowledge Viewer](https://second-brain-viewer.matsu-app.workers.dev/) です。GitHubモードで `main` のknowledgeとindexesを表示します。
-
-デプロイ前にWranglerの認証状態を確認します。Voidの認証は別に管理されるため、Voidで未ログインの場合はブラウザーでログインしてください。
+1. Cloudflare Deploy Skillと[Voidデプロイ手順](https://void.cloud/reference/cli/deploy)を使う。
+2. `app/viewer/`でWrangler・Voidそれぞれの認証を確認する。Void未ログインならブラウザーでログインする。
 
 ```sh
 npx wrangler whoami
 npx void cloudflare login
 ```
 
-GitHubモードでは、次の2つのWorker Secretを使います。登録済みのシークレットは再登録不要です。トークンの値は入力プロンプトから登録し、ファイルやコマンド引数に書かないでください。
+3. 未登録のWorker Secretだけ登録する。
 
 ```sh
 npx wrangler secret put MATSU_SECOND_BRAIN_READ_TOKEN --name second-brain-viewer
 npx wrangler secret put VIEWER_DATA_SOURCE --name second-brain-viewer
 ```
 
-2つ目のプロンプトには `github` を入力します。`VIEWER_DATA_SOURCE` とトークンはどちらも `src/env.ts` に定義したサーバー値で、公開変数やクライアントビルド値にはしません。環境変数の役割は[Voidの環境変数仕様](https://void.cloud/reference/api/env)を参照してください。
+- 値は入力プロンプトへ渡す。トークンをファイル・コマンド引数に書かない。
+- `VIEWER_DATA_SOURCE`には`github`を入力する。
+- どちらもサーバー値とする。[Void環境変数仕様](https://void.cloud/reference/api/env)を参照する。
+
+4. デプロイする。
 
 ```sh
 npx void deploy --platform cloudflare
 ```
 
-シークレット登録で作成された仮Workerへの初回デプロイで `/__void/ready` の確認に失敗し、公開URLが無効な場合は、Cloudflare管理画面の対象Workerの **Settings > Domains & Routes** でworkers.devを有効にして再実行します。
+5. 公開URLと`/api/library`でGitHubデータ取得を確認する。
 
-Voidが生成する `void.lock.json` は、デプロイ先アカウントと解決済み設定を保持します。別の端末でも同じ設定を使えるようGit管理します。`.cloudflare/`、`.wrangler/`、`.void-wrangler.jsonc` は生成物のためGit管理しません。
+| 条件                                             | 対応                                                                                        |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------- |
+| 初回の仮Workerで`/__void/ready`失敗、公開URL無効 | Cloudflare管理画面の対象Worker → Settings → Domains & Routesでworkers.devを有効化して再実行 |
+| Windowsの証明書エラー                            | PowerShellで`$env:NODE_USE_SYSTEM_CA = '1'`を設定                                           |
 
-WindowsでCloudflare APIへの接続が証明書エラーになる場合は、PowerShellで `$env:NODE_USE_SYSTEM_CA = '1'` を設定し、信頼済みのシステム証明書を利用します。
-
-デプロイ後は公開URLと `/api/library` を確認し、モックではなくGitHubのデータを取得できることを確認します。このリポジトリのCIから自動公開はしません。
+| ファイル                                             | 管理                                          |
+| ---------------------------------------------------- | --------------------------------------------- |
+| `void.lock.json`                                     | アカウント・解決済み設定を共有するためGit管理 |
+| `.cloudflare/`・`.wrangler/`・`.void-wrangler.jsonc` | 生成物。Git管理外                             |

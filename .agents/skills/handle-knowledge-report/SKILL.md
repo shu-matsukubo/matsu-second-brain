@@ -5,24 +5,24 @@ description: 実行可能なreport候補一件を再確認し、承認範囲内�
 
 # Knowledge reportに対応する
 
-統合ワークフローから割り当てられた一件だけを扱う。`AGENTS.md`、`knowledge-policy/`、report本体、現在のknowledgeを確認し、候補が現在も有効かを根拠と照合する。
+## 概要
 
-## 実行判断
+- CLIの`next`が選んだreport一件を現在の根拠と照合する。
+- 実施・保留・解消済みの判断と結果をreportに残す。
 
-- CLIの`next`が選択した一件だけを扱う。対象はpending、journalがないin_progress、または`reopened: true`で返されたclosed reportを含む。closed statusだけを見て再開対象を除外せず、CLIが選んでいないclosed reportを独断で再試行しない。現在も正しくpolicyに沿い、ユーザーの判断を要しない候補だけ実施する。
-- AI由来のknowledge改善候補も、根拠と現在の状態を再確認しpolicyに適合すれば実施できる。AI由来であることだけで人間承認待ちにしない。
-- ユーザーが追加情報を求める候補、未承認のpolicy/Skill運用変更、判断で結果が大きく変わる曖昧点は実施せず`deferred`相当で保留し、必要な問いと根拠を残す。
-- 不正確・重複・既に解消済みの候補は、その理由と確認した対象をreportに記録して適切な終端状態へ更新する。
-- 曖昧さを解消するために無断で代替処理へ切り替えない。処理失敗はfailureとして根拠・影響・再開情報を残す。
+## 制約と責務範囲
 
-## Knowledge変更
+- [AGENTS.md](../../../AGENTS.md)と[knowledge-policy](../../../knowledge-policy/)に従う。
+- `reopened: true`ならclosed reportも扱う。選ばれていないclosed reportは再試行しない。
+- AI由来のknowledge候補も、根拠とpolicyへの適合を確認できれば実施する。
+- 追加情報待ち・未承認のpolicy/Skill変更・結果を左右する曖昧点は`deferred`にする。
+- 既存意思・背景・出典・履歴を保持し、AI reportを支持数へ含めない。
+- 曖昧さを解消するために独断で代替処理へ切り替えない。
 
-有効な候補を反映する場合は、knowledge-policyの分類、根拠、主題分割、topic、リンク、stable ID規則に従い、直接必要な主対象だけを更新する。既存意思や背景・出典・履歴を失わない。人間入力の証拠がない支持/反対や昇降格履歴を追加しない。AI reportは支持数に含めない。
+## フロー
 
-既存knowledgeの本文を要約・訂正して置き換える場合は、`evidence`/`history`/`sources`の既存prefixを変更せず、`history`へ`previous_body`（置換前の本文全文）と`previous_path`（置換前のknowledge path）を含むentryを追記する。単なる移動時のMarkdownリンク先変更は本文保持として扱えるが、core CLIの検証に従う。
-
-変更内容、結果、処理日、対象をoperation planに含め、CLIで検証・適用する。新規reportはCLIのreport-add schemaに従い、`id`、`fingerprint`、`origin`、`kind`、`status`、`request`、`result`、`created`、`updated`を渡す。request/resultはfrontmatterだけを正本として保存し、本文へ重複させない。reportの状態更新はknowledge変更と重複実行されないようCLIのsource digest/重複排除契約を使う。indexをCLIが生成する場合、Skillで重複して更新しない。適用後、内部参照とreport結果が実態に合うことを確認する。
-
-## Skill改善
-
-対応完了時、同種の失敗や反復作業がSkill改善を必要とするか確認する。必要なら、確認できる例と利用への影響を添えて別reportに提案する。Skill自体の処理方針はユーザーの明示指示なしに変更しない。
+1. report本体・現在のknowledge・根拠を読み、候補が現在も有効か確認する。
+2. 判断に応じて[CLI契約](../../../docs/workflow-contract.md)でreport planを作る。
+3. `node scripts/brain.mjs apply PLAN.json`でknowledgeと元reportの結果をまとめて適用する。
+4. 内部参照・report結果と実態の一致を確認し、統合親へ返す。
+5. Skill改善が必要なら、確認できる例と影響を別reportへ提案する。処理方針の変更には本人の明示指示を要する。
