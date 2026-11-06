@@ -326,6 +326,19 @@
       "updated": "2026-11-03"
     },
     {
+      "id": "k-87f5dfa1f68d156f",
+      "path": "knowledge/ideas/development-process/k-87f5dfa1f68d156f.md",
+      "kind": "idea",
+      "title": "Skill定義と補助資材を同梱するディレクトリ構成案",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "Skill",
+        "ディレクトリ構成"
+      ],
+      "updated": "2026-11-07"
+    },
+    {
       "id": "k-9b3a81a9daaf7d5a",
       "path": "knowledge/ideas/development-process/k-9b3a81a9daaf7d5a.md",
       "kind": "idea",
