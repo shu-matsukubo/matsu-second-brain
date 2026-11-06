@@ -228,5 +228,17 @@
     "paths": [
       "knowledge/ideas/development-process/k-87f5dfa1f68d156f.md"
     ]
+  },
+  "notion:40e013b8-a22b-8199-8afc-f50391c95c9f": {
+    "source_digest": "1712163cb8e2aecc6e089fd277460d4fd927b6364bd7610dd7300f9d7c8b247f",
+    "input_key": "legacy-8792cb1b3639cb491eac40a10191c55830663766537da38ab000325f2070c559",
+    "evidence_digest": "2213b383a05ad60326e8f5ad0914dd51d80e87e7f059ed5330eeba5c5eb730bb",
+    "operation_digest": "d6e484a0c4608fa2f72d8570f6599a22c05a5e83a2287342f985383f702c8cd9",
+    "knowledge_ids": [
+      "k-49427121c3d37c04"
+    ],
+    "paths": [
+      "knowledge/principles/development-process/k-49427121c3d37c04.md"
+    ]
   }
 }

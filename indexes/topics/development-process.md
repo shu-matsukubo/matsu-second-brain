@@ -25,6 +25,7 @@
 - [Workflowは実行契機から独立させる](../../knowledge/principles/development-process/k-cfb0bb408a84ca5f.md) (k-cfb0bb408a84ca5f)
 - [エージェントのモデルは責務に応じて選ぶ](../../knowledge/principles/development-process/k-f1b6da308d1daaf7.md) (k-f1b6da308d1daaf7)
 - [ツールは継続的な価値で採用を判断する](../../knowledge/principles/development-process/k-1c9d5e44b0d5304d.md) (k-1c9d5e44b0d5304d)
+- [ナレッジ収集は取得漏れの許容範囲で安全な継続性を優先する](../../knowledge/principles/development-process/k-49427121c3d37c04.md) (k-49427121c3d37c04)
 - [パフォーマンス改善は発生頻度と影響度で優先順位を決める](../../knowledge/principles/development-process/k-e4905c42b314c4c4.md) (k-e4905c42b314c4c4)
 - [マルチエージェントの並列度はタスク構造で決める](../../knowledge/principles/development-process/k-cace147d56d039c9.md) (k-cace147d56d039c9)
 - [上位Agentへの相談は必要時の共通能力にする](../../knowledge/principles/development-process/k-284229ca7cd4221b.md) (k-284229ca7cd4221b)
