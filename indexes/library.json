@@ -656,6 +656,20 @@
       "updated": "2026-10-08"
     },
     {
+      "id": "k-2aa29c1ef3b94c4d",
+      "path": "knowledge/principles/development-process/k-2aa29c1ef3b94c4d.md",
+      "kind": "principle",
+      "title": "品質保証は実運用のフィードバックで調整する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "品質保証",
+        "実運用",
+        "フィードバック"
+      ],
+      "updated": "2026-11-07"
+    },
+    {
       "id": "k-37ea96230a1cf568",
       "path": "knowledge/principles/development-process/k-37ea96230a1cf568.md",
       "kind": "principle",

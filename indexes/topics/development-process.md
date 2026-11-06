@@ -33,6 +33,7 @@
 - [仕様を詰める対話と実装エージェントは分ける](../../knowledge/principles/development-process/k-12ebb55403b0808f.md) (k-12ebb55403b0808f)
 - [品質ゲートは追加価値で増やす](../../knowledge/principles/development-process/k-18cd4b4f19159d05.md) (k-18cd4b4f19159d05)
 - [品質保証は人間のレビュー対象から設計する](../../knowledge/principles/development-process/k-5caa30903bcc5de2.md) (k-5caa30903bcc5de2)
+- [品質保証は実運用のフィードバックで調整する](../../knowledge/principles/development-process/k-2aa29c1ef3b94c4d.md) (k-2aa29c1ef3b94c4d)
 - [品質保証レベルは入口で選ぶ](../../knowledge/principles/development-process/k-1fd2110eaa47e4f6.md) (k-1fd2110eaa47e4f6)
 - [外部依存のリスクはUpstream Issueも確認する](../../knowledge/principles/development-process/k-7c01507f86f46660.md) (k-7c01507f86f46660)
 - [安全策は脅威モデルから選ぶ](../../knowledge/principles/development-process/k-0c0c7182767c137a.md) (k-0c0c7182767c137a)
