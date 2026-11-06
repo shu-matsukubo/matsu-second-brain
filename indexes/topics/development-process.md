@@ -18,6 +18,7 @@
 - [AIの操作制約はPolicyで結果を制限する](../../knowledge/principles/development-process/k-c7312886320ad33f.md) (k-c7312886320ad33f)
 - [AIフローでは能力・制御・判断知識を分離する](../../knowledge/principles/development-process/k-1c336721577e40fb.md) (k-1c336721577e40fb)
 - [AIへの依頼は実装結果とともに保存する](../../knowledge/principles/development-process/k-d00d5434cb5bb73e.md) (k-d00d5434cb5bb73e)
+- [AI向けドキュメントは責務と参照構造で説明する](../../knowledge/principles/development-process/k-838e51960661c08f.md) (k-838e51960661c08f)
 - [Issueは現在の実装に照合してから設計する](../../knowledge/principles/development-process/k-a9b0faffeeed8800.md) (k-a9b0faffeeed8800)
 - [Review単位とIntegration単位を分ける](../../knowledge/principles/development-process/k-3e976cb288ac805d.md) (k-3e976cb288ac805d)
 - [Skillの起動は名前の指定と定義の読込を分けて確認する](../../knowledge/principles/development-process/k-0070fb65c2253dd0.md) (k-0070fb65c2253dd0)
