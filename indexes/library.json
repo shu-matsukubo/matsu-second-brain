@@ -409,6 +409,20 @@
       "updated": "2026-11-06"
     },
     {
+      "id": "k-cffd059337441ed6",
+      "path": "knowledge/principles/app-development/k-cffd059337441ed6.md",
+      "kind": "principle",
+      "title": "実行環境の互換性は実際の利用経路で確認する",
+      "topic": "app-development",
+      "topicLabel": "アプリ開発",
+      "tags": [
+        "互換性",
+        "実行環境",
+        "不具合調査"
+      ],
+      "updated": "2026-11-06"
+    },
+    {
       "id": "k-082f394197334891",
       "path": "knowledge/principles/development-process/k-082f394197334891.md",
       "kind": "principle",
