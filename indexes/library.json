@@ -312,6 +312,20 @@
       "updated": "2026-09-30"
     },
     {
+      "id": "k-4fead23b62fc49b6",
+      "path": "knowledge/ideas/development-process/k-4fead23b62fc49b6.md",
+      "kind": "idea",
+      "title": "利用者が指示書を登録してAI Workflowを拡張する案",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "AI Workflow",
+        "拡張",
+        "MCP"
+      ],
+      "updated": "2026-11-07"
+    },
+    {
       "id": "k-68d79effd0909df6",
       "path": "knowledge/ideas/development-process/k-68d79effd0909df6.md",
       "kind": "idea",
