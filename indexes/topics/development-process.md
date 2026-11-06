@@ -35,6 +35,7 @@
 - [外部依存のリスクはUpstream Issueも確認する](../../knowledge/principles/development-process/k-7c01507f86f46660.md) (k-7c01507f86f46660)
 - [安全策は脅威モデルから選ぶ](../../knowledge/principles/development-process/k-0c0c7182767c137a.md) (k-0c0c7182767c137a)
 - [定期処理は停止時間を抑える頻度で実行する](../../knowledge/principles/development-process/k-55e0d5d013745fda.md) (k-55e0d5d013745fda)
+- [実装依頼では要件を明確にして方式を担当者へ委ねる](../../knowledge/principles/development-process/k-25dd9353a7f5df2c.md) (k-25dd9353a7f5df2c)
 - [局所品質が十分なら検証対象を上位へ移す](../../knowledge/principles/development-process/k-7edd2b79c450ab07.md) (k-7edd2b79c450ab07)
 - [承認ゲートは責任境界として設計する](../../knowledge/principles/development-process/k-bd28870e8387958e.md) (k-bd28870e8387958e)
 - [技術の広さと深さは機会費用を踏まえて選ぶ](../../knowledge/principles/development-process/k-1473d6f6b0390549.md) (k-1473d6f6b0390549)
