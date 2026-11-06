@@ -601,6 +601,20 @@
       "updated": "2026-10-23"
     },
     {
+      "id": "k-25dd9353a7f5df2c",
+      "path": "knowledge/principles/development-process/k-25dd9353a7f5df2c.md",
+      "kind": "principle",
+      "title": "実装依頼では要件を明確にして方式を担当者へ委ねる",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "要件定義",
+        "チーム開発",
+        "責務分離"
+      ],
+      "updated": "2026-11-06"
+    },
+    {
       "id": "k-284229ca7cd4221b",
       "path": "knowledge/principles/development-process/k-284229ca7cd4221b.md",
       "kind": "principle",
