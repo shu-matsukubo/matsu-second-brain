@@ -7,6 +7,7 @@
 ## 思想
 
 - [Agentは必要最小限にし専門性は知識で拡張する](../../knowledge/principles/development-process/k-3953b9c0e4266be4.md) (k-3953b9c0e4266be4)
+- [AI Agentの振る舞いは条件を再現した実モデル試験で検証する](../../knowledge/principles/development-process/k-94a9e4979e28732a.md) (k-94a9e4979e28732a)
 - [AI Workflowは探索量と完了時間で評価する](../../knowledge/principles/development-process/k-cb4b907775bc93a7.md) (k-cb4b907775bc93a7)
 - [AIエージェントには覚えておく仕事を任せる](../../knowledge/principles/development-process/k-f51a362201719cec.md) (k-f51a362201719cec)
 - [AIセキュリティは入力経路と実行権限をセットで考える](../../knowledge/principles/development-process/k-c2677cc313efd69a.md) (k-c2677cc313efd69a)
