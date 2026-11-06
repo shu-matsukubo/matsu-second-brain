@@ -204,5 +204,17 @@
     "paths": [
       "knowledge/principles/learning/k-ea486b2c30bdf5ec.md"
     ]
+  },
+  "notion:40e013b8-a22b-8178-80c6-f8272580eded": {
+    "source_digest": "b46f657d5ff7d8ac672c20f24b3799c00e2438c72e8324db362bb5b9c7594be2",
+    "input_key": "legacy-f73cdbc480e89a3d33bdca1142635226f9d41e0bdb4fbe9dd9047e0eeed3c3fa",
+    "evidence_digest": "6c4b0ab12f4e314ebf48a09944c88f4d037cefc424aed1a9c94ba344d06c4198",
+    "operation_digest": "dac2a43cf62657fd5351ddb7cf85bfd78d4fd6a4733384b7e1020fd6d2648303",
+    "knowledge_ids": [
+      "k-87f5dfa1f68d156f"
+    ],
+    "paths": [
+      "knowledge/ideas/development-process/k-87f5dfa1f68d156f.md"
+    ]
   }
 }
