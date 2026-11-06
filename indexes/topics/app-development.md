@@ -12,6 +12,7 @@
 - [AI開発の技術選定では標準機能への誘導も評価する](../../knowledge/principles/app-development/k-b984fc96e28cd8c7.md) (k-b984fc96e28cd8c7)
 - [アプリの通知先に Discord と LINE を使う際の選び方](../../knowledge/principles/app-development/k-483e48a6197921ea.md) (k-483e48a6197921ea)
 - [型の評価では安全性と仕様表現力を区別する](../../knowledge/principles/app-development/k-a25b1a83b8aa3cea.md) (k-a25b1a83b8aa3cea)
+- [実行環境の互換性は実際の利用経路で確認する](../../knowledge/principles/app-development/k-cffd059337441ed6.md) (k-cffd059337441ed6)
 
 ## アイディア
 

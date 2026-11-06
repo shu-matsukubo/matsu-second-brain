@@ -144,5 +144,17 @@
     "paths": [
       "knowledge/principles/development-process/k-94a9e4979e28732a.md"
     ]
+  },
+  "notion:40e013b8-a22b-815f-afcf-c7216555f849": {
+    "source_digest": "6440b6df87bad792affb6cff59d23cab932d013453f986f00ccef403d9514454",
+    "input_key": "legacy-bdc83bd2865ae18da5176300fdf99210477ca84294794e37df4b8b3e4eca3c3c",
+    "evidence_digest": "41152f554082385f4f65872bea55d8862fb2520853471cc7ee82be804554b587",
+    "operation_digest": "28566b201e05764181c3cc0ee4a3fb3fb6dc76c9f99c6d1b691fa4dd0cc64b45",
+    "knowledge_ids": [
+      "k-cffd059337441ed6"
+    ],
+    "paths": [
+      "knowledge/principles/app-development/k-cffd059337441ed6.md"
+    ]
   }
 }
