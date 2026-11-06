@@ -851,6 +851,20 @@
       "updated": "2026-10-30"
     },
     {
+      "id": "k-838e51960661c08f",
+      "path": "knowledge/principles/development-process/k-838e51960661c08f.md",
+      "kind": "principle",
+      "title": "AI向けドキュメントは責務と参照構造で説明する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "AI向けドキュメント",
+        "責務分離",
+        "正本"
+      ],
+      "updated": "2026-11-07"
+    },
+    {
       "id": "k-8f683f6261a605b6",
       "path": "knowledge/principles/development-process/k-8f683f6261a605b6.md",
       "kind": "principle",
