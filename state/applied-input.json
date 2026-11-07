@@ -480,5 +480,17 @@
     "paths": [
       "knowledge/principles/development-process/k-5cab5edadf27210f.md"
     ]
+  },
+  "notion:40e013b8-a22b-8175-86bb-cd9d4e10cfcd": {
+    "source_digest": "8d290466ad5dbafa2fc4a4166a2f2f1f57825ea6fb39697e20ad6e7117f25c8c",
+    "input_key": "legacy-dea5c231dc15f3bd14fbacfcb118f6b36779529b439646bdf7cd621900f0b7b3",
+    "evidence_digest": "b6aee9ff08e4dd5c4580f48ae0a0f4dfe8cfa5fd5e87c81f4007ae54281c67dc",
+    "operation_digest": "16a395cf8ec8d2f690fcac4754805fec470dcf564783ecc256b37ce176924b85",
+    "knowledge_ids": [
+      "k-8d290466ad5dbafa"
+    ],
+    "paths": [
+      "knowledge/principles/development-process/k-8d290466ad5dbafa.md"
+    ]
   }
 }
