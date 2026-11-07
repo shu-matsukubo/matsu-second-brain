@@ -698,6 +698,20 @@
       "updated": "2026-10-19"
     },
     {
+      "id": "k-392e524a7ce400e8",
+      "path": "knowledge/principles/development-process/k-392e524a7ce400e8.md",
+      "kind": "principle",
+      "title": "自動化は実際の運用負担で継続を判断する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "自動化",
+        "運用負担",
+        "Workflow"
+      ],
+      "updated": "2026-11-07"
+    },
+    {
       "id": "k-3953b9c0e4266be4",
       "path": "knowledge/principles/development-process/k-3953b9c0e4266be4.md",
       "kind": "principle",
