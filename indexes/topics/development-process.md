@@ -58,6 +58,7 @@
 - [自動化は実際の運用負担で継続を判断する](../../knowledge/principles/development-process/k-392e524a7ce400e8.md) (k-392e524a7ce400e8)
 - [自己レビューと独立レビューで異なる失敗を検出する](../../knowledge/principles/development-process/k-12584bf597c40b01.md) (k-12584bf597c40b01)
 - [複雑な計算の不具合は計算経路から調べる](../../knowledge/principles/development-process/k-95ab8cac0e648a55.md) (k-95ab8cac0e648a55)
+- [親Agentの判断をタスクに残し実装をWorkerに委譲する](../../knowledge/principles/development-process/k-5466f5c53ed15e3d.md) (k-5466f5c53ed15e3d)
 - [観測と改善を分離する](../../knowledge/principles/development-process/k-082f394197334891.md) (k-082f394197334891)
 - [設計では技術以外の制約条件も明示する](../../knowledge/principles/development-process/k-18612ffa4bd0558c.md) (k-18612ffa4bd0558c)
 - [設計原則は将来の変更で検証可能にする](../../knowledge/principles/development-process/k-d24184b6e646329f.md) (k-d24184b6e646329f)
