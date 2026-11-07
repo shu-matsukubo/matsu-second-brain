@@ -1049,6 +1049,20 @@
       "updated": "2026-11-08"
     },
     {
+      "id": "k-8d290466ad5dbafa",
+      "path": "knowledge/principles/development-process/k-8d290466ad5dbafa.md",
+      "kind": "principle",
+      "title": "Skillの共通化は用途と変更理由で判断する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "Skill",
+        "共通化",
+        "責務分離"
+      ],
+      "updated": "2026-11-08"
+    },
+    {
       "id": "k-8f683f6261a605b6",
       "path": "knowledge/principles/development-process/k-8f683f6261a605b6.md",
       "kind": "principle",
