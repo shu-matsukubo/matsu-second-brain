@@ -378,5 +378,19 @@
     "paths": [
       "knowledge/ideas/development-process/k-5639132bee83c074.md"
     ]
+  },
+  "notion:40e013b8-a22b-8165-bfbc-c382db6f711f": {
+    "source_digest": "cdf3477e775caa89300fd5626a5bd3fc3c055b0b7d6f93eb9bd77ff2088ec151",
+    "input_key": "legacy-8124becb6c2aedec4820dbb6f1d85705fe49c59dcd231ab76c30d8336a34c4ae",
+    "evidence_digest": "34b0920b9f79c5429e6904da3dfe0a0dae9a4952f90a245a0b6ac360f402d163",
+    "operation_digest": "a2a5261b6c31a9a07e32d32794e3475526869661c3bc0fa39c57d0ac26cebde2",
+    "knowledge_ids": [
+      "k-5c7f82b36d860b77",
+      "k-1dd91e1b799f3dbe"
+    ],
+    "paths": [
+      "knowledge/facts/app-development/k-5c7f82b36d860b77.md",
+      "knowledge/ideas/app-development/k-1dd91e1b799f3dbe.md"
+    ]
   }
 }
