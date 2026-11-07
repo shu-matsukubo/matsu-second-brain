@@ -63,6 +63,7 @@
 
 ## アイディア
 
+- [AIで実装負担が下がる場合に自作も比較する仮説](../../knowledge/ideas/development-process/k-890ccb2db2e88874.md) (k-890ccb2db2e88874)
 - [AI処理はキャッシュ効率を運用データで検証する](../../knowledge/ideas/development-process/k-d8c1f72c69667e83.md) (k-d8c1f72c69667e83)
 - [AI判断とWorkflow分岐を分けてテストする案](../../knowledge/ideas/development-process/k-68d79effd0909df6.md) (k-68d79effd0909df6)
 - [GitHub Releasesを個人OSSの変更履歴の正本にする案](../../knowledge/ideas/development-process/k-6e3583d735238d84.md) (k-6e3583d735238d84)
