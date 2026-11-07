@@ -16,6 +16,22 @@
       "updated": "2026-08-24"
     },
     {
+      "id": "k-5c7f82b36d860b77",
+      "path": "knowledge/facts/app-development/k-5c7f82b36d860b77.md",
+      "kind": "fact",
+      "title": "Nyxisの認可モデルと形式証明の範囲",
+      "topic": "app-development",
+      "topicLabel": "アプリ開発",
+      "tags": [
+        "Nyxis",
+        "認可",
+        "形式検証",
+        "Cedar",
+        "Lean"
+      ],
+      "updated": "2026-11-07"
+    },
+    {
       "id": "k-63ec6b4ce9ba5b6b",
       "path": "knowledge/facts/app-development/k-63ec6b4ce9ba5b6b.md",
       "kind": "fact",
@@ -269,6 +285,20 @@
         "コミット"
       ],
       "updated": "2026-08-24"
+    },
+    {
+      "id": "k-1dd91e1b799f3dbe",
+      "path": "knowledge/ideas/app-development/k-1dd91e1b799f3dbe.md",
+      "kind": "idea",
+      "title": "Nyxisの認可設計をAI生成Webアプリに応用する調査案",
+      "topic": "app-development",
+      "topicLabel": "アプリ開発",
+      "tags": [
+        "Nyxis",
+        "認可",
+        "AIコード生成"
+      ],
+      "updated": "2026-11-07"
     },
     {
       "id": "k-3a1a3f3653452faf",
