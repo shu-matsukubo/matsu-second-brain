@@ -66,5 +66,6 @@
 - [AI判断とWorkflow分岐を分けてテストする案](../../knowledge/ideas/development-process/k-68d79effd0909df6.md) (k-68d79effd0909df6)
 - [Skill定義と補助資材を同梱するディレクトリ構成案](../../knowledge/ideas/development-process/k-87f5dfa1f68d156f.md) (k-87f5dfa1f68d156f)
 - [ドキュメントを読者と参照頻度で分ける案](../../knowledge/ideas/development-process/k-9b3a81a9daaf7d5a.md) (k-9b3a81a9daaf7d5a)
+- [個人作成の汎用Skillsを会社で再利用する案](../../knowledge/ideas/development-process/k-5c2fe3559365432f.md) (k-5c2fe3559365432f)
 - [利用者が指示書を登録してAI Workflowを拡張する案](../../knowledge/ideas/development-process/k-4fead23b62fc49b6.md) (k-4fead23b62fc49b6)
 - [独立した手続きにSkillを絞る案](../../knowledge/ideas/development-process/k-f36bc045f746da9e.md) (k-f36bc045f746da9e)
