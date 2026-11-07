@@ -993,6 +993,20 @@
       "updated": "2026-11-05"
     },
     {
+      "id": "k-5cab5edadf27210f",
+      "path": "knowledge/principles/development-process/k-5cab5edadf27210f.md",
+      "kind": "principle",
+      "title": "生成とレビューで作業対象ごとの登録方針を共有する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "AI Workflow",
+        "レビュー",
+        "方針管理"
+      ],
+      "updated": "2026-11-08"
+    },
+    {
       "id": "k-7c01507f86f46660",
       "path": "knowledge/principles/development-process/k-7c01507f86f46660.md",
       "kind": "principle",
