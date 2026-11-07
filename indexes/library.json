@@ -453,6 +453,20 @@
       "updated": "2026-11-07"
     },
     {
+      "id": "k-890ccb2db2e88874",
+      "path": "knowledge/ideas/development-process/k-890ccb2db2e88874.md",
+      "kind": "idea",
+      "title": "AIで実装負担が下がる場合に自作も比較する仮説",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "自作",
+        "OSS",
+        "技術選定"
+      ],
+      "updated": "2026-11-08"
+    },
+    {
       "id": "k-9b3a81a9daaf7d5a",
       "path": "knowledge/ideas/development-process/k-9b3a81a9daaf7d5a.md",
       "kind": "idea",
@@ -906,7 +920,7 @@
         "意思決定",
         "認知負荷"
       ],
-      "updated": "2026-11-04"
+      "updated": "2026-11-08"
     },
     {
       "id": "k-55e0d5d013745fda",
