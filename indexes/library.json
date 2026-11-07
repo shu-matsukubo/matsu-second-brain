@@ -384,6 +384,20 @@
       "updated": "2026-11-07"
     },
     {
+      "id": "k-586b73286999429c",
+      "path": "knowledge/ideas/development-process/k-586b73286999429c.md",
+      "kind": "idea",
+      "title": "タスク分解エージェントの責務とモデル選定案",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "AIエージェント",
+        "タスク分解",
+        "モデル選定"
+      ],
+      "updated": "2026-11-07"
+    },
+    {
       "id": "k-5c2fe3559365432f",
       "path": "knowledge/ideas/development-process/k-5c2fe3559365432f.md",
       "kind": "idea",
