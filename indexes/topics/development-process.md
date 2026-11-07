@@ -2,7 +2,7 @@
 
 ## 事実
 
-（なし）
+- [SemVer 2.0.0の初期開発段階と公開API互換性](../../knowledge/facts/development-process/k-5cb97b9c00c4990c.md) (k-5cb97b9c00c4990c)
 
 ## 思想
 
@@ -32,6 +32,7 @@
 - [上位Agentへの相談は必要時の共通能力にする](../../knowledge/principles/development-process/k-284229ca7cd4221b.md) (k-284229ca7cd4221b)
 - [不採用アーキテクチャは前提が変わったら再評価する](../../knowledge/principles/development-process/k-faeac1f2745de751.md) (k-faeac1f2745de751)
 - [仕様を詰める対話と実装エージェントは分ける](../../knowledge/principles/development-process/k-12ebb55403b0808f.md) (k-12ebb55403b0808f)
+- [個人OSSはリリースごとに更新の影響を伝える](../../knowledge/principles/development-process/k-962298dad74b6ccd.md) (k-962298dad74b6ccd)
 - [品質ゲートは追加価値で増やす](../../knowledge/principles/development-process/k-18cd4b4f19159d05.md) (k-18cd4b4f19159d05)
 - [品質保証は人間のレビュー対象から設計する](../../knowledge/principles/development-process/k-5caa30903bcc5de2.md) (k-5caa30903bcc5de2)
 - [品質保証は実運用のフィードバックで調整する](../../knowledge/principles/development-process/k-2aa29c1ef3b94c4d.md) (k-2aa29c1ef3b94c4d)
@@ -64,6 +65,7 @@
 
 - [AI処理はキャッシュ効率を運用データで検証する](../../knowledge/ideas/development-process/k-d8c1f72c69667e83.md) (k-d8c1f72c69667e83)
 - [AI判断とWorkflow分岐を分けてテストする案](../../knowledge/ideas/development-process/k-68d79effd0909df6.md) (k-68d79effd0909df6)
+- [GitHub Releasesを個人OSSの変更履歴の正本にする案](../../knowledge/ideas/development-process/k-6e3583d735238d84.md) (k-6e3583d735238d84)
 - [Skill定義と補助資材を同梱するディレクトリ構成案](../../knowledge/ideas/development-process/k-87f5dfa1f68d156f.md) (k-87f5dfa1f68d156f)
 - [ドキュメントを読者と参照頻度で分ける案](../../knowledge/ideas/development-process/k-9b3a81a9daaf7d5a.md) (k-9b3a81a9daaf7d5a)
 - [個人作成の汎用Skillsを会社で再利用する案](../../knowledge/ideas/development-process/k-5c2fe3559365432f.md) (k-5c2fe3559365432f)
