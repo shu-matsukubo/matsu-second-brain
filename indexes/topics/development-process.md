@@ -71,3 +71,4 @@
 - [個人作成の汎用Skillsを会社で再利用する案](../../knowledge/ideas/development-process/k-5c2fe3559365432f.md) (k-5c2fe3559365432f)
 - [利用者が指示書を登録してAI Workflowを拡張する案](../../knowledge/ideas/development-process/k-4fead23b62fc49b6.md) (k-4fead23b62fc49b6)
 - [独立した手続きにSkillを絞る案](../../knowledge/ideas/development-process/k-f36bc045f746da9e.md) (k-f36bc045f746da9e)
+- [第2の脳をWebで参照・検索する構成の初期案](../../knowledge/ideas/development-process/k-ac596996ac201a38.md) (k-ac596996ac201a38)
