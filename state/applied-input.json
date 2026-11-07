@@ -366,5 +366,17 @@
       "knowledge/principles/development-process/k-3ddb79c59977a9f0.md",
       "knowledge/ideas/development-process/k-ac596996ac201a38.md"
     ]
+  },
+  "notion:40e013b8-a22b-8189-871c-e544a008fb14": {
+    "source_digest": "2b64aa88b81387f7327c8bc207c4555a99a0b10c5ecc6fc5f6bace7142852353",
+    "input_key": "legacy-ced3f4b102c20ec9190f446cb76dcd3d05c2e29712701c21ee0046e3e843956f",
+    "evidence_digest": "1adaeb6f5098192058ffdabc916c638c46f7bc183d97725b31dc2b07c22df3c8",
+    "operation_digest": "1b084977334cbccdc4618d83b878ac2bb57b0a87000f6e1584f27e139930725f",
+    "knowledge_ids": [
+      "k-5639132bee83c074"
+    ],
+    "paths": [
+      "knowledge/ideas/development-process/k-5639132bee83c074.md"
+    ]
   }
 }
