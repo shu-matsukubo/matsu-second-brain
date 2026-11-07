@@ -32,6 +32,7 @@
 - [上位Agentへの相談は必要時の共通能力にする](../../knowledge/principles/development-process/k-284229ca7cd4221b.md) (k-284229ca7cd4221b)
 - [不採用アーキテクチャは前提が変わったら再評価する](../../knowledge/principles/development-process/k-faeac1f2745de751.md) (k-faeac1f2745de751)
 - [仕様を詰める対話と実装エージェントは分ける](../../knowledge/principles/development-process/k-12ebb55403b0808f.md) (k-12ebb55403b0808f)
+- [仕様理解とタスク分解は親Agentが担当し計画を独立レビューする](../../knowledge/principles/development-process/k-259092392aa4081c.md) (k-259092392aa4081c)
 - [個人OSSはリリースごとに更新の影響を伝える](../../knowledge/principles/development-process/k-962298dad74b6ccd.md) (k-962298dad74b6ccd)
 - [品質ゲートは追加価値で増やす](../../knowledge/principles/development-process/k-18cd4b4f19159d05.md) (k-18cd4b4f19159d05)
 - [品質保証は人間のレビュー対象から設計する](../../knowledge/principles/development-process/k-5caa30903bcc5de2.md) (k-5caa30903bcc5de2)
