@@ -624,5 +624,17 @@
     "operation_digest": "1b960d1629b23a7381c1e12fc3ad4b114c8cc033e44042da9ea588ade344cc54",
     "knowledge_ids": [],
     "paths": []
+  },
+  "notion:40e013b8-a22b-81dd-bf65-c9850070bb65": {
+    "source_digest": "c7a76d5056a6da20c245eb5a1ae9eedd64802a5a265c71f5dd85d10962bfb775",
+    "input_key": "codex|msg_01a1a3b7-591f-7f40-a428-416d840afbb0",
+    "evidence_digest": "f95a3968228bd0348b2cb26786b3da6fc231e20c437e1cc8273e9df168939b51",
+    "operation_digest": "e461411a10a53887d057237de9fd34b01cd9475026be34a674f5123e08172d4d",
+    "knowledge_ids": [
+      "k-c7a76d5056a6da20"
+    ],
+    "paths": [
+      "knowledge/principles/app-development/k-c7a76d5056a6da20.md"
+    ]
   }
 }
