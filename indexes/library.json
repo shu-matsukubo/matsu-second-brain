@@ -1161,6 +1161,20 @@
       "updated": "2026-11-07"
     },
     {
+      "id": "k-99d67a67388c3389",
+      "path": "knowledge/principles/development-process/k-99d67a67388c3389.md",
+      "kind": "principle",
+      "title": "AI開発WorkflowはPRの最新コミットで必須CIの成功まで確認する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "AI Workflow",
+        "CI",
+        "品質保証"
+      ],
+      "updated": "2026-11-08"
+    },
+    {
       "id": "k-a9b0faffeeed8800",
       "path": "knowledge/principles/development-process/k-a9b0faffeeed8800.md",
       "kind": "principle",
