@@ -736,5 +736,13 @@
     "paths": [
       "knowledge/principles/development-process/k-9cff2777bbb25b24.md"
     ]
+  },
+  "notion:40e013b8-a22b-811d-aa15-fb43ba925e7f": {
+    "source_digest": "1f2d88c32eb3eb59efd4b1ccad9e5138eb9b61e8e2e77899aee297598b5015fa",
+    "input_key": "codex|msg_01a1a3bb-dfe1-7b92-8a7a-9d4958cee142",
+    "evidence_digest": "b8c97cf3825bf7eec7f637e53b89583d0b946393e3f2dd46c1feb7c348ddc3aa",
+    "operation_digest": "b28cc21cc262aaea308cd08b453144a73221742fdc51abbfd3cd9388af84cf36",
+    "knowledge_ids": [],
+    "paths": []
   }
 }
