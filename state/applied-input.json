@@ -616,5 +616,13 @@
       "knowledge/facts/app-development/k-32972ab11ccf5dab.md",
       "knowledge/ideas/codex/k-24a0cae7e038cf2f.md"
     ]
+  },
+  "notion:40e013b8-a22b-8185-9e95-c979ea749ede": {
+    "source_digest": "951892940f18bbca0c1cec5ca8b873abda130dd0b82e72ffb6ef47035a438446",
+    "input_key": "codex|msg_01a1a210-7806-71d2-8d84-fe97441b0fbd",
+    "evidence_digest": "2514adb6b7e9d3268364dc373174dff6a2521f6f2eee2242fa07720cac94c087",
+    "operation_digest": "1b960d1629b23a7381c1e12fc3ad4b114c8cc033e44042da9ea588ade344cc54",
+    "knowledge_ids": [],
+    "paths": []
   }
 }
