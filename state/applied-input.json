@@ -744,5 +744,13 @@
     "operation_digest": "b28cc21cc262aaea308cd08b453144a73221742fdc51abbfd3cd9388af84cf36",
     "knowledge_ids": [],
     "paths": []
+  },
+  "notion:40e013b8-a22b-81e8-9518-cd9fa6a66951": {
+    "source_digest": "23db68ea3619d9c0993a9e56e11c75899dd2ed8b84e1c1d35b1f2c51ba5a89dc",
+    "input_key": "codex|msg_01a1a3db-4088-7b13-bc81-ee1ac247a70e",
+    "evidence_digest": "0f083ba3c62ba23432d634d0e031997cafb787014f8ca52edead59f0cacfc441",
+    "operation_digest": "b845e7b73cc06848ea459a5c343705b9eda1d577b3262755b5b1d7a659411e83",
+    "knowledge_ids": [],
+    "paths": []
   }
 }
