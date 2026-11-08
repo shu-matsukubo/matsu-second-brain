@@ -636,5 +636,17 @@
     "paths": [
       "knowledge/principles/app-development/k-c7a76d5056a6da20.md"
     ]
+  },
+  "notion:40e013b8-a22b-817d-af86-c442985b208c": {
+    "source_digest": "4d93ab7205dcc5199b6aa1ab9465fe507face554bdbb24570d463e518c62bcad",
+    "input_key": "codex|msg_01a1a3b8-5e82-7692-986c-3719fb14c539",
+    "evidence_digest": "a533e0fa21b7114e932456e0613ae43edebd4d3f53367f4f7097b43ac7479fb1",
+    "operation_digest": "8b499a80f5dda2a462bbaef70edc9d6572acc619e3d232f0eb906301bae11f94",
+    "knowledge_ids": [
+      "k-c7a76d5056a6da20"
+    ],
+    "paths": [
+      "knowledge/principles/app-development/k-c7a76d5056a6da20.md"
+    ]
   }
 }
