@@ -1257,6 +1257,20 @@
       "updated": "2026-11-01"
     },
     {
+      "id": "k-93b112cfea83692e",
+      "path": "knowledge/principles/development-process/k-93b112cfea83692e.md",
+      "kind": "principle",
+      "title": "Skillの設計原則はツール固有の実装規約から分ける",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "Skill",
+        "設計原則",
+        "実装規約"
+      ],
+      "updated": "2026-11-09"
+    },
+    {
       "id": "k-94a9e4979e28732a",
       "path": "knowledge/principles/development-process/k-94a9e4979e28732a.md",
       "kind": "principle",
