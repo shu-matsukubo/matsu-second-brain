@@ -508,6 +508,20 @@
       "updated": "2026-08-24"
     },
     {
+      "id": "k-e2c7d024572d42fa",
+      "path": "knowledge/ideas/development-process/k-e2c7d024572d42fa.md",
+      "kind": "idea",
+      "title": "個人AI開発の主な実装環境をCodex Cloudにする案",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "Codex Cloud",
+        "個人開発",
+        "実行環境"
+      ],
+      "updated": "2026-11-08"
+    },
+    {
       "id": "k-f36bc045f746da9e",
       "path": "knowledge/ideas/development-process/k-f36bc045f746da9e.md",
       "kind": "idea",
