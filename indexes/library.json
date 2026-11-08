@@ -784,6 +784,20 @@
       "updated": "2026-10-23"
     },
     {
+      "id": "k-23530f4699c05263",
+      "path": "knowledge/principles/development-process/k-23530f4699c05263.md",
+      "kind": "principle",
+      "title": "独立レビューでは行動制約・権限制御・事後検証を区別する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "独立レビュー",
+        "権限制御",
+        "AIエージェント"
+      ],
+      "updated": "2026-11-08"
+    },
+    {
       "id": "k-259092392aa4081c",
       "path": "knowledge/principles/development-process/k-259092392aa4081c.md",
       "kind": "principle",
