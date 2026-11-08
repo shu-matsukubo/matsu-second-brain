@@ -18,6 +18,7 @@
 - [型の不確実性は外部境界に局所化する](../../knowledge/principles/app-development/k-81352241ac9ca39f.md) (k-81352241ac9ca39f)
 - [型の評価では安全性と仕様表現力を区別する](../../knowledge/principles/app-development/k-a25b1a83b8aa3cea.md) (k-a25b1a83b8aa3cea)
 - [実行環境の互換性は実際の利用経路で確認する](../../knowledge/principles/app-development/k-cffd059337441ed6.md) (k-cffd059337441ed6)
+- [第2の脳Viewerの余白は区切りに8px単位、本文内部に4px単位を使う](../../knowledge/principles/app-development/k-c7a76d5056a6da20.md) (k-c7a76d5056a6da20)
 
 ## アイディア
 
