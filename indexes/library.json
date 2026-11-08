@@ -383,6 +383,20 @@
       "updated": "2026-10-02"
     },
     {
+      "id": "k-c6ed0d453a423900",
+      "path": "knowledge/ideas/codex/k-c6ed0d453a423900.md",
+      "kind": "idea",
+      "title": "Notionを明示指定して接続可否を切り分ける案",
+      "topic": "codex",
+      "topicLabel": "Codex",
+      "tags": [
+        "Notion",
+        "プラグイン",
+        "接続確認"
+      ],
+      "updated": "2026-11-09"
+    },
+    {
       "id": "k-f3633df9248e801a",
       "path": "knowledge/ideas/codex/k-f3633df9248e801a.md",
       "kind": "idea",
