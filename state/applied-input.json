@@ -700,5 +700,17 @@
       "knowledge/principles/development-process/k-25dba149959c54f0.md",
       "knowledge/ideas/development-process/k-ab614d0c94cb9205.md"
     ]
+  },
+  "notion:40e013b8-a22b-81b1-b02d-dd1e5f75ec4f": {
+    "source_digest": "93b112cfea83692e472a9a94cd22fceb13d073ca37daee144261227f11b5a4f1",
+    "input_key": "legacy-208751af319cb377865a99849b8bbabbbe5d7419180e3fab8c9404fe0c4daa00",
+    "evidence_digest": "5ffae5e3fa845e108a2d6e19bb7caf3efaad74321c79c81725795bfcae2b7850",
+    "operation_digest": "5611f53e6b7fc21e64f5f12d14b86341e61db6ac384f2deb8e3a3ddf085190b5",
+    "knowledge_ids": [
+      "k-93b112cfea83692e"
+    ],
+    "paths": [
+      "knowledge/principles/development-process/k-93b112cfea83692e.md"
+    ]
   }
 }
