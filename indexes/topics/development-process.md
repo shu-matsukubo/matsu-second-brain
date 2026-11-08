@@ -26,6 +26,7 @@
 - [Skillの共通化は用途と変更理由で判断する](../../knowledge/principles/development-process/k-8d290466ad5dbafa.md) (k-8d290466ad5dbafa)
 - [Skillの設計原則はツール固有の実装規約から分ける](../../knowledge/principles/development-process/k-93b112cfea83692e.md) (k-93b112cfea83692e)
 - [Skillの起動は名前の指定と定義の読込を分けて確認する](../../knowledge/principles/development-process/k-0070fb65c2253dd0.md) (k-0070fb65c2253dd0)
+- [ViewerのCIとデプロイを分けて公開時期は人間が決める](../../knowledge/principles/development-process/k-9cff2777bbb25b24.md) (k-9cff2777bbb25b24)
 - [Workflowの状態は既存成果物から導出する](../../knowledge/principles/development-process/k-0befd2ddf54d4781.md) (k-0befd2ddf54d4781)
 - [Workflowは実行契機から独立させる](../../knowledge/principles/development-process/k-cfb0bb408a84ca5f.md) (k-cfb0bb408a84ca5f)
 - [エージェントのモデルは責務に応じて選ぶ](../../knowledge/principles/development-process/k-f1b6da308d1daaf7.md) (k-f1b6da308d1daaf7)

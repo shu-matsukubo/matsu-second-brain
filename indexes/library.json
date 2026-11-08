@@ -1341,6 +1341,20 @@
       "updated": "2026-11-08"
     },
     {
+      "id": "k-9cff2777bbb25b24",
+      "path": "knowledge/principles/development-process/k-9cff2777bbb25b24.md",
+      "kind": "principle",
+      "title": "ViewerのCIとデプロイを分けて公開時期は人間が決める",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "CI",
+        "デプロイ",
+        "Viewer"
+      ],
+      "updated": "2026-11-09"
+    },
+    {
       "id": "k-a9b0faffeeed8800",
       "path": "knowledge/principles/development-process/k-a9b0faffeeed8800.md",
       "kind": "principle",
