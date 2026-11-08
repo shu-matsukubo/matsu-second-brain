@@ -1187,6 +1187,20 @@
       "updated": "2026-11-08"
     },
     {
+      "id": "k-7652ec730db0f40b",
+      "path": "knowledge/principles/development-process/k-7652ec730db0f40b.md",
+      "kind": "principle",
+      "title": "第2の脳は入力窓口と整理済み知識の正本を分ける",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "第2の脳",
+        "入力キュー",
+        "正本"
+      ],
+      "updated": "2026-11-09"
+    },
+    {
       "id": "k-7c01507f86f46660",
       "path": "knowledge/principles/development-process/k-7c01507f86f46660.md",
       "kind": "principle",

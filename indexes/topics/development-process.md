@@ -58,6 +58,7 @@
 - [状態管理方式は現在の不変条件で選ぶ](../../knowledge/principles/development-process/k-dd48dc1f30a5dbac.md) (k-dd48dc1f30a5dbac)
 - [独立レビューでは行動制約・権限制御・事後検証を区別する](../../knowledge/principles/development-process/k-23530f4699c05263.md) (k-23530f4699c05263)
 - [生成とレビューで作業対象ごとの登録方針を共有する](../../knowledge/principles/development-process/k-5cab5edadf27210f.md) (k-5cab5edadf27210f)
+- [第2の脳は入力窓口と整理済み知識の正本を分ける](../../knowledge/principles/development-process/k-7652ec730db0f40b.md) (k-7652ec730db0f40b)
 - [簡素化では複雑さの移動でなくルールと判断負荷を減らす](../../knowledge/principles/development-process/k-094d1e9c150747ec.md) (k-094d1e9c150747ec)
 - [自動化は実際の運用負担で継続を判断する](../../knowledge/principles/development-process/k-392e524a7ce400e8.md) (k-392e524a7ce400e8)
 - [自己レビューと独立レビューで異なる失敗を検出する](../../knowledge/principles/development-process/k-12584bf597c40b01.md) (k-12584bf597c40b01)
