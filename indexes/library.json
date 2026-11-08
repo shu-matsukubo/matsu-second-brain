@@ -328,6 +328,20 @@
       "updated": "2026-09-29"
     },
     {
+      "id": "k-fb77e767eae73e13",
+      "path": "knowledge/ideas/cloudflare/k-fb77e767eae73e13.md",
+      "kind": "idea",
+      "title": "Cloudflareでアクセス数が少なく見える原因の調査案",
+      "topic": "cloudflare",
+      "topicLabel": "Cloudflare",
+      "tags": [
+        "アクセス解析",
+        "Workers",
+        "WAF"
+      ],
+      "updated": "2026-11-08"
+    },
+    {
       "id": "k-b60be5784b16a225",
       "path": "knowledge/ideas/codex/k-b60be5784b16a225.md",
       "kind": "idea",
@@ -590,6 +604,19 @@
         "仕様"
       ],
       "updated": "2026-11-06"
+    },
+    {
+      "id": "k-b535f1e53f39d202",
+      "path": "knowledge/principles/app-development/k-b535f1e53f39d202.md",
+      "kind": "principle",
+      "title": "アクセス数は指標の計測範囲を確認してから解釈する",
+      "topic": "app-development",
+      "topicLabel": "アプリ開発",
+      "tags": [
+        "アクセス解析",
+        "メトリクス"
+      ],
+      "updated": "2026-11-08"
     },
     {
       "id": "k-b984fc96e28cd8c7",
