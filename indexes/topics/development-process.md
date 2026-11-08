@@ -67,6 +67,7 @@
 - [設計では技術以外の制約条件も明示する](../../knowledge/principles/development-process/k-18612ffa4bd0558c.md) (k-18612ffa4bd0558c)
 - [設計原則は将来の変更で検証可能にする](../../knowledge/principles/development-process/k-d24184b6e646329f.md) (k-d24184b6e646329f)
 - [長寿命なCoreを短寿命なClientへ依存させない](../../knowledge/principles/development-process/k-3ddb79c59977a9f0.md) (k-3ddb79c59977a9f0)
+- [開発会話から本人の意思を技術難度にかかわらず拾う](../../knowledge/principles/development-process/k-25dba149959c54f0.md) (k-25dba149959c54f0)
 - [開発環境に製品本体の機能を再実装しない](../../knowledge/principles/development-process/k-b3e6e58729bb7709.md) (k-b3e6e58729bb7709)
 
 ## アイディア
@@ -74,6 +75,7 @@
 - [AIで実装負担が下がる場合に自作も比較する仮説](../../knowledge/ideas/development-process/k-890ccb2db2e88874.md) (k-890ccb2db2e88874)
 - [AI処理はキャッシュ効率を運用データで検証する](../../knowledge/ideas/development-process/k-d8c1f72c69667e83.md) (k-d8c1f72c69667e83)
 - [AI判断とWorkflow分岐を分けてテストする案](../../knowledge/ideas/development-process/k-68d79effd0909df6.md) (k-68d79effd0909df6)
+- [Codexの開発作業完了時に知識候補を抽出する案](../../knowledge/ideas/development-process/k-ab614d0c94cb9205.md) (k-ab614d0c94cb9205)
 - [GitHub Releasesを個人OSSの変更履歴の正本にする案](../../knowledge/ideas/development-process/k-6e3583d735238d84.md) (k-6e3583d735238d84)
 - [Skill定義と補助資材を同梱するディレクトリ構成案](../../knowledge/ideas/development-process/k-87f5dfa1f68d156f.md) (k-87f5dfa1f68d156f)
 - [yomiyasuで技術文書の読みやすさを検証する案](../../knowledge/ideas/development-process/k-5639132bee83c074.md) (k-5639132bee83c074)

@@ -521,6 +521,20 @@
       "updated": "2026-11-04"
     },
     {
+      "id": "k-ab614d0c94cb9205",
+      "path": "knowledge/ideas/development-process/k-ab614d0c94cb9205.md",
+      "kind": "idea",
+      "title": "Codexの開発作業完了時に知識候補を抽出する案",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "Codex",
+        "ナレッジ収集",
+        "ワークフロー"
+      ],
+      "updated": "2026-11-08"
+    },
+    {
       "id": "k-ac596996ac201a38",
       "path": "knowledge/ideas/development-process/k-ac596996ac201a38.md",
       "kind": "idea",
@@ -890,6 +904,20 @@
         "AIエージェント",
         "タスク分解",
         "独立レビュー"
+      ],
+      "updated": "2026-11-08"
+    },
+    {
+      "id": "k-25dba149959c54f0",
+      "path": "knowledge/principles/development-process/k-25dba149959c54f0.md",
+      "kind": "principle",
+      "title": "開発会話から本人の意思を技術難度にかかわらず拾う",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "ナレッジ収集",
+        "開発会話",
+        "設計判断"
       ],
       "updated": "2026-11-08"
     },
