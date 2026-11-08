@@ -776,5 +776,13 @@
     "paths": [
       "knowledge/ideas/codex/k-c6ed0d453a423900.md"
     ]
+  },
+  "notion:40e013b8-a22b-8110-9055-f885bbd892a9": {
+    "source_digest": "7e5bd04218b72ffa7468ea89cf7083d3724bf586d593b4672c07f5122f40c088",
+    "input_key": "codex|msg_01a1a6f9-ebac-7b81-a443-f7dab137b934",
+    "evidence_digest": "25570770fa32e4c41ddf7e3e7c465f84f82c04a68aac7665788e7abda25a6936",
+    "operation_digest": "e5852c1914a4b65fd54ba587621dafc5eb70088baf3bdf7adde3bf353fd241eb",
+    "knowledge_ids": [],
+    "paths": []
   }
 }
