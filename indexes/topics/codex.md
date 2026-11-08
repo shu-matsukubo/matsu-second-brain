@@ -14,3 +14,4 @@
 
 - [ChatGPT Sitesをチーム向け小アプリに使う案](../../knowledge/ideas/codex/k-f3633df9248e801a.md) (k-f3633df9248e801a)
 - [Codex Schedulerで作業を継続する案](../../knowledge/ideas/codex/k-b60be5784b16a225.md) (k-b60be5784b16a225)
+- [CodexのセッションDBとRolloutファイルの不整合を調べる案](../../knowledge/ideas/codex/k-24a0cae7e038cf2f.md) (k-24a0cae7e038cf2f)

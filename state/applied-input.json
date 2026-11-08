@@ -602,5 +602,19 @@
       "knowledge/principles/app-development/k-b535f1e53f39d202.md",
       "knowledge/ideas/cloudflare/k-fb77e767eae73e13.md"
     ]
+  },
+  "notion:40e013b8-a22b-81f4-9136-cb8e12433588": {
+    "source_digest": "32972ab11ccf5dab24a0cae7e038cf2fb517ddc37b459726ae8af14dc89f7700",
+    "input_key": "legacy-17e4218a4494ba41830952bf0ddc6d3482c63232e6d6ad2b4cf11f14feb14ebb",
+    "evidence_digest": "d650fc01cd72d7df0b06fbc091e31f260982b092ea5ede14b2158830d53d4486",
+    "operation_digest": "8f9cd31cca6ccc61df4bab3248fec2f985e4995287b404099f8215b77d98bf49",
+    "knowledge_ids": [
+      "k-32972ab11ccf5dab",
+      "k-24a0cae7e038cf2f"
+    ],
+    "paths": [
+      "knowledge/facts/app-development/k-32972ab11ccf5dab.md",
+      "knowledge/ideas/codex/k-24a0cae7e038cf2f.md"
+    ]
   }
 }
