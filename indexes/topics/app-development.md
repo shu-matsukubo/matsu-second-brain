@@ -11,6 +11,7 @@
 ## 思想
 
 - [AI開発の技術選定では標準機能への誘導も評価する](../../knowledge/principles/app-development/k-b984fc96e28cd8c7.md) (k-b984fc96e28cd8c7)
+- [アクセス数は指標の計測範囲を確認してから解釈する](../../knowledge/principles/app-development/k-b535f1e53f39d202.md) (k-b535f1e53f39d202)
 - [アプリの通知先に Discord と LINE を使う際の選び方](../../knowledge/principles/app-development/k-483e48a6197921ea.md) (k-483e48a6197921ea)
 - [ホスティングは無料枠を超えたときの挙動と費用で選ぶ](../../knowledge/principles/app-development/k-7567e2e163c4243a.md) (k-7567e2e163c4243a)
 - [型の不確実性は外部境界に局所化する](../../knowledge/principles/app-development/k-81352241ac9ca39f.md) (k-81352241ac9ca39f)
