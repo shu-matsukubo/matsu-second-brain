@@ -550,6 +550,20 @@
       "updated": "2026-08-24"
     },
     {
+      "id": "k-7567e2e163c4243a",
+      "path": "knowledge/principles/app-development/k-7567e2e163c4243a.md",
+      "kind": "principle",
+      "title": "ホスティングは無料枠を超えたときの挙動と費用で選ぶ",
+      "topic": "app-development",
+      "topicLabel": "アプリ開発",
+      "tags": [
+        "ホスティング",
+        "無料枠",
+        "運用コスト"
+      ],
+      "updated": "2026-11-08"
+    },
+    {
       "id": "k-81352241ac9ca39f",
       "path": "knowledge/principles/app-development/k-81352241ac9ca39f.md",
       "kind": "principle",
