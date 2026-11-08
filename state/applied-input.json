@@ -752,5 +752,17 @@
     "operation_digest": "b845e7b73cc06848ea459a5c343705b9eda1d577b3262755b5b1d7a659411e83",
     "knowledge_ids": [],
     "paths": []
+  },
+  "notion:40e013b8-a22b-8110-bdff-efc9eac8332d": {
+    "source_digest": "f78ce07e430aea05c137c467be7bc3d733f6a58068dc1a7f8bc8f454485d3daa",
+    "input_key": "codex|msg_01a1a6b4-1558-7082-9aaa-61fc839d08ef",
+    "evidence_digest": "143705ee256a74bba744e6bcfbbca6d36d8090a42c911523ce2660b9c74d72ce",
+    "operation_digest": "77cad583f91d9f899d6fdf369acfd15ff2ed4a126290055ea786e511d4bcc377",
+    "knowledge_ids": [
+      "k-7652ec730db0f40b"
+    ],
+    "paths": [
+      "knowledge/principles/development-process/k-7652ec730db0f40b.md"
+    ]
   }
 }
