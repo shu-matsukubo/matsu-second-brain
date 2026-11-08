@@ -16,6 +16,19 @@
       "updated": "2026-08-24"
     },
     {
+      "id": "k-32972ab11ccf5dab",
+      "path": "knowledge/facts/app-development/k-32972ab11ccf5dab.md",
+      "kind": "fact",
+      "title": "SQLiteのintegrity_checkが検証する範囲",
+      "topic": "app-development",
+      "topicLabel": "アプリ開発",
+      "tags": [
+        "SQLite",
+        "整合性検査"
+      ],
+      "updated": "2026-11-08"
+    },
+    {
       "id": "k-5c7f82b36d860b77",
       "path": "knowledge/facts/app-development/k-5c7f82b36d860b77.md",
       "kind": "fact",
@@ -338,6 +351,20 @@
         "アクセス解析",
         "Workers",
         "WAF"
+      ],
+      "updated": "2026-11-08"
+    },
+    {
+      "id": "k-24a0cae7e038cf2f",
+      "path": "knowledge/ideas/codex/k-24a0cae7e038cf2f.md",
+      "kind": "idea",
+      "title": "CodexのセッションDBとRolloutファイルの不整合を調べる案",
+      "topic": "codex",
+      "topicLabel": "Codex",
+      "tags": [
+        "セッション",
+        "Rollout",
+        "SQLite"
       ],
       "updated": "2026-11-08"
     },

@@ -7,6 +7,7 @@
 - [Nyxisの認可モデルと形式証明の範囲](../../knowledge/facts/app-development/k-5c7f82b36d860b77.md) (k-5c7f82b36d860b77)
 - [OAuth ログイン後のアプリセッションを設計する](../../knowledge/facts/app-development/k-63ec6b4ce9ba5b6b.md) (k-63ec6b4ce9ba5b6b)
 - [OpenID Connectのユーザー識別にはissとsubを使う](../../knowledge/facts/app-development/k-db267f70c5bcb7b4.md) (k-db267f70c5bcb7b4)
+- [SQLiteのintegrity_checkが検証する範囲](../../knowledge/facts/app-development/k-32972ab11ccf5dab.md) (k-32972ab11ccf5dab)
 
 ## 思想
 
