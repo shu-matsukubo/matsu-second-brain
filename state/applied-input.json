@@ -920,5 +920,17 @@
     "operation_digest": "cb7d0777fb360ba1e3b67381b05def3af2f9fc11e1514a9937cea9acfb6af602",
     "knowledge_ids": [],
     "paths": []
+  },
+  "notion:40f013b8-a22b-8151-9579-cbd0e8cec2ba": {
+    "source_digest": "099a04f2f886a9396233bb22967953db76446adab19ff1aad9a721b4c3f08d6c",
+    "input_key": "codex|msg_01a1a8c7-3934-7ca1-b1d1-d4d660e5e09b",
+    "evidence_digest": "473cb186f165e9f384853135de666deaada47726ee8198110238a1ec74d0ab18",
+    "operation_digest": "d9897a8866ed2bc5bde88663debf16df25f2c188d1b60756e40231c36dfbb93a",
+    "knowledge_ids": [
+      "k-b3f55ff9d2085fed"
+    ],
+    "paths": [
+      "knowledge/ideas/development-process/k-b3f55ff9d2085fed.md"
+    ]
   }
 }
