@@ -792,5 +792,17 @@
     "operation_digest": "c7bcd7e71977f1cde2c66caf511f09004bf688abdc201f2f9f2d804289bc507a",
     "knowledge_ids": [],
     "paths": []
+  },
+  "notion:40f013b8-a22b-81b2-8fd8-ecac301dac58": {
+    "source_digest": "46d8e757cd9a327fec0c43340a61afea0a81feea2c1b5f92d35c509a9afd84e7",
+    "input_key": "codex|msg_01a1a715-754b-7293-8467-b80f29439e92",
+    "evidence_digest": "350c0e79b2b582d16e07d4947b41d04080924e611bbbf1c8bb8586b1c9de6ff1",
+    "operation_digest": "37b2b3e57ea4e667bf3d38cbad25f53cd456fa612c9ebd9e11ecc746e69101bf",
+    "knowledge_ids": [
+      "k-46d8e757cd9a327f"
+    ],
+    "paths": [
+      "knowledge/ideas/codex/k-46d8e757cd9a327f.md"
+    ]
   }
 }

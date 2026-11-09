@@ -369,6 +369,21 @@
       "updated": "2026-11-08"
     },
     {
+      "id": "k-46d8e757cd9a327f",
+      "path": "knowledge/ideas/codex/k-46d8e757cd9a327f.md",
+      "kind": "idea",
+      "title": "Notion MCP認証に保護ソフトが干渉する可能性",
+      "topic": "codex",
+      "topicLabel": "Codex",
+      "tags": [
+        "Notion",
+        "MCP",
+        "OAuth",
+        "接続確認"
+      ],
+      "updated": "2026-11-09"
+    },
+    {
       "id": "k-b60be5784b16a225",
       "path": "knowledge/ideas/codex/k-b60be5784b16a225.md",
       "kind": "idea",
