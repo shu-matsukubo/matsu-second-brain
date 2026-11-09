@@ -816,5 +816,13 @@
     "paths": [
       "knowledge/ideas/codex/k-46d8e757cd9a327f.md"
     ]
+  },
+  "notion:40f013b8-a22b-815e-abab-d89084a182d9": {
+    "source_digest": "24d9595dd0537f5ddeef2066f2ef66dd68741c3ce8eab783981e88f4219a0552",
+    "input_key": "codex|msg_01a1a728-afc4-7622-8491-0f86d8f58fce",
+    "evidence_digest": "305ca1abcb7bb7691b9d0cf5d4ed61d4d8fe80e72bd6746013314a61b73e33e1",
+    "operation_digest": "25646c36d93b8c94aa13742869f63f6965bcef3291e2d85caa41f1a54f7e6990",
+    "knowledge_ids": [],
+    "paths": []
   }
 }
