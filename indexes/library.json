@@ -745,6 +745,20 @@
       "updated": "2026-11-07"
     },
     {
+      "id": "k-035d85d9659d8d5b",
+      "path": "knowledge/principles/development-process/k-035d85d9659d8d5b.md",
+      "kind": "principle",
+      "title": "エージェント間の作業引き継ぎにNotionを使う",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "Notion",
+        "エージェント",
+        "引き継ぎ"
+      ],
+      "updated": "2026-11-09"
+    },
+    {
       "id": "k-082f394197334891",
       "path": "knowledge/principles/development-process/k-082f394197334891.md",
       "kind": "principle",

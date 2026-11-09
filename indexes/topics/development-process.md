@@ -30,6 +30,7 @@
 - [Workflowの状態は既存成果物から導出する](../../knowledge/principles/development-process/k-0befd2ddf54d4781.md) (k-0befd2ddf54d4781)
 - [Workflowは実行契機から独立させる](../../knowledge/principles/development-process/k-cfb0bb408a84ca5f.md) (k-cfb0bb408a84ca5f)
 - [エージェントのモデルは責務に応じて選ぶ](../../knowledge/principles/development-process/k-f1b6da308d1daaf7.md) (k-f1b6da308d1daaf7)
+- [エージェント間の作業引き継ぎにNotionを使う](../../knowledge/principles/development-process/k-035d85d9659d8d5b.md) (k-035d85d9659d8d5b)
 - [ツールは継続的な価値で採用を判断する](../../knowledge/principles/development-process/k-1c9d5e44b0d5304d.md) (k-1c9d5e44b0d5304d)
 - [ナレッジ収集は取得漏れの許容範囲で安全な継続性を優先する](../../knowledge/principles/development-process/k-49427121c3d37c04.md) (k-49427121c3d37c04)
 - [パフォーマンス改善は発生頻度と影響度で優先順位を決める](../../knowledge/principles/development-process/k-e4905c42b314c4c4.md) (k-e4905c42b314c4c4)
