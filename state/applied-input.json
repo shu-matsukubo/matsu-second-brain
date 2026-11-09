@@ -804,5 +804,17 @@
     "paths": [
       "knowledge/ideas/codex/k-46d8e757cd9a327f.md"
     ]
+  },
+  "notion:40f013b8-a22b-81d8-9fc6-ffc1e859f43a": {
+    "source_digest": "1473e859e0ac7ffa0c0261fa1ad22d1fef66ac7b13dac0b418d43745d2a0f002",
+    "input_key": "codex|msg_01a1a726-f04b-7390-b020-52c8d21517d8",
+    "evidence_digest": "57e47874de441d9e2aa44afd5ad1a2f43a9cb81d983eb5dd89cfe15c351eb4b1",
+    "operation_digest": "ab9c4340ac6c6ea1e866d17d9067eee3f1598ef85485535fbe8658470a34ec08",
+    "knowledge_ids": [
+      "k-46d8e757cd9a327f"
+    ],
+    "paths": [
+      "knowledge/ideas/codex/k-46d8e757cd9a327f.md"
+    ]
   }
 }
