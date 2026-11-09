@@ -89,5 +89,6 @@
 - [個人作成の汎用Skillsを会社で再利用する案](../../knowledge/ideas/development-process/k-5c2fe3559365432f.md) (k-5c2fe3559365432f)
 - [利用者が指示書を登録してAI Workflowを拡張する案](../../knowledge/ideas/development-process/k-4fead23b62fc49b6.md) (k-4fead23b62fc49b6)
 - [独立した手続きにSkillを絞る案](../../knowledge/ideas/development-process/k-f36bc045f746da9e.md) (k-f36bc045f746da9e)
-- [第2の脳の手入力をCodex会話の定期収集に置き換える案](../../knowledge/ideas/development-process/k-b3f55ff9d2085fed.md) (k-b3f55ff9d2085fed)
+- [第2の脳に前日のCodex・ChatGPT会話から本人の意思を集める案](../../knowledge/ideas/development-process/k-b3f55ff9d2085fed.md) (k-b3f55ff9d2085fed)
+- [第2の脳の知識ノート末尾に根拠の履歴を残す案](../../knowledge/ideas/development-process/k-0e22ca83ac708e37.md) (k-0e22ca83ac708e37)
 - [第2の脳をWebで参照・検索する構成の初期案](../../knowledge/ideas/development-process/k-ac596996ac201a38.md) (k-ac596996ac201a38)

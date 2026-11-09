@@ -426,6 +426,20 @@
       "updated": "2026-09-30"
     },
     {
+      "id": "k-0e22ca83ac708e37",
+      "path": "knowledge/ideas/development-process/k-0e22ca83ac708e37.md",
+      "kind": "idea",
+      "title": "第2の脳の知識ノート末尾に根拠の履歴を残す案",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "第2の脳",
+        "根拠",
+        "履歴"
+      ],
+      "updated": "2026-11-09"
+    },
+    {
       "id": "k-4fead23b62fc49b6",
       "path": "knowledge/ideas/development-process/k-4fead23b62fc49b6.md",
       "kind": "idea",
@@ -581,12 +595,13 @@
       "id": "k-b3f55ff9d2085fed",
       "path": "knowledge/ideas/development-process/k-b3f55ff9d2085fed.md",
       "kind": "idea",
-      "title": "第2の脳の手入力をCodex会話の定期収集に置き換える案",
+      "title": "第2の脳に前日のCodex・ChatGPT会話から本人の意思を集める案",
       "topic": "development-process",
       "topicLabel": "開発プロセス",
       "tags": [
         "第2の脳",
         "Codex",
+        "ChatGPT",
         "定期収集"
       ],
       "updated": "2026-11-09"
