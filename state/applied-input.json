@@ -874,5 +874,21 @@
       "knowledge/ideas/development-process/k-b3f55ff9d2085fed.md",
       "knowledge/ideas/development-process/k-0e22ca83ac708e37.md"
     ]
+  },
+  "notion:40f013b8-a22b-815c-8e58-eb968c0e2770": {
+    "source_digest": "9317c1fa1dd4f783247e8849a74cfd52d36684ca03176564c1bf2a3791708bf0",
+    "input_key": "codex|msg_01a1a768-ac18-79e2-b25d-cfd2f0dc987c",
+    "evidence_digest": "b29aa954a9848ec97b588ef4bdc68777e3a7f82745a183993ce97703c3789b6d",
+    "operation_digest": "f42bc3ec52b3d12c56b21bb26ec784d5a93804cf689672224d63a74f794f641a",
+    "knowledge_ids": [
+      "k-b3f55ff9d2085fed",
+      "k-0e22ca83ac708e37",
+      "k-25dba149959c54f0"
+    ],
+    "paths": [
+      "knowledge/ideas/development-process/k-b3f55ff9d2085fed.md",
+      "knowledge/ideas/development-process/k-0e22ca83ac708e37.md",
+      "knowledge/principles/development-process/k-25dba149959c54f0.md"
+    ]
   }
 }
