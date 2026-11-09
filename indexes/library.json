@@ -1147,6 +1147,20 @@
       "updated": "2026-11-07"
     },
     {
+      "id": "k-49cf831818d8eefd",
+      "path": "knowledge/principles/development-process/k-49cf831818d8eefd.md",
+      "kind": "principle",
+      "title": "第2の脳の改善は最新のmainから始め、CI成功後にマージする",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "第2の脳",
+        "GitHub",
+        "CI"
+      ],
+      "updated": "2026-11-10"
+    },
+    {
       "id": "k-53b874d26fbc1ddd",
       "path": "knowledge/principles/development-process/k-53b874d26fbc1ddd.md",
       "kind": "principle",
