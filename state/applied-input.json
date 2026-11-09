@@ -912,5 +912,13 @@
     "operation_digest": "80f2b2fa5f659c0ddb0192044d954004d52d32bcd69d1f03ee7910043b409e8f",
     "knowledge_ids": [],
     "paths": []
+  },
+  "notion:40f013b8-a22b-815a-bc74-c23b0db5be71": {
+    "source_digest": "7834027979f24c7e769807efeaff7422411bb0903b8616305af47ae2b7fe32ac",
+    "input_key": "codex|msg_01a1a8c5-9b96-7d50-89f2-65585cf178a1",
+    "evidence_digest": "1404ea3bbc2ff6531034fd0237eee6cbaf59aea7331df7dc44d97ff68603f4ec",
+    "operation_digest": "cb7d0777fb360ba1e3b67381b05def3af2f9fc11e1514a9937cea9acfb6af602",
+    "knowledge_ids": [],
+    "paths": []
   }
 }
