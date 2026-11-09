@@ -860,5 +860,19 @@
     "paths": [
       "knowledge/ideas/development-process/k-b3f55ff9d2085fed.md"
     ]
+  },
+  "notion:40f013b8-a22b-8135-b011-cc66cb0da663": {
+    "source_digest": "0e22ca83ac708e37febc423198f1bfec52423aa1217ff9ee50dcf4ef142e5a12",
+    "input_key": "codex|msg_01a1a761-50aa-7520-a521-45ef4e0473aa",
+    "evidence_digest": "c26bc2296a9026533ec9c75f98792485432cb546a6c79681f25243cb82e5565c",
+    "operation_digest": "a71944ebdc2efd237e0231c1488ca3092fd0d2d066406f8bd35d09bb571f0d00",
+    "knowledge_ids": [
+      "k-b3f55ff9d2085fed",
+      "k-0e22ca83ac708e37"
+    ],
+    "paths": [
+      "knowledge/ideas/development-process/k-b3f55ff9d2085fed.md",
+      "knowledge/ideas/development-process/k-0e22ca83ac708e37.md"
+    ]
   }
 }
