@@ -904,5 +904,13 @@
       "knowledge/ideas/development-process/k-b3f55ff9d2085fed.md",
       "knowledge/principles/development-process/k-7652ec730db0f40b.md"
     ]
+  },
+  "notion:40f013b8-a22b-8129-85d0-ec2d1fa2d791": {
+    "source_digest": "79fa73de59693753c75ddb2a4bf0dbfaca4f7d04d81293534b70f5a368f6ebb1",
+    "input_key": "codex|msg_01a1a8bd-fb62-7e10-ad08-6f33ccb7d28a",
+    "evidence_digest": "ea2a56800c0d5ecbf7cb089e0d29a05e27a533cee24542b98fa46fdb2c27bf11",
+    "operation_digest": "80f2b2fa5f659c0ddb0192044d954004d52d32bcd69d1f03ee7910043b409e8f",
+    "knowledge_ids": [],
+    "paths": []
   }
 }
