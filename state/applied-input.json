@@ -1030,5 +1030,17 @@
     "paths": [
       "knowledge/principles/development-process/k-07618a05f9e8e96b.md"
     ]
+  },
+  "notion:410013b8-a22b-81c8-8d1e-df65ebd44cb1": {
+    "source_digest": "c59340b96209b0643b04789ea34fa4308c4cb8796a718bae43dfb9e8346836ea",
+    "input_key": "chatgpt|思想からスキル生成|2026-11-06|命名候補の発言",
+    "evidence_digest": "c875f1ca56bb5137466657450ef10852b7ba6a4fa589f1a32f682f0c9b5923ff",
+    "operation_digest": "b7d9c74d0106639f282249c3783077962c3f00a97e55739b2f986b10d79ed868",
+    "knowledge_ids": [
+      "k-c59340b96209b064"
+    ],
+    "paths": [
+      "knowledge/ideas/development-process/k-c59340b96209b064.md"
+    ]
   }
 }
