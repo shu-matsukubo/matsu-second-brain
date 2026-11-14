@@ -578,6 +578,20 @@
       "updated": "2026-11-04"
     },
     {
+      "id": "k-a8e9ce890b22c5fe",
+      "path": "knowledge/ideas/development-process/k-a8e9ce890b22c5fe.md",
+      "kind": "idea",
+      "title": "バージョンアップの影響調査をAIのソース確認で補完する案",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "バージョンアップ",
+        "影響調査",
+        "AI"
+      ],
+      "updated": "2026-11-15"
+    },
+    {
       "id": "k-ab614d0c94cb9205",
       "path": "knowledge/ideas/development-process/k-ab614d0c94cb9205.md",
       "kind": "idea",
