@@ -788,6 +788,20 @@
       "updated": "2026-11-09"
     },
     {
+      "id": "k-07618a05f9e8e96b",
+      "path": "knowledge/principles/development-process/k-07618a05f9e8e96b.md",
+      "kind": "principle",
+      "title": "SkillとREADMEは完成品として現在の内容を説明する",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "開発文書",
+        "README",
+        "Skill"
+      ],
+      "updated": "2026-11-14"
+    },
+    {
       "id": "k-082f394197334891",
       "path": "knowledge/principles/development-process/k-082f394197334891.md",
       "kind": "principle",
