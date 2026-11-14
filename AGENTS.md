@@ -96,7 +96,7 @@ stateは保留と安全な再開に必要な最小情報だけを保存する。
 
 処理対象がない場合は何も変更しない。Markdownからindexを再現できること、実データとの整合性、Notion inputの重複防止、再実行と失敗後再開、昇降格履歴、Secretsの非公開を可能な範囲でテストやschema検証で保証する。
 
-knowledge統合・メンテナンス・report作成など、リポジトリを変更する改善フローは、最新のmainから新しい`codex/`ブランチを作り、変更・検証・commit・push・main向けPR作成・CI完了確認・マージの順で行う。この範囲のブランチ公開とCI成功後のマージは通常運用として承認されている。具体的な開始・再開・失敗時の手順は[GitHub連携手順](.agents/skills/curate-second-brain/references/github-flow.md)に従う。Notionだけを変更した場合や差分がない場合は空commit・PRを作らない。アプリのdeployや公開範囲の変更はこの承認に含まない。
+knowledge統合・メンテナンス・report作成など、リポジトリを変更する改善フローは、最新のmainから新しい`codex/`ブランチを作り、変更・検証・commit・push・main向けPR作成・CI完了確認・マージの順で行う。この範囲のブランチ公開とCI成功後のマージは通常運用として承認されている。本人は、この通常運用で整理する開発会話の原文・発言日時・出典を含むknowledge差分を[公開GitHubリポジトリ](https://github.com/shu-matsukubo/matsu-second-brain)へpushし、CI成功後にマージすることも継続承認している（2026-11-14）。具体的な開始・再開・失敗時の手順は[GitHub連携手順](.agents/skills/curate-second-brain/references/github-flow.md)に従う。Notionだけを変更した場合や差分がない場合は空commit・PRを作らない。アプリのdeployや公開範囲の変更はこの承認に含まない。
 
 ## 移行と保全
 

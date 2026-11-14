@@ -23,6 +23,7 @@
 - [AI開発基盤の品質保証は機械的な検証を優先する](../../knowledge/principles/development-process/k-35c3f7d87330d06e.md) (k-35c3f7d87330d06e)
 - [Issueは現在の実装に照合してから設計する](../../knowledge/principles/development-process/k-a9b0faffeeed8800.md) (k-a9b0faffeeed8800)
 - [Review単位とIntegration単位を分ける](../../knowledge/principles/development-process/k-3e976cb288ac805d.md) (k-3e976cb288ac805d)
+- [SkillとREADMEは完成品として現在の内容を説明する](../../knowledge/principles/development-process/k-07618a05f9e8e96b.md) (k-07618a05f9e8e96b)
 - [Skillの共通化は用途と変更理由で判断する](../../knowledge/principles/development-process/k-8d290466ad5dbafa.md) (k-8d290466ad5dbafa)
 - [Skillの設計原則はツール固有の実装規約から分ける](../../knowledge/principles/development-process/k-93b112cfea83692e.md) (k-93b112cfea83692e)
 - [Skillの起動は名前の指定と定義の読込を分けて確認する](../../knowledge/principles/development-process/k-0070fb65c2253dd0.md) (k-0070fb65c2253dd0)
