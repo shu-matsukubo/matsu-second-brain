@@ -1272,6 +1272,20 @@
       "updated": "2026-09-26"
     },
     {
+      "id": "k-5973b8ad9e490c7f",
+      "path": "knowledge/principles/development-process/k-5973b8ad9e490c7f.md",
+      "kind": "principle",
+      "title": "バージョンアップ後は全試験を実施しフロー試験を中心にする",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "バージョンアップ",
+        "試験範囲",
+        "フロー試験"
+      ],
+      "updated": "2026-11-15"
+    },
+    {
       "id": "k-59ebcac46c07180e",
       "path": "knowledge/principles/development-process/k-59ebcac46c07180e.md",
       "kind": "principle",
