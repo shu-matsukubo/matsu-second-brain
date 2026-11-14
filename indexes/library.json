@@ -440,6 +440,20 @@
       "updated": "2026-11-09"
     },
     {
+      "id": "k-4c76057781d8512a",
+      "path": "knowledge/ideas/development-process/k-4c76057781d8512a.md",
+      "kind": "idea",
+      "title": "knowledgeを本体に用途別のSkills一覧を派生させる構成案",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "knowledge",
+        "Skills",
+        "派生"
+      ],
+      "updated": "2026-11-14"
+    },
+    {
       "id": "k-4fead23b62fc49b6",
       "path": "knowledge/ideas/development-process/k-4fead23b62fc49b6.md",
       "kind": "idea",
@@ -610,7 +624,7 @@
       "id": "k-c59340b96209b064",
       "path": "knowledge/ideas/development-process/k-c59340b96209b064.md",
       "kind": "idea",
-      "title": "Skills用リポジトリ名の候補「matsu-skill-sets」",
+      "title": "Skills用リポジトリ名の候補「matsu-skill-garden」",
       "topic": "development-process",
       "topicLabel": "開発プロセス",
       "tags": [
