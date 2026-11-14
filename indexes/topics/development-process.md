@@ -34,6 +34,7 @@
 - [エージェント間の作業引き継ぎにNotionを使う](../../knowledge/principles/development-process/k-035d85d9659d8d5b.md) (k-035d85d9659d8d5b)
 - [ツールは継続的な価値で採用を判断する](../../knowledge/principles/development-process/k-1c9d5e44b0d5304d.md) (k-1c9d5e44b0d5304d)
 - [ナレッジ収集は取得漏れの許容範囲で安全な継続性を優先する](../../knowledge/principles/development-process/k-49427121c3d37c04.md) (k-49427121c3d37c04)
+- [バージョンアップ後は全試験を実施しフロー試験を中心にする](../../knowledge/principles/development-process/k-5973b8ad9e490c7f.md) (k-5973b8ad9e490c7f)
 - [パフォーマンス改善は発生頻度と影響度で優先順位を決める](../../knowledge/principles/development-process/k-e4905c42b314c4c4.md) (k-e4905c42b314c4c4)
 - [マルチエージェントの並列度はタスク構造で決める](../../knowledge/principles/development-process/k-cace147d56d039c9.md) (k-cace147d56d039c9)
 - [上位Agentへの相談は必要時の共通能力にする](../../knowledge/principles/development-process/k-284229ca7cd4221b.md) (k-284229ca7cd4221b)

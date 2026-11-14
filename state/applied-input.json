@@ -1092,5 +1092,17 @@
     "paths": [
       "knowledge/ideas/development-process/k-a8e9ce890b22c5fe.md"
     ]
+  },
+  "notion:410013b8-a22b-8196-80c0-dc4f42631297": {
+    "source_digest": "5973b8ad9e490c7f4245fb6452825b4fc9711ed4cd4933ad64d62d81fa1b9c4d",
+    "input_key": "chatgpt|影響調査の依頼文作成|2026-11-05T23:11:00Z|user-3",
+    "evidence_digest": "f553530ea3b7794e919eedc21cb118f091168b6221cdfb14542e7c895b5f45f4",
+    "operation_digest": "7beb5ebf5e993d429385701ae54b42c044db4f28177a196e262349fb84ddfa75",
+    "knowledge_ids": [
+      "k-5973b8ad9e490c7f"
+    ],
+    "paths": [
+      "knowledge/principles/development-process/k-5973b8ad9e490c7f.md"
+    ]
   }
 }
