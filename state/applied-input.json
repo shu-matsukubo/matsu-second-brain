@@ -1004,5 +1004,19 @@
     "paths": [
       "knowledge/principles/development-process/k-a44acbf0d76b5cf8.md"
     ]
+  },
+  "notion:40f013b8-a22b-815e-bcd4-f235160b5fa4": {
+    "source_digest": "247b962fbcb1609d641525cbea0187742b7e7ea477bd0e12e3345324a3de8a44",
+    "input_key": "codex|msg_01a1ac00-7f3e-7db1-95df-b244d76e91af",
+    "evidence_digest": "851354705854db3f7716ac2be81ffbef58d92ea16b89ea64f8ad3e73311df1b6",
+    "operation_digest": "1ba2de2a9a1cdaa60755e653a0deaace7f254c787932c9bb52a2fe0fae377ec8",
+    "knowledge_ids": [
+      "k-35c3f7d87330d06e",
+      "k-838e51960661c08f"
+    ],
+    "paths": [
+      "knowledge/principles/development-process/k-35c3f7d87330d06e.md",
+      "knowledge/principles/development-process/k-838e51960661c08f.md"
+    ]
   }
 }
