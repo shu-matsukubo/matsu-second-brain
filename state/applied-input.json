@@ -1154,5 +1154,19 @@
     "paths": [
       "knowledge/ideas/development-process/k-5c2fe3559365432f.md"
     ]
+  },
+  "notion:411013b8-a22b-818c-9b21-f1f7e9cb7f1e": {
+    "source_digest": "1a294d7c3f70eff443ca9c7b1bb3ea12f8904cf34de5420b0ed249d6f79debd3",
+    "input_key": "chatgpt|2026-11-07T03:14:15Z|user",
+    "evidence_digest": "5c43aafc06f686f2dd06a87c4a34a09b2f254f2d3dfea0b765e2ef041ec3be2c",
+    "operation_digest": "b116123b08f23bd56a352fe696681757eae3292f739cdee912b5596d7709d294",
+    "knowledge_ids": [
+      "k-1a294d7c3f70eff4",
+      "k-5c2fe3559365432f"
+    ],
+    "paths": [
+      "knowledge/principles/development-process/k-1a294d7c3f70eff4.md",
+      "knowledge/ideas/development-process/k-5c2fe3559365432f.md"
+    ]
   }
 }
