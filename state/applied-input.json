@@ -1118,5 +1118,17 @@
       "knowledge/ideas/development-process/k-1a832bc4b5b206aa.md",
       "knowledge/principles/development-process/k-35c3f7d87330d06e.md"
     ]
+  },
+  "notion:411013b8-a22b-8146-b57e-c8f80d5693b9": {
+    "source_digest": "fe24af87c061da2617cd7fa0a1bb84c5d4076491dec707085df5ea256e366733",
+    "input_key": "codex|msg_01a1b189-186d-70e1-ba38-b53c63ce7a4e",
+    "evidence_digest": "ac11d1ee0dc97db290459397dac61c4c0ce6f7af7dfa168e8ce9c96c1828fc86",
+    "operation_digest": "b41c4383bed2cc708fc792b99c4f0b68fc544111bee723317d4a8ebce5d1304b",
+    "knowledge_ids": [
+      "k-1a832bc4b5b206aa"
+    ],
+    "paths": [
+      "knowledge/ideas/development-process/k-1a832bc4b5b206aa.md"
+    ]
   }
 }
