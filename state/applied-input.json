@@ -1168,5 +1168,17 @@
       "knowledge/principles/development-process/k-1a294d7c3f70eff4.md",
       "knowledge/ideas/development-process/k-5c2fe3559365432f.md"
     ]
+  },
+  "notion:411013b8-a22b-81f9-81b0-cf1a9da20c6a": {
+    "source_digest": "6d5f0105c3af1707bd5756ba48b0d730e0c59b9776899e542825260f6d3250dc",
+    "input_key": "chatgpt|2026-11-07T03:15:42Z|user",
+    "evidence_digest": "f89564b4b33d6f9c3d385d74227f96838b64bc5b2d325031a64349a111b8b76b",
+    "operation_digest": "0b7c26e6417b79ea656866b449e8c04c9d749bc651994a9a1e164da754422762",
+    "knowledge_ids": [
+      "k-6d5f0105c3af1707"
+    ],
+    "paths": [
+      "knowledge/ideas/development-process/k-6d5f0105c3af1707.md"
+    ]
   }
 }
