@@ -91,6 +91,7 @@
 - [yomiyasuで技術文書の読みやすさを検証する案](../../knowledge/ideas/development-process/k-5639132bee83c074.md) (k-5639132bee83c074)
 - [タスク分解エージェントの責務とモデル選定案](../../knowledge/ideas/development-process/k-586b73286999429c.md) (k-586b73286999429c)
 - [ドキュメントを読者と参照頻度で分ける案](../../knowledge/ideas/development-process/k-9b3a81a9daaf7d5a.md) (k-9b3a81a9daaf7d5a)
+- [ナレッジ更新を優先する日次Skillメンテナンスの初期案](../../knowledge/ideas/development-process/k-1a832bc4b5b206aa.md) (k-1a832bc4b5b206aa)
 - [バージョンアップの影響調査をAIのソース確認で補完する案](../../knowledge/ideas/development-process/k-a8e9ce890b22c5fe.md) (k-a8e9ce890b22c5fe)
 - [個人AI開発の主な実装環境をCodex Cloudにする案](../../knowledge/ideas/development-process/k-e2c7d024572d42fa.md) (k-e2c7d024572d42fa)
 - [個人作成の汎用Skillsを会社で再利用する案](../../knowledge/ideas/development-process/k-5c2fe3559365432f.md) (k-5c2fe3559365432f)
