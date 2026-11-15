@@ -513,7 +513,7 @@
       "id": "k-5c2fe3559365432f",
       "path": "knowledge/ideas/development-process/k-5c2fe3559365432f.md",
       "kind": "idea",
-      "title": "個人作成の汎用Skillsを会社で再利用する案",
+      "title": "個人から会社へのSkills持ち込みを控える検討",
       "topic": "development-process",
       "topicLabel": "開発プロセス",
       "tags": [
@@ -521,7 +521,7 @@
         "再利用",
         "ライセンス"
       ],
-      "updated": "2026-11-15"
+      "updated": "2026-11-16"
     },
     {
       "id": "k-68d79effd0909df6",
@@ -978,6 +978,20 @@
         "検証"
       ],
       "updated": "2026-11-06"
+    },
+    {
+      "id": "k-1a294d7c3f70eff4",
+      "path": "knowledge/principles/development-process/k-1a294d7c3f70eff4.md",
+      "kind": "principle",
+      "title": "会社側のSkillsを個人環境へ持ち込まない",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "Skill",
+        "会社",
+        "個人環境"
+      ],
+      "updated": "2026-11-16"
     },
     {
       "id": "k-1c336721577e40fb",
