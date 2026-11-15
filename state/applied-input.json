@@ -1142,5 +1142,17 @@
     "paths": [
       "knowledge/ideas/development-process/k-1a832bc4b5b206aa.md"
     ]
+  },
+  "notion:411013b8-a22b-8162-b90d-f2fda9324198": {
+    "source_digest": "5c736a1eed6a80eb9d44923b04a5c8eab24d292ce415604d48326d7d32287491",
+    "input_key": "chatgpt|2026-11-07T03:11:48Z|user",
+    "evidence_digest": "d90a8fb5e264ecb6207766c1bda347c31bc998dc9b034c27d55247de2ff0a040",
+    "operation_digest": "0f1c5d074200a98195068b65bef7698d2b06d4a2540d107eb9d07ad65230b573",
+    "knowledge_ids": [
+      "k-5c2fe3559365432f"
+    ],
+    "paths": [
+      "knowledge/ideas/development-process/k-5c2fe3559365432f.md"
+    ]
   }
 }
