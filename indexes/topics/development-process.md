@@ -97,6 +97,7 @@
 - [個人AI開発の主な実装環境をCodex Cloudにする案](../../knowledge/ideas/development-process/k-e2c7d024572d42fa.md) (k-e2c7d024572d42fa)
 - [個人から会社へのSkills持ち込みを控える検討](../../knowledge/ideas/development-process/k-5c2fe3559365432f.md) (k-5c2fe3559365432f)
 - [利用者が指示書を登録してAI Workflowを拡張する案](../../knowledge/ideas/development-process/k-4fead23b62fc49b6.md) (k-4fead23b62fc49b6)
+- [思想を反映したSkillsを各開発環境へ導入する案](../../knowledge/ideas/development-process/k-314369cf3b4c1004.md) (k-314369cf3b4c1004)
 - [独立した手続きにSkillを絞る案](../../knowledge/ideas/development-process/k-f36bc045f746da9e.md) (k-f36bc045f746da9e)
 - [第2の脳に前日のCodex・ChatGPT会話から本人の意思を集める案](../../knowledge/ideas/development-process/k-b3f55ff9d2085fed.md) (k-b3f55ff9d2085fed)
 - [第2の脳の知識ノート末尾に根拠の履歴を残す案](../../knowledge/ideas/development-process/k-0e22ca83ac708e37.md) (k-0e22ca83ac708e37)

@@ -454,6 +454,20 @@
       "updated": "2026-11-15"
     },
     {
+      "id": "k-314369cf3b4c1004",
+      "path": "knowledge/ideas/development-process/k-314369cf3b4c1004.md",
+      "kind": "idea",
+      "title": "思想を反映したSkillsを各開発環境へ導入する案",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "Skills",
+        "開発環境",
+        "配布"
+      ],
+      "updated": "2026-11-16"
+    },
+    {
       "id": "k-4c76057781d8512a",
       "path": "knowledge/ideas/development-process/k-4c76057781d8512a.md",
       "kind": "idea",
