@@ -1130,5 +1130,17 @@
     "paths": [
       "knowledge/ideas/development-process/k-1a832bc4b5b206aa.md"
     ]
+  },
+  "notion:411013b8-a22b-8162-a82d-d01a40fbe74a": {
+    "source_digest": "70570ebd88867269b61603563028c8fc6cf73282d5dd1118b399f3868f4acecb",
+    "input_key": "codex|msg_01a1b215-6d10-7781-b302-24da5b6268fe",
+    "evidence_digest": "f131eda05d3c7cbde0886e7d4e58113536d9b8f13f57518f21476e63a2a125cc",
+    "operation_digest": "4f948210207c10a9ff7f472cd453db0d18292033b5f24f604165cf2ce71ac566",
+    "knowledge_ids": [
+      "k-1a832bc4b5b206aa"
+    ],
+    "paths": [
+      "knowledge/ideas/development-process/k-1a832bc4b5b206aa.md"
+    ]
   }
 }
