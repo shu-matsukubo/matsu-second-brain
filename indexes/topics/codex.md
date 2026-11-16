@@ -2,7 +2,7 @@
 
 ## 事実
 
-- [Codex cloud の実行環境設定](../../knowledge/facts/codex/k-9295e908c1b088c6.md) (k-9295e908c1b088c6)
+- [Codex Cloud (Legacy)の実行環境設定](../../knowledge/facts/codex/k-9295e908c1b088c6.md) (k-9295e908c1b088c6)
 - [GitHub から Codex cloud にタスクを委譲する](../../knowledge/facts/codex/k-15f9bd7c222b1115.md) (k-15f9bd7c222b1115)
 
 ## 思想

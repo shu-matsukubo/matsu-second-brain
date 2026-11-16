@@ -205,7 +205,7 @@
       "id": "k-9295e908c1b088c6",
       "path": "knowledge/facts/codex/k-9295e908c1b088c6.md",
       "kind": "fact",
-      "title": "Codex cloud の実行環境設定",
+      "title": "Codex Cloud (Legacy)の実行環境設定",
       "topic": "codex",
       "topicLabel": "Codex",
       "tags": [
@@ -213,7 +213,7 @@
         "クラウド実行",
         "開発環境"
       ],
-      "updated": "2026-08-25"
+      "updated": "2026-11-17"
     },
     {
       "id": "k-5cb97b9c00c4990c",
@@ -770,7 +770,7 @@
         "個人開発",
         "実行環境"
       ],
-      "updated": "2026-11-08"
+      "updated": "2026-11-17"
     },
     {
       "id": "k-f36bc045f746da9e",
