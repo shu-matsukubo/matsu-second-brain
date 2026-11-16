@@ -63,7 +63,7 @@
       "id": "k-a399c0657f69c609",
       "path": "knowledge/facts/app-development/k-a399c0657f69c609.md",
       "kind": "fact",
-      "title": "LINE Messaging API の送信方式を選ぶ",
+      "title": "LINE Messaging APIの送信方式と利用条件",
       "topic": "app-development",
       "topicLabel": "アプリ開発",
       "tags": [
@@ -71,7 +71,7 @@
         "通知",
         "LINE"
       ],
-      "updated": "2026-08-24"
+      "updated": "2026-11-16"
     },
     {
       "id": "k-db267f70c5bcb7b4",
@@ -85,6 +85,20 @@
         "ユーザー識別"
       ],
       "updated": "2026-08-24"
+    },
+    {
+      "id": "k-e119969b83d066a3",
+      "path": "knowledge/facts/app-development/k-e119969b83d066a3.md",
+      "kind": "fact",
+      "title": "Discord Incoming Webhookの送信とレート制限",
+      "topic": "app-development",
+      "topicLabel": "アプリ開発",
+      "tags": [
+        "Discord",
+        "Webhook",
+        "通知"
+      ],
+      "updated": "2026-11-16"
     },
     {
       "id": "k-80d43c7d7d3971e7",
@@ -157,7 +171,7 @@
         "Wrangler",
         "シークレット"
       ],
-      "updated": "2026-08-28"
+      "updated": "2026-11-16"
     },
     {
       "id": "k-15f9bd7c222b1115",
@@ -798,7 +812,7 @@
         "Discord",
         "LINE"
       ],
-      "updated": "2026-08-24"
+      "updated": "2026-11-16"
     },
     {
       "id": "k-7567e2e163c4243a",
