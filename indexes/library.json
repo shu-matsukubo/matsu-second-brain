@@ -415,7 +415,7 @@
       "id": "k-cd2d6bb4573ce4b2",
       "path": "knowledge/ideas/codex/k-cd2d6bb4573ce4b2.md",
       "kind": "idea",
-      "title": "スケジューラ設定の手間からCodex GUI利用を検討する案",
+      "title": "CodexはGUIを主にしてCLIを補助に残す案",
       "topic": "codex",
       "topicLabel": "Codex",
       "tags": [
@@ -743,6 +743,20 @@
         "ワークフロー設計"
       ],
       "updated": "2026-11-03"
+    },
+    {
+      "id": "k-92feba6197fbb3cd",
+      "path": "knowledge/ideas/git/k-92feba6197fbb3cd.md",
+      "kind": "idea",
+      "title": "Gitに慣れた後でSourceTree利用を検討する案",
+      "topic": "git",
+      "topicLabel": "Git",
+      "tags": [
+        "Git",
+        "SourceTree",
+        "学習"
+      ],
+      "updated": "2026-11-16"
     },
     {
       "id": "k-483e48a6197921ea",
