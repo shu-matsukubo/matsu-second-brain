@@ -1426,6 +1426,20 @@
       "updated": "2026-11-08"
     },
     {
+      "id": "k-689e281cbda7f466",
+      "path": "knowledge/principles/development-process/k-689e281cbda7f466.md",
+      "kind": "principle",
+      "title": "GUIとCLIは目的に応じて使い分ける",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "GUI",
+        "CLI",
+        "ツール選定"
+      ],
+      "updated": "2026-11-16"
+    },
+    {
       "id": "k-7652ec730db0f40b",
       "path": "knowledge/principles/development-process/k-7652ec730db0f40b.md",
       "kind": "principle",
