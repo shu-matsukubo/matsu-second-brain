@@ -21,6 +21,7 @@
 - [AI向けドキュメントは責務と参照構造で説明する](../../knowledge/principles/development-process/k-838e51960661c08f.md) (k-838e51960661c08f)
 - [AI開発WorkflowはPRの最新コミットで必須CIの成功まで確認する](../../knowledge/principles/development-process/k-99d67a67388c3389.md) (k-99d67a67388c3389)
 - [AI開発基盤の品質保証は機械的な検証を優先する](../../knowledge/principles/development-process/k-35c3f7d87330d06e.md) (k-35c3f7d87330d06e)
+- [GUIとCLIは目的に応じて使い分ける](../../knowledge/principles/development-process/k-689e281cbda7f466.md) (k-689e281cbda7f466)
 - [Issueは現在の実装に照合してから設計する](../../knowledge/principles/development-process/k-a9b0faffeeed8800.md) (k-a9b0faffeeed8800)
 - [Review単位とIntegration単位を分ける](../../knowledge/principles/development-process/k-3e976cb288ac805d.md) (k-3e976cb288ac805d)
 - [SkillとREADMEは完成品として現在の内容を説明する](../../knowledge/principles/development-process/k-07618a05f9e8e96b.md) (k-07618a05f9e8e96b)
