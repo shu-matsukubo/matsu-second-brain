@@ -11,4 +11,4 @@
 
 ## アイディア
 
-- [S3とCloudFrontで非公開コンテンツを配信する案](../../knowledge/ideas/aws/k-6cfc44888ba6b730.md) (k-6cfc44888ba6b730)
+- [S3を直接公開せずCloudFront経由で配信する案](../../knowledge/ideas/aws/k-6cfc44888ba6b730.md) (k-6cfc44888ba6b730)

@@ -344,7 +344,7 @@
       "id": "k-6cfc44888ba6b730",
       "path": "knowledge/ideas/aws/k-6cfc44888ba6b730.md",
       "kind": "idea",
-      "title": "S3とCloudFrontで非公開コンテンツを配信する案",
+      "title": "S3を直接公開せずCloudFront経由で配信する案",
       "topic": "aws",
       "topicLabel": "AWS",
       "tags": [
@@ -352,7 +352,7 @@
         "CloudFront",
         "配信"
       ],
-      "updated": "2026-09-29"
+      "updated": "2026-11-16"
     },
     {
       "id": "k-fb77e767eae73e13",
