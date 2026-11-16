@@ -1252,5 +1252,19 @@
     "paths": [
       "knowledge/ideas/codex/k-cd2d6bb4573ce4b2.md"
     ]
+  },
+  "notion:412013b8-a22b-8112-b8e9-d0dd60233102": {
+    "source_digest": "92feba6197fbb3cdd5da2f2068b22827a9ba975007045cfff70bec1278a41559",
+    "input_key": "chatgpt|Codex CLI運用比較|2026-11-07T18:54:09Z|user",
+    "evidence_digest": "19f41b2c2db2639d3ef1bbb805224299ae7e43c44614ac4d26c6cc8126e7393b",
+    "operation_digest": "cccc1631547e51b25167d2d10b718015a3642dee995896a9cb722994cfcf36a2",
+    "knowledge_ids": [
+      "k-cd2d6bb4573ce4b2",
+      "k-92feba6197fbb3cd"
+    ],
+    "paths": [
+      "knowledge/ideas/codex/k-cd2d6bb4573ce4b2.md",
+      "knowledge/ideas/git/k-92feba6197fbb3cd.md"
+    ]
   }
 }
