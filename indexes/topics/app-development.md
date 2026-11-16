@@ -2,6 +2,7 @@
 
 ## 事実
 
+- [ChatGPT Sitesの公開共有と利用条件](../../knowledge/facts/app-development/k-33a5d4987fc0872f.md) (k-33a5d4987fc0872f)
 - [Discord Incoming Webhookの送信とレート制限](../../knowledge/facts/app-development/k-e119969b83d066a3.md) (k-e119969b83d066a3)
 - [Hono で Google ログインを実装する](../../knowledge/facts/app-development/k-09eeb3ef9aafd09d.md) (k-09eeb3ef9aafd09d)
 - [LINE Messaging APIの送信方式と利用条件](../../knowledge/facts/app-development/k-a399c0657f69c609.md) (k-a399c0657f69c609)
@@ -24,4 +25,5 @@
 ## アイディア
 
 - [AWS LambdaでHonoを使う案](../../knowledge/ideas/app-development/k-3a1a3f3653452faf.md) (k-3a1a3f3653452faf)
+- [ChatGPT Sitesをチーム向け小アプリに使う案](../../knowledge/ideas/app-development/k-f3633df9248e801a.md) (k-f3633df9248e801a)
 - [Nyxisの認可設計をAI生成Webアプリに応用する調査案](../../knowledge/ideas/app-development/k-1dd91e1b799f3dbe.md) (k-1dd91e1b799f3dbe)

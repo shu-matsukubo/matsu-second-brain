@@ -9,6 +9,48 @@ import YAML from 'yaml';
 
 const cli = path.resolve('scripts/brain.mjs');
 const sha = (s) => crypto.createHash('sha256').update(s).digest('hex');
+test('topic moves retain historical links but reject stale current backlinks and resume safely', (t) => {
+  const root = fixture(t), source = dailyFile(root);
+  const oldPath = 'knowledge/facts/workflow/moved-fact.md', newPath = 'knowledge/facts/app-development/moved-fact.md';
+  const linkPath = 'knowledge/ideas/workflow/linked-idea.md';
+  const meta = { id: 'moved-fact', title: 'Moved fact', type: 'fact', topic: 'workflow', topic_label: 'Workflow', tags: [], updated: '2026-01-01', support_streak: 0, opposition_streak: 0, related: [], opposes: [], evidence: [], history: [], sources: [] };
+  const markdown = (value, body) => '---\n' + YAML.stringify(value, { lineWidth: 0 }) + '---\n' + body;
+  const oldContent = markdown(meta, '# Fact\n');
+  const oldLinkBody = '# Idea\n\n[Fact](../../facts/workflow/moved-fact.md)\n';
+  const linkMeta = { ...meta, id: 'linked-idea', type: 'idea', title: 'Linked idea' };
+  const oldLink = markdown(linkMeta, oldLinkBody);
+  for (const [file, content] of [[oldPath, oldContent], [linkPath, oldLink]]) {
+    fs.mkdirSync(path.dirname(path.join(root, file)), { recursive: true });
+    fs.writeFileSync(path.join(root, file), content);
+  }
+  const indexScript = path.join(root, 'app/viewer/scripts/generate-index.ts');
+  fs.mkdirSync(path.dirname(indexScript), { recursive: true }); fs.writeFileSync(indexScript, 'process.exit(0);');
+  const nextMeta = { ...linkMeta, history: [{ from: 'idea', to: 'idea', at: '2026-01-01', reason: 'Update the live link and preserve its earlier text.', previous_body: oldLinkBody, previous_path: linkPath }] };
+  const plan = { version: 1, kind: 'daily', source_id: source.relative, source_digest: source.sourceDigest, daily_status_path: source.relative,
+    moves: [{ from_path: oldPath, to_path: newPath, id: meta.id, expected_digest: sha(oldContent) }],
+    writes: [
+      { path: newPath, content: markdown({ ...meta, topic: 'app-development' }, '# Fact\n'), expected_digest: sha('') },
+      { path: linkPath, content: markdown(nextMeta, oldLinkBody), expected_digest: sha(oldLink) }
+    ] };
+  const planPath = path.join(root, 'plan.json'); fs.writeFileSync(planPath, JSON.stringify(plan));
+  const stale = invoke(root, 'apply', {}, [planPath]);
+  assert.equal(stale.status, 1); assert.match(stale.stderr, /planned content still links to moved path/);
+  assert.equal(fs.existsSync(path.join(root, 'state/journal.json')), false);
+  assert.equal(fs.readFileSync(path.join(root, linkPath), 'utf8'), oldLink);
+  plan.writes[1].content = markdown(nextMeta, oldLinkBody.replace('../../facts/workflow/', '../../facts/app-development/'));
+  fs.writeFileSync(planPath, JSON.stringify(plan));
+  const interrupted = invoke(root, 'apply', { BRAIN_FAIL_AFTER_WRITE: '1' }, [planPath]);
+  assert.equal(interrupted.status, 1); assert.match(interrupted.stderr, /injected failure after write/);
+  fs.unlinkSync(planPath);
+  const resumed = invoke(root, 'resume'); assert.equal(resumed.status, 0, resumed.stderr);
+  assert.equal(fs.existsSync(path.join(root, oldPath)), false);
+  assert.equal(fs.existsSync(path.join(root, newPath)), true);
+  const finalText = fs.readFileSync(path.join(root, linkPath), 'utf8');
+  const finalMeta = YAML.parse(finalText.match(/^---\n([\s\S]*?)\n---/)[1]);
+  assert.equal(finalMeta.history[0].previous_body, oldLinkBody);
+  assert.ok(finalText.endsWith(oldLinkBody.replace('../../facts/workflow/', '../../facts/app-development/')));
+  assert.equal(fs.existsSync(path.join(root, 'state/journal.json')), false);
+});
 function fixture(t) {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'brain-'));
   t.after(() => fs.rmSync(root, { recursive: true, force: true }));
