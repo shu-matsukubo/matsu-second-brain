@@ -1278,5 +1278,19 @@
     "paths": [
       "knowledge/principles/development-process/k-689e281cbda7f466.md"
     ]
+  },
+  "notion:412013b8-a22b-8179-b553-e80df32963c1": {
+    "source_digest": "5e7039d528fa5901be20e01d7bba396af0b6e293682de8228cc3ca95ce21741b",
+    "input_key": "chatgpt|Codex CLI運用比較|2026-11-07T19:03:42Z|user",
+    "evidence_digest": "4e84ff9c76bcb5d52687bb687320d788b9d22fd42eefdd657735af4f2d7fa210",
+    "operation_digest": "cca449da33a931213bf69cd52148af26777ba287e64f3810f046e79f4752b0c3",
+    "knowledge_ids": [
+      "k-689e281cbda7f466",
+      "k-92feba6197fbb3cd"
+    ],
+    "paths": [
+      "knowledge/principles/development-process/k-689e281cbda7f466.md",
+      "knowledge/ideas/git/k-92feba6197fbb3cd.md"
+    ]
   }
 }
