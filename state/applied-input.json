@@ -1292,5 +1292,17 @@
       "knowledge/principles/development-process/k-689e281cbda7f466.md",
       "knowledge/ideas/git/k-92feba6197fbb3cd.md"
     ]
+  },
+  "notion:419013b8-a22b-816b-9323-ff8ecdc31fcc": {
+    "source_digest": "75f0865eb7e1842e933b62def7bc53219d43c72b3cddfdfcd30e7e3eef265aa9",
+    "input_key": "codex|msg_01a1dec1-628e-7c13-9534-09defdd06a5a",
+    "evidence_digest": "1c48cc5032ad8f6293aeddcffe8f937dfcaa9a9d99a7cf0f77b48d293a99eb50",
+    "operation_digest": "36d4f68596e0068c351a8668c91267754fb68708a72a864e758a3d7bbd7279f0",
+    "knowledge_ids": [
+      "k-75f0865eb7e1842e"
+    ],
+    "paths": [
+      "knowledge/principles/development-process/k-75f0865eb7e1842e.md"
+    ]
   }
 }
