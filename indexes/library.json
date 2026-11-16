@@ -29,6 +29,20 @@
       "updated": "2026-11-08"
     },
     {
+      "id": "k-33a5d4987fc0872f",
+      "path": "knowledge/facts/app-development/k-33a5d4987fc0872f.md",
+      "kind": "fact",
+      "title": "ChatGPT Sitesの公開共有と利用条件",
+      "topic": "app-development",
+      "topicLabel": "アプリ開発",
+      "tags": [
+        "ChatGPT Sites",
+        "公開共有",
+        "プラン"
+      ],
+      "updated": "2026-11-17"
+    },
+    {
       "id": "k-5c7f82b36d860b77",
       "path": "knowledge/facts/app-development/k-5c7f82b36d860b77.md",
       "kind": "fact",
@@ -188,20 +202,6 @@
       "updated": "2026-08-24"
     },
     {
-      "id": "k-33a5d4987fc0872f",
-      "path": "knowledge/facts/codex/k-33a5d4987fc0872f.md",
-      "kind": "fact",
-      "title": "ChatGPT Sitesの公開共有と利用条件",
-      "topic": "codex",
-      "topicLabel": "Codex",
-      "tags": [
-        "ChatGPT Sites",
-        "公開共有",
-        "プラン"
-      ],
-      "updated": "2026-09-30"
-    },
-    {
       "id": "k-9295e908c1b088c6",
       "path": "knowledge/facts/codex/k-9295e908c1b088c6.md",
       "kind": "fact",
@@ -341,6 +341,20 @@
       "updated": "2026-09-26"
     },
     {
+      "id": "k-f3633df9248e801a",
+      "path": "knowledge/ideas/app-development/k-f3633df9248e801a.md",
+      "kind": "idea",
+      "title": "ChatGPT Sitesをチーム向け小アプリに使う案",
+      "topic": "app-development",
+      "topicLabel": "アプリ開発",
+      "tags": [
+        "ChatGPT Sites",
+        "チーム共有",
+        "軽量アプリ"
+      ],
+      "updated": "2026-11-17"
+    },
+    {
       "id": "k-6cfc44888ba6b730",
       "path": "knowledge/ideas/aws/k-6cfc44888ba6b730.md",
       "kind": "idea",
@@ -438,20 +452,6 @@
         "GUI"
       ],
       "updated": "2026-11-16"
-    },
-    {
-      "id": "k-f3633df9248e801a",
-      "path": "knowledge/ideas/codex/k-f3633df9248e801a.md",
-      "kind": "idea",
-      "title": "ChatGPT Sitesをチーム向け小アプリに使う案",
-      "topic": "codex",
-      "topicLabel": "Codex",
-      "tags": [
-        "ChatGPT Sites",
-        "チーム共有",
-        "軽量アプリ"
-      ],
-      "updated": "2026-09-30"
     },
     {
       "id": "k-0e22ca83ac708e37",

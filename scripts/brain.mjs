@@ -60,7 +60,8 @@ function knowledgePathFor(meta) {
 }
 function relativeMarkdownTargets(filePath, content) {
   const targets = [];
-  for (const match of content.matchAll(/\]\(<?([^)>]+)>?\)/g)) {
+  const body = yamlFromMarkdown(content).body;
+  for (const match of body.matchAll(/\]\(<?([^)>]+)>?\)/g)) {
     let target = match[1].trim();
     if (!target || /^(?:[a-z]+:|\/\/|#)/i.test(target)) continue;
     target = decodeURIComponent(target.split(/[?#]/, 1)[0]);
