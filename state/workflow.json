@@ -11,6 +11,7 @@
     "report/separate-notification-criteria-and-specifications.md": "b7f4ce59239ad1740d266936fea29e79506cbd2a502e4623b16ae40a40d22242",
     "report/clarify-s3-cloudfront-idea-title-scope.md": "c7cf16ccd3f7d1c28c1e684f46dc44da9462fe12343579408b887449a9417a84",
     "report/clarify-chatgpt-sites-access-and-topic.md": "609195f6b94831bb2f1a816d7cd509cc6c3678e09c74c3517779c1c114bccb60",
-    "report/github-pr-122-ci-not-started.md": "62eca6182030af4a4b3cec62eb2cf2818e19b52246549202da8d721553417613"
+    "report/github-pr-122-ci-not-started.md": "62eca6182030af4a4b3cec62eb2cf2818e19b52246549202da8d721553417613",
+    "report/recheck-github-codex-delegation-sources.md": "c49ddf919f9b51a4f33869c624b4968ef52041d9d6eb8eccf45cb59e186b2469"
   }
 }
