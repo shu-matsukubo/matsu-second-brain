@@ -3,6 +3,7 @@
   "pending": null,
   "idleFingerprint": null,
   "acknowledgedInputs": {
-    "report/input-journal-resume-trailing-newline.md": "c83b3c943c0fe5c51f14a397e95e15e0eb829afc990f210af8990767f92219a3"
+    "report/input-journal-resume-trailing-newline.md": "c83b3c943c0fe5c51f14a397e95e15e0eb829afc990f210af8990767f92219a3",
+    "report/signals-2026-08-knowledge-review.md": "1a845b538cf4dfa13cf247335f761b4c2644f9393b76b34e60228ea0a6c0198d"
   }
 }
