@@ -1440,6 +1440,20 @@
       "updated": "2026-11-16"
     },
     {
+      "id": "k-75f0865eb7e1842e",
+      "path": "knowledge/principles/development-process/k-75f0865eb7e1842e.md",
+      "kind": "principle",
+      "title": "不備のある入力は対応不要にし、本人に手動補完を求めない",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "入力管理",
+        "データ不備",
+        "手動補完"
+      ],
+      "updated": "2026-11-16"
+    },
+    {
       "id": "k-7652ec730db0f40b",
       "path": "knowledge/principles/development-process/k-7652ec730db0f40b.md",
       "kind": "principle",

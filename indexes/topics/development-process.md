@@ -39,6 +39,7 @@
 - [パフォーマンス改善は発生頻度と影響度で優先順位を決める](../../knowledge/principles/development-process/k-e4905c42b314c4c4.md) (k-e4905c42b314c4c4)
 - [マルチエージェントの並列度はタスク構造で決める](../../knowledge/principles/development-process/k-cace147d56d039c9.md) (k-cace147d56d039c9)
 - [上位Agentへの相談は必要時の共通能力にする](../../knowledge/principles/development-process/k-284229ca7cd4221b.md) (k-284229ca7cd4221b)
+- [不備のある入力は対応不要にし、本人に手動補完を求めない](../../knowledge/principles/development-process/k-75f0865eb7e1842e.md) (k-75f0865eb7e1842e)
 - [不採用アーキテクチャは前提が変わったら再評価する](../../knowledge/principles/development-process/k-faeac1f2745de751.md) (k-faeac1f2745de751)
 - [仕様を詰める対話と実装エージェントは分ける](../../knowledge/principles/development-process/k-12ebb55403b0808f.md) (k-12ebb55403b0808f)
 - [仕様理解とタスク分解は親Agentが担当し計画を独立レビューする](../../knowledge/principles/development-process/k-259092392aa4081c.md) (k-259092392aa4081c)
