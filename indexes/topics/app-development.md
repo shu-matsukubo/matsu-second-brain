@@ -2,8 +2,9 @@
 
 ## 事実
 
+- [Discord Incoming Webhookの送信とレート制限](../../knowledge/facts/app-development/k-e119969b83d066a3.md) (k-e119969b83d066a3)
 - [Hono で Google ログインを実装する](../../knowledge/facts/app-development/k-09eeb3ef9aafd09d.md) (k-09eeb3ef9aafd09d)
-- [LINE Messaging API の送信方式を選ぶ](../../knowledge/facts/app-development/k-a399c0657f69c609.md) (k-a399c0657f69c609)
+- [LINE Messaging APIの送信方式と利用条件](../../knowledge/facts/app-development/k-a399c0657f69c609.md) (k-a399c0657f69c609)
 - [Nyxisの認可モデルと形式証明の範囲](../../knowledge/facts/app-development/k-5c7f82b36d860b77.md) (k-5c7f82b36d860b77)
 - [OAuth ログイン後のアプリセッションを設計する](../../knowledge/facts/app-development/k-63ec6b4ce9ba5b6b.md) (k-63ec6b4ce9ba5b6b)
 - [OpenID Connectのユーザー識別にはissとsubを使う](../../knowledge/facts/app-development/k-db267f70c5bcb7b4.md) (k-db267f70c5bcb7b4)
