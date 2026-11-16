@@ -454,6 +454,20 @@
       "updated": "2026-11-09"
     },
     {
+      "id": "k-16e605ca90d66975",
+      "path": "knowledge/ideas/development-process/k-16e605ca90d66975.md",
+      "kind": "idea",
+      "title": "モデルの利用可否への不安から提供元のアプリを選ぶ案",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "AIツール",
+        "モデル",
+        "クライアント"
+      ],
+      "updated": "2026-11-16"
+    },
+    {
       "id": "k-1a832bc4b5b206aa",
       "path": "knowledge/ideas/development-process/k-1a832bc4b5b206aa.md",
       "kind": "idea",
@@ -466,6 +480,19 @@
         "ナレッジ"
       ],
       "updated": "2026-11-15"
+    },
+    {
+      "id": "k-1cc57054a2b08553",
+      "path": "knowledge/ideas/development-process/k-1cc57054a2b08553.md",
+      "kind": "idea",
+      "title": "AI運用のフィードバックを書き出す場所を設ける案",
+      "topic": "development-process",
+      "topicLabel": "開発プロセス",
+      "tags": [
+        "AI運用",
+        "フィードバック"
+      ],
+      "updated": "2026-11-16"
     },
     {
       "id": "k-314369cf3b4c1004",
