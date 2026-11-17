@@ -18,6 +18,7 @@
     "report/recheck-api-gateway-auth-comparison-sources.md": "c7623c55b5495ebba83615bb31016bed83be310839d05d4ecb332eedf2e24b11",
     "report/recheck-workers-first-deploy-sources.md": "8b50974ca9d9939fab54fd999f9a23fe1d90394ebdb8f489c064a6460829aca6",
     "report/recheck-windows-container-requirements-sources.md": "171fc74a791e3b4c644e6f274f63d9254b9f0d153d1dd1a934776fe311610dd8",
-    "report/recheck-docker-basics-sources.md": "361604abaf7c5c2767cecb081de0b56dde5911776f0ed794d6d1146641f61486"
+    "report/recheck-docker-basics-sources.md": "361604abaf7c5c2767cecb081de0b56dde5911776f0ed794d6d1146641f61486",
+    "report/recheck-dockerfile-compose-sources.md": "b0fb39d8d2a86f7b19b0a82599021d74dd4e469f352545a597657b07c728b4be"
   }
 }
