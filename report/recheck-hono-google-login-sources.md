@@ -3,7 +3,7 @@ id: recheck-hono-google-login-sources
 fingerprint: knowledge:k-09eeb3ef9aafd09d:verify-hono-google-login-sources-and-example
 origin: ai
 kind: knowledge
-status: pending
+status: completed
 created: 2026-11-17
 updated: 2026-11-17
 request: 対象はknowledge/facts/app-development/k-09eeb3ef9aafd09d.md（ID
@@ -15,6 +15,13 @@ request: 対象はknowledge/facts/app-development/k-09eeb3ef9aafd09d.md（ID
   k-db267f70c5bcb7b4全体の更新へ広げず、必要な関連リンクを維持する。安定ID・ファイル名・type fact・topic
   app-development、旧本文・元出典・既存リンクを保持し、支持反対0/0・過去履歴不明を維持する。題名の語尾だけを理由に改名せず、AI評価を本人の支持へ数えない。
 result: |-
+  2026-11-17 handle-knowledge-reportでHono Googleログインfact一件を更新した。Hono公式の外部middleware一覧、固定コミット89dc1e0d30e9a109a0a3d3ec3a23bc5296c2a24bのREADME・package.json・googleAuth/AuthFlow実装・Context/GoogleUser型を確認した。リポジトリ版は0.9.1であり、npm配布物の一致や最新版とは断定しない。Google公式のWeb向けOAuth説明とpolicyでredirect URIの一致・秘密情報・最小scopeを確認し、必要な出典URLと2026-11-17の確認日を追加した。
+
+  設定例では未定義/Partial型のuser-googleからIDを確認し、アプリ側セッションが未実装の間は501で終了することを明記した。旧redirect成功の例と製品比較は旧本文全文として保全した。公式の接続補助とアプリ内の認証状態管理を区別し、関連session/OIDC/Workersノート全体の更新には広げていない。安定ID・題名・ファイル名・fact・app-development・支持反対0/0・履歴不明、旧出典・関連リンクを維持した。追加evidenceはAI/none/counted false。
+
+  資料と実装・型定義を読んだ確認であり、ライブラリの導入・型コンパイル・実OAuthログインは未実施。実際のGoogle Cloud作成・OAuth同意・シークレット登録・deploy・サービス設定・Notion・daily・archive・policy・Skillは変更していない。Index生成とworkflow acknowledgementを同じ主対象として実行した。本人への手動補完や入力再収集は不要。Skill改善の追加提案は不要。
+
+  以前の候補登録結果（保全）:
   2026-11-17 review-knowledgeでAI候補一件を登録。全144件（facts22/principles87/ideas35）のID重複、分類・topic・配置差、related/opposesの不明IDはなく、brain validate/index:checkも成功した。対象ノートを全文確認し、sources四件と本文の公式情報欄に確認日がない。設定例にはGOOGLE_ID/GOOGLE_SECRET、googleAuthのscope、user-googleからのユーザー取得、セッション実装のコメントがある。これらは保存された記述として確認したもので、今回の評価で現行ライブラリ・Googleの仕様として検証したわけではない。説明が誤り・脆弱・実行不能とは断定していない。
 
   関連するセッションfactとOIDC識別factを読み、責務の境界を確認した。両ノートには本文に既存の確認日があり、同じ理由で一括の再確認対象にはしていない。active/archiveの構造化reportのID・fingerprintを照合し、対象の同一候補は未登録。現在のcanonical knowledgeを直接確認できている。対象確認時SHA-256: aae894e8443294b473eb987282883d8862a870089ce881835d10af972e1f2a44。

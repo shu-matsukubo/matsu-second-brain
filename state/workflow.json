@@ -13,6 +13,7 @@
     "report/clarify-chatgpt-sites-access-and-topic.md": "609195f6b94831bb2f1a816d7cd509cc6c3678e09c74c3517779c1c114bccb60",
     "report/github-pr-122-ci-not-started.md": "62eca6182030af4a4b3cec62eb2cf2818e19b52246549202da8d721553417613",
     "report/recheck-github-codex-delegation-sources.md": "c49ddf919f9b51a4f33869c624b4968ef52041d9d6eb8eccf45cb59e186b2469",
-    "report/clarify-legacy-cloud-environment-scope.md": "e8b8852f1eaa3416fdd20583ffdd45c7b19651eb7aa20c22b8694143d32a9d69"
+    "report/clarify-legacy-cloud-environment-scope.md": "e8b8852f1eaa3416fdd20583ffdd45c7b19651eb7aa20c22b8694143d32a9d69",
+    "report/recheck-hono-google-login-sources.md": "0bdf3064110f86a0759420f7bc3f385ef16c96cb21934e5bfde0a12228624bce"
   }
 }
