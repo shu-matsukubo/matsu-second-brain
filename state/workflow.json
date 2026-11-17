@@ -16,6 +16,7 @@
     "report/clarify-legacy-cloud-environment-scope.md": "e8b8852f1eaa3416fdd20583ffdd45c7b19651eb7aa20c22b8694143d32a9d69",
     "report/recheck-hono-google-login-sources.md": "0bdf3064110f86a0759420f7bc3f385ef16c96cb21934e5bfde0a12228624bce",
     "report/recheck-api-gateway-auth-comparison-sources.md": "c7623c55b5495ebba83615bb31016bed83be310839d05d4ecb332eedf2e24b11",
-    "report/recheck-workers-first-deploy-sources.md": "8b50974ca9d9939fab54fd999f9a23fe1d90394ebdb8f489c064a6460829aca6"
+    "report/recheck-workers-first-deploy-sources.md": "8b50974ca9d9939fab54fd999f9a23fe1d90394ebdb8f489c064a6460829aca6",
+    "report/recheck-windows-container-requirements-sources.md": "171fc74a791e3b4c644e6f274f63d9254b9f0d153d1dd1a934776fe311610dd8"
   }
 }
