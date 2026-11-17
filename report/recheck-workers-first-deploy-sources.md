@@ -3,7 +3,7 @@ id: recheck-workers-first-deploy-sources
 fingerprint: knowledge:k-97d6709958a83deb:verify-workers-first-deploy-sources-and-scope
 origin: ai
 kind: knowledge
-status: pending
+status: completed
 created: 2026-11-17
 updated: 2026-11-17
 request: 対象はknowledge/facts/cloudflare/k-97d6709958a83deb.md（ID
@@ -15,6 +15,13 @@ request: 対象はknowledge/facts/cloudflare/k-97d6709958a83deb.md（ID
   k-aa6d85a855837646には既存の確認日があり、不要に全体の再検証/更新へ広げない。Honoリンクの表示も現ノートの説明範囲に合うか必要な範囲で確認する。安定ID・題名・path・fact・topic
   cloudflare、旧本文・元出典・関連リンクを保全し、支持反対0/0・過去履歴不明を維持する。語尾だけの改名や本人の採用意思の推定はせず、AI評価を支持へ数えない。取得できない箇所は未確認とし、再開条件を残す。
 result: |-
+  2026-11-17 handle-knowledge-reportでWorkers初回公開fact一件を更新した。公式のinstall/update・環境・commands・general/Workers commands・Secrets・GitHub Actions資料を確認し、出典七件に確認日を追加した。ローカルWranglerと未導入時npxの違い、対話OAuthとCI token/account ID、対象環境を区別した。secret putは即時deployを伴うため、旧一律の事前登録順序を改め、対応版でコードとsecrets-fileを同時送信できる説明を追加した。未作成Workerに対するsecret putの普遍的な成功や、具体的な初回環境での動作までは断定していない。
+
+  通常WranglerとCloudflare Vite pluginの環境選択の違い、npm run deployが任意scriptであることも明記した。Honoの関連リンク説明を現在のOAuth接続例の範囲へ整えた。無料枠やシークレットfact全体は更新していない。旧本文全文・元出典二件・関連リンクを保全し、安定ID・題名・path・fact/cloudflare・支持反対0/0・履歴不明は維持。AI evidence none/counted falseを追加し、Indexとworkflow acknowledgementを同じ主対象で生成した。
+
+  資料の読解のみで、Wrangler導入・ローカル版検証・認証・API token取得/設定・シークレット登録・Worker作成・deploy・DNS/公開範囲の変更は行っていない。引用コマンドも未実行。Notion・daily・archive・policy・Skillにも変更はない。本人への手動補完や入力再収集は不要。Skill改善の追加提案は不要。
+
+  以前の候補登録結果（保全）:
   2026-11-17 review-knowledgeでAI候補一件を登録。全144件（facts22/principles87/ideas35）の安定IDは重複なし、分類/topic配置差と関連/反対IDの不足はなく、brain validate/index:checkも成功した。対象ノートを全文確認し、ログイン・シークレット登録・deployを含む手順と公式URL二件はあるが、sourcesと本文末尾の公式情報欄に確認日がない。今回の評価で現在のCloudflare仕様やコマンドの成否を確認したわけではなく、旧手順が誤り・利用不可・安全と断定していない。
 
   シークレット管理と無料枠の関連ノートは本文を読み、既存の確認日を持つ別主題として扱った。HonoノートはPR130でOAuth接続例と確認範囲を更新済みで、対象ノートの関連リンク説明にも必要最小限の整合を取る余地がある。active/archiveの構造化report19件のID・fingerprintを照合し同一候補は未登録。現在のcanonical knowledgeを直接確認できている。対象確認時SHA-256: 0d238dea7e3bdaf861842fedf843d931da1d02d659d3ab93877ee63b5f9eeaec。
