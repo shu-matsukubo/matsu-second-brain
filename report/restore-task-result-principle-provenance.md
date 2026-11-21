@@ -3,18 +3,10 @@ id: restore-task-result-principle-provenance
 fingerprint: knowledge:k-d00d5434cb5bb73e:restore-legacy-source-provenance
 origin: ai
 kind: knowledge
-status: pending
+status: completed
 created: 2026-11-21
 updated: 2026-11-21
-request: "対象は knowledge/principles/development-process/k-d00d5434cb5bb73e.md（ID
-  k-d00d5434cb5bb73e、AIへの依頼は実装結果とともに保存する）。現在はevidence/history/sourcesがすべて空で、本文末\
-  尾にも根拠記録がなく、タスクと実装結果を組で保存する判断の由来をknowledge単体で確認できない。knowledge-policy/policy.md\
-  「根拠、出典、関連リンク」に沿い、保全済みの旧入力 daily/2026/08/05-093011.md、当時の活動を記録した
-  report/archive/reports/weekly/2026/08-16.md、report/archive/migration-map.json\
-  を再確認し、この一件へ確認できる保存文・登録日時・整理の経緯と出典を追記する改善を検討する。現在の判断内容、安定ID、title、type/topic、支\
-  持・反対0/0とhistory_status:
-  unknownを保つ。旧入力の登録日時を実際の会話の発言時刻と見なさず、元会話の原文・会話ID・不明な支持履歴を捏造しない。AI評価や過去の週次レポートを\
-  人間の新たな支持として数えない。旧dailyの処理再開、Notion再登録、本人への出典探索・手動補完依頼は行わない。"
+request: "対象は knowledge/principles/development-process/k-d00d5434cb5bb73e.md（ID k-d00d5434cb5bb73e、AIへの依頼は実装結果とともに保存する）。現在はevidence/history/sourcesがすべて空で、本文末尾にも根拠記録がなく、タスクと実装結果を組で保存する判断の由来をknowledge単体で確認できない。knowledge-policy/policy.md「根拠、出典、関連リンク」に沿い、保全済みの旧入力 daily/2026/08/05-093011.md、当時の活動を記録した report/archive/reports/weekly/2026/08-16.md、report/archive/migration-map.jsonを再確認し、この一件へ確認できる保存文・登録日時・整理の経緯と出典を追記する改善を検討する。現在の判断内容、安定ID、title、type/topic、支持・反対0/0とhistory_status: unknownを保つ。旧入力の登録日時を実際の会話の発言時刻と見なさず、元会話の原文・会話ID・不明な支持履歴を捏造しない。AI評価や過去の週次レポートを人間の新たな支持として数えない。旧dailyの処理再開、Notion再登録、本人への出典探索・手動補完依頼は行わない。"
 result: |-
   2026-11-21のreview-knowledgeで候補登録。Notion未処理ビューは実取得が成功し、results空・has_more falseを確認した。全144件（fact22・principle87・idea35）のメタデータ、分類とtopicの配置、主題一覧、安定ID、related/opposes参照と支持・反対の閾値到達を点検した。ID重複・配置不一致・参照先ID欠落・閾値到達はなく、brain validateとindex:checkは成功した。根拠・出典の点検で、この一件について保存済み旧記録との対応を確認した。
 
@@ -23,4 +15,6 @@ result: |-
   確認時SHA-256: 対象knowledge = 87816a470a57e3760c3dc0c60f7fb2b4263d2267387c44061b85af81a8eb82e1; 旧daily = 1fb44908e5d40f46ccc34b524e81848de2ff0a82fe008bbf28c341c87bc09c6d; 週次レポート = 074f71748ec879e0bc7094793d0c79b2df71a230dd809bb9d689a18ef6112f83; 移行対応表 = 9856582aa52190966cfa8bd8bdca142340409efeb07c5c1ec7b04fa06bcf7b16。active/archiveの構造化report26件のID/fingerprintと旧記録への言及を照合した。当該ノートの言及は関連リンク・当時の活動・移行記録であり、同一ノートの根拠履歴不足を扱う候補はなかった。完了済みの抽象化原則の由来追記とは対象IDが異なる。
 
   影響は、判断内容を読めても由来をノート内で追えないこと。今回の変更は改善候補の登録だけで、knowledge・旧daily・archive・Notion・index・policy・Skillは変更しない。後続の一件処理で現在状態を再確認し、確認できる保存記録の由来を最小限追記する。全件の形式変更や履歴不明を理由とした降格、GitHub連携仕様・関連ノート全体の再検証は対象外。不備のあるNotion入力の補完待ちは再開せず、対応不要の方針を維持する。Skill改善の追加提案は不要。
+
+  2026-11-21 対応完了: 対象knowledge・旧入力・週次レポート・移行対応表のSHA-256が候補登録時と一致することを再確認した。既存の判断内容と関連リンクを保ち、末尾へ旧入力の保存文、入力登録日時、当時の活動記録と移行対応、確認できない範囲を追記した。メタデータに出典digestとAI由来・direction none・counted falseの整理根拠、変更前本文全文を保存した。安定ID・title・type/topic・支持反対0/0・history_status unknownを維持した。元会話の逐語原文・実発言時刻・会話ID・具体的な作成commitを確認したとは扱わない。旧daily・archive・Notionは変更せず、旧入力の再処理、本人への出典探索・手動補完依頼、不備のあるNotion入力の補完待ちの再開は行っていない。indexは同じknowledge状態から再生成した。この主対象一件の範囲で対応を完了し、Skill改善の追加提案は不要。
 ---
