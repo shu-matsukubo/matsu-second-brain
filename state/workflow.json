@@ -20,6 +20,7 @@
     "report/recheck-windows-container-requirements-sources.md": "171fc74a791e3b4c644e6f274f63d9254b9f0d153d1dd1a934776fe311610dd8",
     "report/recheck-docker-basics-sources.md": "361604abaf7c5c2767cecb081de0b56dde5911776f0ed794d6d1146641f61486",
     "report/recheck-dockerfile-compose-sources.md": "b0fb39d8d2a86f7b19b0a82599021d74dd4e469f352545a597657b07c728b4be",
-    "report/recheck-git-workspaces-remotes-sources.md": "da7f2c606263b314ec38600257f31a8ff453469d322882b87cee064ac84bf390"
+    "report/recheck-git-workspaces-remotes-sources.md": "da7f2c606263b314ec38600257f31a8ff453469d322882b87cee064ac84bf390",
+    "report/recheck-git-history-operations-sources.md": "23f7d6b6f74c90a4c189790b817eceff87c544ad3f60f89baaa185ef632bb432"
   }
 }
